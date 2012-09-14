@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Alkivia SidePosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-28 23:16+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jordi Canals <devel@jcanals.cat>\n"
+"Language-Team: Jordi Canals | http://alkivia.org <devel@jcanals.cat>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../sideposts.php:54
+msgid "Warning:"
+msgstr ""
+
+#: ../sideposts.php:55
+#, php-format
+msgid "The active plugin %s is not compatible with your PHP version."
+msgstr ""
+
+#: ../sideposts.php:57
+#, php-format
+msgid "%s is required for this plugin."
+msgstr ""
+
+#: ../includes/functions.php:49
+msgid "Archive"
+msgstr ""
+
+#: ../includes/functions.php:51
+msgid "Archive for"
+msgstr ""
+
+#: ../includes/widget.php:68
+msgid "A widget to move posts to the sidebar."
+msgstr ""
+
+#: ../includes/widget.php:83
+msgid "Category not selected."
+msgstr ""
+
+#: ../includes/widget.php:155
+msgid "Title:"
+msgstr ""
+
+#: ../includes/widget.php:156
+msgid "Category:"
+msgstr ""
+
+#: ../includes/widget.php:158
+msgid "-- PRIVATE POSTS --"
+msgstr ""
+
+#: ../includes/widget.php:170
+msgid "Number of posts:"
+msgstr ""
+
+#: ../includes/widget.php:172
+#, php-format
+msgid "(At most %d)"
+msgstr ""
+
+#: ../includes/widget.php:175
+msgid "Show:"
+msgstr ""
+
+#: ../includes/widget.php:181
+msgid "Full Post"
+msgstr ""
+
+#: ../includes/widget.php:184
+msgid "Post Excerpt"
+msgstr ""
+
+#: ../includes/widget.php:187
+msgid "Excerpts with thumbnails"
+msgstr ""
+
+#: ../includes/widget.php:190
+msgid "Photo Blog"
+msgstr ""
+
+#: ../includes/widget.php:193
+msgid "Only Post Title"
+msgstr ""
+
+#: ../includes/widget.php:204
+msgid "Show category on all feeds"
+msgstr ""
+
+#: ../includes/widget.php:206
+msgid "Image width:"
+msgstr ""
+
+#: ../includes/widget.php:208
+msgid "pixels"
+msgstr ""
+
+#: ../includes/widget.php:211
+msgid "Align thumbnail to right"
+msgstr ""
+
+#: ../templates/photoblog.php:48
+msgid "No Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: ../templates/photoblog.php:50
+msgid "% Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:52
+msgid "Comments closed"
+msgstr ""
+
+#: ../templates/posts.php:46
+msgid "Read more &raquo;"
+msgstr ""
+

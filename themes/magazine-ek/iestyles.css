@@ -1,0 +1,62 @@
+body {
+	padding-left: 1px;
+	}
+
+.sf-menu a {
+	padding: .5em 1em .5em;
+}
+
+.meta {
+	margin-bottom: 15px;
+	}
+	
+#twocol {
+	margin-bottom: 10px;
+	}	
+	
+.twopost {
+	padding-bottom: 10px;
+	}
+	
+.post, .posts {
+	padding-bottom: 10px;
+ 	}
+	
+.postmetadata, .tags {
+	font-size: 10px;
+	}
+
+.threepost {
+	padding-bottom: 15px;
+	}
+	
+#leftcontent {
+	margin: 0 7px;
+	}
+	
+#description {
+	width: 38%;
+	font-size: 12px;
+	margin-top: 5px;
+	}	
+
+#threecol {
+	margin: 0;
+	background: url(images/line.png) repeat-y 32.5% 0;
+	}
+
+#threecol2 {
+	background: url(images/line.png) repeat-y 68% 0;
+}
+	
+img.avatar {
+	margin-left: -65px;
+	}
+			
+#sub-navigation ul ul {
+	top:20px;
+	}
+
+#sub-navigation li {
+		padding: 0 10px 1px 0;
+		}

@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sideposts 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-28 23:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jordi Canals <devel@jcanals.cat>\n"
+"Language-Team: ^xRun^ <xrun@xrunblogg.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Norwegian Bokmal\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../sideposts.php:54
+msgid "Warning:"
+msgstr "Advarsel:"
+
+#: ../sideposts.php:55
+#, php-format
+msgid "The active plugin %s is not compatible with your PHP version."
+msgstr "Det aktive innstikket %s er ikke kompatibelt med din PHP-versjon."
+
+#: ../sideposts.php:57
+#, php-format
+msgid "%s is required for this plugin."
+msgstr "%s er nødvendig for dette innstikket."
+
+#: ../includes/functions.php:49
+#, fuzzy
+msgid "Archive"
+msgstr "Arkiv for:"
+
+#: ../includes/functions.php:51
+msgid "Archive for"
+msgstr "Arkiv for:"
+
+#: ../includes/widget.php:68
+msgid "A widget to move posts to the sidebar."
+msgstr "En widget som flytter poster til sidebar."
+
+#: ../includes/widget.php:83
+msgid "Category not selected."
+msgstr "Kategori ikke valgt."
+
+#: ../includes/widget.php:155
+msgid "Title:"
+msgstr "Tittel:"
+
+#: ../includes/widget.php:156
+msgid "Category:"
+msgstr "Kategori:"
+
+#: ../includes/widget.php:158
+msgid "-- PRIVATE POSTS --"
+msgstr "--PRIVATE POSTER--"
+
+#: ../includes/widget.php:170
+msgid "Number of posts:"
+msgstr "Antall poster:"
+
+#: ../includes/widget.php:172
+#, php-format
+msgid "(At most %d)"
+msgstr "(Maks %d)"
+
+#: ../includes/widget.php:175
+msgid "Show:"
+msgstr "Vis:"
+
+#: ../includes/widget.php:181
+msgid "Full Post"
+msgstr "Hele posten"
+
+#: ../includes/widget.php:184
+msgid "Post Excerpt"
+msgstr "Utdrag"
+
+#: ../includes/widget.php:187
+msgid "Excerpts with thumbnails"
+msgstr "Utdrag med thumbnails"
+
+#: ../includes/widget.php:190
+msgid "Photo Blog"
+msgstr ""
+
+#: ../includes/widget.php:193
+msgid "Only Post Title"
+msgstr ""
+
+#: ../includes/widget.php:204
+msgid "Show category on all feeds"
+msgstr ""
+
+#: ../includes/widget.php:206
+#, fuzzy
+msgid "Image width:"
+msgstr "Thumbnail bredde:"
+
+#: ../includes/widget.php:208
+msgid "pixels"
+msgstr "punkter"
+
+#: ../includes/widget.php:211
+msgid "Align thumbnail to right"
+msgstr ""
+
+#: ../templates/photoblog.php:48
+msgid "No Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: ../templates/photoblog.php:50
+msgid "% Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:52
+msgid "Comments closed"
+msgstr ""
+
+#: ../templates/posts.php:46
+msgid "Read more &raquo;"
+msgstr "Les mer &raquo;"
+
+#~ msgid "The active plugin %s is not compatible with your WordPress version."
+#~ msgstr ""
+#~ "Det aktive innstikket %s er ikke kompatibelt med din WordPress-versjon."
+#~ msgid "WordPress %s is required to run this plugin."
+#~ msgstr "WordPress %s er nødvendig for å bruke dette innstikket."
+#~ msgid "Standard sidebar functions are not present."
+#~ msgstr "Alminnelige sidebar-funksjoner er ikke tilstede."
+#~ msgid "It is required to use the standard sidebar to run %s"
+#~ msgstr "Standard sidebar er nødvendig for å bruke %s"
+#~ msgid "Read full post &raquo;"
+#~ msgstr "Les hele &raquo;"
+#~ msgid "No posts found"
+#~ msgstr "Ingen poster funnet"
+

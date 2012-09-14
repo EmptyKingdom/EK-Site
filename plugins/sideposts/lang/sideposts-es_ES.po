@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Alkivia SidePosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-28 23:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jordi Canals <devel@jcanals.cat>\n"
+"Language-Team: Jordi Canals | http://alkivia.org <devel@jcanals.cat>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: \n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SearchPath-0: \n"
+
+#: ../sideposts.php:54
+msgid "Warning:"
+msgstr "Atención:"
+
+#: ../sideposts.php:55
+#, php-format
+msgid "The active plugin %s is not compatible with your PHP version."
+msgstr "El plugin activo %s no es compatible con tu versión de PHP."
+
+#: ../sideposts.php:57
+#, php-format
+msgid "%s is required for this plugin."
+msgstr "Se requiere %s para ejecutar este plugin."
+
+#: ../includes/functions.php:49
+msgid "Archive"
+msgstr "Archivo"
+
+#: ../includes/functions.php:51
+msgid "Archive for"
+msgstr "Archivo de"
+
+#: ../includes/widget.php:68
+msgid "A widget to move posts to the sidebar."
+msgstr "Un widget que desplaza posts a la barra lateral."
+
+#: ../includes/widget.php:83
+msgid "Category not selected."
+msgstr "No se ha seleccionado una categoría."
+
+#: ../includes/widget.php:155
+msgid "Title:"
+msgstr "Título:"
+
+#: ../includes/widget.php:156
+msgid "Category:"
+msgstr "Categoría:"
+
+#: ../includes/widget.php:158
+msgid "-- PRIVATE POSTS --"
+msgstr "-- ENTRADAS PRIVADAS --"
+
+#: ../includes/widget.php:170
+msgid "Number of posts:"
+msgstr "Número de entradas:"
+
+#: ../includes/widget.php:172
+#, php-format
+msgid "(At most %d)"
+msgstr "(Máximo %d)"
+
+#: ../includes/widget.php:175
+msgid "Show:"
+msgstr "Mostrar:"
+
+#: ../includes/widget.php:181
+msgid "Full Post"
+msgstr "Entrada completa"
+
+#: ../includes/widget.php:184
+msgid "Post Excerpt"
+msgstr "Solo estractos"
+
+#: ../includes/widget.php:187
+msgid "Excerpts with thumbnails"
+msgstr "Estractos con miniaturas"
+
+#: ../includes/widget.php:190
+msgid "Photo Blog"
+msgstr "Nombre del blog"
+
+#: ../includes/widget.php:193
+msgid "Only Post Title"
+msgstr "Solo título de la entrada"
+
+#: ../includes/widget.php:204
+msgid "Show category on all feeds"
+msgstr "Mostrar en todos los hilos RSS"
+
+#: ../includes/widget.php:206
+msgid "Image width:"
+msgstr "Anchura Imagen:"
+
+#: ../includes/widget.php:208
+msgid "pixels"
+msgstr "píxeles"
+
+#: ../includes/widget.php:211
+msgid "Align thumbnail to right"
+msgstr "Alinear miniatura a la derecha"
+
+#: ../templates/photoblog.php:48
+msgid "No Comments"
+msgstr "No hay comentarios"
+
+#: ../templates/photoblog.php:49
+msgid "1 Comment"
+msgstr "1 comentario"
+
+#: ../templates/photoblog.php:50
+msgid "% Comments"
+msgstr "% comentarios"
+
+#: ../templates/photoblog.php:52
+msgid "Comments closed"
+msgstr "Comentarios cerrados"
+
+#: ../templates/posts.php:46
+msgid "Read more &raquo;"
+msgstr "Seguir leyendo &raquo;"
+
+#~ msgid "The active plugin %s is not compatible with your WordPress version."
+#~ msgstr "El plugin activo %s no es compatible con tu versión de WordPress."
+#~ msgid "WordPress %s is required to run this plugin."
+#~ msgstr "Se requiere WordPress %s para ejecutar este plugin."
+#~ msgid "Standard sidebar functions are not present."
+#~ msgstr "Algunas funciones de la barra lateral estándar no están presentes."
+#~ msgid "It is required to use the standard sidebar to run %s"
+#~ msgstr "Se requiere el uso de la barra lateral estándard para ejecutar %s"
+
+#, fuzzy
+#~ msgid "Image too wide."
+#~ msgstr "Anchura Imagen:"
+#~ msgid "Read full post &raquo;"
+#~ msgstr "Leer el artículo completo &raquo;"
+#~ msgid "No posts found"
+#~ msgstr "No se encontraron artículos."
+#~ msgid "Incompatible System"
+#~ msgstr "Sistema Incompatible"
+#~ msgid "Read More..."
+#~ msgstr "Leer más..."
+#~ msgid "DailyTube Plugin Settings"
+#~ msgstr "Configuración de DailyTube"
+#~ msgid ""
+#~ "DailyTube plugin has been updated. Please, check your plugin settings."
+#~ msgstr ""
+#~ "La extensión DailyTube ha sido actualizada. Por favor, revisa la "
+#~ "configuración de esta extensión."
+#~ msgid ""
+#~ "CAUTION: You updated from a version prior to 1.0. For this reason your "
+#~ "settings have been reverted to defaults."
+#~ msgstr ""
+#~ "ATENCION: Has actualizado desde una versión anterior a 1.0. Por este "
+#~ "motivo, las opciones se han revertido a valores por defecto."
+#~ msgid "DailyTube Settings"
+#~ msgstr "Configuración DailyTube"
+#~ msgid "<strong>Note:</strong> All sizes must be entered as Width x Height"
+#~ msgstr "<strong>Nota:</strong> Todos los tamaños son Ancho x Alto"
+#~ msgid "Content tag:"
+#~ msgstr "Etiqueta de contenido:"
+#~ msgid "Video Size:"
+#~ msgstr "Tamaño de vídeo:"
+#~ msgid "Show Related Videos?"
+#~ msgstr "¿Mostrar vídeos relacionados?"
+#~ msgid "Yes"
+#~ msgstr "Sí"
+#~ msgid "No"
+#~ msgstr "No"
+#~ msgid "Player Color:"
+#~ msgstr "Color del reproductor:"
+#~ msgid "Show Border?"
+#~ msgstr "¿Mostrar marco?"
+#~ msgid "Enhanced Genie Menu?"
+#~ msgstr "¿Utilizar menú \"Genie\"?"
+#~ msgid "Wide format tag:"
+#~ msgstr "Marcador formato panorámico:"
+#~ msgid "Square format tag:"
+#~ msgstr "Marcador de formato cuadrado:"
+#~ msgid "Wide Video Size"
+#~ msgstr "Tamaño de vídeo panorámico"
+#~ msgid "Square Video Size"
+#~ msgstr "Tamaño de vídeo cuadrado"
+#~ msgid "Allow FullScreen?"
+#~ msgstr "¿Permitir pantalla completa?"
+#~ msgid "Global Settings"
+#~ msgstr "Opciones Generales"
+#~ msgid "Video Align:"
+#~ msgstr "Alineación del vídeo:"
+#~ msgid "None"
+#~ msgstr "Ninguna"
+#~ msgid "Left"
+#~ msgstr "Izquierda"
+#~ msgid "Center"
+#~ msgstr "Centro"
+#~ msgid "Right"
+#~ msgstr "Derecha"
+#~ msgid "Save Changes"
+#~ msgstr "Guardar Cambios"
+#~ msgid "YouTube & Google Video Size"
+#~ msgstr "Tamaño de vídeo YouTube y Google"
+#~ msgid "or"
+#~ msgstr "o"
+

@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Widget\n"
+"PO-Revision-Date: 2009-07-02 21:05+0300\n"
+"Last-Translator: Fat Cow <zhr@tut.by>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;__ngettext_noop:1,2;_c\n"
+"X-Poedit-Basepath: ../\n"
+"POT-Creation-Date: \n"
+"Language-Team: Fat Cow <zhr@tut.by>\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: GalleryWidgetObject.php:14
+msgid "A gallery of images that are attached to your posts"
+msgstr "В галерее изображений, которые прилагаются к вашим постам"
+
+#: GalleryWidgetObject.php:97
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: GalleryWidgetObject.php:99
+msgid "How many images:"
+msgstr "Как много изображений:"
+
+#: GalleryWidgetObject.php:102
+msgid "Order by:"
+msgstr "Сортировать по:"
+
+#: GalleryWidgetObject.php:114
+msgid "Shown widget on:"
+msgstr "Показывать виджеты по:"
+
+#: GalleryWidgetObject.php:126
+msgid "Linktype*:"
+msgstr "Тип ссылки*:"
+
+#: GalleryWidgetObject.php:138
+msgid "Show only 1 image per post*:"
+msgstr "Показывать только одно изображение на пост*:"
+
+#: GalleryWidgetObject.php:149
+msgid "CSS-Class to add to the link:"
+msgstr "CSS-класс:"
+
+#: GalleryWidgetObject.php:154
+msgid "Category-Option:"
+msgstr "Категория-Вариант:"
+
+#: GalleryWidgetObject.php:165
+msgid "Categories (commaseparated list of ids)*:"
+msgstr "Категории (сортировка по ID)*:"
+
+#: GalleryWidgetObject.php:15
+#: gallery_widget.php:44
+#: gallery_widget.php:48
+#: gallery_widget.php:224
+msgid "Gallery Widget"
+msgstr "Галерея виджетов"
+
+#: gallery_widget.php:70
+msgid "Updatenotice for:"
+msgstr "Уведомление об обновлении для:"
+
+#: GalleryWidgetObject.php:151
+msgid "Linkrelationship (rel=):"
+msgstr "Linkrelationship (rel=):"
+
+#: GalleryWidgetObject.php:167
+msgid "* these options can be used only, if you use category-option include or exclude"
+msgstr "* Эти варианты могут быть использованы только в том случае, если вы используете опции включать или выключать"
+

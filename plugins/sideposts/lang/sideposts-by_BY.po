@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SidePosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-28 23:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jordi Canals <devel@jcanals.cat>\n"
+"Language-Team: Marcis Gasuns <www.comfi.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Belarusian\n"
+"X-Poedit-Country: BELARUS\n"
+
+#: ../sideposts.php:54
+msgid "Warning:"
+msgstr ""
+
+#: ../sideposts.php:55
+#, php-format
+msgid "The active plugin %s is not compatible with your PHP version."
+msgstr ""
+
+#: ../sideposts.php:57
+#, php-format
+msgid "%s is required for this plugin."
+msgstr ""
+
+#: ../includes/functions.php:49
+#, fuzzy
+msgid "Archive"
+msgstr "Архіў для"
+
+#: ../includes/functions.php:51
+msgid "Archive for"
+msgstr "Архіў для"
+
+#: ../includes/widget.php:68
+msgid "A widget to move posts to the sidebar."
+msgstr "Віджэт для перамяшчэння пастоў на бакавую панэль"
+
+#: ../includes/widget.php:83
+msgid "Category not selected."
+msgstr "Катэгорыі не вылучаны"
+
+#: ../includes/widget.php:155
+msgid "Title:"
+msgstr "Назва:"
+
+#: ../includes/widget.php:156
+msgid "Category:"
+msgstr "Катэгорыя:"
+
+#: ../includes/widget.php:158
+msgid "-- PRIVATE POSTS --"
+msgstr ""
+
+#: ../includes/widget.php:170
+msgid "Number of posts:"
+msgstr "Колькасць паведамленняў:"
+
+#: ../includes/widget.php:172
+#, php-format
+msgid "(At most %d)"
+msgstr "(Максімальна %d)"
+
+#: ../includes/widget.php:175
+msgid "Show:"
+msgstr "Паказваць:"
+
+#: ../includes/widget.php:181
+msgid "Full Post"
+msgstr "Пост цалкам"
+
+#: ../includes/widget.php:184
+msgid "Post Excerpt"
+msgstr "Вытрымка з паведамлення"
+
+#: ../includes/widget.php:187
+msgid "Excerpts with thumbnails"
+msgstr "Вытрымка з эскізам:"
+
+#: ../includes/widget.php:190
+msgid "Photo Blog"
+msgstr ""
+
+#: ../includes/widget.php:193
+msgid "Only Post Title"
+msgstr ""
+
+#: ../includes/widget.php:204
+msgid "Show category on all feeds"
+msgstr ""
+
+#: ../includes/widget.php:206
+#, fuzzy
+msgid "Image width:"
+msgstr "Шырыня эскіза:"
+
+#: ../includes/widget.php:208
+msgid "pixels"
+msgstr "пикселі"
+
+#: ../includes/widget.php:211
+msgid "Align thumbnail to right"
+msgstr ""
+
+#: ../templates/photoblog.php:48
+msgid "No Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: ../templates/photoblog.php:50
+msgid "% Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:52
+msgid "Comments closed"
+msgstr ""
+
+#: ../templates/posts.php:46
+msgid "Read more &raquo;"
+msgstr "Чытаць далей &raquo;"
+
+#, fuzzy
+#~ msgid "The active plugin %s is not compatible with your WordPress version."
+#~ msgstr ""
+#~ "Гэты плагін не сумяшчальны з вашай сістэмай. Памылка ў функцыях бакавой "
+#~ "панэлі або няправільная версія WordPress"
+#~ msgid "Read full post &raquo;"
+#~ msgstr "Чытаць паведамленне цалкам &raquo;"
+#~ msgid "No posts found"
+#~ msgstr "Не знойдзены ні адзін пост"
+#~ msgid "Incompatible System"
+#~ msgstr "Несумяшчальныя сістэмы"
+

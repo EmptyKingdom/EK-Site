@@ -1,0 +1,4 @@
+<br />
+<b>Warning</b>:  file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: php_network_getaddresses: getaddrinfo failed: Name or service not known in <b>/var/www/vhosts/dev2.iconfinder.net/httpdocs/control/ajax/download.php</b> on line <b>68</b><br />
+<br />
+<b>Warning</b>:  file_get_contents(http://www.convertico.com'function.copy') [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known in <b>/var/www/vhosts/dev2.iconfinder.net/httpdocs/control/ajax/download.php</b> on line <b>68</b><br />

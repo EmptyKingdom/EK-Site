@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+/**
+ * SidePosts WordPress Widget.
+ * Use this Style Sheet to customize the plugin.
+ * You can delete the file, and write your custom styles on the theme' style.css file.
+ * If you're usinf one of my themes, styling on the file custom.css is the preferred method.
+ *
+ * @version		$Rev: 528 $
+ * @author		Jordi Canals
+ * @copyright   Copyright (C) 2008, 2009, 2010 Jordi Canals
+ * @license		GNU General Public License version 2
+ * @link		http://alkivia.org
+ * @package		Alkivia
+ * @subpackage	Sideposts
+ *
+
+	Copyright 2008, 2009, 2010 Jordi Canals <devel@jcanals.cat>
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	version 2 as published by the Free Software Foundation.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* ------------------------------------------------ WIDGET SIDEPOSTS */
+#sidebar ul li.widget_sideposts ul li, #sidebar ul li.widget_sideposts ul a {
+	color: #fa6400;
+	font-size: 13px;
+	padding-top: 10px;
+	font-weight: bold;
+	}
+
+#sidebar span.sideposts_date {
+	color: #474747;
+	font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+	}
+	
+#sidebar ul li.widget_sideposts ul li p {
+	color: #474747;
+	font-weight: normal;
+	text-decoration: none;
+	font-size: 11px;
+	}
+
+#sidebar ul li.widget_sideposts ul li p a {
+	color: #ff7e01;
+	line-height: normal;
+	font-weight: normal;
+	font-size: 11px;
+	padding-top: 0;
+	}
+
+#sidebar ul li.widget_sideposts ul li p a:hover {
+	text-decoration: underline;
+	}
+
+/* ------------------------------------------- SIDEPOSTS IMAGE ALIGN */
+#sidebar ul li.widget_sideposts ul li img.alignleft {
+	float: left;
+	margin: 5px;
+	padding: 2px;
+	border: 1px solid #ffde01;
+	clear: both;
+	}
+	
+#sidebar ul li.widget_sideposts ul li img.alignright {
+	float: right;
+	margin: 5px;
+	padding: 2px;
+	border: 1px solid #ffde01;
+	clear: both;
+}
+
+#sidebar ul li.widget_sideposts ul li img.aligncenter {
+	display: block;
+	border: 0px;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+
+/* EOF */

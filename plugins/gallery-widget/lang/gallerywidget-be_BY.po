@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Widget\n"
+"PO-Revision-Date: 2009-08-28 03:01+0200\n"
+"Last-Translator: Fat Cow <zhr@tut.by>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Belarusian\n"
+"X-Poedit-Country: BELARUS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;__ngettext_noop:1,2;_c\n"
+"X-Poedit-Basepath: ../\n"
+"POT-Creation-Date: \n"
+"Language-Team: ilyuha <iamm@tut.by>\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: GalleryWidgetObject.php:14
+msgid "A gallery of images that are attached to your posts"
+msgstr "У галерэі малюнкаў, якія прыкладаюцца да вашых пастоў"
+
+#: GalleryWidgetObject.php:97
+msgid "Title:"
+msgstr "Загаловак:"
+
+#: GalleryWidgetObject.php:99
+msgid "How many images:"
+msgstr "Як шмат малюнкаў:"
+
+#: GalleryWidgetObject.php:102
+msgid "Order by:"
+msgstr "Сартаваць па:"
+
+#: GalleryWidgetObject.php:114
+msgid "Shown widget on:"
+msgstr "Паказваць виджеты па:"
+
+#: GalleryWidgetObject.php:126
+msgid "Linktype*:"
+msgstr "Тып спасылкі*:"
+
+#: GalleryWidgetObject.php:138
+msgid "Show only 1 image per post*:"
+msgstr "Паказваць толькі адзін малюнак на пост*:"
+
+#: GalleryWidgetObject.php:149
+msgid "CSS-Class to add to the link:"
+msgstr "CSS-клас:"
+
+#: GalleryWidgetObject.php:154
+msgid "Category-Option:"
+msgstr "Катэгорыя-Варыянт:"
+
+#: GalleryWidgetObject.php:165
+msgid "Categories (commaseparated list of ids)*:"
+msgstr "Катэгорыі (сартаванне па ID)*:"
+
+#: GalleryWidgetObject.php:15
+#: gallery_widget.php:44
+#: gallery_widget.php:48
+#: gallery_widget.php:224
+msgid "Gallery Widget"
+msgstr "Галерэя виджетов"
+
+#: gallery_widget.php:70
+msgid "Updatenotice for:"
+msgstr "Апавяшчэнне пра абнаўленне для:"
+
+#: GalleryWidgetObject.php:151
+msgid "Linkrelationship (rel=):"
+msgstr "Linkrelationship (rel=):"
+
+#: GalleryWidgetObject.php:167
+msgid "* these options can be used only, if you use category-option include or exclude"
+msgstr "* Гэтыя варыянты могуць быць скарыстаны толькі ў тым выпадку, калі вы выкарыстоўваеце опцыі ўключаць ці выключаць"
+

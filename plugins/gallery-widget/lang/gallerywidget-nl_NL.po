@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Widget v1.1.7\n"
+"PO-Revision-Date: 2010-01-07 20:06+0100\n"
+"Last-Translator: Rene - WordPressPluginGuide.com <info@wppg.me>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;__ngettext_noop:1,2;_c\n"
+"X-Poedit-Basepath: ../\n"
+"POT-Creation-Date: \n"
+"Language-Team: WordPressPluginGuide.com <info@wppg.me>\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: GalleryWidgetObject.php:14
+msgid "A gallery of images that are attached to your posts"
+msgstr "Een gallerij met beelden die als bijlage toegevoegd zijn aan jouw berichten"
+
+#: GalleryWidgetObject.php:97
+msgid "Title:"
+msgstr "Titel:"
+
+#: GalleryWidgetObject.php:99
+msgid "How many images:"
+msgstr "Aantal beelden:"
+
+#: GalleryWidgetObject.php:102
+msgid "Order by:"
+msgstr "Sortering:"
+
+#: GalleryWidgetObject.php:114
+msgid "Shown widget on:"
+msgstr "Laat het widget zien op (alle pagina's/startpagina) :"
+
+#: GalleryWidgetObject.php:126
+msgid "Linktype*:"
+msgstr "Linktype*:"
+
+#: GalleryWidgetObject.php:138
+msgid "Show only 1 image per post*:"
+msgstr "Laat slechts 1 beeld per bericht zien*:"
+
+#: GalleryWidgetObject.php:149
+msgid "CSS-Class to add to the link:"
+msgstr "CSS-Klasse om toe te voegen aan de link:"
+
+#: GalleryWidgetObject.php:154
+msgid "Category-Option:"
+msgstr "Categorie-Optie:"
+
+#: GalleryWidgetObject.php:165
+msgid "Categories (commaseparated list of ids)*:"
+msgstr "Categorieën (Lijst met ID's gesepareerd door een komma)*:"
+
+#: GalleryWidgetObject.php:15
+#: gallery_widget.php:44
+#: gallery_widget.php:48
+#: gallery_widget.php:224
+msgid "Gallery Widget"
+msgstr "Gallerij Widget"
+
+#: gallery_widget.php:70
+msgid "Updatenotice for:"
+msgstr "Opmerkingen over het bijwerken:"
+
+#: GalleryWidgetObject.php:151
+msgid "Linkrelationship (rel=):"
+msgstr "Link relatie (rel=):"
+
+#: GalleryWidgetObject.php:167
+msgid "* these options can be used only, if you use category-option include or exclude"
+msgstr "* Deze opties kunnen alleen gebruikt worden wanneer je de categorie optie incude of exclude gebruikt"
+

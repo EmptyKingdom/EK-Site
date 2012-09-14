@@ -1,0 +1,143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SidePosts Widget 2.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-28 23:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jordi Canals <devel@jcanals.cat>\n"
+"Language-Team: WordPress по-русски | http://www.wp-ru.ru <grib69@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2);\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+"X-Poedit-SearchPath-2: ../lib\n"
+
+#: ../sideposts.php:54
+msgid "Warning:"
+msgstr "Предупреждение:"
+
+#: ../sideposts.php:55
+#, php-format
+msgid "The active plugin %s is not compatible with your PHP version."
+msgstr "Плагин %s не совместим с установленой у Вас версией PHP."
+
+#: ../sideposts.php:57
+#, php-format
+msgid "%s is required for this plugin."
+msgstr "%s требуется для плагина."
+
+#: ../includes/functions.php:49
+#, fuzzy
+msgid "Archive"
+msgstr "Архив для"
+
+#: ../includes/functions.php:51
+msgid "Archive for"
+msgstr "Архив для"
+
+#: ../includes/widget.php:68
+msgid "A widget to move posts to the sidebar."
+msgstr "Виджет размещает записи на сайдбаре."
+
+#: ../includes/widget.php:83
+msgid "Category not selected."
+msgstr "Не выбрана рубрика."
+
+#: ../includes/widget.php:155
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: ../includes/widget.php:156
+msgid "Category:"
+msgstr "Рубрика:"
+
+#: ../includes/widget.php:158
+msgid "-- PRIVATE POSTS --"
+msgstr "-- ЛИЧНЫЕ ЗАПИСИ --"
+
+#: ../includes/widget.php:170
+msgid "Number of posts:"
+msgstr "Кол-во записей:"
+
+#: ../includes/widget.php:172
+#, php-format
+msgid "(At most %d)"
+msgstr "(Максимум %d)"
+
+#: ../includes/widget.php:175
+msgid "Show:"
+msgstr "Отображать:"
+
+#: ../includes/widget.php:181
+msgid "Full Post"
+msgstr "Запись полностью"
+
+#: ../includes/widget.php:184
+msgid "Post Excerpt"
+msgstr "Отрывок из записи"
+
+#: ../includes/widget.php:187
+msgid "Excerpts with thumbnails"
+msgstr "Отрывок с миниатюрой"
+
+#: ../includes/widget.php:190
+msgid "Photo Blog"
+msgstr ""
+
+#: ../includes/widget.php:193
+msgid "Only Post Title"
+msgstr "Только заголовок записи"
+
+#: ../includes/widget.php:204
+msgid "Show category on all feeds"
+msgstr ""
+
+#: ../includes/widget.php:206
+#, fuzzy
+msgid "Image width:"
+msgstr "Ширина миниатюры:"
+
+#: ../includes/widget.php:208
+msgid "pixels"
+msgstr "пикселей"
+
+#: ../includes/widget.php:211
+msgid "Align thumbnail to right"
+msgstr ""
+
+#: ../templates/photoblog.php:48
+msgid "No Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: ../templates/photoblog.php:50
+msgid "% Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:52
+msgid "Comments closed"
+msgstr ""
+
+#: ../templates/posts.php:46
+msgid "Read more &raquo;"
+msgstr "Далее... &raquo;"
+
+#~ msgid "The active plugin %s is not compatible with your WordPress version."
+#~ msgstr "Плагин %s не совместим с Вашей версией WordPress."
+#~ msgid "WordPress %s is required to run this plugin."
+#~ msgstr "Требуется WordPress %s для работы этого плагина."
+#~ msgid "Read full post &raquo;"
+#~ msgstr "Читать полностью &raquo;"
+#~ msgid "No posts found"
+#~ msgstr "Записи не найдены"
+

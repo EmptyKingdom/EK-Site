@@ -1,0 +1,973 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: c.bavota <c@bavotasan.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:26
+msgid " Remember me"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:17
+msgid " to &#8220; %s &#8221;"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:19
+#: magazine_basic/archive.php:35
+msgid "% Comments &#187;"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:17
+msgid "% Responses"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:2
+msgid "%1$s search results for \"%2$s\""
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1060
+msgid "(Edit)"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_feature.php:78
+msgid "(Note: The selected will be excluded from the main content on the index page)"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_feature.php:69
+msgid "(max 5)"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:69
+#: magazine_basic/comments.php:72
+msgid "(required)"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:19
+#: magazine_basic/archive.php:35
+msgid "1 Comment &#187;"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:64
+msgid "<a href=\"%1$s\" title=\"Log out of this account\">Log out &raquo;</a>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:1066
+msgid "<em>Your comment is awaiting moderation.</em>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/archive.php:44
+msgid "<h2 class='center'>No posts found.</h2>"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/archive.php:44
+msgid "<h2 class='center'>Sorry, but there aren't any posts by %s yet.</h2>"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/archive.php:44
+msgid "<h2 class='center'>Sorry, but there aren't any posts in the %s category yet.</h2>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/sidebar2.php:18
+#: magazine_basic/sidebar.php:19
+msgid "<h2>Archives</h2>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/sidebar2.php:12
+#: magazine_basic/sidebar.php:15
+msgid "<h2>Calendar</h2>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/sidebar2.php:6
+#: magazine_basic/sidebar.php:9
+msgid "<h2>Links</h2>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/archive.php:44
+msgid "<h2>Sorry, but there aren't any posts with this date.</h2>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/sidebar2.php:24
+#: magazine_basic/sidebar.php:25
+msgid "<h2>Tags</h2>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:314
+msgid "<h4>2. Header Ad</h4>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:316
+msgid "<h4>3. Post Subtitle</h4>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:319
+msgid "<h4>4. Pull Quote</h4>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:321
+msgid "<h4>5. Image Resizer</h4>"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/single.php:14
+msgid "<p class=\"tags\"><small>Tags: "
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "<p>A lot of hard work went in to programming and designing <strong>%s</strong>, and if you would like to support c.bavota (the guy who built it) please use the donate link below. Any amount, even $1.00, is appreciated (a man's gotta eat, ya know).</p>"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:307
+msgid "<p>If you have any questions, comments, or if you encounter a bug, please <a href=\"http://tinkerpriestmedia.com/contact/\">contact me</a>.</p"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "<p>Thanks for downloading <strong>%s</strong>. Hope you enjoy using it!</p"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:530
+msgid "Activate Image Resizer"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:369
+msgid "Activated"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Add a site description here. NOTE: Content is used as a description on individual posts and pages."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Add any CSS styles above. NOTE: Any modifications made to style.css directly will be overwritten when updating the theme so make your modifications here."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Add site specific keywords here, separated by commas. NOTE: Tags are used as keywords on individual post pages."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Add your 468 x 60 header ad image and link here. NOTE: A Header Ad won't be shown if Centered is selected for the Logo or Blog Name location."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Add your Google Analytics code here."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/footer.php:17
+msgid "All Rights Reserved"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/archive.php:13
+#: magazine_basic/archive.php:15
+#: magazine_basic/archive.php:17
+msgid "Archive for "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/archive.php:19
+msgid "Author Archive"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/archive.php:21
+msgid "Blog Archives"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/search.php:13
+#: magazine_basic/archive.php:29
+#: magazine_basic/layout/option1.php:6
+#: magazine_basic/layout/option3.php:48
+#: magazine_basic/layout/option2.php:28
+#: magazine_basic/widgets/widget_feature.php:17
+#: magazine_basic/layout/option4.php:27
+#: magazine_basic/single.php:7
+msgid "By"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:908
+#: magazine_basic/functions.php:913
+msgid "CSS"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:560
+msgid "Categories"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:498
+#: magazine_basic/functions.php:515
+msgid "Categories, Archives, Search Pages"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:367
+#: magazine_basic/functions.php:368
+msgid "Cats "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:559
+msgid "Centered"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:674
+msgid "Click-through Link"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:40
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:708
+#: magazine_basic/functions.php:782
+msgid "Content"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:61
+#: magazine_basic/widgets/widget_login.php:5
+msgid "Control Panel"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/footer.php:17
+msgid "Copyright &copy; %d"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:253
+msgid "Current Saved Settings"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:8
+msgid "Dashboard"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:563
+msgid "Date in Nav-Bar"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:818
+msgid "Display \"Latest Story\""
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:368
+msgid "Display Authors"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Display Date in Nav-Bar"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:367
+msgid "Display Dates"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:677
+msgid "Display Header Ad"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Do want to display the excerpt or the content on the front page?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:19
+#: magazine_basic/archive.php:35
+msgid "Edit"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:708
+#: magazine_basic/functions.php:781
+msgid "Excerpt"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Excerpt Word Limit"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:708
+msgid "Excerpt or Content"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "First Page"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:344
+msgid "First Sidebar Width"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:322
+msgid "First, make sure to set the permissions of the cache folder in the theme\\'s directory to 0755. Then turn on the Image Resizer on the <a href=\"admin.php?page=%s-Layout\">Layout page</a>. ICropped images should now appear on your front page and category pages. If images only appear on the single post page, please go here to troubleshoot: <a href=\"http://code.google.com/p/timthumb/issues/detail?id=8\">http://code.google.com/p/timthumb/issues/detail?id=8</a> or just keep the Image Resizer turned off."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_feature.php:71
+msgid "From which category: "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:367
+#: magazine_basic/functions.php:368
+msgid "Front "
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:496
+#: magazine_basic/functions.php:513
+#: magazine_basic/functions.php:701
+msgid "Front Page"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:851
+msgid "Google Analytics"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:553
+msgid "Header &amp; Footer"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:564
+msgid "Header Ad"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:558
+msgid "Header Logo"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:107
+msgid "Home"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "How many posts would you like to appear on the front page?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "How many sidebars would you like?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "How many words do you want to appear in your front page post excerpts? (max. 55)"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "How would you like your posts displayed on the front page?"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:311
+msgid "INSTRUCTIONS"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:317
+msgid "If you would like to add a <strong>Subtitle</strong> to your post, it is pretty simple. Just create a custom field with the name \"subtitle\" (a) and place the text you want as the value (b) then click \"Add Custom Field\" (c). The <strong>Subtitle</strong> will be displayed beneath the main title on the front page, category page and single post page."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "If you would like to display a logo in the header, please enter the file path above."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:369
+msgid "Image Resizer"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:294
+msgid "Info"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:850
+msgid "Keywords"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Last Page"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/index.php:27
+#: magazine_basic/functions.php:714
+msgid "Latest Story"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:336
+msgid "Layout"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:50
+msgid "Leave a Reply"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:50
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:822
+#: magazine_basic/functions.php:559
+msgid "Left"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/header.php:75
+msgid "Log In"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:66
+#: magazine_basic/widgets/widget_login.php:15
+msgid "Log Out"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:64
+msgid "Logged in as <a href=\"%1$s/wp-admin/profile.php\">%2$s</a>. "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:60
+#: magazine_basic/widgets/widget_login.php:7
+msgid "Logged in as:"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:559
+msgid "Logo or Blog Name Location"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:32
+msgid "Lost your password"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:72
+msgid "Mail (will not be published)"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:69
+msgid "Name"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:558
+#: magazine_basic/functions.php:562
+#: magazine_basic/functions.php:563
+msgid "No"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:19
+#: magazine_basic/archive.php:35
+msgid "No Comments &#187;"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:17
+msgid "No Responses"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:560
+#: magazine_basic/functions.php:561
+#: magazine_basic/functions.php:849
+#: magazine_basic/functions.php:850
+#: magazine_basic/functions.php:851
+#: magazine_basic/functions.php:913
+msgid "Not Added"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:564
+msgid "Not Available"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:707
+msgid "Number of Posts"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:342
+msgid "Number of Sidebars"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_feature.php:67
+msgid "Number of posts to show: "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:369
+#: magazine_basic/functions.php:564
+msgid "Off"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:564
+msgid "On"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:17
+msgid "One Response"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:706
+#: magazine_basic/functions.php:744
+#: magazine_basic/functions.php:747
+#: magazine_basic/functions.php:750
+#: magazine_basic/functions.php:753
+msgid "Option"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Page %CURRENT_PAGE% of %TOTAL_PAGES%"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/page.php:11
+#: magazine_basic/single.php:16
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:561
+msgid "Pages"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:24
+msgid "Password"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:672
+msgid "Path to Ad Image"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:10
+#: magazine_basic/archive.php:26
+#: magazine_basic/layout/option1.php:3
+#: magazine_basic/layout/option3.php:4
+#: magazine_basic/layout/option3.php:45
+#: magazine_basic/layout/option2.php:4
+#: magazine_basic/layout/option2.php:25
+#: magazine_basic/layout/option4.php:4
+#: magazine_basic/layout/option4.php:24
+msgid "Permanent Link to %s"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:1
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:706
+msgid "Post Layout"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/search.php:19
+#: magazine_basic/archive.php:35
+msgid "Posted in"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:367
+#: magazine_basic/functions.php:368
+#: magazine_basic/functions.php:500
+#: magazine_basic/functions.php:517
+msgid "Posts"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/archive.php:10
+msgid "Posts Tagged &#8216; %s &#8217;"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/footer.php:19
+msgid "Powered by"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:65
+#: magazine_basic/widgets/widget_login.php:14
+msgid "Profile"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/layout/option1.php:10
+#: magazine_basic/layout/option3.php:11
+#: magazine_basic/layout/option3.php:52
+#: magazine_basic/layout/option2.php:11
+#: magazine_basic/layout/option2.php:32
+#: magazine_basic/layout/option4.php:11
+#: magazine_basic/layout/option4.php:31
+#: magazine_basic/functions.php:1075
+msgid "Read more &raquo;"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:73
+#: magazine_basic/widgets/widget_login.php:31
+msgid "Register"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:822
+#: magazine_basic/functions.php:559
+msgid "Right"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:710
+#: magazine_basic/functions.php:711
+#: magazine_basic/functions.php:712
+#: magazine_basic/functions.php:796
+#: magazine_basic/functions.php:797
+#: magazine_basic/functions.php:798
+msgid "Row"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:844
+msgid "SEO"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:269
+msgid "Save Changes"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/searchform.php:3
+msgid "Search &amp; Hit Enter"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:346
+msgid "Second Sidebar Width"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Select the width of your site."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:25
+msgid "Send"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:822
+msgid "Separate"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:294
+#: magazine_basic/functions.php:336
+#: magazine_basic/functions.php:553
+#: magazine_basic/functions.php:701
+#: magazine_basic/functions.php:844
+#: magazine_basic/functions.php:908
+msgid "Settings"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Settings Saved"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:349
+msgid "Sidebar Location"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:849
+msgid "Site Description"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:341
+msgid "Site Width"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/search.php:25
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/single.php:21
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:83
+msgid "Submit Comment"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:138
+msgid "Subscribe"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/search.php:19
+#: magazine_basic/archive.php:35
+msgid "Tags: "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:8
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_feature.php:64
+msgid "Title: "
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:320
+msgid "To add a <strong>Pull Quote</strong> to you post, enter the HTML editor and surround the selected text with <code>&lt;div class=\"pullquote\"&gt; &lt;/div&gt;</code>. NOTE: The blockquote tag use to be used to style a pull quote but that has been changed since version 2.5."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:312
+msgid "To add a logo to the header, you need to upload the image through the WordPress uploader or through FTP. Once the image is uploaded, copy the file path, which should look like <code>http://www.yoursite.com/your-image.jpg</code>, and paste it into the <em>Header Logo</em> field on the <a href=\"admin.php?page=%s-Header\">Header &amp; Footer</a> page."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:315
+msgid "To add an advertisement banner to the header, first you need to upload the banner through the WordPress uploader or through FTP. Once the banner is uploaded, copy the file path, which should look like <code>http://www.yoursite.com/your-image.jpg</code>, and paste it into the <em>Header Ad - Path to  Ad Image</em> field on the <a href=\"admin.php?page=%s-Header\">Header &amp; Footer</a> page. Then add your click-through link to the <em>Header Ad - Click-through Link</em> field. Both fields are needed to make the ad display. NOTE: AdSense or any ad script will not work through the <em>Header Ad</em> panel."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:822
+msgid "Undefined"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:23
+msgid "User"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/widgets/widget_login.php:20
+#: magazine_basic/widgets/widget_login.php:35
+#: magazine_basic/functions.php:1075
+#: magazine_basic/functions.php:562
+msgid "User Login"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/comments.php:75
+msgid "Website"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "What would you like your first sidebar width to be?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "What would you like your second sidebar width to be?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Where do you want your Logo or Blog Name located?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Where would you like your sidebars located?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Which Categories would you like to include in the nav menu? Enter the Category IDs separated by commas or \"all\" to display all Categories."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Which Pages would you like to include in the nav menu? Enter the Page IDs separated by commas or \"all\" to display all Pages."
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:710
+#: magazine_basic/functions.php:711
+#: magazine_basic/functions.php:712
+msgid "Words"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Would you like to display the \"Latest Story\" header on the front page?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Would you like to display the date in the nav-bar?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Would you like to have a User Login section at the top of your site?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Would you like to have dates displayed under your post titles?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Would you like to have images automatically resized?"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1075
+msgid "Would you like to have the author displayed under your post titles?"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/header.php:63
+#: magazine_basic/widgets/widget_login.php:11
+msgid "Write"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/functions.php:558
+#: magazine_basic/functions.php:562
+#: magazine_basic/functions.php:563
+msgid "Yes"
+msgstr ""
+
+#. Text in function
+#: magazine_basic/comments.php:57
+msgid "You must be <a href=\"%1$s/wp-login.php?redirect_to=%2$s\">logged in</a> to post a comment."
+msgstr ""
+
+#. Text in function
+#: magazine_basic/functions.php:1060
+msgid "on %1$s at %2$s"
+msgstr ""
+
+#. Text in echo
+#: magazine_basic/footer.php:18
+msgid "theme designed by"
+msgstr ""
+

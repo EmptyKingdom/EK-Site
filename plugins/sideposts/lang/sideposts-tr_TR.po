@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SidePosts WordPress Widget in TurKish\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-28 23:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jordi Canals <devel@jcanals.cat>\n"
+"Language-Team: Omer Faruk - wordpress.info.tr <admin@wordpress.info.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: \n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SearchPath-0: \n"
+
+#: ../sideposts.php:54
+msgid "Warning:"
+msgstr ""
+
+#: ../sideposts.php:55
+#, php-format
+msgid "The active plugin %s is not compatible with your PHP version."
+msgstr ""
+
+#: ../sideposts.php:57
+#, php-format
+msgid "%s is required for this plugin."
+msgstr ""
+
+#: ../includes/functions.php:49
+#, fuzzy
+msgid "Archive"
+msgstr "Arşiv için:"
+
+#: ../includes/functions.php:51
+msgid "Archive for"
+msgstr "Arşiv için:"
+
+#: ../includes/widget.php:68
+msgid "A widget to move posts to the sidebar."
+msgstr "Yazıları kenar çubuğuna taşımak için bir widget."
+
+#: ../includes/widget.php:83
+msgid "Category not selected."
+msgstr "Kategori seçilmedi"
+
+#: ../includes/widget.php:155
+msgid "Title:"
+msgstr "Başlık:"
+
+#: ../includes/widget.php:156
+msgid "Category:"
+msgstr "Kategori:"
+
+#: ../includes/widget.php:158
+msgid "-- PRIVATE POSTS --"
+msgstr ""
+
+#: ../includes/widget.php:170
+msgid "Number of posts:"
+msgstr "Yazı Sayısı:"
+
+#: ../includes/widget.php:172
+#, php-format
+msgid "(At most %d)"
+msgstr "(İlk %d'dakiler)"
+
+#: ../includes/widget.php:175
+msgid "Show:"
+msgstr "Göster:"
+
+#: ../includes/widget.php:181
+msgid "Full Post"
+msgstr "Tüm Yazı"
+
+#: ../includes/widget.php:184
+msgid "Post Excerpt"
+msgstr "Yazı Alıntısı"
+
+#: ../includes/widget.php:187
+msgid "Excerpts with thumbnails"
+msgstr ""
+
+#: ../includes/widget.php:190
+msgid "Photo Blog"
+msgstr ""
+
+#: ../includes/widget.php:193
+msgid "Only Post Title"
+msgstr ""
+
+#: ../includes/widget.php:204
+msgid "Show category on all feeds"
+msgstr ""
+
+#: ../includes/widget.php:206
+msgid "Image width:"
+msgstr ""
+
+#: ../includes/widget.php:208
+msgid "pixels"
+msgstr ""
+
+#: ../includes/widget.php:211
+msgid "Align thumbnail to right"
+msgstr ""
+
+#: ../templates/photoblog.php:48
+msgid "No Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: ../templates/photoblog.php:50
+msgid "% Comments"
+msgstr ""
+
+#: ../templates/photoblog.php:52
+msgid "Comments closed"
+msgstr ""
+
+#: ../templates/posts.php:46
+msgid "Read more &raquo;"
+msgstr "Daha fazlasını oku &raquo;"
+
+#~ msgid "Read full post &raquo;"
+#~ msgstr "Yazının tümünü oku &raquo;"
+#~ msgid "No posts found"
+#~ msgstr "Hiç yazı bulunamadı"
+#~ msgid "Read More..."
+#~ msgstr "Daha fazlasını oku..."
+#~ msgid "DailyTube Plugin Settings"
+#~ msgstr "Configuración de DailyTube"
+#~ msgid ""
+#~ "DailyTube plugin has been updated. Please, check your plugin settings."
+#~ msgstr ""
+#~ "La extensión DailyTube ha sido actualizada. Por favor, revisa la "
+#~ "configuración de esta extensión."
+#~ msgid ""
+#~ "CAUTION: You updated from a version prior to 1.0. For this reason your "
+#~ "settings have been reverted to defaults."
+#~ msgstr ""
+#~ "ATENCION: Has actualizado desde una versión anterior a 1.0. Por este "
+#~ "motivo, las opciones se han revertido a valores por defecto."
+#~ msgid "DailyTube Settings"
+#~ msgstr "Configuración DailyTube"
+#~ msgid "<strong>Note:</strong> All sizes must be entered as Width x Height"
+#~ msgstr "<strong>Nota:</strong> Todos los tamaños son Ancho x Alto"
+#~ msgid "Content tag:"
+#~ msgstr "Etiqueta de contenido:"
+#~ msgid "Video Size:"
+#~ msgstr "Tamaño de vídeo:"
+#~ msgid "Show Related Videos?"
+#~ msgstr "¿Mostrar vídeos relacionados?"
+#~ msgid "Yes"
+#~ msgstr "Sí"
+#~ msgid "No"
+#~ msgstr "No"
+#~ msgid "Player Color:"
+#~ msgstr "Color del reproductor:"
+#~ msgid "Show Border?"
+#~ msgstr "¿Mostrar marco?"
+#~ msgid "Enhanced Genie Menu?"
+#~ msgstr "¿Utilizar menú \"Genie\"?"
+#~ msgid "Wide format tag:"
+#~ msgstr "Marcador formato panorámico:"
+#~ msgid "Square format tag:"
+#~ msgstr "Marcador de formato cuadrado:"
+#~ msgid "Wide Video Size"
+#~ msgstr "Tamaño de vídeo panorámico"
+#~ msgid "Square Video Size"
+#~ msgstr "Tamaño de vídeo cuadrado"
+#~ msgid "Allow FullScreen?"
+#~ msgstr "¿Permitir pantalla completa?"
+#~ msgid "Global Settings"
+#~ msgstr "Opciones Generales"
+#~ msgid "Video Align:"
+#~ msgstr "Alineación del vídeo:"
+#~ msgid "None"
+#~ msgstr "Ninguna"
+#~ msgid "Left"
+#~ msgstr "Izquierda"
+#~ msgid "Center"
+#~ msgstr "Centro"
+#~ msgid "Right"
+#~ msgstr "Derecha"
+#~ msgid "Save Changes"
+#~ msgstr "Guardar Cambios"
+#~ msgid "YouTube & Google Video Size"
+#~ msgstr "Tamaño de vídeo YouTube y Google"
+#~ msgid "or"
+#~ msgstr "o"
+
