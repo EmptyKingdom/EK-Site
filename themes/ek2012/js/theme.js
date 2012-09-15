@@ -3,7 +3,8 @@ $(document).ready(function(){
 		focus: function(){
 			$(this).css({
 				'border-color': '#333',
-				'cursor': 'auto'
+				'cursor': 'auto',
+				'padding-left' : '24px'
 			}).animate({
 				'width' : 150
 			})
@@ -11,7 +12,8 @@ $(document).ready(function(){
 		blur: function(){
 			$(this).css({
 				'border-color': '#fff',
-				'cursor': 'pointer'
+				'cursor': 'pointer',
+				'padding-left': '16px'
 			}).animate({
 				'width' : 0
 			})
