@@ -1,0 +1,119 @@
+@import "definitions.less";
+
+/* BOOTSTRAP OVERRIDES */
+body {
+	margin: @grid 0;
+}
+
+a, a:visited {
+	color: @linkColor;
+}
+
+a:hover, a:active {
+	color: @linkHighlight;
+	text-decoration: none;
+}
+
+.btn-primary {
+	background: @linkHighlight;
+	.border-radius(0px);
+	border: none;
+}
+
+/* SECTION / PAGE SPECIFIC */
+#masthead {
+	.side {
+		text-align: right;
+	}
+	position: relative;
+	h1#logo {
+		display: inline;
+		img {
+			margin: @grid*2.5 0 0 0;
+		}
+	}
+	h2#tagline {
+		font-size: 12px;
+		font-family: @sansSerifFamily;
+		color: @textColor;
+		font-weight: normal;
+		position: absolute;
+		line-height: normal;
+		display: inline;
+		bottom: 0;
+		margin: 0;
+	}
+}
+
+#utility-menu {
+	font-size: 0px;
+	li {
+		font-size: @baseFontSize;
+		display: inline-block;
+		margin: 0 0 0 @grid;
+		line-height: @grid*3;
+		&.icon {
+			text-indent: 10000px;
+			background: url(../img/bg-utility-menu-icons.png) no-repeat;
+			height: @grid*3;
+			width: @grid*3;
+		}
+		&.vimeo {
+			background-position: 0px 0px;
+		}
+		&.pinterest {
+			background-position: -@grid*4 0px;
+		}
+		&.facebook {
+			background-position: -@grid*8 0px;
+		}
+		&.twitter {
+			background-position: -@grid*12px 0px;
+		}
+		span {
+			vertical-align: -30%;
+		}
+	}
+}
+
+#basic-search {
+	position: relative;	
+	input {
+		display: inline-block;
+		height: @grid * 2;
+		width: 0px;
+		padding: @grid/2;
+		padding-left: 30px;
+		background: url(../img/icon-search.png) @grid/2 @grid/2 no-repeat;
+		position: absolute;
+		cursor: pointer;
+		border: @grid/4 solid #FFF;
+		right: 0;
+		outline: none;
+	}
+}
+
+#main-menu-container {
+    display: table;
+    margin-top: @grid * 5;
+    border-spacing: @grid/2 0;
+    margin-left: -@grid/2;
+    width: 100.8%;
+    #main-menu {
+	    display: table-row;
+	    li {
+		    display: table-cell;
+		    text-align: center;
+		    border-bottom: @grid/2 solid @linkColor;
+		    vertical-align: bottom;
+		    padding: 0 0 @grid 0;
+		    text-transform: uppercase;
+		    font-size: 11px;
+		    font-weight: bold;
+		    line-height: 0;
+		    &:hover {
+			    border-bottom-color: @linkHighlight;
+		    }
+	    }
+    }
+}

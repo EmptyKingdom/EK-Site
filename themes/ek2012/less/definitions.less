@@ -1,0 +1,15 @@
+@grid: 8px;
+@textColor: #898989;
+@linkColor: #333;
+@linkHighlight: #00B8EC;
+@baseFontSize: 13px;
+@sansSerifFamily: 'Myriad Pro', sans-serif;
+
+.border-radius (@radius: @grid * .5) {
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
