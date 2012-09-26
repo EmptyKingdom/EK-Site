@@ -20,7 +20,7 @@ a:hover, a:active {
 	border: none;
 }
 
-/* SECTION / PAGE SPECIFIC */
+/* GLOBAL LAYOUT ELEMENTS */
 #masthead {
 	.side {
 		text-align: right;
@@ -92,28 +92,66 @@ a:hover, a:active {
 		outline: none;
 	}
 }
-
-#main-menu-container {
-    display: table;
-    margin-top: @grid * 5;
-    border-spacing: @grid/2 0;
-    margin-left: -@grid/2;
-    width: 100.8%;
-    #main-menu {
-	    display: table-row;
-	    li {
-		    display: table-cell;
-		    text-align: center;
-		    border-bottom: @grid/2 solid @linkColor;
-		    vertical-align: bottom;
-		    padding: 0 0 @grid 0;
-		    text-transform: uppercase;
-		    font-size: 11px;
-		    font-weight: bold;
-		    line-height: 0;
-		    &:hover {
-			    border-bottom-color: @linkHighlight;
+#main-nav {
+	margin-bottom: @grid*3;
+	#main-menu-container {
+	    display: table;
+	    margin-top: @grid * 5;
+	    border-spacing: @grid/2 0;
+	    margin-left: -@grid/2;
+	    width: 100.8%;
+	    #main-menu {
+		    display: table-row;
+		    li {
+			    display: table-cell;
+			    text-align: center;
+			    border-bottom: @grid/2 solid @linkColor;
+			    vertical-align: bottom;
+			    padding: 0 0 @grid 0;
+			    text-transform: uppercase;
+			    font-size: 11px;
+			    font-weight: bold;
+			    line-height: 0;
+			    &:hover {
+				    border-bottom-color: @linkHighlight;
+			    }
 		    }
 	    }
-    }
+	}	
+}
+
+/* SECTION / PAGE SPECIFIC */
+
+.carousel-control {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border: 0;
+	background-color: @linkHighlight;
+	opacity: 1;
+	color: #FFF !important;
+	width: 24px;
+	height: 52px;
+	font-weight: normal !important;
+	line-height: 52px;
+	top: 45%;
+	&.left {
+		left: -12px;
+	}
+	&.right {
+		left: auto;
+		right: -12px;
+	}
+}
+
+#carousel-sections {
+	li {
+		display: inline-block;
+		width: 32%;
+		a {
+			display: block;
+			text-align: center;
+			border-bottom: 2px solid;
+		}
+	}
 }
