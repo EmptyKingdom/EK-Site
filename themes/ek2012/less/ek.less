@@ -14,13 +14,17 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
-.btn-primary {
-	background: @linkHighlight;
+.btn {
 	.border-radius(0px);
 	border: none;
+	color: #FFF;
+	.text-shadow;
+	&.btn-primary {
+		background: @linkHighlight;
+	}
 }
 
-/* GLOBAL LAYOUT ELEMENTS */
+/* GLOBAL LAYOUT & ELEMENTS */
 #masthead {
 	.side {
 		text-align: right;
@@ -120,6 +124,29 @@ a:hover, a:active {
 	}	
 }
 
+h5.category {
+	font-family: @sansSerifFamily;
+	text-transform: uppercase;
+	font-size: 11px;
+	background: transparent url(../img/category-stars.png) no-repeat;
+	height: 11px;
+	padding-top: 2px;
+	line-height: 13px;
+	padding-left: 13+@grid/2;
+	margin: @grid*2 0;
+	vertical-align: 90%;
+}
+
+.photography {
+	h5.category {
+		background-position: 0px 0px;
+	}
+	.btn {
+		background: #FAA634;
+	}
+}
+
+
 /* SECTION / PAGE SPECIFIC */
 
 .carousel-control {
@@ -145,13 +172,41 @@ a:hover, a:active {
 }
 
 #carousel-sections {
-	li {
+	padding-left: @grid*2;
+	> li {
 		display: inline-block;
 		width: 32.5%;
-		a {
+		position: relative;
+		&.active, &:hover {
+			> a {
+				color: @linkHighlight;
+			}
+		}
+		> a {
 			display: block;
 			text-align: center;
 			border-bottom: 2px solid;
+		}
+		ul {
+			position: relative;
+			overflow: hidden;
+			width: 300%;
+			height: 350px;
+			li {
+				position: absolute;
+				width: 100%;
+				opacity: 0;
+				&.active {
+					opacity: 1;
+				}
+				h3 {
+					line-height: normal;
+					font-weight: normal;
+				}
+				p {
+					line-height: 20px;
+				}
+			}
 		}
 	}
 }

@@ -14,7 +14,30 @@
 	</div>
 	<div class="span4">
 		<ul class="unstyled" id="carousel-sections">
-			<li><a href="javascript:void(0)">Top Stories</a></li>
+			<li class="active">
+			<a href="javascript:void(0)">Top Stories</a>
+			<ul class="unstyled carousel-section">
+				<li class="active photography">
+					<h5 class="category">Photography</h5>
+					<h3>This is an example of a very long title on empty kingdom.</h3>
+					<p class="postmeta">10.01.2012 by  Konahrtist</p>
+					<p>Hui+ is no stranger on Empty Kingdom, not at all. This is her third feature and she’s also been on Empty Kingdom’s Top 100 list. It’s about that time for her yearly update and she surprises us once again. Earthly, elegant and ethereal...</p>
+					<a class="btn">Read More...</a>
+				</li>
+				<li class="photography">
+					<h5 class="category">Photography</h5>
+					<h3>This is an example of a very long title on empty kingdom.</h3>
+					<p class="postmeta">10.01.2012 by  Konahrtist</p>
+					<p>Hui+ is no stranger on Empty Kingdom, not at all. This is her third feature and she’s also been on Empty Kingdom’s Top 100 list. It’s about that time for her yearly update and she surprises us once again. Earthly, elegant and ethereal...</p>
+				</li>
+				<li class="photography">
+					<h5 class="category">Photography</h5>
+					<h3>This is an example of a very long title on empty kingdom.</h3>
+					<p class="postmeta">10.01.2012 by  Konahrtist</p>
+					<p>Hui+ is no stranger on Empty Kingdom, not at all. This is her third feature and she’s also been on Empty Kingdom’s Top 100 list. It’s about that time for her yearly update and she surprises us once again. Earthly, elegant and ethereal...</p>
+				</li>
+			</ul>
+			</li>
 			<li><a href="javascript:void(0)">Events</a></li>
 			<li><a href="javascript:void(0)">EK Top 100</a></li>
 		</ul>
