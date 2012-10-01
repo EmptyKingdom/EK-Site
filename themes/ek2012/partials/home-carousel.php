@@ -3,7 +3,7 @@
 		<div id="featured-carousel" class="carousel slide">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
-				<div class="active item"><img src="http://fpoimg.com/624x350" alt=""></div>
+				<div class="active item"><img src="http://fpoimg.com/770x350" alt=""></div>
 				<div class="item"><img src="http://fpoimg.com/624x350" alt=""></div>
 				<div class="item"><img src="http://fpoimg.com/624x350" alt=""></div>
 			</div>
