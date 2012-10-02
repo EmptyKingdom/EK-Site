@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="">
+<!DOCTYPE html> 
+<html>
 	<head>  
 		<meta charset="utf-8">
 	    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' | '; } ?><?php bloginfo('name'); if(is_home()) { echo ' | '; bloginfo('description'); } ?></title>

@@ -147,11 +147,60 @@ h5.category {
 	}
 }
 
+.illustration {
+	h5.category {
+		background-position: 0px -13px;
+	}
+	.btn {
+		background: #f33737;
+	}
+}
+
+.film {
+	h5.category {
+		background-position: 0px -28px;
+	}
+	.btn {
+		background: #000000;
+	}
+}
+
+.new-media {
+	h5.category {
+		background-position: 0px -41px;
+	}
+	.btn {
+		background: #884e92;
+	}
+}
+
+.event {
+	h5.category {
+		background-position: 0px -54px;
+	}
+	.btn {
+		background: #884e92;
+	}
+}
+
+.interview {
+	h5.category {
+		background-position: 0px -67px;
+	}
+	.btn {
+		background: #00b8eb;
+	}
+}
+
 
 /* SECTION / PAGE SPECIFIC */
 
-#featured-carousel {
+#feature .carousel {
 	padding-top: @grid * 2;
+	display: none;
+	&.active {
+		display: block;
+	}
 }
 
 .carousel-control {
@@ -160,13 +209,14 @@ h5.category {
 	-webkit-border-radius: 0;
 	border: 0;
 	background-color: @linkHighlight;
-	opacity: 1;
+	opacity: 1 !important;
 	color: #FFF !important;
 	width: 24px;
 	height: 52px;
 	font-weight: normal !important;
 	line-height: 52px;
 	top: 45%;
+	z-index: 3;
 	&.left {
 		left: -12px;
 	}
@@ -176,40 +226,67 @@ h5.category {
 	}
 }
 
+.carousel {
+	&.carousel-fade {
+		.item {
+			.transition(.7s ease-in-out opacity);
+			left: 0 !important;
+		}
+		.next.left, .prev.right {
+			opacity: 1;
+			z-index: 1;
+		}
+		.active.left, .active.right {
+			opacity: 0;
+			z-index: 2;
+		}
+	}
+}
+
 #carousel-sections {
 	padding-left: @grid*2;
-	> li {
-		display: inline-block;
-		width: 32.5%;
-		position: relative;
-		&.active, &:hover {
-			> a {
-				color: @linkHighlight;
+	position: relative;
+	#carousel-section-nav {
+		width: 100%;
+		li {
+			display: inline-block;
+			width: 32.5%;
+			a {
+				display: block;
+				text-align: center;
+				border-bottom: 2px solid;
+			}
+			&.active, &:hover {
+				a {
+					color: @linkHighlight;
+				}
 			}
 		}
-		> a {
-			display: block;
-			text-align: center;
-			border-bottom: 2px solid;
+	}
+	.carousel-section-content {
+		opacity: 0;
+		h3 {
+			line-height: normal;
+			font-weight: normal;
 		}
-		ul {
-			position: relative;
-			overflow: hidden;
-			width: 300%;
-			height: 350px;
-			li {
-				position: absolute;
-				width: 100%;
-				opacity: 0;
-				&.active {
-					opacity: 1;
-				}
-				h3 {
-					line-height: normal;
-					font-weight: normal;
-				}
-				p {
-					line-height: 20px;
+		p {
+			line-height: 20px;
+		}
+		&.active {
+			opacity: 1;
+		}
+		&#carousel-section-0 {
+			ul {
+				position: relative;
+				li {
+					.transition(.7s ease-in-out opacity);
+					position: absolute;
+					top: 0;
+					left: 0;
+					opacity: 0;
+					&.active {
+						opacity: 1;
+					}
 				}
 			}
 		}

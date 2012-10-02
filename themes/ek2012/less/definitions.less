@@ -19,3 +19,12 @@
 	-moz-text-shadow: @x @y @blur @color;
 	-webkit-text-shadow: @x @y @blur @color;
 }
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+      -ms-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
