@@ -129,7 +129,7 @@ h5.category {
 	font-family: @sansSerifFamily;
 	text-transform: uppercase;
 	font-size: 11px;
-	background: transparent url(../img/category-stars.png) no-repeat;
+	background: url(../img/sprites.png) no-repeat;
 	height: 11px;
 	padding-top: 2px;
 	line-height: 13px;
@@ -140,7 +140,7 @@ h5.category {
 
 .photography {
 	h5.category {
-		background-position: 0px 0px;
+		background-position: -1px -36px ;
 	}
 	.btn {
 		background: #FAA634;
@@ -149,7 +149,7 @@ h5.category {
 
 .illustration {
 	h5.category {
-		background-position: 0px -13px;
+		background-position: 0 -134px ;
 	}
 	.btn {
 		background: #f33737;
@@ -158,7 +158,7 @@ h5.category {
 
 .film {
 	h5.category {
-		background-position: 0px -28px;
+		background-position: -1px -76px ;
 	}
 	.btn {
 		background: #000000;
@@ -167,7 +167,7 @@ h5.category {
 
 .new-media {
 	h5.category {
-		background-position: 0px -41px;
+		background-position: -1px -95px ;
 	}
 	.btn {
 		background: #884e92;
@@ -176,7 +176,7 @@ h5.category {
 
 .event {
 	h5.category {
-		background-position: 0px -54px;
+		background-position: 0 -115px ;
 	}
 	.btn {
 		background: #884e92;
@@ -185,7 +185,7 @@ h5.category {
 
 .interview {
 	h5.category {
-		background-position: 0px -67px;
+		background-position: -1px -56px ;
 	}
 	.btn {
 		background: #00b8eb;
@@ -251,7 +251,7 @@ h5.category {
 			float: left;
 			width: @grid;
 			height: @grid;
-			background-color: #CCC;
+			background-color: @lightGray;
 			margin-left: @grid/2;
 			&.active {
 				background-color: @linkHighlight;
@@ -310,6 +310,48 @@ h5.category {
 						opacity: 1;
 					}
 				}
+			}
+		}
+	}
+}
+ul#view-controls {
+	text-transform: uppercase;
+/* 	font-weight: bold; */
+	li {
+		display: inline-block;
+		height: 16px;
+		a, a:visited {
+			padding-left: @grid+16px;
+			margin-right: @grid*2;
+			display: inline-block;
+			color: @lightGray;
+			background: url(../img/sprites.png) no-repeat;
+		}
+		a:hover, a:active {
+			color: @linkColor;
+		}
+		&#grid-view {
+			a {
+				background-position: 0 -155px ;
+			}
+			&.active a, &:hover a {
+				background-position: 0 -180px ;
+			}
+		}
+		&#list-view {
+			a {
+				background-position: 0 -205px ;
+			}
+			&.active a, &:hover a {
+				background-position: 0 -230px ;
+			}
+		}
+		&#cat-filter {
+			a {
+				background-position: 0 -255px ;
+			}
+			&.active a , &:hover a {
+				background-position: 0 -275px ;
 			}
 		}
 	}

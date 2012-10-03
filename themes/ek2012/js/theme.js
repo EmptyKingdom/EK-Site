@@ -21,7 +21,7 @@ $(document).ready(function(){
 	}, 'input')
 	
 	$('#feature .carousel').carousel({
-		interval: 5000
+		interval: 20000
 	}).on({
 		slide: function(e){
 			// e.relatedTarget slide coming in, but it's broken when the first slide is the one coming in
