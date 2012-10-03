@@ -26,24 +26,47 @@ $(document).ready(function(){
 		slide: function(e){
 			// e.relatedTarget slide coming in, but it's broken when the first slide is the one coming in
 			var nextSlide = e.relatedTarget || $(this).find('.item:first').get(0);
-			$($(nextSlide).data('description')).siblings().removeClass('active');
-			$($(nextSlide).data('description')).addClass('active');
+			
+			// activate the description element in the carousel sidebar
+			var $descriptionEl = $($(nextSlide).data('description'));
+			$descriptionEl.siblings().removeClass('active');
+			$descriptionEl.addClass('active');
+		}, 
+		slid: function(e){
+			var $this = $(this);
+			var index = $this.find('.item.active').index();
+			var $indicators = $this.find('.carousel-indicator li');
+			
+			// update the blue square indicator
+			$indicators.removeClass('active');
+			$indicators.eq(index).addClass('active');
 		}
 	});
 	
+	$('.carousel-indicator').on({
+		click: function(e) {
+			var $indicator = $(e.target);
+			var index = $indicator.data('slide_to');
+			$indicator.parents('.carousel').carousel(index);
+		}
+	}, 'a');
+	
 	$('ul#carousel-section-nav > li').on({
 		click: function(event){
+
+			var $this = $(this);
+			
 			// switch the selected carousel section nav
 			$('#carousel-section-nav > li').removeClass('active');
-			$(this).parent('li').addClass('active');
+			$this.parent('li').addClass('active');
 			
 			// switch the selected carousel section content
 			$('.carousel-section-content').removeClass('active');
-			$($(this).data('section')).addClass('active');
+			$($this.data('section')).addClass('active');
 			
 			// switch the selected carousel
 			$('#feature .carousel').removeClass('active').carousel('pause');
-			$($(this).data('carousel')).addClass('active').carousel('cycle');
+			$($this.data('carousel')).addClass('active').carousel('cycle');
 		}
 	}, 'a');
 	

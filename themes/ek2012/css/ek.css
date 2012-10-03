@@ -32,6 +32,8 @@ h5.category{font-family:'Myriad Pro',sans-serif;text-transform:uppercase;font-si
 .carousel.carousel-fade .item{-webkit-transition:0.7s ease-in-out opacity;-moz-transition:0.7s ease-in-out opacity;-ms-transition:0.7s ease-in-out opacity;-o-transition:0.7s ease-in-out opacity;transition:0.7s ease-in-out opacity;left:0 !important;}
 .carousel.carousel-fade .next.left,.carousel.carousel-fade .prev.right{opacity:1;z-index:1;}
 .carousel.carousel-fade .active.left,.carousel.carousel-fade .active.right{opacity:0;z-index:2;}
+.carousel .carousel-indicator{position:absolute;margin:0;bottom:8px;right:8px;z-index:10;}.carousel .carousel-indicator li{float:left;width:8px;height:8px;background-color:#CCC;margin-left:4px;}.carousel .carousel-indicator li.active{background-color:#00b8ec;}
+.carousel .carousel-indicator li a{display:block;height:100%;width:100%;}
 #carousel-sections{padding-left:16px;position:relative;}#carousel-sections #carousel-section-nav{width:100%;}#carousel-sections #carousel-section-nav li{display:inline-block;width:32.5%;}#carousel-sections #carousel-section-nav li a{display:block;text-align:center;border-bottom:2px solid;}
 #carousel-sections #carousel-section-nav li.active a,#carousel-sections #carousel-section-nav li:hover a{color:#00b8ec;}
 #carousel-sections .carousel-section-content{opacity:0;}#carousel-sections .carousel-section-content h3{line-height:normal;font-weight:normal;}

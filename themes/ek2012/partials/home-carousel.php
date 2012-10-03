@@ -10,7 +10,12 @@
 			<!-- Carousel nav -->
 			<a class="carousel-control left" href="#featured-carousel-0" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right" href="#featured-carousel-0" data-slide="next">&rsaquo;</a>
-			<!-- Carousel pager -->
+			<!-- Carousel indicator -->
+			<ul class="unstyled carousel-indicator">
+				<li class="active"><a href="javascript:void(0)" class="page-0" data-slide_to="0"></a></li>
+				<li><a href="javascript:void(0)" class="page-1" data-slide_to="1"></a></li>
+				<li><a href="javascript:void(0)" class="page-2" data-slide_to="2"></a></li>
+			</ul>
 		</div>
 		<div id="featured-carousel-1" class="carousel carousel-component slide carousel-fade">
 			<!-- Carousel items -->
@@ -22,7 +27,12 @@
 			<!-- Carousel nav -->
 			<a class="carousel-control left" href="#featured-carousel-1" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right" href="#featured-carousel-1" data-slide="next">&rsaquo;</a>
-			<!-- Carousel pager -->
+			<!-- Carousel indicator -->
+			<ul class="unstyled carousel-indicator">
+				<li class="active"><a href="javascript:void(0)" class="page-0" data-slide_to="0"></a></li>
+				<li><a href="javascript:void(0)" class="page-1" data-slide_to="1"></a></li>
+				<li><a href="javascript:void(0)" class="page-2" data-slide_to="2"></a></li>
+			</ul>
 		</div>
 		<div id="featured-carousel-2" class="carousel carousel-component slide carousel-fade">
 			<!-- Carousel items -->
@@ -34,7 +44,12 @@
 			<!-- Carousel nav -->
 			<a class="carousel-control left" href="#featured-carousel-2" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right" href="#featured-carousel-2" data-slide="next">&rsaquo;</a>
-			<!-- Carousel pager -->
+			<!-- Carousel indicator -->
+			<ul class="unstyled carousel-indicator">
+				<li class="active"><a href="javascript:void(0)" class="page-0" data-slide_to="0"></a></li>
+				<li><a href="javascript:void(0)" class="page-1" data-slide_to="1"></a></li>
+				<li><a href="javascript:void(0)" class="page-2" data-slide_to="2"></a></li>
+			</ul>
 		</div>
 	</div>
 	<div class="span4">

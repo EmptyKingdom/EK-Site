@@ -241,6 +241,28 @@ h5.category {
 			z-index: 2;
 		}
 	}
+	.carousel-indicator {
+		position: absolute;
+		margin: 0;
+		bottom: @grid;
+		right: @grid;
+		z-index: 10;
+		li {
+			float: left;
+			width: @grid;
+			height: @grid;
+			background-color: #CCC;
+			margin-left: @grid/2;
+			&.active {
+				background-color: @linkHighlight;
+			}
+			a {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
 }
 
 #carousel-sections {
