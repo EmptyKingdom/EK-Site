@@ -24,6 +24,30 @@ a:hover, a:active {
 	}
 }
 
+.well {
+	.border-radius(0px);
+	background-color: @paleGray;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	.span2 {
+		width: 134px;
+		@media (min-width: 1200px) {
+			width: 160px;
+		}
+		@media (max-width: 979px) and (min-width: 768px) {
+			width: 94px;
+		}
+	}
+}
+
+h5 {
+	font-family: @sansSerifFamily;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
 /* GLOBAL LAYOUT & ELEMENTS */
 #masthead {
 	.side {
@@ -143,7 +167,7 @@ h5.category {
 		background-position: -1px -36px ;
 	}
 	.btn {
-		background: #FAA634;
+		background: @photographyColor;
 	}
 }
 
@@ -152,7 +176,7 @@ h5.category {
 		background-position: 0 -134px ;
 	}
 	.btn {
-		background: #f33737;
+		background: @illustrationColor;
 	}
 }
 
@@ -161,7 +185,7 @@ h5.category {
 		background-position: -1px -76px ;
 	}
 	.btn {
-		background: #000000;
+		background: @filmColor;
 	}
 }
 
@@ -170,7 +194,7 @@ h5.category {
 		background-position: -1px -95px ;
 	}
 	.btn {
-		background: #884e92;
+		background: @newMediaColor;
 	}
 }
 
@@ -179,7 +203,7 @@ h5.category {
 		background-position: 0 -115px ;
 	}
 	.btn {
-		background: #884e92;
+		background: @eventColor;
 	}
 }
 
@@ -188,7 +212,7 @@ h5.category {
 		background-position: -1px -56px ;
 	}
 	.btn {
-		background: #00b8eb;
+		background: @interviewColor;
 	}
 }
 
@@ -353,6 +377,36 @@ ul#view-controls {
 			&.active a , &:hover a {
 				background-position: 0 -275px ;
 			}
+		}
+	}
+}
+
+#cat-filters {
+	h3 {
+		font-family: @sansSerifFamily;
+		font-weight: normal;
+		font-style: italic;
+		color: @midGray;
+		font-size: 22px;
+	}
+	.illustration {
+		h5 {
+			color: @illustrationColor;
+		}
+	}
+	.photography {
+		h5 {
+			color: @photographyColor;
+		}
+	}
+	.film {
+		h5 {
+			color: @filmColor;
+		}
+	}
+	.new-media {
+		h5 {
+			color: @newMediaColor;
 		}
 	}
 }

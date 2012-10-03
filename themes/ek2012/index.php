@@ -7,12 +7,12 @@
 			<li id="list-view"><a href="javascript:void(0)">List View</a></li>
 			<li id="cat-filter"><a href="javascript:void(0)">Filter By Category</a></li>
 		</ul>
-		<div id="cat-filters">
+		<div id="cat-filters" class="well">
 			<h3>Select specific categories you want to view.</h3>
 			<div class="row">
 				<div class="span2 illustration">
-					<h4>Illustration &amp; Art</h4>
-					<ul class="cat-filter illustration">
+					<h5>Illustration &amp; Art</h5>
+					<ul class="cat-filter illustration unstyled">
 						<li>Collage</li>
 						<li>Digital</li>
 						<li>Drawings</li>
@@ -28,8 +28,8 @@
 					</ul> <!-- /.cat-filter.illustration -->
 				</div> <!-- .span2 -->
 				<div class="span2 photography">
-					<h4>Photography</h4>
-					<ul class="cat-filter photography">
+					<h5>Photography</h5>
+					<ul class="cat-filter photography unstyled">
 						<li>Abstract</li>
 						<li>Ambient</li>
 						<li>Black &amp; White</li>
@@ -42,8 +42,8 @@
 					</ul> <!-- /.cat-filter.photography -->
 				</div> <!-- .span2 -->
 				<div class="span2 film">
-					<h4>Film</h4>
-					<ul class="cat-filter film">
+					<h5>Film</h5>
+					<ul class="cat-filter film unstyled">
 						<li>Animation</li>
 						<li>Commercial</li>
 						<li>Feature Film</li>
@@ -52,8 +52,8 @@
 					</ul> <!-- /.cat-filter.film -->
 				</div> <!-- .span2 -->
 				<div class="span2 new-media">
-					<h4>New Media</h4>
-					<ul class="cat-filter new-media">
+					<h5>New Media</h5>
+					<ul class="cat-filter new-media unstyled">
 						<li>Advertising</li>
 						<li>Animation</li>
 						<li>Graphic Design</li>
