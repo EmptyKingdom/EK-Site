@@ -571,3 +571,35 @@ ul#view-controls {
 		}
 	}
 }
+
+.widget {
+	h4 {
+		background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
+		padding: 0 @grid*3.5;
+		color: #FFF;
+		text-transform: uppercase;
+		font-family: @sansSerifFamily;
+		font-size: @grid*2;
+		font-weight: 500;
+		height: @grid*4;
+		line-height: @grid*4.5;
+		margin-bottom: 0;
+	}
+	.content {
+		background-color: @paleGray;
+		margin-top: 1px;
+		padding: @grid*3;
+	}
+	&.facebook {
+		.facebookOuter {
+			width: auto; 
+			height: auto;
+			overflow: hidden;
+		}
+		.fb-like-box, .fb-like-box span, .fb-like-box.fb_iframe_widget span iframe {
+		    border: none !important;
+		    margin: -1px !important;
+		    width: 101% !important;
+		}
+	}
+}
