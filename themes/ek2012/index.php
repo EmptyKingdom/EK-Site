@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php get_template_part('/partials/home', 'carousel') ?>
-<?php get_template_part('/partials/view-controls') ?>
 <div class="row">
 	<div class="span8" id="main">
+		<?php get_template_part('/partials/view-controls') ?>
 		<div id="post-list" class="grid">
 			<?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>

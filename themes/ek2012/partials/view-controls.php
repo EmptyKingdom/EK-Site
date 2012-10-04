@@ -3,8 +3,7 @@
 			<li id="list-view"><a href="javascript:void(0)" data-action="listView">List View</a></li>
 			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters">Filter By Category</a></li>
 		</ul> <!-- /#view-controls -->
-	<div class="row">
-		<div id="cat-filters" class="well span8">
+		<div id="cat-filters" class="well">
 			<a id="close-cat-filters" href="javascript:void(0)"></a>
 			<h3>Select specific categories you want to view.</h3>
 			<div class="row">
@@ -62,4 +61,3 @@
 				</div> <!-- .span2 -->
 			</div> <!-- /.row -->
 		</div> <!-- /#cat-filters -->
-	</div> <!-- /.row -->

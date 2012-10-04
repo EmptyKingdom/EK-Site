@@ -52,7 +52,7 @@ ul#view-controls li#list-view a{background:url(../img/slices/icon-listview.png) 
 ul#view-controls li#list-view.active a,ul#view-controls li#list-view:hover a{background:url(../img/slices/icon-listview-active.png) no-repeat;}
 ul#view-controls li#cat-filter a{background:url(../img/slices/icon-filter.png) no-repeat;}
 ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{background:url(../img/slices/icon-filter-active.png) no-repeat;}
-#cat-filters{position:relative;}#cat-filters #close-cat-filters{display:block;position:absolute;top:20px;right:20px;background:url(../img/slices/close-button.png) no-repeat;height:15px;width:15px;}
+#cat-filters{display:none;position:relative;}#cat-filters #close-cat-filters{display:block;position:absolute;top:20px;right:20px;background:url(../img/slices/close-button.png) no-repeat;height:15px;width:15px;}
 #cat-filters h3{font-family:'Myriad Pro',sans-serif;font-weight:normal;font-style:italic;font-size:22px;}
 #cat-filters a{color:#999999;}
 #cat-filters .illustration h5{color:#f33737;}
