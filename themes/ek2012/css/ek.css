@@ -50,8 +50,23 @@ ul#view-controls li#list-view a{background-position:0 -205px;}
 ul#view-controls li#list-view.active a,ul#view-controls li#list-view:hover a{background-position:0 -230px;}
 ul#view-controls li#cat-filter a{background-position:0 -255px;}
 ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{background-position:0 -275px;}
-#cat-filters h3{font-family:'Myriad Pro',sans-serif;font-weight:normal;font-style:italic;color:#999999;font-size:22px;}
+#cat-filters{display:none;position:relative;}#cat-filters #close-cat-filters{display:block;position:absolute;top:20px;right:20px;background:url(../img/sprites.png) no-repeat;background-position:0 -300px;height:15px;width:15px;}
+#cat-filters h3{font-family:'Myriad Pro',sans-serif;font-weight:normal;font-style:italic;font-size:22px;}
+#cat-filters a{color:#999999;}
 #cat-filters .illustration h5{color:#f33737;}
+#cat-filters .illustration a:hover,#cat-filters .illustration a:active{color:#f33737;}
+#cat-filters .illustration .selected a{color:#f33737;}
+#cat-filters .illustration .selected .check{background-color:#f33737;}
 #cat-filters .photography h5{color:#faa634;}
+#cat-filters .photography a:hover,#cat-filters .photography a:active{color:#faa634;}
+#cat-filters .photography .selected a{color:#faa634;}
+#cat-filters .photography .selected .check{background-color:#faa634;}
 #cat-filters .film h5{color:#000000;}
+#cat-filters .film a:hover,#cat-filters .film a:active{color:#000000;}
+#cat-filters .film .selected a{color:#000000;}
+#cat-filters .film .selected .check{background-color:#000000;}
 #cat-filters .new-media h5{color:#62bb46;}
+#cat-filters .new-media a:hover,#cat-filters .new-media a:active{color:#62bb46;}
+#cat-filters .new-media .selected a{color:#62bb46;}
+#cat-filters .new-media .selected .check{background-color:#62bb46;}
+#cat-filters .check{display:inline-block;height:8px;width:8px;margin-right:8px;background-color:#999999;}

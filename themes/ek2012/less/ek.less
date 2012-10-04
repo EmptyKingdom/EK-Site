@@ -382,31 +382,96 @@ ul#view-controls {
 }
 
 #cat-filters {
+	display: none;
+	position: relative;
+	#close-cat-filters {
+		display: block;
+		position: absolute;
+		top: @grid*2.5;
+		right: @grid*2.5;
+		background: url(../img/sprites.png) no-repeat;
+		background-position: 0 -300px ;
+		height: 15px;
+		width: 15px;
+	}
 	h3 {
 		font-family: @sansSerifFamily;
 		font-weight: normal;
 		font-style: italic;
-		color: @midGray;
 		font-size: 22px;
+	}
+	a {
+		color: @midGray;
 	}
 	.illustration {
 		h5 {
 			color: @illustrationColor;
+		}
+		a:hover, a:active {
+			color: @illustrationColor;
+		}
+		.selected {
+			a { 
+				color: @illustrationColor;
+			}
+			.check {
+				background-color: @illustrationColor;
+			}
 		}
 	}
 	.photography {
 		h5 {
 			color: @photographyColor;
 		}
+		a:hover, a:active {
+			color: @photographyColor;
+		}
+		.selected {
+			a { 
+				color: @photographyColor;
+			}
+			.check {
+				background-color: @photographyColor;
+			}
+		}
 	}
 	.film {
 		h5 {
 			color: @filmColor;
+		}
+		a:hover, a:active {
+			color: @filmColor;
+		}
+		.selected {
+			a { 
+				color: @filmColor;
+			}
+			.check {
+				background-color: @filmColor;
+			}
 		}
 	}
 	.new-media {
 		h5 {
 			color: @newMediaColor;
 		}
+		a:hover, a:active {
+			color: @newMediaColor;
+		}
+		.selected {
+			a { 
+				color: @newMediaColor;
+			}
+			.check {
+				background-color: @newMediaColor;
+			}
+		}
+	}
+	.check {
+		display: inline-block;
+		height: @grid;
+		width: @grid;
+		margin-right: @grid;
+		background-color: @midGray;	
 	}
 }

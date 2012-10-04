@@ -52,7 +52,7 @@ $(document).ready(function(){
 	}, 'a');
 	
 	$('ul#carousel-section-nav > li').on({
-		click: function(event){
+		click: function(e){
 
 			var $this = $(this);
 			
@@ -70,4 +70,49 @@ $(document).ready(function(){
 		}
 	}, 'a');
 	
+	$('#view-controls').on({
+		click: function(e) {
+			e.preventDefault();
+			var $clicked = $(e.target);
+			var action = $clicked.data('action');
+			var target = $clicked.data('target') || null;
+			if (typeof viewControls[action] == 'function') {
+				viewControls[action](target);
+			}
+		}
+	}, 'a');
+	
+	$('#cat-filters').on({
+		click: function(e) {
+			if ($(e.target).attr('id') == 'close-cat-filters') {
+				$('#view-controls #cat-filter a').trigger('click');
+			} else {
+				$(this).parent('li').toggleClass('selected');
+			}
+		}
+	}, 'a')
 })
+
+var viewControls = {
+	gridView: function(target) {
+		if (arguments.length == 0) {
+			var target = '#post-list';
+		}
+		this.switchView('list', 'grid', target);
+	},
+
+	listView: function(target) {
+		if (arguments.length == 0) {
+			var target = '#post-list';
+		}
+		this.switchView('grid', 'list', target);
+	},
+
+	switchView: function(from, to, target) {
+		$(target).removeClass(from).addClass(to);
+	},
+	
+	showCatFilters: function() {
+		$('#cat-filters').slideToggle();
+	}
+}
