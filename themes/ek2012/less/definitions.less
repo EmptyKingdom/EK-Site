@@ -30,6 +30,12 @@
           text-shadow: @x @y @blur @color;
 }
 
+.box-shadow (@x: 0px, @y: 0px, @blur: 0px, @color: #FFF) {
+  -webkit-box-shadow: @x @y @blur @color;
+     -moz-box-shadow: @x @y @blur @color;
+          box-shadow: @x @y @blur @color;
+}
+
 // Transitions
 .transition(@transition) {
   -webkit-transition: @transition;
