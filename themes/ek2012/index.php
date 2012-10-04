@@ -21,7 +21,7 @@
 			<h4><strong>Empty Kingdom</strong> Newsletter</h4>
 			<form class="form-inline input-append">
 				<input type="text" name="newsletter-signup">
-				<button class="btn btn-inverse" type="submit">Subscribe</button>
+				<button class="btn btn-inverse" type="submit">Subscribe<span class="arrow"></span></button>
 			</form>
 		</div>
 	</div> <!-- /#sidebar -->

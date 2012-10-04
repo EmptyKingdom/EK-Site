@@ -30,6 +30,10 @@ a:hover, a:active {
 input {
 	.border-radius(0px) !important;
 	.box-shadow() !important;
+	&[type=text] {
+		height: @grid*2;
+		padding: @grid;
+	}
 }
 
 .well {
@@ -539,6 +543,16 @@ ul#view-controls {
 }
 
 .newsletter-signup {
+	h4 {
+		text-transform: uppercase;
+		font-family: @sansSerifFamily;
+		font-weight: normal;
+		color: @textColor;
+		font-size: @baseFontSize;
+		strong {
+			color: @linkHighlight;
+		}
+	}
 	input {
 		.transition(none) !important;
 		border: none !important;
@@ -547,6 +561,13 @@ ul#view-controls {
 		}
 	}
 	button {
-		
+		height: @grid*4;
+		padding: @grid;
+		.arrow {
+			background: url(../img/slices/arrow-right-white.png) no-repeat right top;
+			display: inline-block;
+			height: @grid*2;
+			width: @grid*3;
+		}
 	}
 }
