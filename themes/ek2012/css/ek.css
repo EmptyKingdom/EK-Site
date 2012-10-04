@@ -83,7 +83,8 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 .newsletter-signup h4{text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-weight:normal;color:#898989;font-size:13px;}.newsletter-signup h4 strong{color:#00b8ec;}
 .newsletter-signup input{-webkit-transition:none !important;-moz-transition:none !important;-ms-transition:none !important;-o-transition:none !important;transition:none !important;border:none !important;}.newsletter-signup input[type=text]{background-color:#f5f5f5;}
 .newsletter-signup button{height:32px;padding:8px;}.newsletter-signup button .arrow{background:url(../img/slices/arrow-right-white.png) no-repeat right top;display:inline-block;height:16px;width:24px;}
-.widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin-bottom:0;}
-.widget .content{background-color:#f5f5f5;margin-top:1px;padding:24px;}
+.widget{background-color:#f5f5f5;padding:0 24px;}.widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px -24px;border-bottom:1px solid #2AC8F8;}
 .widget.facebook .facebookOuter{width:auto;height:auto;overflow:hidden;}
 .widget.facebook .fb-like-box,.widget.facebook .fb-like-box span,.widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}
+.widget.widget_pinterest-pinboard-widget{padding-bottom:16px;}.widget.widget_pinterest-pinboard-widget .row{margin-bottom:16px;}
+.widget.widget_pinterest-pinboard-widget .follow a{font-size:20px;line-height:20px;}.widget.widget_pinterest-pinboard-widget .follow a .logo{width:85px;height:20px;display:inline-block;background:url(../img/slices/logo-pinterest.png) no-repeat right center;vertical-align:-10%;}

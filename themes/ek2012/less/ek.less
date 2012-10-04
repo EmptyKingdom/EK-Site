@@ -573,6 +573,8 @@ ul#view-controls {
 }
 
 .widget {
+	background-color: @paleGray;
+	padding: 0 @grid*3;
 	h4 {
 		background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
 		padding: 0 @grid*3.5;
@@ -583,12 +585,10 @@ ul#view-controls {
 		font-weight: 500;
 		height: @grid*4;
 		line-height: @grid*4.5;
-		margin-bottom: 0;
+		margin: @grid*3 -@grid*3;
+		border-bottom: 1px solid #2AC8F8;
 	}
 	.content {
-		background-color: @paleGray;
-		margin-top: 1px;
-		padding: @grid*3;
 	}
 	&.facebook {
 		.facebookOuter {
@@ -601,5 +601,22 @@ ul#view-controls {
 		    margin: -1px !important;
 		    width: 101% !important;
 		}
+	}
+	&.widget_pinterest-pinboard-widget {
+		.row {
+			margin-bottom: @grid * 2;
+		}
+		.follow a {
+			font-size: 20px;
+			line-height: 20px;
+			.logo {
+				width: 85px;
+				height: 20px;
+				display: inline-block;
+				background: url(../img/slices/logo-pinterest.png) no-repeat right center;
+				vertical-align: -10%;
+			}
+		}
+		padding-bottom: @grid*2;
 	}
 }

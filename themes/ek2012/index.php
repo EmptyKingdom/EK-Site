@@ -50,6 +50,9 @@
 				</div>
 			</div> <!-- /.content -->
 		</div> <!-- /.widget -->
+
+		<?php dynamic_sidebar('Sidebar 1') ?>
+
 	</div> <!-- /#sidebar -->
 </div> <!-- /.row -->
 <?php get_footer(); ?>

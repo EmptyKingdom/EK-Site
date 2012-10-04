@@ -108,15 +108,6 @@ class Pinterest_Pinboard_Widget extends WP_Widget {
         $title = apply_filters('widget_title', $instance['title']);
         echo($before_title . $title . $after_title);
         ?>
-        <div id="pinterest-pinboard-widget-container">
-        <style type="text/css">
-        #pinterest-pinboard-widget-container .row { width: 200px; height: 65px; }
-        #pinterest-pinboard-widget-container .pinboard { margin-top: 10px; }
-        #pinterest-pinboard-widget-container .pinboard img { width: 61px; height: 61px; padding: 0 4px 4px 0; }
-        #pinterest-pinboard-widget-container .pin_link { padding-top: 5px; }
-        #pinterest-pinboard-widget-container .pin_text { vertical-align: super; }
-        #pinterest-pinboard-widget-container .pin_text a { color: #999; }
-        </style>
         <div class="pinboard">
         <?php
 
@@ -138,7 +129,7 @@ class Pinterest_Pinboard_Widget extends WP_Widget {
                 $title = $pin['title'];
                 $url = $pin['url'];
                 $image = $pin['image'];
-                echo("<a href=\"$url\"><img src=\"$image\" alt=\"$title\" title=\"$title\" /></a>");
+                echo("<a class=\"span1\" href=\"$url\"><img src=\"$image\" alt=\"$title\" title=\"$title\" /></a>");
                 $count++;
                 if ($count >= $cols) {
                     echo("</div>");
@@ -148,15 +139,8 @@ class Pinterest_Pinboard_Widget extends WP_Widget {
         }
         ?>
         </div>
-        <div class="pin_link">
-            <a class="pin_logo" href="<?php echo($this->protocol) ?>pinterest.com/<?php echo($username) ?>/">
-                <img src="<?php echo($this->protocol) ?>passets-cdn.pinterest.com/images/small-p-button.png" width="16" height="16" alt="Follow Me on Pinterest" />
-            </a>
-            <span class="pin_text"><a href="http://pinterest.com/<?php echo($username) ?>/">More Pins</a></span>
-        </div>
-        </div>
+        <p class="follow"><a href="http://pinterest.com/<?php echo $username ?>">Follow EK on <span class="logo"></span></a></p>
         <?php
-        echo($this->get_footer());
         echo($after_widget);
     }
     
