@@ -475,3 +475,45 @@ ul#view-controls {
 		background-color: @midGray;	
 	}
 }
+
+#post-list {
+	&.grid {
+		margin-right: -30px;
+		.span4 {
+			margin-right: 30px;
+			.transition(e('4s ease width'));
+		}
+	}
+	&.list {
+		margin-left: 0;
+		.span4 {
+			width: 100%;
+			margin-right: 0;
+			.transition(e('4s ease width, 0s ease margin-right 4s'));
+		}
+	}
+	.span4 {
+		margin-left: 0px;
+	}
+	.post {
+		margin-bottom: @grid*4;
+		.author {
+			float: left;
+		}
+		.date {
+			float: right;
+		}
+		img {
+			clear: both;
+		}
+		h5 {
+			margin-bottom: 0;
+		}
+		.excerpt {
+			margin-top: @grid*2;
+			margin-bottom: 0;
+			padding: @grid*2 0;
+			border-top: 2px dotted @lightGray;
+		}
+	}
+}

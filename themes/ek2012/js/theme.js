@@ -75,7 +75,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			var $clicked = $(e.target);
 			var action = $clicked.data('action');
-			var target = $clicked.data('target') || null;
+			var target = $clicked.data('target') || '#post-list';
 			if (typeof viewControls[action] == 'function') {
 				viewControls[action](target);
 			}
@@ -95,16 +95,10 @@ $(document).ready(function(){
 
 var viewControls = {
 	gridView: function(target) {
-		if (arguments.length == 0) {
-			var target = '#post-list';
-		}
 		this.switchView('list', 'grid', target);
 	},
 
 	listView: function(target) {
-		if (arguments.length == 0) {
-			var target = '#post-list';
-		}
 		this.switchView('grid', 'list', target);
 	},
 
