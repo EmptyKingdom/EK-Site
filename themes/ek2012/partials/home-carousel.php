@@ -3,9 +3,9 @@
 		<div id="featured-carousel-0" class="carousel carousel-component slide carousel-fade active">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
-				<div class="active item" data-description="#post-1"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+1" alt=""></div>
-				<div class="item" data-description="#post-2"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+2" alt=""></div>
-				<div class="item" data-description="#post-3"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+3" alt=""></div>
+				<div class="active item" data-description="#post-1"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+1" alt=""></div>
+				<div class="item" data-description="#post-2"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+2" alt=""></div>
+				<div class="item" data-description="#post-3"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+3" alt=""></div>
 			</div>
 			<!-- Carousel nav -->
 			<a class="carousel-control left" href="#featured-carousel-0" data-slide="prev">&lsaquo;</a>
@@ -20,9 +20,9 @@
 		<div id="featured-carousel-1" class="carousel carousel-component slide carousel-fade">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
-				<div class="active item" data-description="#event-4"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+4" alt=""></div>
-				<div class="item" data-description="#event-5"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+5" alt=""></div>
-				<div class="item" data-description="#event-6"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+6" alt=""></div>
+				<div class="active item" data-description="#event-4"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+4" alt=""></div>
+				<div class="item" data-description="#event-5"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+5" alt=""></div>
+				<div class="item" data-description="#event-6"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+6" alt=""></div>
 			</div>
 			<!-- Carousel nav -->
 			<a class="carousel-control left" href="#featured-carousel-1" data-slide="prev">&lsaquo;</a>
@@ -37,9 +37,9 @@
 		<div id="featured-carousel-2" class="carousel carousel-component slide carousel-fade">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
-				<div class="active item"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+7" alt=""></div>
-				<div class="item"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+8" alt=""></div>
-				<div class="item"><img src="http://www.dummyimag.es/770x350/000/fff.png&text=Slide+9" alt=""></div>
+				<div class="active item"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+7" alt=""></div>
+				<div class="item"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+8" alt=""></div>
+				<div class="item"><img src="http://www.dummyimag.es/770x395/000/fff.png&text=Slide+9" alt=""></div>
 			</div>
 			<!-- Carousel nav -->
 			<a class="carousel-control left" href="#featured-carousel-2" data-slide="prev">&lsaquo;</a>
