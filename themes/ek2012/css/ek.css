@@ -4,6 +4,7 @@ a:hover,a:active{color:#00b8ec;text-decoration:none;}
 .btn{border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-moz-background-clip:padding !important;-webkit-background-clip:padding-box !important;background-clip:padding-box !important;border:none;color:#FFF;text-transform:uppercase;font-family:'Arial',sans-serif;font-size:11px;line-height:8px;padding:8px 16px;-webkit-text-shadow:0px 0px 0px #ffffff;-moz-text-shadow:0px 0px 0px #ffffff;text-shadow:0px 0px 0px #ffffff;}.btn:hover{background:#e5e5e5 !important;}
 .btn.btn-primary{background:#00b8ec;}
 .btn.btn-inverse{background:#333333;}
+.arrow-right{padding-right:24px;background:url(../img/slices/arrow-right-blue.png) no-repeat right center;display:inline-block;height:14px;}
 input{border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-moz-background-clip:padding !important;-webkit-background-clip:padding-box !important;background-clip:padding-box !important;-webkit-box-shadow:0px 0px 0px #ffffff !important;-moz-box-shadow:0px 0px 0px #ffffff !important;box-shadow:0px 0px 0px #ffffff !important;}input[type=text]{height:16px;padding:8px;}
 .well{border-radius:0px;-webkit-border-radius:0px;-moz-border-radius:0px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:whitesmoke;border:none;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;}.well .span2{width:134px;}@media (min-width:1200px){.well .span2{width:160px;}}@media (max-width:979px) and (min-width:768px){.well .span2{width:94px;}}
 h5{font-family:'Myriad Pro',sans-serif;text-transform:uppercase;font-size:11px;}
@@ -90,3 +91,5 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 .widget.facebook .fb-like-box,.widget.facebook .fb-like-box span,.widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}
 .widget.widget_pinterest-pinboard-widget .row{margin-bottom:16px;}
 .widget.widget_pinterest-pinboard-widget .follow a{font-size:20px;line-height:20px;}.widget.widget_pinterest-pinboard-widget .follow a .logo{width:85px;height:20px;display:inline-block;background:url(../img/slices/logo-pinterest.png) no-repeat right center;vertical-align:-10%;}
+.widget.trending ul{margin:0;}.widget.trending ul li{padding-bottom:8px;}
+.widget.widget_text{padding:0;background-color:#FFF;}.widget.widget_text .featured-archive{background:none;border:none;font-weight:600;line-height:18px;height:18px;font-size:18px;}

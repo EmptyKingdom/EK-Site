@@ -74,7 +74,7 @@
 						<h3>This is an example of a very long title on empty kingdom.</h3>
 						<p class="postmeta">10.01.2012 by  Konahrtist</p>
 						<p>Hui+ is no stranger on Empty Kingdom, not at all. This is her third feature and she’s also been on Empty Kingdom’s Top 100 list. It’s about that time for her yearly update and she surprises us once again. Earthly, elegant and ethereal...</p>
-						<a class="btn">Read More...</a>
+						<a class="btn">View More...</a>
 					</li>
 					<li class="illustration" id="post-2">
 						<h5 class="category">Illustration & Art</h5>
@@ -94,15 +94,15 @@
 				<ul class="unstyled">
 					<li class="active event" id="event-4">
 						<h5 class="category">Event 1</h5>
-						<a class="btn">Read More...</a>
+						<a class="btn">View More...</a>
 					</li>
 					<li class="event" id="event-5">
 						<h5 class="category">Event 2</h5>
-						<a class="btn">Read More...</a>
+						<a class="btn">View More...</a>
 					</li>
 					<li class="event" id="event-6">
 						<h5 class="category">Event 3</h5>
-						<a class="btn">Read More...</a>
+						<a class="btn">View More...</a>
 					</li>
 				</ul>
 			</div> <!-- /#carousel-section-1 -->

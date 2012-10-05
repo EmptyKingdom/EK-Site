@@ -36,6 +36,13 @@ a:hover, a:active {
 	}
 }
 
+.arrow-right {
+	padding-right: @grid+16px;
+	background: url(../img/slices/arrow-right-blue.png) no-repeat right center;
+	display: inline-block;
+	height: 14px;
+}
+
 input {
 	.border-radius(0px) !important;
 	.box-shadow() !important;
@@ -637,6 +644,26 @@ ul#view-controls {
 				background: url(../img/slices/logo-pinterest.png) no-repeat right center;
 				vertical-align: -10%;
 			}
+		}
+	}
+	&.trending {
+		ul {
+			margin: 0;
+			li {
+				padding-bottom: @grid;
+			}
+		}
+	}
+	&.widget_text {
+		padding: 0;
+		background-color: #FFF;
+		.featured-archive {
+			background: none;
+			border: none;
+			font-weight: 600;
+			line-height: 18px;
+			height: 18px;
+			font-size: 18px;
 		}
 	}
 }
