@@ -3,6 +3,7 @@
 /* BOOTSTRAP OVERRIDES */
 body {
 	margin: @grid 0;
+	line-height: @baseFontSize+6;
 }
 
 a, a:visited {
@@ -18,7 +19,15 @@ a:hover, a:active {
 	.border-radius(0px) !important;
 	border: none;
 	color: #FFF;
+	text-transform: uppercase;
+	font-family: @sansSerifAltFamily;
+	font-size: 11px;
+	line-height: @grid;
+	padding: @grid @grid*2;
 	.text-shadow;
+	&:hover {
+		background: @paleGray !important;
+	}
 	&.btn-primary {
 		background: @linkHighlight;
 	}
@@ -38,7 +47,7 @@ input {
 
 .well {
 	.border-radius(0px);
-	background-color: @paleGray;
+	background-color: whitesmoke;
 	border: none;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -177,60 +186,72 @@ h5.category {
 .photography {
 	h5.category {
 		background: url(../img/slices/category-photography.png) no-repeat;
-/* 		background-position: -1px -36px ; */
 	}
 	.btn {
 		background: @photographyColor;
+		&:hover {
+			color: @photographyColor;
+		}
 	}
 }
 
 .illustration {
 	h5.category {
 		background: url(../img/slices/category-illustration.png) no-repeat;
-/* 		background-position: 0 -134px ; */
 	}
 	.btn {
 		background: @illustrationColor;
+		&:hover {
+			color: @illustrationColor;
+		}
 	}
 }
 
 .film {
 	h5.category {
 		background: url(../img/slices/category-film.png) no-repeat;
-/* 		background-position: -1px -76px ; */
 	}
 	.btn {
 		background: @filmColor;
+		&:hover {
+			color: @filmColor;
+		}
 	}
 }
 
 .new-media {
 	h5.category {
 		background: url(../img/slices/category-new-media.png) no-repeat;
-/* 		background-position: -1px -95px ; */
 	}
 	.btn {
 		background: @newMediaColor;
+		&:hover {
+			color: @newMediaColor;
+		}
 	}
 }
 
 .event {
 	h5.category {
 		background: url(../img/slices/category-event.png) no-repeat;
-/* 		background-position: 0 -115px ; */
 	}
 	.btn {
 		background: @eventColor;
+		&:hover {
+			color: @eventColor;
+		}
 	}
 }
 
 .interview {
 	h5.category {
 		background: url(../img/slices/category-interview.png) no-repeat;
-/* 		background-position: -1px -56px ; */
 	}
 	.btn {
 		background: @interviewColor;
+		&:hover {
+			color: @interviewColor;
+		}
 	}
 }
 
@@ -367,7 +388,6 @@ ul#view-controls {
 			margin-right: @grid*2;
 			display: inline-block;
 			color: @lightGray;
-/* 			background: url(../img/slices/category-photography.png) no-repeat; */
 		}
 		a:hover, a:active {
 			color: @linkColor;
@@ -375,7 +395,6 @@ ul#view-controls {
 		&#grid-view {
 			a {
 				background: url(../img/slices/icon-gridview.png) no-repeat;
-/* 				background-position: 0 -155px ; */
 			}
 			&.active a, &:hover a {
 				background: url(../img/slices/icon-gridview-active.png) no-repeat;
@@ -384,21 +403,17 @@ ul#view-controls {
 		&#list-view {
 			a {
 				background: url(../img/slices/icon-listview.png) no-repeat;
-/* 				background-position: 0 -205px ; */
 			}
 			&.active a, &:hover a {
 				background: url(../img/slices/icon-listview-active.png) no-repeat;
-/* 				background-position: 0 -230px ; */
 			}
 		}
 		&#cat-filter {
 			a {
 				background: url(../img/slices/icon-filter.png) no-repeat;
-/* 				background-position: 0 -255px ; */
 			}
 			&.active a , &:hover a {
 				background: url(../img/slices/icon-filter-active.png) no-repeat;
-/* 				background-position: 0 -275px ; */
 			}
 		}
 	}
@@ -413,8 +428,6 @@ ul#view-controls {
 		top: @grid*2.5;
 		right: @grid*2.5;
 		background: url(../img/slices/close-button.png) no-repeat;
-/* 		background: url(../img/sprites.png) no-repeat; */
-/* 		background-position: 0 -300px ; */
 		height: 15px;
 		width: 15px;
 	}
@@ -521,8 +534,12 @@ ul#view-controls {
 	}
 	.post {
 		margin-bottom: @grid*4;
-		.author {
+		.author, .date {
 			float: left;
+			font-size: 11px;
+			margin: @grid 0 @grid*2-3 0;
+			line-height: 11px;
+			color: @midGray;
 		}
 		.date {
 			float: right;
@@ -530,11 +547,17 @@ ul#view-controls {
 		img {
 			clear: both;
 		}
+		h4 {
+			font-weight: 600;
+			margin: 0;
+		}
 		h5 {
 			margin-bottom: 0;
+			height: 14px;
+			margin: 12px 0 0 0;
 		}
 		.excerpt {
-			margin-top: @grid*2;
+			margin-top: @grid+2;
 			margin-bottom: 0;
 			padding: @grid*2 0;
 			border-top: 2px dotted @lightGray;
@@ -557,7 +580,7 @@ ul#view-controls {
 		.transition(none) !important;
 		border: none !important;
 		&[type=text] {
-			background-color: @paleGray;
+			background-color: whitesmoke;
 		}
 	}
 	button {
@@ -573,7 +596,7 @@ ul#view-controls {
 }
 
 .widget {
-	background-color: @paleGray;
+	background-color: whitesmoke;
 	padding: 0 @grid*3 @grid*2 @grid*3;
 	h4 {
 		background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
