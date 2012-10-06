@@ -97,6 +97,7 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 .newsletter-signup button{height:32px;padding:8px;}.newsletter-signup button .arrow{background:url(../img/slices/arrow-right-white.png) no-repeat right top;display:inline-block;height:16px;width:24px;}
 #footer{background:#111;font-size:11px;}#footer h4{margin:18px 0;color:#cccccc;}
 #footer a,#footer a:link{color:#898989;}
+#footer a:hover,#footer a:active{color:#00b8ec;}
 #footer .widget{margin-bottom:45px;}#footer .widget.newsletter-signup h4{text-align:justify;}
 #footer .widget.newsletter-signup input{background:#333333;border-bottom:2px solid #00b8ec !important;display:block;margin:16px 0;}
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
