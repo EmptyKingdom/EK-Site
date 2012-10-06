@@ -1,5 +1,5 @@
 <div class="post illustration span4">
-	<h4>Post title on Empty Kingdom</h4>
+	<h3>Post title on Empty Kingdom</h3>
 	<p class="author">by lorem ipsum</p>
 	<p class="date">10.02.2012</p>
 	<img src="http://www.dummyimag.es/770x395/000/fff.png&text=Post">

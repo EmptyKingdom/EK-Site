@@ -23,7 +23,7 @@
 					<h2 id="tagline">Tagline changes when you refresh page</h2>
 				</div> <!-- /span8 -->
 				<div class="span4 side">
-					<ul class="unstyled" id="utility-menu">
+					<ul class="unstyled ek-social" id="utility-menu">
 						<li><span><a href="#">Register</a> | <a href="#">Login</a></span></li>
 						<li class="vimeo icon">Vimeo</li>
 						<li class="pinterest icon">Pinterest</li>

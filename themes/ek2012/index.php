@@ -17,14 +17,7 @@
 			<img src="http://www.dummyimag.es/300x250/000/fff.png&text=300x250%20AD%20UNIT">
 		</div> <!-- /#ad-slot-1 -->
 
-		<!-- Newsletter signup -->
-		<div class="newsletter-signup">
-			<h4><strong>Empty Kingdom</strong> Newsletter</h4>
-			<form class="form-inline input-append">
-				<input type="text" name="newsletter-signup">
-				<button class="btn btn-inverse" type="submit">Subscribe<span class="arrow"></span></button>
-			</form>
-		</div> <!-- /.newsletter-signup -->
+
 
 		<!-- Widget -->
 		<div class="widget facebook">
@@ -51,7 +44,7 @@
 			</div> <!-- /.content -->
 		</div> <!-- /.widget -->
 
-		<?php dynamic_sidebar('Sidebar 1') ?>
+		<?php dynamic_sidebar('Right Sidebar') ?>
 		
 		<!-- Widget -->
 		<div class="widget trending">

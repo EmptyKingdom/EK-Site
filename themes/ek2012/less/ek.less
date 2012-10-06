@@ -2,7 +2,7 @@
 
 /* BOOTSTRAP OVERRIDES */
 body {
-	margin: @grid 0;
+	margin: @grid 0 0 0;
 	line-height: @baseFontSize+6;
 }
 
@@ -18,7 +18,7 @@ a:hover, a:active {
 .btn {
 	.border-radius(0px) !important;
 	border: none;
-	color: #FFF;
+	color: #FFF !important;
 	text-transform: uppercase;
 	font-family: @sansSerifAltFamily;
 	font-size: 11px;
@@ -70,6 +70,15 @@ input {
 	}
 }
 
+h4 {
+	font-family: @sansSerifFamily;
+	font-weight: normal;
+	strong {
+		color: @linkHighlight;
+		font-weight: @semiBold;
+	}
+}
+
 h5 {
 	font-family: @sansSerifFamily;
 	text-transform: uppercase;
@@ -101,7 +110,7 @@ h5 {
 	}
 }
 
-#utility-menu {
+.ek-social {
 	font-size: 0px;
 	overflow: hidden;
 	li {
@@ -554,7 +563,9 @@ ul#view-controls {
 		img {
 			clear: both;
 		}
-		h4 {
+		h3 {
+			font-size: 18px;
+			line-height: normal;
 			font-weight: 600;
 			margin: 0;
 		}
@@ -572,16 +583,91 @@ ul#view-controls {
 	}
 }
 
+#sidebar {
+	.widget {
+		background-color: whitesmoke;
+		padding: 0 @grid*3 @grid*2 @grid*3;
+		h4 {
+			background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
+			padding: 0 @grid*3.5;
+			color: #FFF;
+			text-transform: uppercase;
+			font-family: @sansSerifFamily;
+			font-size: @grid*2;
+			font-weight: 500;
+			height: @grid*4;
+			line-height: @grid*4.5;
+			margin: @grid*3 -@grid*3;
+			border-bottom: 1px solid #2AC8F8;
+		}
+		&.newsletter-signup {
+			background: #FFF;
+			border: none;
+			padding: 0px;
+			h4 {
+				font-size: @baseFontSize;
+				background: #FFF;
+				border: none;
+				margin-bottom: 0;
+			}
+		}
+		&.facebook {
+			.facebookOuter {
+				width: auto; 
+				height: auto;
+				overflow: hidden;
+			}
+			.fb-like-box, .fb-like-box span, .fb-like-box.fb_iframe_widget span iframe {
+			    border: none !important;
+			    margin: -1px !important;
+			    width: 101% !important;
+			}
+		}
+		&.widget_pinterest-pinboard-widget {
+			.row {
+				margin-bottom: @grid * 2;
+			}
+			.follow a {
+				font-size: 20px;
+				line-height: 20px;
+				.logo {
+					width: 85px;
+					height: 20px;
+					display: inline-block;
+					background: url(../img/slices/logo-pinterest.png) no-repeat right center;
+					vertical-align: -10%;
+				}
+			}
+		}
+		&.trending {
+			ul {
+				margin: 0;
+				li {
+					padding-bottom: @grid;
+				}
+			}
+		}
+		&.widget_text {
+			padding: 0;
+			background-color: #FFF;
+			.featured-archive {
+				background: none;
+				border: none;
+				font-weight: 600;
+				line-height: 18px;
+				height: 18px;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
 .newsletter-signup {
 	h4 {
 		text-transform: uppercase;
-		font-family: @sansSerifFamily;
 		font-weight: normal;
 		color: @textColor;
-		font-size: @baseFontSize;
-		strong {
-			color: @linkHighlight;
-		}
+		margin-bottom: 0;
 	}
 	input {
 		.transition(none) !important;
@@ -602,68 +688,40 @@ ul#view-controls {
 	}
 }
 
-.widget {
-	background-color: whitesmoke;
-	padding: 0 @grid*3 @grid*2 @grid*3;
+#footer {
+	background: #111;
+	font-size: 11px;
 	h4 {
-		background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
-		padding: 0 @grid*3.5;
-		color: #FFF;
-		text-transform: uppercase;
-		font-family: @sansSerifFamily;
-		font-size: @grid*2;
-		font-weight: 500;
-		height: @grid*4;
-		line-height: @grid*4.5;
-		margin: @grid*3 -@grid*3;
-		border-bottom: 1px solid #2AC8F8;
+		margin: 18px 0;
+		color: @lightGray;
 	}
-	&.facebook {
-		.facebookOuter {
-			width: auto; 
-			height: auto;
-			overflow: hidden;
-		}
-		.fb-like-box, .fb-like-box span, .fb-like-box.fb_iframe_widget span iframe {
-		    border: none !important;
-		    margin: -1px !important;
-		    width: 101% !important;
-		}
+	a, a:link {
+		color: @textColor;
 	}
-	&.widget_pinterest-pinboard-widget {
-		.row {
-			margin-bottom: @grid * 2;
-		}
-		.follow a {
-			font-size: 20px;
-			line-height: 20px;
-			.logo {
-				width: 85px;
-				height: 20px;
-				display: inline-block;
-				background: url(../img/slices/logo-pinterest.png) no-repeat right center;
-				vertical-align: -10%;
+	.widget {
+		margin-bottom: 45px;
+		&.newsletter-signup {
+			h4 {
+				text-align: justify;
+			}
+			input {
+				background: @darkGray;
+				border-bottom: 2px solid @linkHighlight !important;
+				display: block;
+				margin: @grid*2 0;
 			}
 		}
-	}
-	&.trending {
-		ul {
-			margin: 0;
+		&.ek-social {
 			li {
-				padding-bottom: @grid;
+				margin-left: 0;
+				margin-right: @grid;
 			}
 		}
-	}
-	&.widget_text {
-		padding: 0;
-		background-color: #FFF;
-		.featured-archive {
-			background: none;
-			border: none;
-			font-weight: 600;
-			line-height: 18px;
-			height: 18px;
-			font-size: 18px;
+		&.featured-post {
+			p {
+				font-size: @baseFontSize;
+				margin: @grid*2 0;
+			}
 		}
 	}
 }
