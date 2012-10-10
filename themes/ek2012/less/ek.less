@@ -609,6 +609,7 @@ ul#view-controls {
 				background: #FFF;
 				border: none;
 				margin-bottom: 0;
+				color: @textColor;
 			}
 		}
 		&.facebook {
@@ -675,16 +676,24 @@ ul#view-controls {
 		&[type=text] {
 			background-color: whitesmoke;
 		}
+		width: 61%;
 	}
 	button {
 		height: @grid*4;
 		padding: @grid;
-		.arrow {
-			background: url(../img/slices/arrow-right-white.png) no-repeat right top;
-			display: inline-block;
-			height: @grid*2;
-			width: @grid*3;
+		font-family: @sansSerifFamily;
+		font-size: 15px;
+		text-transform: none;
+		font-weight: normal;
+		line-height: normal;
+		background-image: url(../img/slices/arrow-right-white.png) !important;
+		background-repeat: no-repeat !important;
+		background-position: 90% center !important;
+		text-align: left;
+		&:hover {
+			background: @linkHighlight url(../img/slices/arrow-right-white.png) no-repeat right top !important;
 		}
+		width: 35%;
 	}
 }
 
@@ -705,13 +714,13 @@ ul#view-controls {
 		margin-bottom: 45px;
 		&.newsletter-signup {
 			h4 {
-				text-align: justify;
 			}
 			input {
 				background: @darkGray;
 				border-bottom: 2px solid @linkHighlight !important;
 				display: block;
 				margin: @grid*2 0;
+				width: 63%;
 			}
 		}
 		&.ek-social {
