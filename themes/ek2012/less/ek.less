@@ -226,14 +226,14 @@ h5.category {
 	}
 }
 
-.illustration {
+.illustration-art {
 	h5.category {
 		background: url(../img/slices/category-illustration.png) no-repeat;
 	}
 	.btn {
-		background: @illustrationColor;
+		background: @illustrationartColor;
 		&:hover {
-			color: @illustrationColor;
+			color: @illustrationartColor;
 		}
 	}
 }
@@ -472,19 +472,19 @@ ul#view-controls {
 	a {
 		color: @midGray;
 	}
-	.illustration {
+	.illustration-art {
 		h5 {
-			color: @illustrationColor;
+			color: @illustrationartColor;
 		}
 		a:hover, a:active {
-			color: @illustrationColor;
+			color: @illustrationartColor;
 		}
 		.selected {
 			a { 
-				color: @illustrationColor;
+				color: @illustrationartColor;
 			}
 			.check {
-				background-color: @illustrationColor;
+				background-color: @illustrationartColor;
 			}
 		}
 	}
@@ -547,25 +547,42 @@ ul#view-controls {
 
 #post-list {
 	&.grid {
-		margin-right: -30px;
-		.span4 {
-			margin-right: 30px;
-			.transition(e('.4s ease width'));
+		.row {
+			margin-bottom: 45px;
+			height: 450px;
+			.span4 {
+				.transition(e('.4s ease width'));
+				.thumbnail {
+					overflow: hidden;
+					max-height: 190px;
+				}
+			}
 		}
 	}
 	&.list {
-		margin-left: 0;
-		.span4 {
-			width: 100%;
-			margin-right: 0;
-			.transition(e('.4s ease width, 0s ease margin-right .4s'));
+		.row {
+			margin-left: 0;
+			.span4 {
+				width: 100%;
+				margin-left: 0;
+				margin-bottom: 45px;
+				.transition(e('.4s ease width'));
+				.thumbnail {
+					max-height:none;
+				}
+			}
 		}
 	}
 	.span4 {
-		margin-left: 0px;
+		.thumbnail {
+			clear: both;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 	.post {
-		margin-bottom: @grid*4;
 		.author, .date {
 			float: left;
 			font-size: 11px;
@@ -595,8 +612,26 @@ ul#view-controls {
 			margin-bottom: 0;
 			padding: @grid*2 0;
 			border-top: 2px dotted @lightGray;
+			img {
+				display: none;
+			}
 		}
 	}
+}
+
+.prev {
+	h4 {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	a {
+		color: @linkHighlight;
+	}
+}
+
+.next {
+	.prev;
+	text-align: right;
 }
 
 #sidebar {

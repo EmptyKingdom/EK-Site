@@ -1,15 +1,31 @@
 <?php get_header(); ?>
-<?php get_template_part('/partials/home', 'carousel') ?>
+<?php if (is_home() && !is_paged()) : ?>
+	<?php get_template_part('/partials/home', 'carousel') ?>
+<?php endif; ?>
 <div class="row">
 	<div class="span8" id="main">
 		<?php get_template_part('/partials/view-controls') ?>
 		<div id="post-list" class="grid">
 			<?php if (have_posts()) : ?>
+				<div class="row">
 				<?php while (have_posts()) : the_post(); ?>
 					<?php get_template_part('/partials/loop', 'post') ?>
+					<?php if ($wp_query->current_post+1 != $wp_query->post_count && ($wp_query->current_post+1) % 2 == 0) : ?>
+				</div>
+				<div class="row">
+					<?php endif; ?>
 				<?php endwhile; ?>
+				</div>
 			<?php endif; ?>
 		</div> <!-- /#post-list -->
+		<div class="row">
+			<div class="prev span4">
+				<h4><?php previous_posts_link('&laquo; Previous') ?></h4>
+			</div>
+			<div class="next span4">
+				<h4><?php next_posts_link('Next &raquo;') ?></h4>
+			</div>
+		</div>
 	</div> <!-- /#main -->
 	<div class="span4" id="sidebar">
 		<!-- Ad slot -->

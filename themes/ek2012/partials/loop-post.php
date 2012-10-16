@@ -1,9 +1,16 @@
-<div class="post illustration span4">
-	<h3>Post title on Empty Kingdom</h3>
-	<p class="author">by lorem ipsum</p>
-	<p class="date">10.02.2012</p>
-	<img src="http://www.dummyimag.es/770x395/000/fff.png&text=Post">
-	<h5 class="category">Illustration & Art</h5>
-	<p class="excerpt">Goñi Montes is definitely one of my favorite illustrators of all time. His creativity is endless and at this rate, it is likely that the amount of times we feature him on EK will be too. He was first featured back in April 2010 and was back for an interview on March 24th, 2011.</p>
-	<a class="btn">View More...</a>
+<?php $categories = get_the_category() ?>
+<?php foreach($categories as $category) : ?>
+	<?php if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'event', 'interview'))) : ?>
+		<?php $the_category = $category;
+		break; ?>		
+	<?php endif; ?>
+<?php endforeach; ?>
+<div class="post <?php echo $the_category->slug ?> span4">
+	<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+	<p class="author">by <?php the_author() ?></p>
+	<p class="date"><?php the_time(get_option('date_format')) ?></p>
+	<div class="thumbnail"><?php the_post_thumbnail() ?></div>
+	<h5 class="category"><?php echo $the_category->name ?></h5>
+	<div class="excerpt"><?php the_excerpt() ?></div>
+	<a class="btn" href="<?php the_permalink() ?>">View More...</a>
 </div>
