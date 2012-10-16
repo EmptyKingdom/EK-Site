@@ -146,16 +146,27 @@ h5 {
 	position: relative;	
 	input {
 		display: inline-block;
-		height: @grid * 2;
 		width: 0px;
-		padding: @grid/2;
+		height: 11px;
+		padding-top: 7px;
+		padding-bottom: 6px;
 		padding-left: @grid*2;
 		background: url(../img/icon-search.png) @grid/2 @grid/2 no-repeat;
+		background-color: #FFF;
 		position: absolute;
 		cursor: pointer;
-		border: @grid/4 solid #FFF;
 		right: 0;
 		outline: none;
+		border: none;
+		font-size: 11px;
+		font-family: @sansSerifFamily;
+		.transition(.4s ease-in-out all);
+		color: @linkHighlight;
+		&.expanded {
+			width: 150px;
+			background-color: @paleGray;
+			padding-left: @grid*3;
+		}
 	}
 }
 #main-nav {

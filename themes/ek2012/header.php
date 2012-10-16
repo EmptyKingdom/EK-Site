@@ -33,7 +33,7 @@
 					</ul>
 					<div id="basic-search">
 						<form action="<?php echo site_url('/') ?>">
-							<input type="text" name="s" style="width: 0px;">
+							<input type="text" name="s" value="Search your Empty Kingdom">
 						</form>
 					</div>
 				</div> <!-- /span4 -->
