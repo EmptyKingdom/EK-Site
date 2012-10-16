@@ -33,8 +33,8 @@ h5.category{font-family:'Myriad Pro',sans-serif;text-transform:uppercase;font-si
 .event .btn{background:#894e93;}.event .btn:hover{color:#894e93;}
 .interview h5.category{background:url(../img/slices/category-interview.png) no-repeat;}
 .interview .btn{background:#00b8eb;}.interview .btn:hover{color:#00b8eb;}
-#feature .carousel{padding-top:16px;display:none;}#feature .carousel.active{display:block;}
-.carousel-control{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background-color:#00b8ec;opacity:1 !important;color:#FFF !important;width:24px;height:52px;font-weight:normal !important;line-height:52px;top:45%;z-index:3;}.carousel-control.left{left:-12px;}
+#feature .carousel{margin-top:16px;display:none;}#feature .carousel.active{display:block;}
+.carousel-control{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background-color:#00b8ec;opacity:1 !important;color:#FFF !important;width:24px;height:52px;font-weight:normal !important;line-height:52px;top:50%;margin-top:-26px;z-index:3;}.carousel-control.left{left:-12px;}
 .carousel-control.right{left:auto;right:-12px;}
 .carousel.carousel-fade .item{-webkit-transition:0.7s ease-in-out opacity;-moz-transition:0.7s ease-in-out opacity;-ms-transition:0.7s ease-in-out opacity;-o-transition:0.7s ease-in-out opacity;transition:0.7s ease-in-out opacity;left:0 !important;}
 .carousel.carousel-fade .next.left,.carousel.carousel-fade .prev.right{opacity:1;z-index:1;}
