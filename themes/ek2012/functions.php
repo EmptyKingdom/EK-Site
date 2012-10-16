@@ -1,6 +1,8 @@
 <?php 
 
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size('770', '395', true);
 
 register_nav_menu('main-menu', 'Main Menu');
 register_nav_menu('quick-links-footer', 'Footer Quick Links');
