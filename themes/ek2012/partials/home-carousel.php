@@ -5,7 +5,7 @@ if (function_exists('ot_get_option')) :
 	<div class="span8">
 	<?php
 	foreach ($carousels as $i => &$carousel) :
-		if ($carousel['type'] == 'slides' && $carousel['carousel'])
+		if ($carousel['type'] == 'slide_collection' && $carousel['slide_collection'])
 		{
 			$carousel['slides'] = new WP_Query(array(
 				'post_type' => 'slide',
@@ -24,7 +24,6 @@ if (function_exists('ot_get_option')) :
 		{
 			$carousel['slides'] = new WP_Query(array(
 				'post_type' => $carousel['post_type'],
-				'c
 				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : -1,
 			));
 		}
