@@ -139,3 +139,91 @@ function ek_admin_head()
 	</script>
 	<?php
 }
+
+/**
+ * Activate Add-ons
+ * Here you can enter your activation codes to unlock Add-ons to use in your theme. 
+ * Since all activation codes are multi-site licenses, you are allowed to include your key in premium themes. 
+ * Use the commented out code to update the database with your activation code. 
+ * You may place this code inside an IF statement that only runs on theme activation.
+ */ 
+ 
+// if(!get_option('acf_repeater_ac')) update_option('acf_repeater_ac', "xxxx-xxxx-xxxx-xxxx");
+// if(!get_option('acf_options_page_ac')) update_option('acf_options_page_ac', "xxxx-xxxx-xxxx-xxxx");
+// if(!get_option('acf_flexible_content_ac')) update_option('acf_flexible_content_ac', "xxxx-xxxx-xxxx-xxxx");
+// if(!get_option('acf_gallery_ac')) update_option('acf_gallery_ac', "xxxx-xxxx-xxxx-xxxx");
+
+
+/**
+ * Register field groups
+ * The register_field_group function accepts 1 array which holds the relevant data to register a field group
+ * You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
+ * This code must run every time the functions.php file is read
+ */
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => '507ef43c5fb19',
+		'title' => 'Slides',
+		'fields' => 
+		array (
+			0 => 
+			array (
+				'key' => 'field_507dfe64a3359',
+				'label' => 'Post to feature',
+				'name' => 'featured_post',
+				'type' => 'relationship',
+				'instructions' => 'Optionally choose a post to feature in this slide. You can leave the slide title, content, link, and featured image blank to use the selected post\'s title, content, link, and image. If you enter a value for any of those fields, they will override the selected post\'s value when the slide is displayed in the carousel.',
+				'required' => '0',
+				'post_type' => 
+				array (
+					0 => 'post',
+				),
+				'taxonomy' => 
+				array (
+					0 => 'all',
+				),
+				'max' => '1',
+				'order_no' => '0',
+			),
+			1 => 
+			array (
+				'key' => 'field_507e0220d8eed',
+				'label' => 'Link',
+				'name' => 'link',
+				'type' => 'text',
+				'instructions' => 'Optionally enter a URL that the title of this slide will be linked to.
+	
+	If left blank, and a featured post is selected for this slide, the title will be linked to the post. If no post is selected, then the title will not be linked.',
+				'required' => '0',
+				'default_value' => '',
+				'formatting' => 'none',
+				'order_no' => '1',
+			),
+		),
+		'location' => 
+		array (
+			'rules' => 
+			array (
+				0 => 
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'slide',
+					'order_no' => '0',
+				),
+			),
+			'allorany' => 'all',
+		),
+		'options' => 
+		array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => 
+			array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
