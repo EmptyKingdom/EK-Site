@@ -89,7 +89,7 @@ if (function_exists('ot_get_option')) :
 						<?php if ($featured_post) : ?>
 						<h5 class="category"><?php echo ek_get_cat($featured_post[0], 'name'); ?></h5>
 						<?php endif; ?>
-						<h3><?php echo get_the_title() != '' ? get_the_title() : $featured_post->post_title; ?></h3>
+						<h3><?php echo get_the_title() != '' ? get_the_title() : $featured_post[0]->post_title; ?></h3>
 						<?php if ($featured_post) : ?>
 						<p class="postmeta"><?php echo get_the_time(get_option('date_format'), $featured_post[0]) ?> by  <?php echo get_the_author($featured_post[0]); ?></p>
 						<p><?php echo wp_trim_words($featured_post[0]->post_content) ?></p>
