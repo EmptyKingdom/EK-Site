@@ -179,6 +179,8 @@ if(function_exists("register_field_group"))
 				'post_type' => 
 				array (
 					0 => 'post',
+					1 => 'event',
+					2 => 'cause',
 				),
 				'taxonomy' => 
 				array (
