@@ -16,15 +16,18 @@ if (function_exists('ot_get_option')) :
 						'terms' => $carousel['slide_collection'],
 					)
 				),
-				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : -1,
+				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : 10,
 				'order' => 'asc',
 			));
 		} 
+		
 		else if ($carousel['type'] == 'recent_posts')
 		{
 			$carousel['slides'] = new WP_Query(array(
 				'post_type' => $carousel['post_type'],
-				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : -1,
+				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : 10,
+				'cat' => $carousel['category'] ? $carousel['category'] : '',
+				'tag_id' => $carousel['tag'] ? $carousel['tag'] : '',
 			));
 		}
 		
@@ -84,7 +87,9 @@ if (function_exists('ot_get_option')) :
 				<?php if ($carousel['slides']->have_posts()) : ?>
 				<ul class="unstyled">
 					<?php while($carousel['slides']->have_posts()) : $carousel['slides']->the_post(); ?>
-					<?php $featured_post = get_field('featured_post'); ?>
+					<?php 
+					global $post;
+					$featured_post = ($carousel['type'] == 'slides') ? get_field('featured_post') : array($post); ?>
 					<li class="<?php echo $carousel['slides']->current_post == 0 ? 'active' : '' ?> <?php echo $featured_post ? ek_get_cat($featured_post[0], 'slug') : '' ?>" id="slide-<?php the_id() ?>">
 						<?php if ($featured_post) : ?>
 						<h5 class="category"><?php echo ek_get_cat($featured_post[0], 'name'); ?></h5>
@@ -94,7 +99,7 @@ if (function_exists('ot_get_option')) :
 						<p class="postmeta"><?php echo get_the_time(get_option('date_format'), $featured_post[0]) ?> by  <?php echo get_the_author($featured_post[0]); ?></p>
 						<p><?php echo wp_trim_words($featured_post[0]->post_content) ?></p>
 						<?php else: ?>
-						<?php the_content() ?>
+						<?php echo $carousel['type'] == 'slides' ? get_the_content() : '<p>'.get_the_excerpt().'</p>'; ?>
 						<?php endif; ?>
 						<a class="btn" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More...</a>
 					</li>
