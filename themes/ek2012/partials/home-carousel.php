@@ -89,7 +89,7 @@ if (function_exists('ot_get_option')) :
 					<?php while($carousel['slides']->have_posts()) : $carousel['slides']->the_post(); ?>
 					<?php 
 					global $post;
-					$featured_post = ($carousel['type'] == 'slides') ? get_field('featured_post') : array($post); ?>
+					$featured_post = ($carousel['type'] == 'slide_collection') ? get_field('featured_post') : array($post); ?>
 					<li class="<?php echo $carousel['slides']->current_post == 0 ? 'active' : '' ?> <?php echo $featured_post ? ek_get_cat($featured_post[0], 'slug') : '' ?>" id="slide-<?php the_id() ?>">
 						<?php if ($featured_post) : ?>
 						<h5 class="category"><?php echo ek_get_cat($featured_post[0], 'name'); ?></h5>
@@ -99,7 +99,7 @@ if (function_exists('ot_get_option')) :
 						<p class="postmeta"><?php echo get_the_time(get_option('date_format'), $featured_post[0]) ?> by  <?php echo get_the_author($featured_post[0]); ?></p>
 						<p><?php echo wp_trim_words($featured_post[0]->post_content) ?></p>
 						<?php else: ?>
-						<?php echo $carousel['type'] == 'slides' ? get_the_content() : '<p>'.get_the_excerpt().'</p>'; ?>
+						<?php echo $carousel['type'] == 'slide_collection' ? get_the_content() : '<p>'.get_the_excerpt().'</p>'; ?>
 						<?php endif; ?>
 						<a class="btn" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More...</a>
 					</li>
