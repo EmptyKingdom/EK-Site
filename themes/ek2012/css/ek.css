@@ -95,7 +95,8 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 #sidebar .widget.facebook .fb-like-box,#sidebar .widget.facebook .fb-like-box span,#sidebar .widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}
 #sidebar .widget.widget_ek-pinterest-widget .row{margin-bottom:16px;}
 #sidebar .widget.widget_ek-pinterest-widget .follow a{font-size:20px;line-height:20px;}#sidebar .widget.widget_ek-pinterest-widget .follow a .logo{width:85px;height:20px;display:inline-block;background:url(../img/slices/logo-pinterest.png) no-repeat right center;vertical-align:-10%;}
-#sidebar .widget.widget_ek-random-articles ul{margin:0;}#sidebar .widget.widget_ek-random-articles ul li{padding-bottom:8px;}
+#sidebar .widget.ek-random-articles ul{margin:0;}#sidebar .widget.ek-random-articles ul li{padding-bottom:8px;}#sidebar .widget.ek-random-articles ul li h3{margin-bottom:8px;}
+#sidebar .widget.ek-random-articles ul li .thumbnail{margin-bottom:16px;}
 #sidebar .widget.widget_text{padding:0;background-color:#FFF;}#sidebar .widget.widget_text .featured-archive{background:none;border:none;font-weight:600;line-height:18px;height:18px;font-size:18px;}
 .newsletter-signup h4{text-transform:uppercase;font-weight:normal;color:#898989;margin-bottom:0;}
 .newsletter-signup input{-webkit-transition:none !important;-moz-transition:none !important;-ms-transition:none !important;-o-transition:none !important;transition:none !important;border:none !important;width:61%;}.newsletter-signup input[type=text]{background-color:whitesmoke;}
