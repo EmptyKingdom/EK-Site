@@ -6,17 +6,7 @@
 	<div class="span8" id="main">
 		<?php get_template_part('/partials/view-controls') ?>
 		<div id="post-list" class="grid">
-			<?php if (have_posts()) : ?>
-				<div class="row">
-				<?php while (have_posts()) : the_post(); ?>
-					<?php get_template_part('/partials/loop', 'post') ?>
-					<?php if ($wp_query->current_post+1 != $wp_query->post_count && ($wp_query->current_post+1) % 2 == 0) : ?>
-				</div>
-				<div class="row">
-					<?php endif; ?>
-				<?php endwhile; ?>
-				</div>
-			<?php endif; ?>
+			<?php get_template_part('/partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
 		<div class="row">
 			<div class="prev span4">
@@ -32,9 +22,6 @@
 		<div id="ad-slot-1">
 			<img src="http://www.dummyimag.es/300x250/000/fff.png&text=300x250%20AD%20UNIT">
 		</div> <!-- /#ad-slot-1 -->
-
-
-
 		<!-- Widget -->
 		<div class="widget facebook">
 			<div id="fb-root"></div>

@@ -109,6 +109,22 @@ add_filter( 'ot_theme_mode', '__return_true' );
 include_once( 'option-tree/ot-loader.php' );
 include_once('theme-options.php');
 
+// filter cats
+add_action('wp_ajax_ek_filter_cats', 'ek_load_filtered_cats');
+add_action('wp_ajax_nopriv_ek_filter_cats', 'ek_load_filtered_cats');
+function ek_load_filtered_cats() 
+{
+	$query = $_POST['orig_query'] ?: array();
+	$query['post_status'] = 'publish'; // otherwise wp thinks we're in the admin and shows all post statuses
+	if ( ! empty($_POST['categories']))
+	{
+		$query['category__in'] = $_POST['categories'];
+	}
+	query_posts($query);
+	get_template_part('/partials/posts', 'listing');
+	die();
+}
+
 add_action('admin_head', 'ek_admin_head');
 function ek_admin_head()
 {
