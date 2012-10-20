@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="span8" id="main">
 		<?php get_template_part('/partials/view-controls') ?>
-		<div id="post-list" class="grid">
+		<div id="post-list" class="post-list grid">
 			<?php get_template_part('/partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
 		<div class="row">
@@ -25,23 +25,6 @@
 
 		<?php dynamic_sidebar('Right Sidebar') ?>
 		
-		<!-- Widget -->
-		<div class="widget trending">
-			<h4>Trending Articles on EK</h4>
-			<ul class="unstyled">
-				<li><img src="http://www.dummyimag.es/770x395/999/fff.png&text=322x165"></li>
-				<li><img src="http://www.dummyimag.es/770x395/999/fff.png&text=322x165"></li>
-				<li><img src="http://www.dummyimag.es/770x395/999/fff.png&text=322x165"></li>
-				<li><img src="http://www.dummyimag.es/770x395/999/fff.png&text=322x165"></li>
-				<li><img src="http://www.dummyimag.es/770x395/999/fff.png&text=322x165"></li>
-				<li><img src="http://www.dummyimag.es/770x395/999/fff.png&text=322x165"></li>
-			</ul> <!-- /.content -->
-		</div> <!-- /.widget -->
-		
-		<div class="widget widget_text">
-			<h4 class="featured-archive"><a href="" class="arrow-right">EK Featured Article Archive</a></h4>
-		</div>
-
 	</div> <!-- /#sidebar -->
 </div> <!-- /.row -->
 <?php get_footer(); ?>
