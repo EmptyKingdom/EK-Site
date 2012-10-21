@@ -40,6 +40,9 @@
 						<?php dynamic_sidebar('Footer Right') ?>
 					</div> <!-- /.span4 -->
 				</div> <!-- /.row -->
+				<div id="ad-slot-2">
+					<img src="http://dummyimag.es/728x90/fff/111&text=728+x+90+AD+UNIT">
+				</div> <!-- /#ad-slot-1 -->
 
 			</div> <!-- /.container -->
 		</div> <!-- /#footer -->
