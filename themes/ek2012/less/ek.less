@@ -124,6 +124,10 @@ h5 {
 			background: url(../img/bg-utility-menu-icons.png) no-repeat;
 			height: @grid*3;
 			width: @grid*3;
+			.transition(.3s ease-in-out all);
+			&:hover {
+				background-position-y: -24px;
+			}
 		}
 		&.vimeo {
 			background-position: 0px 0px;
