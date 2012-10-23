@@ -24,8 +24,8 @@ get_header(); ?>
 				<p class="author"><?php the_author(); ?></p>
 				<p class="date"><?php the_time(get_option('date_format')) ?></p>
 				<p class="posts-nav">
-					<a class="prev" href="javascript:void(0)"></a>
-					<a class="next" href="javascript:void(0)"></a>
+					<a class="prev" href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>"></a>
+					<a class="next" href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"></a>
 				</p>
 			</div> <!-- /.meta -->
 			<div class="featured-image"><?php the_post_thumbnail('full') ?></div>

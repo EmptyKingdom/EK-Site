@@ -111,7 +111,7 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
 #footer #ad-slot-2{width:728px;height:90px;margin:24px auto;}
 body.single{font-size:16px;line-height:24px;}body.single h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
-body.single .meta{position:relative;margin-bottom:11px;}body.single .meta p{height:13px;margin:0;}
+body.single .meta{position:relative;margin-bottom:11px;font-size:13px;line-height:normal;}body.single .meta p{height:13px;margin:0;}
 body.single .meta .author{float:left;}
 body.single .meta .date{float:right;margin-right:32px;}
 body.single .meta .posts-nav{position:absolute;right:0;width:23px;height:13px;}body.single .meta .posts-nav a{display:block;position:absolute;height:13px;width:8px;background-repeat:no-repeat;}body.single .meta .posts-nav a.prev{left:0;background-image:url(../img/posts-nav-prev-off.png);}body.single .meta .posts-nav a.prev:hover,body.single .meta .posts-nav a.prev:active{background-image:url(../img/posts-nav-prev-on.png);}
