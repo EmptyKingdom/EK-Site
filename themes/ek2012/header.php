@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/theme.js"></script>
 		<?php wp_head(); ?>
 	</head>
-	<body>
+	<body <?php body_class() ?>>
 		<div class="container">
 			<div id="masthead" class="row">
 				<div class="span8 main">

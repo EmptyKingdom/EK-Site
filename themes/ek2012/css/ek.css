@@ -12,13 +12,14 @@ h5{font-family:'Myriad Pro',sans-serif;text-transform:uppercase;font-size:11px;}
 #masthead{position:relative;}#masthead .side{text-align:right;}
 #masthead h1#logo{display:inline;}#masthead h1#logo img{margin:20px 0 0 0;}
 #masthead h2#tagline{font-size:12px;font-family:'Myriad Pro',sans-serif;color:#898989;font-weight:normal;position:absolute;line-height:normal;display:inline;bottom:0;margin:0;}
+#utility-menu{margin-bottom:0;height:24px;}
 .ek-social{font-size:0px;overflow:hidden;}.ek-social li{font-size:13px;display:inline-block;margin:0 0 0 8px;line-height:24px;}.ek-social li.icon{text-indent:10000px;background:url(../img/bg-utility-menu-icons.png) no-repeat;height:24px;width:24px;-webkit-transition:0.3s ease-in-out all;-moz-transition:0.3s ease-in-out all;-ms-transition:0.3s ease-in-out all;-o-transition:0.3s ease-in-out all;transition:0.3s ease-in-out all;}.ek-social li.icon:hover{background-position-y:-24px;}
 .ek-social li.vimeo{background-position:0px 0px;}
 .ek-social li.pinterest{background-position:-32px 0px;}
 .ek-social li.facebook{background-position:-64px 0px;}
 .ek-social li.twitter{background-position:-96px 0px;}
 .ek-social li span{vertical-align:-30%;}
-#basic-search{position:relative;}#basic-search input{display:inline-block;width:0px;height:11px;padding-top:7px;padding-bottom:6px;padding-left:16px;background:url(../img/icon-search.png) 4px 4px no-repeat;background-color:#FFF;position:absolute;cursor:pointer;right:0;outline:none;border:none;font-size:11px;font-family:'Myriad Pro',sans-serif;-webkit-transition:0.4s ease-in-out all;-moz-transition:0.4s ease-in-out all;-ms-transition:0.4s ease-in-out all;-o-transition:0.4s ease-in-out all;transition:0.4s ease-in-out all;color:#00b8ec;}#basic-search input.expanded{width:150px;background-color:#e5e5e5;padding-left:24px;}
+#basic-search{position:relative;height:28px;}#basic-search input{display:inline-block;width:0px;height:11px;padding-top:7px;padding-bottom:6px;padding-left:16px;background:url(../img/icon-search.png) 4px 4px no-repeat;background-color:#FFF;position:absolute;cursor:pointer;right:0;outline:none;border:none;font-size:11px;font-family:'Myriad Pro',sans-serif;-webkit-transition:0.4s ease-in-out all;-moz-transition:0.4s ease-in-out all;-ms-transition:0.4s ease-in-out all;-o-transition:0.4s ease-in-out all;transition:0.4s ease-in-out all;color:#00b8ec;}#basic-search input.expanded{width:182px;background-color:#e5e5e5;padding-left:24px;}
 #main-nav{margin-bottom:24px;}#main-nav #main-menu-container{display:table;margin-top:40px;border-spacing:4px 0;margin-left:-4px;width:100.8%;}#main-nav #main-menu-container #main-menu{display:table-row;}#main-nav #main-menu-container #main-menu li{display:table-cell;text-align:center;border-bottom:4px solid #333333;vertical-align:bottom;padding:0 0 8px 0;text-transform:uppercase;font-size:11px;font-weight:bold;line-height:0;}#main-nav #main-menu-container #main-menu li:hover{border-bottom-color:#00b8ec;cursor:pointer;}#main-nav #main-menu-container #main-menu li:hover a{color:#00b8ec !important;}
 h5.category{font-family:'Myriad Pro',sans-serif;text-transform:uppercase;font-size:11px;background:url(../img/slices/sprites.png) no-repeat;height:11px;padding-top:2px;line-height:13px;padding-left:17px;margin:16px 0;vertical-align:90%;}
 .photography h5.category{background:url(../img/slices/category-photography.png) no-repeat;}
@@ -109,3 +110,25 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
 #footer #ad-slot-2{width:728px;height:90px;margin:24px auto;}
+body.single h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
+body.single .meta{position:relative;margin-bottom:11px;}body.single .meta p{height:13px;margin:0;}
+body.single .meta .author{float:left;}
+body.single .meta .date{float:right;margin-right:32px;}
+body.single .meta .posts-nav{position:absolute;right:0;width:23px;height:13px;}body.single .meta .posts-nav a{display:block;position:absolute;height:13px;width:8px;background-repeat:no-repeat;}body.single .meta .posts-nav a.prev{left:0;background-image:url(../img/posts-nav-prev-off.png);}body.single .meta .posts-nav a.prev:hover,body.single .meta .posts-nav a.prev:active{background-image:url(../img/posts-nav-prev-on.png);}
+body.single .meta .posts-nav a.next{right:0;background-image:url(../img/posts-nav-next-off.png);}body.single .meta .posts-nav a.next:hover,body.single .meta .posts-nav a.next:active{background-image:url(../img/posts-nav-next-on.png);}
+body.single .sub-img{height:44px;line-height:44px;}body.single .sub-img h5.category{float:left;}
+body.single .sub-img .heart{float:right;margin:12px 0;height:21px;line-height:21px;padding-left:25px;text-transform:uppercase;font-weight:600;background:url(../img/heart-add.png) no-repeat;}
+body.single .post-share{border-top:2px dotted #cccccc;border-bottom:2px dotted #cccccc;height:37px;}body.single .post-share li{display:inline;padding-right:24px;font-size:10px;text-transform:uppercase;font-weight:600;line-height:37px;}body.single .post-share li a{color:#333333;}
+body.single .post-share li:before{content:'';display:inline-block;position:relative;height:12px;width:12px;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;margin-right:4px;top:2px;}
+body.single .post-share li.facebook:before{background-color:#2e89ce;}
+body.single .post-share li.facebook a:hover{color:#2e89ce !important;}
+body.single .post-share li.twitter:before{background-color:#16caf4;}
+body.single .post-share li.twitter a:hover{color:#16caf4 !important;}
+body.single .post-share li.stumbleupon:before{background-color:#29e273;}
+body.single .post-share li.stumbleupon a:hover{color:#29e273 !important;}
+body.single .post-share li.pinterest:before{background-color:#d84b1e;}
+body.single .post-share li.pinterest a:hover{color:#d84b1e !important;}
+body.single .post-share li.email:before{background-color:#333333;}
+body.single .post-share li.email a:hover{color:#333333 !important;}
+body.single .post-share li.permalink:before{background-color:#b2b2b2;}
+body.single .post-share li.permalink a:hover{color:#b2b2b2 !important;}
