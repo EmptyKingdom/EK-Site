@@ -90,7 +90,7 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 .prev a{color:#00b8ec;}
 .next{text-align:right;}.next h4{text-transform:uppercase;font-weight:bold;}
 .next a{color:#00b8ec;}
-#sidebar .widget{background-color:whitesmoke;padding:0 24px 16px 24px;}#sidebar .widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px -24px;border-bottom:1px solid #2AC8F8;}
+#sidebar .widget{background-color:whitesmoke;padding:0 24px 16px 24px;border-bottom:4px solid #00b8ec;}#sidebar .widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px -24px;border-bottom:1px solid #2AC8F8;}
 #sidebar .widget.newsletter-signup{background:#FFF;border:none;padding:0px;}#sidebar .widget.newsletter-signup h4{font-size:13px;background:#FFF;border:none;margin-bottom:0;color:#898989;}
 #sidebar .widget.facebook .facebookOuter{width:auto;height:auto;overflow:hidden;}
 #sidebar .widget.facebook .fb-like-box,#sidebar .widget.facebook .fb-like-box span,#sidebar .widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}
@@ -110,7 +110,7 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
 #footer #ad-slot-2{width:728px;height:90px;margin:24px auto;}
-body.single h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
+body.single{font-size:16px;line-height:24px;}body.single h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
 body.single .meta{position:relative;margin-bottom:11px;}body.single .meta p{height:13px;margin:0;}
 body.single .meta .author{float:left;}
 body.single .meta .date{float:right;margin-right:32px;}
