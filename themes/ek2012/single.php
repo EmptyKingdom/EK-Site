@@ -31,7 +31,7 @@ get_header(); ?>
 			<div class="featured-image"><?php the_post_thumbnail('full') ?></div>
 			<div class="sub-img clearfix">
 				<h5 class="category"><?php echo $category->name ?></h5>
-				<p class="heart"><a href="javascript:void(0)">Add</a></p>
+<!-- 				<p class="heart"><a href="javascript:void(0)">Add</a></p> -->
 			</div> <!-- /.category -->
 			<ul class="post-share unstyled">
 				<li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
