@@ -118,10 +118,11 @@ $(document).ready(function(){
 					}).spin($clicked.parent().get(0));
 					$.post(ajaxurl, {
 						action: 'ek_load_posts',
-						categories: [$slider.data('cats')],
-						base_query: {
+						nonce: $slider.data('nonce'),
+						query: {
 							posts_per_page: 3,
-							paged: $slider.data('max_page')+1
+							paged: $slider.data('max_page')+1,
+							category__in: [$slider.data('cats')]
 						}
 					}, function(result){
 						spinner.stop();
@@ -130,8 +131,9 @@ $(document).ready(function(){
 							'left': '-='+slideDistance
 						});
 						$slider.append($(result).find('.span4').width(relatedArtistPostWidth));
-						$slider.data('max_page', $slider.data('max_page')+1)
-						$slider.data('cur_page', $slider.data('cur_page')+1)
+						$slider.data('max_page', $slider.data('max_page')+1);
+						$slider.data('cur_page', $slider.data('cur_page')+1);
+						$slider.data('nonce', $(result).filter('#nonce').text());
 						$clicked.prev('.prev').css('visibility', 'visible');
 					})
 				} else {

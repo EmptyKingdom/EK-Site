@@ -114,19 +114,19 @@ add_action('wp_ajax_ek_load_posts', 'ek_load_posts');
 add_action('wp_ajax_nopriv_ek_load_posts', 'ek_load_posts');
 function ek_load_posts() 
 {
-	$query = $_POST['base_query'] ?: array();
-	$query['post_status'] = 'publish'; // otherwise wp thinks we're in the admin and shows all post statuses
-	if ( ! empty($_POST['categories']))
+	if (check_ajax_referer(__FUNCTION__,'nonce'))
 	{
-		$query['category__in'] = $_POST['categories'];
+		$query = $_POST['query'] ?: array();
+		$query['post_status'] = 'publish'; // otherwise wp thinks we're in the admin and shows all post statuses
+		query_posts($query);
+		get_template_part('/partials/posts', 'listing');
+		echo '<div id="nonce">'.wp_create_nonce(__FUNCTION__).'</div>';
 	}
-	query_posts($query);
-	get_template_part('/partials/posts', 'listing');
 	die();
 }
 
-add_action('admin_head', 'ek_admin_head');
-function ek_admin_head()
+add_action('admin_footer', 'ek_admin_footer');
+function ek_admin_footer()
 {
 	?>
 	<script type="text/javascript">
@@ -134,21 +134,23 @@ function ek_admin_head()
 		var carouselTypeSelects = function(){
 			$('.carousel-type').each(function(i, el) {
 				if ($(el).val() == 'slide_collection') {
-					$(el).closest('.option-tree-setting-body').find('.slide-collection').closest('.format-settings').show();
-					$(el).closest('.option-tree-setting-body').find('.carousel-post-type, .carousel-category, .carousel-tag').each(function(i, e){
+					$(el).closest('.format-settings').siblings().find('.slide-collection').closest('.format-settings').show();
+					$(el).closest('.format-settings').siblings().find('.carousel-post-type, .carousel-category, .carousel-tag').each(function(i, e){
 						$(e).closest('.format-settings').hide();
 					})
 				} else {
-					$(el).closest('.option-tree-setting-body').find('.slide-collection').closest('.format-settings').hide();
-					$(el).closest('.option-tree-setting-body').find('.carousel-post-type, .carousel-category, .carousel-tag').each(function(i, e){
+					$(el).closest('.format-settings').siblings().find('.slide-collection').closest('.format-settings').hide();
+					$(el).closest('.format-settings').siblings().find('.carousel-post-type, .carousel-category, .carousel-tag').each(function(i, e){
 						$(e).closest('.format-settings').show();
 					})
 				}
 			})
 		}
 		if (pagenow == 'appearance_page_ot-theme-options') {
-			carouselTypeSelects();
-			$('.carousel-type').change(carouselTypeSelects)
+			setInterval(carouselTypeSelects, 500);
+			$('#option-tree-settings-api').on({
+				change: carouselTypeSelects,
+			}, '.carousel-type')
 		}
 	})		
 				

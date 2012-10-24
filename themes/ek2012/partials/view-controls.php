@@ -3,7 +3,7 @@
 			<li id="list-view"><a href="javascript:void(0)" data-action="listView">List View</a></li>
 			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters">Filter By Category</a></li>
 		</ul> <!-- /#view-controls -->
-		<div id="cat-filters" class="well clearfix">
+		<div id="cat-filters" class="well clearfix" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
 			<a id="close-cat-filters" href="javascript:void(0)"></a>
 			<h3>Select specific categories you want to view.</h3>
 			<div class="row">
@@ -69,9 +69,9 @@
 					}).spin($(this).parent().get(0));
 					$('#post-list').load(ajaxurl, {
 						action: 'ek_load_posts',
-						categories: cats,
-						base_query: <?php echo json_encode($wp_query->query) ?>
-					}, function(){
+						nonce: $('#cat-filters'.data('nonce')),
+						query: $.extend(<?php echo json_encode($wp_query->query) ?>, {category__in: cats});
+					}, function(result){
 						// after content loads:
 						spinner.stop();
 						
@@ -90,6 +90,7 @@
 						if ($('#wpadminbar').length) {
 							scrollTo -= $('#wpadminbar').outerHeight();
 						}
+						$('#cat-filters').data('nonce', $(result).filter('#nonce').text());
 						$('html, body').animate({
 							scrollTop: scrollTo
 						}, 200);

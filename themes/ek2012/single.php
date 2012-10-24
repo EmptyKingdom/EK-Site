@@ -34,7 +34,7 @@ get_header(); ?>
 			</div> <!-- /.meta -->
 			<div class="featured-image"><?php the_post_thumbnail('full') ?></div>
 			<div class="sub-img clearfix">
-				<h5 class="category"><?php echo $category->name ?></h5>
+				<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
 <!-- 				<p class="heart"><a href="javascript:void(0)">Add</a></p> -->
 			</div> <!-- /.category -->
 			<?php get_template_part('/partials/post', 'share') ?>
@@ -52,9 +52,9 @@ get_header(); ?>
 					<a class="next" href="javascript:void(0)">more posts</a>
 				</span>
 			</h2>
-			<div class="post-list row" data-cats="<?php echo $category->term_id ?>" data-cur_page="1" data-max_page="1">
-			<?php global $wp_query; $wp_query = $related_artists; 
-			while (have_posts()) : the_post();
+			<div class="post-list row" data-cats="<?php echo $category->term_id ?>" data-cur_page="1" data-max_page="1" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
+			<?php 
+			while ($related_artists->have_posts()) : $related_artists->the_post();
 			get_template_part('/partials/loop', 'post');
 			endwhile;
 			?>
