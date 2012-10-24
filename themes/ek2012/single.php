@@ -13,6 +13,10 @@ function ek_hide_featured_image_from_content(){
 add_action('wp_head', 'ek_hide_featured_image_from_content');
 global $post;
 $category = ek_get_cat($post);
+$related_artists = new WP_Query(array(
+	'category__in' => $category->term_id,
+	'posts_per_page' => 3,
+));
 get_header(); ?>
 <div class="row">
 	<div class="span8" id="main">
@@ -21,8 +25,8 @@ get_header(); ?>
 		<?php while(have_posts()) : the_post(); ?>
 			<h1><?php the_title(); ?></h1>
 			<div class="meta clearfix">
-				<p class="author"><?php the_author(); ?></p>
-				<p class="date"><?php the_time(get_option('date_format')) ?></p>
+				<p class="author">by <?php the_author(); ?></p>
+				<p class="date">Published on <?php the_time(get_option('date_format')) ?></p>
 				<p class="posts-nav">
 					<a class="prev" href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>"></a>
 					<a class="next" href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"></a>
@@ -33,19 +37,31 @@ get_header(); ?>
 				<h5 class="category"><?php echo $category->name ?></h5>
 <!-- 				<p class="heart"><a href="javascript:void(0)">Add</a></p> -->
 			</div> <!-- /.category -->
-			<ul class="post-share unstyled">
-				<li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
-				<li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
-				<li class="stumbleupon"><a href="javascript:void(0)">StumbleUpon</a></li>
-				<li class="pinterest"><a href="javascript:void(0)">Pinterest</a></li>
-				<li class="email"><a href="javascript:void(0)">Email</a></li>
-				<li class="permalink"><a href="javascript:void(0)">Permalink</a></li>
-			</ul> <!-- /.post-share.unstyled -->
+			<?php get_template_part('/partials/post', 'share') ?>
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div> <!-- /.post-content -->
+			<?php get_template_part('/partials/post', 'share') ?>
 		<?php endwhile; // have_posts() ?>
 		</div> <!-- /.post-full -->
+		<div id="related-artists">
+			<h2>
+				Artists You Might Also Like
+				<span class="more-posts">
+					<a class="prev" href="javascript:void(0)">prev posts</a>
+					<a class="next" href="javascript:void(0)">more posts</a>
+				</span>
+			</h2>
+			<div class="post-list row" data-cats="<?php echo $category->term_id ?>" data-cur_page="1" data-max_page="1">
+			<?php global $wp_query; $wp_query = $related_artists; 
+			while (have_posts()) : the_post();
+			get_template_part('/partials/loop', 'post');
+			endwhile;
+			?>
+			</div>
+		</div>
+	<?php else : // have_posts() ?>
+		<p>Post not found.</p>
 	<?php endif; // have_posts() ?>
 	</div> <!-- /#main -->
 	<div class="span4" id="sidebar">

@@ -1,3 +1,4 @@
+.btn-arrow-left{background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;}
 body{margin:8px 0 0 0;line-height:19px;}
 a,a:visited{color:#333333;}
 a:hover,a:active{color:#00b8ec;text-decoration:none;}
@@ -101,7 +102,7 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 #sidebar .widget.widget_text{padding:0;background-color:#FFF;}#sidebar .widget.widget_text .featured-archive{background:none;border:none;font-weight:600;line-height:18px;height:18px;font-size:18px;}
 .newsletter-signup h4{text-transform:uppercase;font-weight:normal;color:#898989;margin-bottom:0;}
 .newsletter-signup input{-webkit-transition:none !important;-moz-transition:none !important;-ms-transition:none !important;-o-transition:none !important;transition:none !important;border:none !important;width:61%;}.newsletter-signup input[type=text]{background-color:whitesmoke;}
-.newsletter-signup button{height:32px;padding:8px;font-family:'Myriad Pro',sans-serif;font-size:15px;text-transform:none;font-weight:normal;line-height:normal;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;text-align:left;width:35%;}.newsletter-signup button:hover{background-color:#00b8ec !important;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;color:#FFF !important;}
+.newsletter-signup button{height:32px;padding:8px;font-family:'Myriad Pro',sans-serif;font-size:15px;text-transform:none;font-weight:normal;line-height:normal;text-align:left;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;width:35%;}.newsletter-signup button:hover{background-color:#00b8ec !important;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;color:#ffffff !important;}
 #footer{background:#111;font-size:11px;}#footer h4{margin:18px 0;color:#cccccc;}
 #footer a,#footer a:link{color:#898989;}
 #footer a:hover,#footer a:active{color:#00b8ec;}
@@ -132,3 +133,11 @@ body.single .post-share li.email:before{background-color:#333333;}
 body.single .post-share li.email a:hover{color:#333333 !important;}
 body.single .post-share li.permalink:before{background-color:#b2b2b2;}
 body.single .post-share li.permalink a:hover{color:#b2b2b2 !important;}
+body.single #related-artists{position:relative;overflow:hidden;margin-bottom:30px;}body.single #related-artists h2{position:relative;background:#000000 url(../img/slices/star-blue-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px 0;overflow:hidden;}body.single #related-artists h2 .more-posts{position:absolute;right:0px;display:inline-block;line-height:34px;height:34px;}body.single #related-artists h2 .more-posts a{text-transform:none;color:#FFF;font-weight:normal;display:inline-block;font-size:12px;background-size:6px 12px;position:relative;top:-1px;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;}body.single #related-artists h2 .more-posts a:hover{background-color:#00b8ec !important;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;color:#ffffff !important;}
+body.single #related-artists h2 .more-posts a.prev{visibility:hidden;padding-left:28px;padding-right:16px;background-image:url(../img/slices/arrow-left-white.png) !important;background-position-x:10% !important;margin-left:16px;}
+body.single #related-artists h2 .more-posts a.next{padding-right:28px;padding-left:16px;}
+body.single #related-artists .span4{width:29.5%;}body.single #related-artists .span4 .excerpt{display:none;}
+body.single #related-artists .span4 .category{display:none;}
+body.single #related-artists .span4 .btn{display:none;}
+body.single #related-artists .post-list{position:relative;left:0px;-webkit-transition:0.2s ease-in-out left;-moz-transition:0.2s ease-in-out left;-ms-transition:0.2s ease-in-out left;-o-transition:0.2s ease-in-out left;transition:0.2s ease-in-out left;}
+body.single #sidebar{padding-top:68px;}

@@ -110,11 +110,11 @@ include_once( 'option-tree/ot-loader.php' );
 include_once('theme-options.php');
 
 // filter cats
-add_action('wp_ajax_ek_filter_cats', 'ek_load_filtered_cats');
-add_action('wp_ajax_nopriv_ek_filter_cats', 'ek_load_filtered_cats');
-function ek_load_filtered_cats() 
+add_action('wp_ajax_ek_load_posts', 'ek_load_posts');
+add_action('wp_ajax_nopriv_ek_load_posts', 'ek_load_posts');
+function ek_load_posts() 
 {
-	$query = $_POST['orig_query'] ?: array();
+	$query = $_POST['base_query'] ?: array();
 	$query['post_status'] = 'publish'; // otherwise wp thinks we're in the admin and shows all post statuses
 	if ( ! empty($_POST['categories']))
 	{

@@ -17,6 +17,21 @@
 @interviewColor: #00b8eb;
 @semiBold: 600;
 
+
+.btn-arrow-left {
+	background-image: url(../img/slices/arrow-right-white.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: 90% center !important;
+}
+
+.btn-arrow-left-hover(@textcolor: #FFF, @bgcolor: @linkHighlight) {
+	background-color: @bgcolor !important;
+	background-image: url(../img/slices/arrow-right-white.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: 90% center !important;
+	color: @textcolor !important;
+}
+
 .border-radius (@radius: @grid * .5) {
     border-radius: @radius;
     -webkit-border-radius: @radius;

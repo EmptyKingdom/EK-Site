@@ -13,6 +13,9 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/theme.js"></script>
+		<script type="text/javascript">
+			ajaxurl = '<?php echo admin_url('admin-ajax.php') ?>'
+		</script>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class() ?>>

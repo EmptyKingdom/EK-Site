@@ -761,16 +761,10 @@ ul#view-controls {
 		text-transform: none;
 		font-weight: normal;
 		line-height: normal;
-		background-image: url(../img/slices/arrow-right-white.png) !important;
-		background-repeat: no-repeat !important;
-		background-position: 90% center !important;
 		text-align: left;
+		.btn-arrow-left;
 		&:hover {
-			background-color: @linkHighlight !important;
-			background-image: url(../img/slices/arrow-right-white.png) !important;
-			background-repeat: no-repeat !important;
-			background-position: 90% center !important;
-			color: #FFF !important;
+			.btn-arrow-left-hover;
 		}
 		width: 35%;
 	}
@@ -965,5 +959,77 @@ body.single {
 				}
 			}
 		}
+	}
+	#related-artists {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 30px;
+		h2 {
+			position: relative;
+			background: #000 url(../img/slices/star-blue-hdr.png) no-repeat @grid center;
+			padding: 0 @grid*3.5;
+			color: #FFF;
+			text-transform: uppercase;
+			font-family: @sansSerifFamily;
+			font-size: @grid*2;
+			font-weight: 500;
+			height: @grid*4;
+			line-height: @grid*4.5;
+			margin: @grid*3 0;
+			overflow: hidden;
+			.more-posts {
+				position: absolute;
+				right: 0px;
+				display: inline-block;
+				line-height: @grid*4 + 2;
+				height: @grid*4 + 2;
+				a {
+					text-transform: none;
+					color: #FFF;
+					font-weight: normal;
+					display: inline-block;
+					font-size: 12px;
+					background-size: 6px 12px;
+					position: relative;
+					top: -1px;
+					.btn-arrow-left;
+					&:hover {
+						.btn-arrow-left-hover;
+					}
+					&.prev {
+						visibility: hidden;
+						padding-left: 28px;
+						padding-right: 16px;
+						background-image: url(../img/slices/arrow-left-white.png) !important;
+						background-position-x: 10% !important;
+						margin-left: 16px;
+					}
+					&.next {
+						padding-right: 28px;
+						padding-left: 16px;
+					}
+				}
+			}
+		}
+		.span4 {
+			width: 29.5%;
+			.excerpt {
+				display: none;
+			}
+			.category {
+				display: none;
+			}
+			.btn {
+				display: none;
+			}
+		}
+		.post-list {
+			position: relative;
+			left: 0px;
+			.transition(.2s ease-in-out left);
+		}
+	}
+	#sidebar {
+		padding-top: 68px;
 	}
 }

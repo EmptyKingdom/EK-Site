@@ -67,10 +67,10 @@
 						speed: 1.0,
 						left: -10
 					}).spin($(this).parent().get(0));
-					$('#post-list').load('<?php echo admin_url('admin-ajax.php') ?>', {
-						action: 'ek_filter_cats',
+					$('#post-list').load(ajaxurl, {
+						action: 'ek_load_posts',
 						categories: cats,
-						orig_query: <?php echo json_encode($wp_query->query) ?>
+						base_query: <?php echo json_encode($wp_query->query) ?>
 					}, function(){
 						// after content loads:
 						spinner.stop();
