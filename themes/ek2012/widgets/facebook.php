@@ -1,6 +1,6 @@
 <?php
 /**
- * Newsletter Signup Widget Class
+ * Facebook Widget Class
  */
 class EK_Widget_Facebook extends WP_Widget {
  
