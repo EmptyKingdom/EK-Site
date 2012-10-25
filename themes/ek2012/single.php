@@ -60,6 +60,7 @@ get_header(); ?>
 			?>
 			</div>
 		</div>
+		<p><?php the_tags(); ?></p>
 	<?php else : // have_posts() ?>
 		<p>Post not found.</p>
 	<?php endif; // have_posts() ?>
