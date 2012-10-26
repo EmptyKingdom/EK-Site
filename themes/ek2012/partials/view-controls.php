@@ -69,8 +69,8 @@
 					}).spin($(this).parent().get(0));
 					$('#post-list').load(ajaxurl, {
 						action: 'ek_load_posts',
-						nonce: $('#cat-filters'.data('nonce')),
-						query: $.extend(<?php echo json_encode($wp_query->query) ?>, {category__in: cats});
+						nonce: $('#cat-filters').data('nonce'),
+						query: $.extend({}, <?php echo json_encode($wp_query->query) ?>, {category__in: cats})
 					}, function(result){
 						// after content loads:
 						spinner.stop();
@@ -85,7 +85,7 @@
 						// close the filters box
 						$('#close-cat-filters').trigger('click');
 						
-						// 
+						// scroll to top of view controls
 						var scrollTo = $('#view-controls').offset().top-10;
 						if ($('#wpadminbar').length) {
 							scrollTo -= $('#wpadminbar').outerHeight();

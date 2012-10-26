@@ -78,7 +78,7 @@ function ek_get_cat($post, $property = false)
 	$categories = get_the_category($post->ID);
 	foreach($categories as $category)
 	{
-		if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'event', 'interview'))) 
+		if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum'))) 
 		{
 			$the_category = $category;
 			break;
@@ -114,7 +114,7 @@ add_action('wp_ajax_ek_load_posts', 'ek_load_posts');
 add_action('wp_ajax_nopriv_ek_load_posts', 'ek_load_posts');
 function ek_load_posts() 
 {
-	if (check_ajax_referer(__FUNCTION__,'nonce'))
+	if (check_ajax_referer(__FUNCTION__,'nonce', false))
 	{
 		$query = $_POST['query'] ?: array();
 		$query['post_status'] = 'publish'; // otherwise wp thinks we're in the admin and shows all post statuses
@@ -122,7 +122,10 @@ function ek_load_posts()
 		get_template_part('/partials/posts', 'listing');
 		echo '<div id="nonce">'.wp_create_nonce(__FUNCTION__).'</div>';
 	}
-	die();
+	else
+	{
+		die('No posts found.');
+	}
 }
 
 add_action('admin_footer', 'ek_admin_footer');
