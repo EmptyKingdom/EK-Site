@@ -120,12 +120,14 @@ function ek_load_posts()
 		$query['post_status'] = 'publish'; // otherwise wp thinks we're in the admin and shows all post statuses
 		query_posts($query);
 		get_template_part('/partials/posts', 'listing');
-		echo '<div id="nonce">'.wp_create_nonce(__FUNCTION__).'</div>';
+		echo '<div id="nonce" style="display: none">'.wp_create_nonce(__FUNCTION__).'</div>';
 	}
 	else
 	{
 		die('No posts found.');
 	}
+	
+	die();
 }
 
 add_action('admin_footer', 'ek_admin_footer');
