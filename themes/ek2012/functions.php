@@ -73,15 +73,22 @@ function ek_register_stuff() {
 add_action('init', 'ek_register_stuff');
 
 /* get ek main category */
-function ek_get_cat($post, $property = false)
+function ek_get_cat($post = false, $property = false)
 {
-	$categories = get_the_category($post->ID);
-	foreach($categories as $category)
+	if (is_category())
 	{
-		if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum'))) 
+		$the_category = get_queried_object();
+	}
+	else 
+	{
+		$categories = get_the_category($post->ID);
+		foreach($categories as $category)
 		{
-			$the_category = $category;
-			break;
+			if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum'))) 
+			{
+				$the_category = $category;
+				break;
+			}
 		}
 	}
 	if ( ! $the_category)

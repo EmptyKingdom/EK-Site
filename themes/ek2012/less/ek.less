@@ -200,7 +200,7 @@ h5 {
 			    font-size: 11px;
 			    font-weight: bold;
 			    line-height: 0;
-			    &:hover {
+			    &:hover, &.current-menu-item  {
 				    border-bottom-color: @linkHighlight;
 				    cursor: pointer;
 				    a {
@@ -645,9 +645,11 @@ ul#view-controls {
 	}
 }
 
-.next {
-	.prev;
-	text-align: right;
+#featured {
+	.next {
+		.prev;
+		text-align: right;
+	}	
 }
 
 #sidebar {

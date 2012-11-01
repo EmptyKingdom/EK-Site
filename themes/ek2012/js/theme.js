@@ -15,7 +15,7 @@ $(document).ready(function(){
 	}, 'input')
 	
 	$('#feature .carousel').carousel({
-		interval: 20000
+		interval: 5000
 	}).on({
 		slide: function(e){
 			// e.relatedTarget slide coming in, but it's broken when the first slide is the one coming in
@@ -36,6 +36,8 @@ $(document).ready(function(){
 			$indicators.eq(index).addClass('active');
 		}
 	});
+	
+/* 	$('#category-carousel .carousel').carousel({interval: 5000}); */
 	
 	$('.carousel-indicator').on({
 		click: function(e) {
