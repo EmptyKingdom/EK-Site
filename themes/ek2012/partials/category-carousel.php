@@ -42,27 +42,31 @@ if (function_exists('ot_get_option')) :
 		<div id="category-carousel" class="carousel carousel-component slide carousel-fade <?php echo ek_get_cat($post, 'slug') ?>">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
-				<?php while ($carousel['slides']->have_posts()) : $carousel['slides']->the_post(); $featured_post = get_field('featured_post'); ?>
+				<?php while ($carousel['slides']->have_posts()) : $carousel['slides']->the_post(); 
+				$featured_post = get_field('featured_post');
+				$featured_post = $featured_post ? $featured_post[0] : $carousel['type'] == 'recent_posts' ? $post : false; ?>
 				<div class="<?php echo $carousel['slides']->current_post == 0 ? 'active' : '' ?> item" data-description="#slide-<?php the_id() ?>">
-					<h3><?php echo get_the_title() != '' ? get_the_title() : $featured_post[0]->post_title; ?></h3>
-					<p class="postmeta"><?php echo get_the_time(get_option('date_format'), $featured_post[0]) ?> by  <?php echo get_the_author($featured_post[0]); ?></p>
-					<?php 
+					<h3><?php echo get_the_title() != '' ? get_the_title() : $featured_post->post_title; ?></h3>
+					<div class="postmeta clearfix">
+						<p class="author">by <?php the_author() ?></p>
+						<p class="date"><?php the_time(get_option('date_format')) ?></p>
+					</div> <!-- /.postmeta -->
+					<div class="img"><?php 
 					if (has_post_thumbnail()) : 
 						the_post_thumbnail(); 
 					elseif ($featured_post) :
-						echo get_the_post_thumbnail($featured_post[0]->ID, 'post-thumbnail'); 
+						echo get_the_post_thumbnail($featured_post->ID, 'post-thumbnail'); 
 					endif; 
 					?>
+					</div> <!-- /.img -->
 					<div class="caption">
 						<?php if ($featured_post) : ?>
-						<h5 class="category"><?php echo ek_get_cat($featured_post[0], 'name'); ?></h5>
-						<?php endif; ?>
-						<?php if ($featured_post) : ?>
-						<p><?php echo wp_trim_words($featured_post[0]->post_content) ?></p>
+						<h5 class="category"><?php echo ek_get_cat($featured_post, 'name'); ?></h5>
+						<p><?php echo wp_trim_words($featured_post->post_content) ?></p>
 						<?php else: ?>
-						<?php echo $carousel['type'] == 'slide_collection' ? get_the_content() : '<p>'.get_the_excerpt().'</p>'; ?>
+						<?php echo $carousel['type'] == 'slide_collection' ? '<p>'.get_the_content().'</p>' : ''; ?>
 						<?php endif; ?>
-						<a class="btn" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More...</a>
+						<a class="btn" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post) ?>">View More...</a>
 					</div> <!-- /.caption -->
 				</div> <!-- /.item -->
 				<?php endwhile; // slide loop ?>

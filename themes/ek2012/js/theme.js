@@ -1,4 +1,15 @@
 $(document).ready(function(){
+
+	updateCarouselIndicator = function(e){
+		var $this = $(this);
+		var index = $this.find('.item.active').index();
+		var $indicators = $this.find('.carousel-indicator li');
+		
+		// update the blue square indicator
+		$indicators.removeClass('active');
+		$indicators.eq(index).addClass('active');
+	}
+
 	$('#basic-search').on({
 		focus: function(){
 			$(this).addClass('expanded');
@@ -26,16 +37,9 @@ $(document).ready(function(){
 			$descriptionEl.siblings().removeClass('active');
 			$descriptionEl.addClass('active');
 		}, 
-		slid: function(e){
-			var $this = $(this);
-			var index = $this.find('.item.active').index();
-			var $indicators = $this.find('.carousel-indicator li');
-			
-			// update the blue square indicator
-			$indicators.removeClass('active');
-			$indicators.eq(index).addClass('active');
-		}
+		slid: updateCarouselIndicator
 	});
+	
 	
 /* 	$('#category-carousel .carousel').carousel({interval: 5000}); */
 	
@@ -46,6 +50,10 @@ $(document).ready(function(){
 			$indicator.parents('.carousel').carousel(index);
 		}
 	}, 'a');
+	
+	$('#category-carousel').carousel({interval: 20000}).on({
+		slid: updateCarouselIndicator
+	});
 	
 	$('ul#carousel-section-nav > li').on({
 		click: function(e){
