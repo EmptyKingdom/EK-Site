@@ -45,7 +45,9 @@ class EK_Widget_Random_Articles extends WP_Widget {
 			<?php endwhile; ?>
 		</ul> <!-- /.content -->
 		<?php 
-		echo $after_widget; 
+		echo $after_widget; ?>
+		<h4 class="featured-archive"><a href="" class="arrow-right">EK Featured Article Archive</a></h4>
+		<?php
 	}
  
     /** @see WP_Widget::update -- do not rename this */
@@ -60,7 +62,7 @@ class EK_Widget_Random_Articles extends WP_Widget {
     function form($instance) 
     {
 		/* Set up some default widget settings. */
-		$defaults = array( 'title' => 'Trending Articles');
+		$defaults = array( 'title' => 'Random Articles on EK');
 		$instance = wp_parse_args( (array) $instance, $defaults );
         $title 		= esc_attr($instance['title']);
         $num_posts 		= $instance['num_posts'] ?: 10;
