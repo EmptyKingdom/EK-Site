@@ -29,8 +29,8 @@ class EK_Widget_NewsletterSignup extends WP_Widget {
 			echo $before_title . $instance['title'] . $after_title;		
 		} 
 		?>
-			<form class="form-inline input-append">
-				<input type="text" name="newsletter-signup">
+			<form class="form-inline input-append" method="post" target="_blank" action="http://emptykingdom.us2.list-manage1.com/subscribe/post?u=3f08bc9297322c689bc33d40e&amp;id=e079112528">
+				<input type="text" name="EMAIL">
 				<button class="btn btn-inverse" type="submit">Subscribe<span class="arrow"></span></button>
 			</form>
 
