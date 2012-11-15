@@ -121,32 +121,32 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
 #footer #ad-slot-2{width:728px;height:90px;margin:24px auto;}
-body.single{font-size:16px;line-height:24px;}body.single h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
-body.single .meta{position:relative;margin-bottom:11px;font-size:13px;line-height:normal;}body.single .meta p{height:13px;margin:0;}
-body.single .meta .author{float:left;}
-body.single .meta .date{float:right;margin-right:32px;}
-body.single .meta .posts-nav{position:absolute;right:0;width:23px;height:13px;}body.single .meta .posts-nav a{display:block;position:absolute;height:13px;width:8px;background-repeat:no-repeat;}body.single .meta .posts-nav a.prev{left:0;background-image:url(../img/posts-nav-prev-off.png);}body.single .meta .posts-nav a.prev:hover,body.single .meta .posts-nav a.prev:active{background-image:url(../img/posts-nav-prev-on.png);}
-body.single .meta .posts-nav a.next{right:0;background-image:url(../img/posts-nav-next-off.png);}body.single .meta .posts-nav a.next:hover,body.single .meta .posts-nav a.next:active{background-image:url(../img/posts-nav-next-on.png);}
-body.single .sub-img{height:44px;line-height:44px;}body.single .sub-img h5.category{float:left;}
-body.single .sub-img .heart{float:right;margin:12px 0;height:21px;line-height:21px;padding-left:25px;text-transform:uppercase;font-weight:600;background:url(../img/heart-add.png) no-repeat;}
-body.single .post-share{border-top:2px dotted #cccccc;border-bottom:2px dotted #cccccc;height:37px;}body.single .post-share li{display:inline;padding-right:24px;font-size:10px;text-transform:uppercase;font-weight:600;line-height:37px;}body.single .post-share li a{color:#333333;}
-body.single .post-share li:before{content:'';display:inline-block;position:relative;height:12px;width:12px;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;margin-right:4px;top:2px;}
-body.single .post-share li.facebook:before{background-color:#2e89ce;}
-body.single .post-share li.facebook a:hover{color:#2e89ce !important;}
-body.single .post-share li.twitter:before{background-color:#16caf4;}
-body.single .post-share li.twitter a:hover{color:#16caf4 !important;}
-body.single .post-share li.stumbleupon:before{background-color:#29e273;}
-body.single .post-share li.stumbleupon a:hover{color:#29e273 !important;}
-body.single .post-share li.pinterest:before{background-color:#d84b1e;}
-body.single .post-share li.pinterest a:hover{color:#d84b1e !important;}
-body.single .post-share li.email:before{background-color:#333333;}
-body.single .post-share li.email a:hover{color:#333333 !important;}
-body.single .post-share li.permalink:before{background-color:#b2b2b2;}
-body.single .post-share li.permalink a:hover{color:#b2b2b2 !important;}
-body.single #related-artists{position:relative;overflow:hidden;margin-bottom:30px;}body.single #related-artists h2{position:relative;background:#000000 url(../img/slices/star-blue-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px 0;overflow:hidden;}body.single #related-artists h2 .more-posts{position:absolute;right:0px;display:inline-block;line-height:34px;height:34px;}body.single #related-artists h2 .more-posts a{text-transform:none;color:#FFF;font-weight:normal;display:inline-block;font-size:12px;background-size:6px 12px;position:relative;top:-1px;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;}body.single #related-artists h2 .more-posts a:hover{background-color:#00b8ec !important;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;color:#ffffff !important;}
-body.single #related-artists h2 .more-posts a.prev{visibility:hidden;padding-left:28px;padding-right:16px;background-image:url(../img/slices/arrow-left-white.png) !important;background-position-x:10% !important;margin-left:16px;}
-body.single #related-artists h2 .more-posts a.next{padding-right:28px;padding-left:16px;}
-body.single #related-artists .span4{width:29.5%;}body.single #related-artists .span4 .excerpt{display:none;}
-body.single #related-artists .span4 .category{display:none;}
-body.single #related-artists .span4 .btn{display:none;}
-body.single #related-artists .post-list{position:relative;left:0px;-webkit-transition:0.2s ease-in-out left;-moz-transition:0.2s ease-in-out left;-ms-transition:0.2s ease-in-out left;-o-transition:0.2s ease-in-out left;transition:0.2s ease-in-out left;}
+body.single,body.page{font-size:16px;line-height:24px;}body.single h1,body.page h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
+body.single .meta,body.page .meta{position:relative;margin-bottom:11px;font-size:13px;line-height:normal;}body.single .meta p,body.page .meta p{height:13px;margin:0;}
+body.single .meta .author,body.page .meta .author{float:left;}
+body.single .meta .date,body.page .meta .date{float:right;margin-right:32px;}
+body.single .meta .posts-nav,body.page .meta .posts-nav{position:absolute;right:0;width:23px;height:13px;}body.single .meta .posts-nav a,body.page .meta .posts-nav a{display:block;position:absolute;height:13px;width:8px;background-repeat:no-repeat;}body.single .meta .posts-nav a.prev,body.page .meta .posts-nav a.prev{left:0;background-image:url(../img/posts-nav-prev-off.png);}body.single .meta .posts-nav a.prev:hover,body.page .meta .posts-nav a.prev:hover,body.single .meta .posts-nav a.prev:active,body.page .meta .posts-nav a.prev:active{background-image:url(../img/posts-nav-prev-on.png);}
+body.single .meta .posts-nav a.next,body.page .meta .posts-nav a.next{right:0;background-image:url(../img/posts-nav-next-off.png);}body.single .meta .posts-nav a.next:hover,body.page .meta .posts-nav a.next:hover,body.single .meta .posts-nav a.next:active,body.page .meta .posts-nav a.next:active{background-image:url(../img/posts-nav-next-on.png);}
+body.single .sub-img,body.page .sub-img{height:44px;line-height:44px;}body.single .sub-img h5.category,body.page .sub-img h5.category{float:left;}
+body.single .sub-img .heart,body.page .sub-img .heart{float:right;margin:12px 0;height:21px;line-height:21px;padding-left:25px;text-transform:uppercase;font-weight:600;background:url(../img/heart-add.png) no-repeat;}
+body.single .post-share,body.page .post-share{border-top:2px dotted #cccccc;border-bottom:2px dotted #cccccc;height:37px;}body.single .post-share li,body.page .post-share li{display:inline;padding-right:24px;font-size:10px;text-transform:uppercase;font-weight:600;line-height:37px;}body.single .post-share li a,body.page .post-share li a{color:#333333;}
+body.single .post-share li:before,body.page .post-share li:before{content:'';display:inline-block;position:relative;height:12px;width:12px;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;margin-right:4px;top:2px;}
+body.single .post-share li.facebook:before,body.page .post-share li.facebook:before{background-color:#2e89ce;}
+body.single .post-share li.facebook a:hover,body.page .post-share li.facebook a:hover{color:#2e89ce !important;}
+body.single .post-share li.twitter:before,body.page .post-share li.twitter:before{background-color:#16caf4;}
+body.single .post-share li.twitter a:hover,body.page .post-share li.twitter a:hover{color:#16caf4 !important;}
+body.single .post-share li.stumbleupon:before,body.page .post-share li.stumbleupon:before{background-color:#29e273;}
+body.single .post-share li.stumbleupon a:hover,body.page .post-share li.stumbleupon a:hover{color:#29e273 !important;}
+body.single .post-share li.pinterest:before,body.page .post-share li.pinterest:before{background-color:#d84b1e;}
+body.single .post-share li.pinterest a:hover,body.page .post-share li.pinterest a:hover{color:#d84b1e !important;}
+body.single .post-share li.email:before,body.page .post-share li.email:before{background-color:#333333;}
+body.single .post-share li.email a:hover,body.page .post-share li.email a:hover{color:#333333 !important;}
+body.single .post-share li.permalink:before,body.page .post-share li.permalink:before{background-color:#b2b2b2;}
+body.single .post-share li.permalink a:hover,body.page .post-share li.permalink a:hover{color:#b2b2b2 !important;}
+body.single #related-artists,body.page #related-artists{position:relative;overflow:hidden;margin-bottom:30px;}body.single #related-artists h2,body.page #related-artists h2{position:relative;background:#000000 url(../img/slices/star-blue-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'Myriad Pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px 0;overflow:hidden;}body.single #related-artists h2 .more-posts,body.page #related-artists h2 .more-posts{position:absolute;right:0px;display:inline-block;line-height:34px;height:34px;}body.single #related-artists h2 .more-posts a,body.page #related-artists h2 .more-posts a{text-transform:none;color:#FFF;font-weight:normal;display:inline-block;font-size:12px;background-size:6px 12px;position:relative;top:-1px;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;}body.single #related-artists h2 .more-posts a:hover,body.page #related-artists h2 .more-posts a:hover{background-color:#00b8ec !important;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;color:#ffffff !important;}
+body.single #related-artists h2 .more-posts a.prev,body.page #related-artists h2 .more-posts a.prev{visibility:hidden;padding-left:28px;padding-right:16px;background-image:url(../img/slices/arrow-left-white.png) !important;background-position-x:10% !important;margin-left:16px;}
+body.single #related-artists h2 .more-posts a.next,body.page #related-artists h2 .more-posts a.next{padding-right:28px;padding-left:16px;}
+body.single #related-artists .span4,body.page #related-artists .span4{width:29.5%;}body.single #related-artists .span4 .excerpt,body.page #related-artists .span4 .excerpt{display:none;}
+body.single #related-artists .span4 .category,body.page #related-artists .span4 .category{display:none;}
+body.single #related-artists .span4 .btn,body.page #related-artists .span4 .btn{display:none;}
+body.single #related-artists .post-list,body.page #related-artists .post-list{position:relative;left:0px;-webkit-transition:0.2s ease-in-out left;-moz-transition:0.2s ease-in-out left;-ms-transition:0.2s ease-in-out left;-o-transition:0.2s ease-in-out left;transition:0.2s ease-in-out left;}
