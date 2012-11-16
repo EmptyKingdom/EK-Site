@@ -134,7 +134,7 @@ body.home ul#view-controls{margin:30px 0;}
 #footer a,#footer a:link{color:#898989;}
 #footer a:hover,#footer a:active{color:#00b8ec;}
 #footer .widget{margin-bottom:45px;}
-#footer .widget.newsletter-signup input{background:#333333;border-bottom:2px solid #00b8ec !important;display:block;margin:16px 0;width:63%;}
+#footer .widget.newsletter-signup input{background:#333333;border-bottom:2px solid #00b8ec !important;display:block;margin:16px 0;width:63%;color:#e5e5e5;}
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
 #footer #ad-slot-2{width:728px;height:90px;margin:24px auto;}
