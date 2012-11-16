@@ -154,6 +154,16 @@ $(document).ready(function(){
 			}
 		}
 	}, 'a.prev, a.next')
+	
+	$('ul.sub-menu').each(function(i, e){
+		var $this = $(this);
+		var $li = $this.parent();
+		$li.hover(function(){
+			$(this).addClass('active');
+		}, function(){
+			$(this).removeClass('active');
+		})
+	})
 
 })
 

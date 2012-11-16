@@ -42,12 +42,15 @@
 				</div> <!-- /span4 -->
 			</div> <!-- /masthead -->
 			<div id="main-nav" class="">
-				<?php wp_nav_menu(array(
+				<?php $main_menu = wp_nav_menu(array(
 					'theme_location' => 'main-menu',
 					'container_class' => '',
 					'container_id' => 'main-menu-container',
 					'menu_class' => '',
 					'menu_id' => 'main-menu',
 					'fallback_cb' => false,
-				)) ?>
+					'echo' => false,
+				));
+				echo str_replace('sub-menu', 'sub-menu unstyled', $main_menu)
+				?>
 			</div>

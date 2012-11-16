@@ -190,7 +190,7 @@ h5 {
 	    width: 100.8%;
 	    #main-menu {
 		    display: table-row;
-		    li {
+		    >li {
 			    display: table-cell;
 			    text-align: center;
 			    border-bottom: @grid/2 solid @linkColor;
@@ -200,11 +200,41 @@ h5 {
 			    font-size: 11px;
 			    font-weight: bold;
 			    line-height: 0;
+			    position: relative;
+			    >ul {
+			    	text-transform: lowercase;
+			    	font-weight: normal;
+				    position: absolute;
+				    left: -100000px;
+				    top: 100%;
+				    z-index: 10009;
+				    padding: 16px 8px;
+				    margin: 0 -4px;
+				    width: 100%;
+				    li {
+				    	position: relative;
+				    	margin: 0 -12px;
+				    	height: 22px;
+				    	line-height: 22px;
+				    	font-size: 12px;
+					    a:link, a:visited {
+						    color: #FFF !important;
+					    }
+					    &:hover {
+						    background-color: #333 !important;
+					    }
+				    }
+			    }
+			    &.active {
+				    >ul {
+					    left: 0px;
+				    }
+			    }
 			    &:hover, &.current-menu-item  {
 				    border-bottom-color: @linkHighlight;
 				    cursor: pointer;
 				    a {
-					    color: @linkHighlight !important;
+					    color: @linkHighlight;
 				    }
 			    }
 		    }
@@ -229,10 +259,16 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-photography.png) no-repeat;
 	}
-	.btn, .carousel-indicator li.active, .carousel-control {
+	.btn, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
 		background: @photographyColor !important;
 		&:hover {
 			color: @photographyColor;
+		}
+	}
+	&.menu-item.active, &.current-menu-item {
+		border-bottom-color: @photographyColor !important;
+		a, a:hover {
+			color: @photographyColor !important;
 		}
 	}
 }
@@ -241,10 +277,16 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-illustration.png) no-repeat;
 	}
-	.btn, .carousel-indicator li.active, .carousel-control {
+	.btn, .carousel-indicator li.active, .carousel-control, .sub-menu {
 		background: @illustrationartColor !important;
 		&:hover {
 			color: @illustrationartColor;
+		}
+	}
+	&.menu-item.active, &.current-menu-item {
+		border-bottom-color: @illustrationartColor !important;
+		a, a:hover {
+			color: @illustrationartColor !important;
 		}
 	}
 }
@@ -253,10 +295,16 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-film.png) no-repeat;
 	}
-	.btn, .carousel-indicator li.active, .carousel-control {
+	.btn, .carousel-indicator li.active, .carousel-control, .sub-menu {
 		background: @filmColor !important;
 		&:hover {
 			color: @filmColor;
+		}
+	}
+	&.menu-item.active, &.current-menu-item {
+		border-bottom-color: @filmColor !important;
+		a, a:hover {
+			color: @filmColor !important;
 		}
 	}
 }
@@ -265,10 +313,16 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-new-media.png) no-repeat;
 	}
-	.btn, .carousel-indicator li.active, .carousel-control {
+	.btn, .carousel-indicator li.active, .carousel-control, .sub-menu {
 		background: @newMediaColor !important;
 		&:hover {
 			color: @newMediaColor;
+		}
+	}
+	&.menu-item.active, &.current-menu-item {
+		border-bottom-color: @newMediaColor !important;
+		a, a:hover {
+			color: @newMediaColor !important;
 		}
 	}
 }
@@ -277,10 +331,16 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-event.png) no-repeat;
 	}
-	.btn, .carousel-indicator li.active, .carousel-control {
+	.btn, .carousel-indicator li.active, .carousel-control, .sub-menu {
 		background: @eventColor !important;
 		&:hover {
 			color: @eventColor;
+		}
+	}
+	&.menu-item.active, &.current-menu-item {
+		border-bottom-color: @eventColor !important;
+		a, a:hover {
+			color: @eventColor !important;
 		}
 	}
 }
@@ -289,10 +349,16 @@ h5.category {
 	h5.category,  {
 		background: url(../img/slices/category-interview.png) no-repeat;
 	}
-	.btn, .carousel-indicator li.active, .carousel-control {
+	.btn, .carousel-indicator li.active, .carousel-control, .sub-menu {
 		background: @interviewColor !important;
 		&:hover {
 			color: @interviewColor;
+		}
+	}
+	&.menu-item.active, &.current-menu-item {
+		border-bottom-color: @interviewColor !important;
+		a, a:hover {
+			color: @interviewColor !important;
 		}
 	}
 }
