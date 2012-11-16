@@ -2,7 +2,7 @@
 body{margin:8px 0 0 0;line-height:19px;}
 a,a:visited{color:#333333;}
 a:hover,a:active{color:#00b8ec;text-decoration:none;}
-.btn{border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-moz-background-clip:padding !important;-webkit-background-clip:padding-box !important;background-clip:padding-box !important;border:none;color:#FFF !important;text-transform:uppercase;font-family:'Arial',sans-serif;font-size:11px;line-height:8px;padding:8px 16px;background:#333333;-webkit-text-shadow:0px 0px 0px #ffffff;-moz-text-shadow:0px 0px 0px #ffffff;text-shadow:0px 0px 0px #ffffff;}.btn:hover{background:#e5e5e5 !important;color:#898989 !important;}
+.btn{border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-moz-background-clip:padding !important;-webkit-background-clip:padding-box !important;background-clip:padding-box !important;border:none;color:#FFF !important;text-transform:uppercase;font-family:'Arial',sans-serif;font-size:11px;line-height:8px;padding:8px 16px;background:#000;-webkit-text-shadow:0px 0px 0px #ffffff;-moz-text-shadow:0px 0px 0px #ffffff;text-shadow:0px 0px 0px #ffffff;}.btn:hover{background:#e5e5e5 !important;color:#898989 !important;}
 .btn.btn-primary{background:#00b8ec;}
 .btn.btn-inverse{background:#333333;}
 .arrow-right{padding-right:24px;background:url(../img/slices/arrow-right-blue.png) no-repeat right center;display:inline-block;height:14px;}
