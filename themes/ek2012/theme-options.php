@@ -56,7 +56,7 @@ This is the quickest way to set up a carousel that shows a stream of recent post
           array(
             'id'          => 'max_num',
             'label'       => 'Max # of items',
-            'desc'        => 'Enter the maximum number of items to show in this carousel.',
+            'desc'        => 'Enter the maximum number of items to show in this carousel (defaults to 5).',
             'std'         => '',
             'type'        => 'text',
             'rows'        => '',

@@ -16,7 +16,7 @@ if (function_exists('ot_get_option')) :
 						'terms' => $carousel['slide_collection'],
 					)
 				),
-				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : 10,
+				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : 5,
 				'order' => 'asc',
 			));
 		} 
@@ -25,7 +25,7 @@ if (function_exists('ot_get_option')) :
 		{
 			$carousel['slides'] = new WP_Query(array(
 				'post_type' => $carousel['post_type'],
-				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : 10,
+				'posts_per_page' => $carousel['max_num'] ? $carousel['max_num'] : 5,
 				'cat' => $carousel['category'] ? $carousel['category'] : '',
 				'tag_id' => $carousel['tag'] ? $carousel['tag'] : '',
 			));
