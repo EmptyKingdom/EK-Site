@@ -511,7 +511,7 @@ ul#view-controls {
 	font-family: @sansSerifAltFamily;
 	font-size: 11px;
 	line-height: 16px;
-	margin: 30px 0;
+	margin: 0 0 30px 0;
 	li {
 		display: inline-block;
 		height: 16px;
@@ -548,6 +548,12 @@ ul#view-controls {
 				background: url(../img/slices/icon-filter-active.png) no-repeat;
 			}
 		}
+	}
+}
+
+body.home {
+	ul#view-controls {
+		margin: 30px 0;
 	}
 }
 
@@ -786,7 +792,7 @@ ul#view-controls {
 	}
 }
 
-#featured {
+#main {
 	.next {
 		.prev;
 		text-align: right;

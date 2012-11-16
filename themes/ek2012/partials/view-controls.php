@@ -1,6 +1,9 @@
 		<ul class="unstyled" id="view-controls">
 			<li id="grid-view"><a href="javascript:void(0)" data-action="gridView">Grid View</a></li>
 			<li id="list-view"><a href="javascript:void(0)" data-action="listView">List View</a></li>
+			<?php if ( ! is_home()) : ?>
+		</ul>
+			<?php else : ?>
 			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters">Filter By Category</a></li>
 		</ul> <!-- /#view-controls -->
 		<div id="cat-filters" class="well clearfix" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
@@ -98,3 +101,4 @@
 				}
 			}, '#filter-btn');
 		</script>
+		<?php endif; ?>

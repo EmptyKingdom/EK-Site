@@ -4,6 +4,7 @@
 		<?php if (is_category()) : ?>
 			<?php get_template_part('/partials/category', 'carousel') ?>
 		<?php endif; ?>
+		<?php get_template_part('/partials/view-controls') ?>
 		<div id="post-list" class="post-list grid">
 			<?php get_template_part('/partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
