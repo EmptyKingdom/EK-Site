@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-	<div class="span8" id="main">
+	<div class="span8 <?php echo ek_get_cat(false, 'slug', true) ?>" id="main">
 		<?php if (is_category()) : ?>
 			<?php get_template_part('/partials/category', 'carousel') ?>
 		<?php endif; ?>

@@ -73,7 +73,7 @@ function ek_register_stuff() {
 add_action('init', 'ek_register_stuff');
 
 /* get ek main category */
-function ek_get_cat($post = false, $property = false)
+function ek_get_cat($post = false, $property = false, $parent = false)
 {
 	if (is_category())
 	{
@@ -93,9 +93,28 @@ function ek_get_cat($post = false, $property = false)
 	}
 	if ( ! $the_category)
 		return false;
+	if ($parent)
+	{
+		$the_category = ek_get_root_category($the_category);
+	}
 	if ($property)
 		return $the_category->$property;
 	return $the_category;
+}
+
+function ek_get_root_category($category)
+{
+	if (is_object($category))
+	{
+		$category = $category->term_id;
+	}
+	$parent_cats = get_category_parents($category, false, '/', true);
+	if (is_string($parent_cats))
+	{
+		$split_arr = explode("/", $parent_cats);
+		return get_category_by_slug($split_arr[0]);
+	}
+	return $category;
 }
 
 
