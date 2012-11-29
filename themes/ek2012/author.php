@@ -30,6 +30,7 @@ get_header(); ?>
 		</div> <!-- /.span3.author-details -->
 	</div> <!-- /.row -->
 </div> <!-- /#author-panel -->
+<h3 class="recent">Recent Posts By: <span><?php echo $curauth->display_name ?></span></h2>
 <div class="row">
 	<div class="span8 <?php echo ek_get_cat(false, 'slug', true) ?>" id="main">
 		<?php if (is_category()) : ?>

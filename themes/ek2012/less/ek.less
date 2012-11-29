@@ -1205,7 +1205,6 @@ body.author {
 		@media (max-width: 767px) {
 			border-bottom: 1px solid #00B8EC;
 		}
-		margin-bottom: 20px;
 		.author-general {
 			@media (min-width: 768px) {
 				border-right: 1px solid #00B8EC;
@@ -1271,6 +1270,23 @@ body.author {
 				margin: 0 0 8px 0;
 				line-height: normal;
 			}
+		}
+	}
+	h3.recent {
+		font-family: @sansSerifFamily;
+		text-transform: uppercase;
+		background-color: @linkHighlight;
+		color: #FFF;
+		display: inline-block;
+		padding: 8px 12px;
+		font-weight: normal;
+		line-height: normal;
+		font-size: 16px;
+		margin: 36px 0 18px 0;
+		span {
+			font-family: @serifFamily;
+			text-transform: none;
+			font-style: italic;
 		}
 	}
 }
