@@ -199,12 +199,16 @@ h5 {
 			    text-align: center;
 			    border-bottom: @grid/2 solid @linkColor;
 			    vertical-align: bottom;
-			    padding: 0 0 @grid 0;
+			    padding: 0 16px @grid 16px;
 			    text-transform: uppercase;
 			    font-size: 11px;
 			    font-weight: bold;
 			    line-height: 0;
 			    position: relative;
+			    &.fixed-width {
+				    width: 150px;
+				    padding: 0 0 @grid 0;
+			    }
 			    >ul {
 			    	text-transform: lowercase;
 			    	font-weight: normal;
