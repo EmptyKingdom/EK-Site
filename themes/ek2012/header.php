@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="//use.typekit.net/uzz7qfl.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/yepnope.1.5.4-min.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/theme.js"></script>
 		<script type="text/javascript">
