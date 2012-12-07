@@ -58,7 +58,6 @@ $(document).ready(function(){
 		slid: updateCarouselIndicator
 	});
 	
-	
 /* 	$('#category-carousel .carousel').carousel({interval: 5000}); */
 	
 	$('.carousel-indicator').on({
