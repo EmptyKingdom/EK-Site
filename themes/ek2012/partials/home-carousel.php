@@ -101,7 +101,7 @@ if (function_exists('ot_get_option')) :
 						<?php else: ?>
 						<?php echo $carousel['type'] == 'slide_collection' ? get_the_content() : '<p>'.get_the_excerpt().'</p>'; ?>
 						<?php endif; ?>
-						<a class="btn" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More...</a>
+						<a class="btn btn-default" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More...</a>
 					</li>
 					<?php endwhile; // slide loop ?>
 				</ul>
