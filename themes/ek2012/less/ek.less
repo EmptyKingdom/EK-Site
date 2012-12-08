@@ -211,7 +211,7 @@ h5 {
 			    }
 			    >ul {
 			    	text-transform: lowercase;
-			    	font-weight: normal;
+			    	font-weight: bold;
 				    position: absolute;
 				    left: -100000px;
 				    top: 100%;
@@ -224,7 +224,10 @@ h5 {
 				    overflow: hidden;
 				    opacity: 0;
 				    visibility: hidden;
-				    .transition(e('.4s linear max-height, .2s ease-in-out opacity'));
+				    .transition(e('.4s linear max-height, .3s ease-in-out opacity'));
+				    -webkit-transform: translate3d(0,0,0);
+					-moz-tranform: translate3d(0,0,0);
+					transform: translate3d(0,0,0);
 				    li {
 				    	position: relative;
 				    	margin: 0 -12px;
@@ -243,7 +246,7 @@ h5 {
 				    >ul {
 				    	padding: 16px 8px;
 					    left: 0px;
-					    max-height: 1000px;
+					    max-height: 600px;
 					    opacity: 1;
 					    visibility: visible;
 				    }
