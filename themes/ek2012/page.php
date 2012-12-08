@@ -18,11 +18,11 @@ get_header(); ?>
 		<?php while(have_posts()) : the_post(); ?>
 			<h1><?php the_title(); ?></h1>
 			<div class="featured-image"><?php the_post_thumbnail('full') ?></div>
-			<?php get_template_part('/partials/post', 'share') ?>
+			<?php get_template_part('/partials/post', 'actions') ?>
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div> <!-- /.post-content -->
-			<?php get_template_part('/partials/post', 'share') ?>
+			<?php get_template_part('/partials/post', 'actions') ?>
 		<?php endwhile; // have_posts() ?>
 		</div> <!-- /.post-full -->
 	<?php else : // have_posts() ?>

@@ -1,16 +1,4 @@
 <?php 
-function ek_hide_featured_image_from_content(){
-	global $post; 
-	if (strtotime($post->post_date) < strtotime('November 1, 2012'))
-	{
-		$thumbnail_id = get_post_thumbnail_id($post->ID);	?>
-		<style type="text/css" media="screen">
-			.post-content .wp-image-<?php echo $thumbnail_id ?> {display: none}
-		</style>
-		<?php
-	}
-}
-add_action('wp_head', 'ek_hide_featured_image_from_content');
 global $post;
 $category = ek_get_cat($post);
 $related_artists = new WP_Query(array(
@@ -32,16 +20,12 @@ get_header(); ?>
 					<a class="next" href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"></a>
 				</p>
 			</div> <!-- /.meta -->
-			<div class="featured-image"><?php the_post_thumbnail('full') ?></div>
-			<div class="sub-img clearfix">
-				<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
-<!-- 				<p class="heart"><a href="javascript:void(0)">Add</a></p> -->
-			</div> <!-- /.category -->
-			<?php get_template_part('/partials/post', 'share') ?>
+			<?php get_template_part('/partials/post', 'actions') ?>
+			<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div> <!-- /.post-content -->
-			<?php get_template_part('/partials/post', 'share') ?>
+			<?php get_template_part('/partials/post', 'actions') ?>
 		<?php endwhile; // have_posts() ?>
 		</div> <!-- /.post-full -->
 		<div id="related-artists">
