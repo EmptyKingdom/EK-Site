@@ -1,21 +1,3 @@
-spinnerOpts = {
-	lines: 15, // The number of lines to draw
-	length: 0, // The length of each line
-	width: 3, // The line thickness
-	radius: 10, // The radius of the inner circle
-	corners: 1, // Corner roundness (0..1)
-	rotate: 90, // The rotation offset
-	color: '#00B8EC',
-	speed: 1.4, // Rounds per second
-	trail: 40, // Afterglow percentage
-	shadow: false, // Whether to render a shadow
-	hwaccel: false, // Whether to use hardware acceleration
-	className: 'spinner', // The CSS class to assign to the spinner
-	zIndex: 2e9, // The z-index (defaults to 2000000000)
-	top: 'auto', // Top position relative to parent in px
-	left: -10 // Left position relative to parent in px
-}
-
 $(document).ready(function(){
 
 	updateCarouselIndicator = function(e){
@@ -118,6 +100,20 @@ $(document).ready(function(){
 	$('#related-artists .post').width(relatedArtistPostWidth);
 	var slideDistance = $slider.find('.post:first').outerWidth(true)*3;
 	
+	// social share bar
+	if ($('.post-share').length)
+	{
+		$('.post-share li').each(function(i, e){
+			$(this).hover(function(){
+				$(this).addClass('active');
+			},
+			function(){
+				$(this).removeClass('active');
+			});
+		})
+	}
+	
+	// cat filters
 	yepnope({
 		test: $('#cat-filters').length,
 		yep: themedir + '/js/spin.min.js',
@@ -164,6 +160,7 @@ $(document).ready(function(){
 		}
 	});
 
+	// related artists
 	yepnope({
 		test: $('#related-artists').length,
 		yep: themedir + '/js/spin.min.js',
@@ -244,3 +241,22 @@ var viewControls = {
 		$('#cat-filters').slideToggle();
 	}
 }
+
+spinnerOpts = {
+	lines: 15, // The number of lines to draw
+	length: 0, // The length of each line
+	width: 3, // The line thickness
+	radius: 10, // The radius of the inner circle
+	corners: 1, // Corner roundness (0..1)
+	rotate: 90, // The rotation offset
+	color: '#00B8EC',
+	speed: 1.4, // Rounds per second
+	trail: 40, // Afterglow percentage
+	shadow: false, // Whether to render a shadow
+	hwaccel: false, // Whether to use hardware acceleration
+	className: 'spinner', // The CSS class to assign to the spinner
+	zIndex: 2e9, // The z-index (defaults to 2000000000)
+	top: 'auto', // Top position relative to parent in px
+	left: -10 // Left position relative to parent in px
+}
+
