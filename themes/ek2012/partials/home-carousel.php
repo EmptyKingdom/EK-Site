@@ -5,7 +5,7 @@ if (function_exists('ot_get_option')) :
 	foreach ($carousels as &$carousel) :
 		$carousel = (object) $carousel;
 	endforeach;
-	ek_display_carousels($carousels, 'featured', true);?>
+	ek_display_carousels($carousels, 'featured', true, true);?>
 <?php
 endif; // function_exists('ot_get_option') ?>
 </div> <!-- /#feature.row -->

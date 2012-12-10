@@ -8,6 +8,25 @@
 				if (is_array($featured_post)) $featured_post = $featured_post[0];
 			endif; ?>
 		<div class="<?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> item" data-description="#slide-<?php the_id() ?>">
+			<?php if ( ! $hide_title) : ?>
+				<?php if ($carousel->type == 'slide_collection') : ?>
+					<?php if ($featured_post) :?>
+						<h3><a href="<?php echo get_permalink($featured_post) ?>"><?php echo $featured_post->post_title; ?></a></h3>
+						<div class="postmeta clearfix">
+							<p class="author">by <a href="<?php echo get_author_posts_url($featured_post->post_author) ?>" rel="author"><?php echo get_the_author_meta('display_name', $featured_post->post_author) ?></a></p>
+							<p class="date"><?php echo get_the_time(get_option('date_format'), $featured_post) ?></p>
+						</div> <!-- /.postmeta -->
+					<?php else : // slide is showing ?>
+						<h3><?php the_title() ?></h3>
+					<?php endif; ?>
+				<?php else : // carousel is recent posts ?>
+					<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+					<div class="postmeta clearfix">
+						<p class="author">by <?php the_author_posts_link(); ?></p>
+						<p class="date"><?php the_time(get_option('date_format')) ?></p>
+					</div> <!-- /.postmeta -->
+				<?php endif; ?>
+			<?php endif; // ! $hide_title ?>
 			<?php 
 			if (has_post_thumbnail()) : 
 				the_post_thumbnail(); 
