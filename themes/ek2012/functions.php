@@ -69,6 +69,30 @@ function ek_register_stuff() {
 		'taxonomies' => array('slide_collections'),
 	); 
 	register_post_type('slide', $args);
+	
+	// slide post type
+	$labels = array(
+		'name' => __('Offsite Products', 'ek'),
+		'singular_name' => __('Offsite Product', 'ek'),
+		'add_new_item' => __('Add New Product', 'ek'),
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true, 
+		'show_in_menu' => true, 
+		'query_var' => true,
+		'rewrite' => false,
+		'capability_type' => 'post',
+		'has_archive' => false, 
+		'hierarchical' => false,
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'menu_position' => null,
+	); 
+
+	register_post_type('offsite_product', $args);
+	
 }
 add_action('init', 'ek_register_stuff');
 
@@ -115,6 +139,53 @@ function ek_get_root_category($category)
 		return get_category_by_slug($split_arr[0]);
 	}
 	return $category;
+}
+
+function ek_display_carousels($carousels, $class_base = 'category', $side_captions = false)
+{
+	if (is_object($carousels))
+	{
+		$carousels = array($carousels);
+	}
+	foreach ($carousels as $i => &$carousel)
+	{
+		if ($carousel->type == 'slide_collection' && $carousel->slide_collection)
+		{
+			$carousel->slides = new WP_Query(array(
+				'post_type' => 'slide',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'slide_collections',
+						'field' => 'id',
+						'terms' => $carousel->slide_collection,
+					)
+				),
+				'posts_per_page' => $carousel->max_num ? $carousel->max_num : 5,
+				'order' => 'asc',
+			));
+		} 
+		
+		else if ($carousel->type == 'recent_posts')
+		{
+			$carousel->slides = new WP_Query(array(
+				'post_type' => $carousel->post_type,
+				'posts_per_page' => $carousel->max_num ? $carousel->max_num : 5,
+				'cat' => $carousel->category ? $carousel->category : '',
+				'tag' => $carousel->tag ? $carousel->tag : '',
+			));
+		}
+		
+		if ( ! $carousel->slides->post_count)
+		{
+			unset($carousels[$i]);
+		}
+		if ( ! $side_captions)
+		{
+			$carousel->show_caption = true;
+		}
+	}
+	$carousels = array_values($carousels);
+	include(locate_template('partials/carousels.php'));
 }
 
 
@@ -272,6 +343,7 @@ function ek_admin_footer()
 	</script>
 	<?php
 }
+
 
 /**
  * Activate Add-ons
