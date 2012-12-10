@@ -56,7 +56,7 @@ This is the quickest way to set up a carousel that shows a stream of recent post
           array(
             'id'          => 'max_num',
             'label'       => 'Max # of items',
-            'desc'        => 'Enter the maximum number of items to show in this carousel (defaults to 5).',
+            'desc'        => 'Enter the maximum number of items to show in this carousel (defaults to 5). If a slide collection has more items than the limit, then the full collectionw won\'t be shown.',
             'std'         => '',
             'type'        => 'text',
             'rows'        => '',
@@ -98,19 +98,19 @@ This is the quickest way to set up a carousel that shows a stream of recent post
             'taxonomy'    => '',
             'class'       => 'carousel-category'
           ),
-/*
+
           array(
             'id'          => 'tag',
             'label'       => 'Tag',
-            'desc'        => 'Optionally select a tag to limit the posts that show up in the carousel.',
+            'desc'        => 'Optionally enter a tag to limit the posts that show up in the carousel.',
             'std'         => '',
-            'type'        => 'tag-select',
+            'type'        => 'text',
             'rows'        => '',
             'post_type'   => '',
             'taxonomy'    => '',
             'class'       => 'carousel-tag'
           )
-*/
+
 );
 
 $carousel_sections = array(
@@ -121,6 +121,7 @@ $carousel_sections = array(
 	'photography_cat' 			=> 'Photography Category',
 	'the_interviews_cat'		=> 'The Interviews Category',
 	'the_mausoleum_cat' 		=> 'The Mausoleum Category',
+	'offsite_products'			=> 'Offsite Products',
 );
 
 /**

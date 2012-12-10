@@ -116,8 +116,8 @@ body.home ul#view-controls{margin:30px 0;}
 .post-list .post .excerpt{margin-top:10px;margin-bottom:0;padding:16px 0;border-top:2px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
 .prev h4{text-transform:uppercase;font-weight:bold;}
 .prev a{color:#00b8ec;}
-#main .next{text-align:right;}#main .next h4{text-transform:uppercase;font-weight:bold;}
-#main .next a{color:#00b8ec;}
+#main .pager .next{text-align:right;}#main .pager .next h4{text-transform:uppercase;font-weight:bold;}
+#main .pager .next a{color:#00b8ec;}
 #sidebar{padding-top:68px;}#sidebar .widget{background-color:whitesmoke;padding:0 24px 16px 24px;border-bottom:4px solid #00b8ec;}#sidebar .widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:24px -24px;border-bottom:1px solid #2AC8F8;}
 #sidebar .widget.newsletter-signup{background:#FFF;border:none;padding:0px;}#sidebar .widget.newsletter-signup h4{font-size:13px;background:#FFF;border:none;margin-bottom:0;color:#898989;}
 #sidebar .widget.facebook .facebookOuter{width:auto;height:auto;overflow:hidden;}
