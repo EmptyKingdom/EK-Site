@@ -172,6 +172,7 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 				'posts_per_page' => $carousel->max_num ? $carousel->max_num : 5,
 				'cat' => $carousel->category ? $carousel->category : '',
 				'tag' => $carousel->tag ? $carousel->tag : '',
+				'meta_key' => '_thumbnail_id',
 			));
 		}
 		
