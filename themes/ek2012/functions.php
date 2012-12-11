@@ -83,12 +83,11 @@ function ek_register_stuff() {
 		'show_ui' => true, 
 		'show_in_menu' => true, 
 		'query_var' => true,
-		'rewrite' => false,
+		'rewrite' => array('slug' => 'store'),
 		'capability_type' => 'post',
-		'has_archive' => false, 
+		'has_archive' => true, 
 		'hierarchical' => false,
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'menu_position' => null,
 	); 
 
 	register_post_type('offsite_product', $args);
