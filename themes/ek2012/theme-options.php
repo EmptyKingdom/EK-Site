@@ -210,6 +210,19 @@ $custom_settings['settings'][] = array(
 );
 
 $custom_settings['settings'][] = array(
+	'id'          => 'offsite_products_button_link',
+	'section'	  => 'offsite_products',
+	'label'       => 'Promo Button Link',
+	'desc'        => '',
+	'std'         => 'http://thumbtackpress.com/',
+	'type'        => 'text',
+	'rows'        => '',
+	'post_type'   => '',
+	'taxonomy'    => '',
+	'class'       => ''
+);
+
+$custom_settings['settings'][] = array(
 	'id'          => 'offsite_products_credits_text',
 	'section'	  => 'offsite_products',
 	'label'       => 'Credits Text',
