@@ -197,6 +197,19 @@ $custom_settings['settings'][] = array(
 );
 
 $custom_settings['settings'][] = array(
+	'id'          => 'offsite_products_button_text',
+	'section'	  => 'offsite_products',
+	'label'       => 'Promo Button Text',
+	'desc'        => '',
+	'std'         => 'Shop All Posters',
+	'type'        => 'text',
+	'rows'        => '',
+	'post_type'   => '',
+	'taxonomy'    => '',
+	'class'       => ''
+);
+
+$custom_settings['settings'][] = array(
 	'id'          => 'offsite_products_credits_text',
 	'section'	  => 'offsite_products',
 	'label'       => 'Credits Text',
