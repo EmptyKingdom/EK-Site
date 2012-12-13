@@ -371,7 +371,6 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
-}
 
 	// Field groups on Slide post type
 	register_field_group(array (
