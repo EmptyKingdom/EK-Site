@@ -6,6 +6,7 @@ if (function_exists('ot_get_option')) :
 		$carousel = (object) $carousel;
 	endforeach;
 	ek_display_carousels($carousels, 'featured', true, true);?>
+	<hr class="dotted span12">
 <?php
 endif; // function_exists('ot_get_option') ?>
 </div> <!-- /#feature.row -->
