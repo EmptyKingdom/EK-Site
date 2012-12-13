@@ -168,6 +168,49 @@ foreach ($carousel_sections as $id => $title)
 	}
 }
 
+// Additional settings
+
+$custom_settings['settings'][] = array(
+	'id'          => 'offsite_products_button_text',
+	'section'	  => 'offsite_products',
+	'label'       => 'Promo Button Text',
+	'desc'        => '',
+	'std'         => 'Shop All Posters',
+	'type'        => 'text',
+	'rows'        => '',
+	'post_type'   => '',
+	'taxonomy'    => '',
+	'class'       => ''
+);
+
+$custom_settings['settings'][] = array(
+	'id'          => 'offsite_products_credits_text',
+	'section'	  => 'offsite_products',
+	'label'       => 'Credits Text',
+	'desc'        => '',
+	'std'         => 'The exclusive EK gallery provided by our partners at Thumbtack Press.',
+	'type'        => 'text',
+	'rows'        => '',
+	'post_type'   => '',
+	'taxonomy'    => '',
+	'class'       => ''
+);
+
+$custom_settings['settings'][] = array(
+	'id'          => 'offsite_products_hide_promo_credits',
+	'section'	  => 'offsite_products',
+	'label'       => 'Hide Button & Text from Carousel?',
+	'desc'        => '',
+	'type'        => 'checkbox',
+	'choices'     => array(
+		array( 
+			'value' => 'yes',
+			'label' => 'Yes' 
+		)
+	)
+);
+
+
 /* print_r($custom_settings); */
    
   /* settings are not the same update the DB */

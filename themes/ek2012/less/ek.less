@@ -1367,7 +1367,16 @@ body.author {
 }
 
 body.post-type-archive-offsite_product {
+	#feature {
+		position: relative;
+		.tempshop-credits {
+			position: absolute;
+			bottom: 60px;
+			right: -16px;
+		}
+	}
 	.post-list {
+		margin-bottom: 20px;
 		.row {
 			margin-left: -15px;
 		}
@@ -1397,6 +1406,31 @@ body.post-type-archive-offsite_product {
 			.author {
 				float: none;
 			}
+		}
+	}
+	.btn-large.tempshop {
+		border: 2px solid @linkHighlight;
+		background-color: #dbff08;
+		text-align: center;
+		vertical-align: middle;
+		color: @linkHighlight !important;
+		line-height: 12px;
+		font-size: 12px;
+		font-weight: @semiBold;
+		padding: 18px 27px;
+		font-family: @sansSerifFamily;
+		margin-bottom: 18px;
+		&:before {
+			content: url(../img/slices/star-blue-hdr.png);
+			padding-right: 8px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.tempshop-credits {
+		margin-left: 0px;
+		em {
+			color: @midGray;
 		}
 	}
 }

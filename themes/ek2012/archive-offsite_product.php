@@ -9,6 +9,9 @@
 			$carousel->post_type = ot_get_option($option_str.'_carousel_post_type');
 			$carousel->category = ot_get_option($option_str.'_carousel_category');
 			ek_display_carousels($carousel, 'featured', true, true);
+			if (ot_get_option('offsite_products_hide_promo_credits') != array('yes')) :
+				get_template_part('partials/tempshop', 'credits');
+			endif;
 		endif; // function_exists('ot_get_option') ?>
 		<hr class="dotted span12">
 	</div> <!-- /#feature.row -->
@@ -17,14 +20,7 @@
 			<div id="post-list" class="post-list">
 				<?php get_template_part('/partials/offsite_products', 'listing') ?>
 			</div> <!-- /#post-list -->
-			<div class="row">
-				<div class="prev span4">
-				<h4><?php previous_posts_link('&laquo; Previous') ?></h4>
-			</div>
-				<div class="next span4">
-				<h4><?php next_posts_link('Next &raquo;') ?></h4>
-			</div>
-			</div>
+			<?php get_template_part('partials/tempshop', 'credits'); ?>
 		</div> <!-- /#main -->
 		<div class="span4" id="sidebar">
 			<?php get_sidebar(); ?>
