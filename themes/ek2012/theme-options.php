@@ -171,11 +171,24 @@ foreach ($carousel_sections as $id => $title)
 // Additional settings
 
 $custom_settings['settings'][] = array(
-	'id'          => 'offsite_products_button_text',
+	'id'          => 'offsite_products_header',
 	'section'	  => 'offsite_products',
-	'label'       => 'Promo Button Text',
+	'label'       => 'Header',
 	'desc'        => '',
-	'std'         => 'Shop All Posters',
+	'std'         => 'Featured Posters',
+	'type'        => 'text',
+	'rows'        => '',
+	'post_type'   => '',
+	'taxonomy'    => '',
+	'class'       => ''
+);
+
+$custom_settings['settings'][] = array(
+	'id'          => 'offsite_products_subhdr',
+	'section'	  => 'offsite_products',
+	'label'       => 'Subheader',
+	'desc'        => '',
+	'std'         => 'Select an artist below to view more works on Thumbtack Press.',
 	'type'        => 'text',
 	'rows'        => '',
 	'post_type'   => '',

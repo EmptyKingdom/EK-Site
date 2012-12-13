@@ -53,6 +53,7 @@ h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-si
 .interview .btn:hover{background:#e5e5e5 !important;color:#00b8eb !important;}
 .interview.menu-item.active,.interview.current-menu-item{border-bottom-color:#00b8eb !important;}.interview.menu-item.active a,.interview.current-menu-item a,.interview.menu-item.active a:hover,.interview.current-menu-item a:hover{color:#00b8eb !important;}
 hr.dotted{display:block;clear:both;border-top:1px dotted #cccccc;margin-top:20px;margin-bottom:20px;}
+#ad-slot-1{background-color:#e5e5e5;}#ad-slot-1 img{padding:32px;}
 body.home #sidebar{padding-top:0;}
 #feature .carousel{margin-top:16px;display:none;}#feature .carousel.active{display:block;}
 .carousel-control{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background-color:#00b8ec;opacity:1 !important;color:#FFF !important;width:24px;height:52px;font-weight:normal !important;line-height:40px;font-size:52px;top:50%;margin-top:-26px;z-index:3;}.carousel-control.left{left:-12px;}
@@ -77,7 +78,6 @@ ul#view-controls li#list-view a{background:url(../img/slices/icon-listview.png) 
 ul#view-controls li#list-view.active a,ul#view-controls li#list-view:hover a{background:url(../img/slices/icon-listview-active.png) no-repeat;}
 ul#view-controls li#cat-filter a{background:url(../img/slices/icon-filter.png) no-repeat;}
 ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{background:url(../img/slices/icon-filter-active.png) no-repeat;}
-body.home ul#view-controls{margin:30px 0;}
 #cat-filters{display:none;position:relative;}#cat-filters #close-cat-filters{display:block;position:absolute;top:20px;right:20px;background:url(../img/slices/close-button.png) no-repeat;height:15px;width:15px;}
 #cat-filters #filter-btn{margin-left:20px;}
 #cat-filters h3{font-family:'myriad-pro',sans-serif;font-weight:normal;font-style:italic;font-size:22px;}
@@ -181,6 +181,9 @@ body.author #author-panel .author-general .social ul{display:inline;}
 body.author #author-panel .author-details h3{text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:18px;color:#00b8ec;font-weight:normal;margin:0 0 8px 0;line-height:normal;}
 body.author h3.recent{font-family:'myriad-pro',sans-serif;text-transform:uppercase;background-color:#00b8ec;color:#FFF;display:inline-block;padding:8px 12px;font-weight:normal;line-height:normal;font-size:16px;margin:36px 0 18px 0;}body.author h3.recent span{font-family:'minion-pro',serif;text-transform:none;font-style:italic;}
 body.post-type-archive-offsite_product #feature{position:relative;}body.post-type-archive-offsite_product #feature .tempshop-credits{position:absolute;bottom:60px;right:-16px;}
+body.post-type-archive-offsite_product #main h1{font-size:22px;font-family:'myriad-pro',sans-serif;color:#00b8ec;font-weight:normal;text-transform:uppercase;line-height:22px;margin:0;}
+body.post-type-archive-offsite_product #main h2{color:#999999;font-size:13px;font-family:'myriad-pro',sans-serif;font-weight:normal;line-height:13px;margin:10px 0 40px 0;}
+body.post-type-archive-offsite_product #sidebar{padding-top:0px;}
 body.post-type-archive-offsite_product .post-list{margin-bottom:20px;}body.post-type-archive-offsite_product .post-list .row{margin-left:-15px;}
 body.post-type-archive-offsite_product .post-list .span2{margin-left:15px;width:196.666666666667px;}@media (min-width:1200px){body.post-type-archive-offsite_product .post-list .span2{margin-left:15px;width:246.666666666667px;}}@media (max-width:979px) and (min-width:768px){body.post-type-archive-offsite_product .post-list .span2{margin-left:15px;width:148.666666666667px;}}@media (max-width:767px){body.post-type-archive-offsite_product .post-list .span2{display:block;float:none;width:100%;margin-left:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}body.post-type-archive-offsite_product .post-list .span2 img{width:100%;}}body.post-type-archive-offsite_product .post-list .span2 .author{float:none;}
 body.post-type-archive-offsite_product .btn-large.tempshop{border:2px solid #00b8ec;background-color:#dbff08;text-align:center;vertical-align:middle;color:#00b8ec !important;line-height:12px;font-size:12px;font-weight:600;padding:18px 27px;font-family:'myriad-pro',sans-serif;margin-bottom:18px;}body.post-type-archive-offsite_product .btn-large.tempshop:before{content:url(../img/slices/star-blue-hdr.png);padding-right:8px;display:inline-block;vertical-align:middle;}
