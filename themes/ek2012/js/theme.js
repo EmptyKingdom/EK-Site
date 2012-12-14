@@ -215,12 +215,12 @@ $(document).ready(function(){
 
 
 	$('ul.sub-menu').each(function(i, e){
-		var $this = $(this);
-		var $li = $this.parent();
-		$li.hover(function(){
-			$(this).addClass('active');
+		var $dropdown = $(this);
+		var $parent = $dropdown.closest('li');
+		$parent.hover(function(){
+			$parent.addClass('active');
 		}, function(){
-			$(this).removeClass('active');
+			$parent.removeClass('active');
 		})
 	})
 

@@ -270,6 +270,21 @@ function ek_admin_footer()
 	<?php
 }
 
+class EK_Nav_Walker extends Walker_Nav_Menu
+{
+    function start_lvl(&$output, $depth)
+    {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<div class=\"custom-sub\"><ul class=\"sub-menu unstyled\">\n";
+    }
+    function end_lvl(&$output, $depth)
+    {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul></div>\n";
+    }
+}
+
+
 
 /**
  * Activate Add-ons

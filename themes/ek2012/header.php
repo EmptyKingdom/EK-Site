@@ -52,8 +52,7 @@
 					'menu_class' => '',
 					'menu_id' => 'main-menu',
 					'fallback_cb' => false,
-					'echo' => false,
+					'walker' => new EK_Nav_Walker(),
 				));
-				echo str_replace('sub-menu', 'sub-menu unstyled', $main_menu)
 				?>
 			</div>
