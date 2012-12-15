@@ -569,38 +569,57 @@ ul#view-controls {
 	margin: 0 0 30px 0;
 	li {
 		display: inline-block;
-		height: 16px;
+		vertical-align: middle;
 		a, a:visited {
-			padding-left: @grid+16px;
-			margin-right: @grid*2;
+			padding: 10px 20px 10px 40px;
+			margin-right: 15px;
 			display: inline-block;
-			color: @lightGray;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+			line-height: 11px;
+			background-position: 10px center;
 		}
 		a:hover, a:active, &.active a, &:hover a {
-			color: @linkColor;
+			color: #FFF !important;
 		}
 		&#grid-view {
 			a {
-				background: url(../img/slices/icon-gridview.png) no-repeat;
+				background-image: url(../img/slices/icon-gridview.png);
 			}
 			&.active a, &:hover a {
-				background: url(../img/slices/icon-gridview-active.png) no-repeat;
+				background: url(../img/slices/icon-gridview-active.png) no-repeat 10px center @darkGray !important;
 			}
 		}
 		&#list-view {
 			a {
-				background: url(../img/slices/icon-listview.png) no-repeat;
+				background-image: url(../img/slices/icon-listview.png);
 			}
 			&.active a, &:hover a {
-				background: url(../img/slices/icon-listview-active.png) no-repeat;
+				background: url(../img/slices/icon-listview-active.png) no-repeat 10px center @darkGray !important;
 			}
 		}
 		&#cat-filter {
 			a {
-				background: url(../img/slices/icon-filter.png) no-repeat;
+				background-image: url(../img/slices/icon-filter.png);
 			}
-			&.active a , &:hover a {
-				background: url(../img/slices/icon-filter-active.png) no-repeat;
+			&.active a, &:hover a {
+				background: url(../img/slices/icon-filter-active.png) no-repeat 10px center @darkGray !important;
+			}
+		}
+		&#sfw-filter {
+			position: relative;
+			a {
+				background-image: url(../img/slices/icon-checkbox.png);
+			}
+			&.active a, &:hover a {
+				background: url(../img/slices/icon-checkbox-active.png) no-repeat 10px center @darkGray !important;
+			}
+			&.checked a {
+				background: url(../img/slices/icon-checkbox-checked.png) no-repeat 10px center @darkGray !important;
+			}
+			.spinner {
+				position: absolute !important;
+				left: 100% !important;
 			}
 		}
 	}

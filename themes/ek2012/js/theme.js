@@ -82,7 +82,7 @@ $(document).ready(function(){
 			var action = $clicked.data('action');
 			var target = $clicked.data('target') || '#post-list';
 			if (typeof viewControls[action] == 'function') {
-				viewControls[action](target);
+				viewControls[action](target, e);
 			}
 		}
 	}, 'a');
@@ -90,7 +90,7 @@ $(document).ready(function(){
 	$('#cat-filters').on({
 		click: function(e) {
 			if ($(e.target).attr('id') == 'close-cat-filters') {
-				$('#view-controls #cat-filter a').trigger('click');
+				$('#cat-filters').slideUp();
 			} else {
 				$(this).parent('li').toggleClass('selected');
 			}
@@ -117,47 +117,11 @@ $(document).ready(function(){
 	
 	// cat filters
 	yepnope({
-		test: $('#cat-filters').length,
+		test: $('#cat-filters, #filter-sfw').length,
 		yep: themedir + '/js/spin.min.js',
 		callback: function(){
-			console.log('cat filters');
-			$('#cat-filters').on({
-				click: function(e){
-					e.preventDefault();
-					var cats = [];
-					$('#cat-filters').find('li.selected').each(function(i, el){
-						cats.push($(el).data('cat_id'))
-					})
-					var spinner = new Spinner(spinnerOpts).spin($(this).parent().get(0));
-					$('#post-list').load(ajaxurl, {
-						action: 'ek_load_posts',
-						nonce: $('#cat-filters').data('nonce'),
-						query: $.extend({}, origQuery, {category__in: cats})
-					}, function(result){
-						// after content loads:
-						spinner.stop();
-						
-						// set the flag text on or off:
-						if (cats.length) {
-							$('#cat-filter').addClass('active').find('a').text('Filter By Category [on]');
-						} else {
-							$('#cat-filter').removeClass('active').find('a').text('Filter By Category');
-						}
-						
-						// close the filters box
-						$('#close-cat-filters').trigger('click');
-						
-						// scroll to top of view controls
-						var scrollTo = $('#view-controls').offset().top-10;
-						if ($('#wpadminbar').length) {
-							scrollTo -= $('#wpadminbar').outerHeight();
-						}
-						$('#cat-filters').data('nonce', $(result).filter('#nonce').text());
-						$('html, body').animate({
-							scrollTop: scrollTo
-						}, 200);
-					})
-				}
+			$('#main').on({
+				click: filterPosts
 			}, '#filter-btn');
 		}
 	});
@@ -173,7 +137,6 @@ $(document).ready(function(){
 					var curPage = $slider.data('cur_page');
 					var maxPage = $slider.data('max_page');
 					if ($clicked.hasClass('prev')) {
-					console.log(slideDistance);
 					$slider.css('left', '+='+slideDistance);
 					$slider.data('cur_page', curPage-1)
 					if (curPage-1 == 1) {
@@ -212,6 +175,52 @@ $(document).ready(function(){
 			}, 'a.prev, a.next')
 		}
 	})
+	
+	filterPosts = function(){
+		var $this = $(this);
+		var cats = [];
+		$('#cat-filters').find('li.selected').each(function(i, el){
+			cats.push($(el).data('cat_id'))
+		})
+		var newQuery = {category__in: cats};
+		if ($('#sfw-filter').hasClass('checked')) {
+			newQuery.tag__not_in = $('#sfw-filter').data('nsfw_tagid');
+		}
+		
+		var spinner = new Spinner(spinnerOpts).spin($this.parent().get(0));
+		$('#post-list').load(ajaxurl, {
+			action: 'ek_load_posts',
+			nonce: $('#cat-filters').data('nonce'),
+			query: $.extend({}, origQuery, newQuery)
+		}, function(result){
+			// after content loads:
+			spinner.stop();
+			
+			// set the flag text on or off:
+			if (cats.length) {
+				$('#cat-filter').addClass('active').find('a').text('Filter By Category [on]');
+			} else {
+				$('#cat-filter').removeClass('active').find('a').text('Filter By Category');
+			}
+			
+			console.log($this);
+			if ($this.parent().attr('id') != 'sfw-filter')
+			{
+				// close the filters box
+				$('#close-cat-filters').trigger('click');
+
+				// scroll to top of view controls if it was the category filters that was clicked
+				var scrollTo = $('#view-controls').offset().top-10;
+				if ($('#wpadminbar').length) {
+					scrollTo -= $('#wpadminbar').outerHeight();
+				}
+				$('#cat-filters').data('nonce', $(result).filter('#nonce').text());
+				$('html, body').animate({
+					scrollTop: scrollTo
+				}, 200);
+			}
+		})
+	}
 
 
 	$('ul.sub-menu').each(function(i, e){
@@ -239,8 +248,13 @@ var viewControls = {
 		$(target).removeClass(from).addClass(to);
 	},
 	
-	showCatFilters: function() {
+	showCatFilters: function(target) {
 		$('#cat-filters').slideToggle();
+	},
+	
+	filterSfw: function(target, e) {
+		$('#sfw-filter').toggleClass('checked')
+		filterPosts.call(e.target); // e.target is the sfw button
 	}
 }
 
