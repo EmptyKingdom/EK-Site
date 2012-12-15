@@ -203,8 +203,7 @@ $(document).ready(function(){
 				$('#cat-filter').removeClass('active').find('a').text('Filter By Category');
 			}
 			
-			console.log($this);
-			if ($this.parent().attr('id') != 'sfw-filter')
+			if ($this.attr('id') == 'filter-btn')
 			{
 				// close the filters box
 				$('#close-cat-filters').trigger('click');
