@@ -140,18 +140,6 @@ $custom_settings = array(
 	),
 	'settings'        => array(
 		array(
-	        'id'          => 'taglines',
-	        'label'       => 'Taglines',
-	        'desc'        => 'Enter a list of taglines, separated by line breaks. A random one will show up next to the site logo, each time a page on the site is visited.',
-	        'std'         => '',
-	        'type'        => 'textarea_simple',
-	        'section'     => 'general',
-	        'rows'        => '6',
-	        'post_type'   => '',
-	        'taxonomy'    => '',
-	        'class'       => '',
-	       ),	
-		array(
 	        'id'          => 'home_carousels',
 	        'label'       => 'Home Page Carousels',
 	        'desc'        => 'Configure up to 3 carousels. Only the first 3 carousels added here will show up on the page.',
@@ -163,6 +151,18 @@ $custom_settings = array(
 	        'taxonomy'    => '',
 	        'class'       => '',
 	        'settings'    => $carousel_settings,
+	       ),	
+		array(
+	        'id'          => 'taglines',
+	        'label'       => 'Taglines',
+	        'desc'        => 'Enter a list of taglines, separated by line breaks. A random one will show up next to the site logo, each time a page on the site is visited.',
+	        'std'         => '',
+	        'type'        => 'textarea_simple',
+	        'section'     => 'general',
+	        'rows'        => '6',
+	        'post_type'   => '',
+	        'taxonomy'    => '',
+	        'class'       => '',
 	       ),	
       ),
 );
