@@ -239,6 +239,48 @@ function ek_load_posts()
 	die();
 }
 
+// sfw endpoint
+add_action( 'init', 'ek_add_sfw_endpoint' );
+function ek_add_sfw_endpoint() 
+{
+	add_rewrite_endpoint( 'sfw', EP_ALL );
+}
+
+// sfw query filter
+add_action( 'pre_get_posts', 'ek_sfw_pre_get_posts' );
+function ek_sfw_pre_get_posts($query)
+{
+	global $wp_query;
+	if (isset($wp_query->query_vars['sfw']))
+	{
+		$query->query_vars['tax_query'][] = array(
+            'taxonomy' => 'post_tag',
+            'field' => 'slug',
+            'terms' => 'nsfw',
+            'operator' => 'NOT IN',
+		);
+		if ( ! empty($wp_query->query_vars['sfw']))
+		{
+			$vars = explode('/', $wp_query->query_vars['sfw']);
+			foreach ($vars as $i => $var)
+			{
+				if ($i % 2 == 0)
+				{
+					if ( ! $wp_query->is_singular() && $var == 'page')
+					{
+						$var = 'paged';
+						if ($vars[$i+1] > 1)
+						{
+							$wp_query->is_paged = true;
+						}
+					}
+					$wp_query->query_vars[$var] = $vars[$i+1];
+				}
+			}
+		}
+	}
+}
+
 add_filter('nav_menu_css_class', 'ek_nav_cat_classes', 10, 2);
 function ek_nav_cat_classes($classes, $item)
 {
