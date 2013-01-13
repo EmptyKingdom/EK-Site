@@ -28,7 +28,7 @@ get_header(); ?>
 			<?php get_template_part('/partials/post', 'actions') ?>
 		<?php endwhile; // have_posts() ?>
 		</div> <!-- /.post-full -->
-		<div id="related-artists">
+		<div id="related-artists" class="post-addendum">
 			<h2>
 				Artists You Might Also Like
 				<span class="more-posts">
@@ -43,6 +43,10 @@ get_header(); ?>
 			endwhile;
 			?>
 			</div>
+		</div>
+		<div id="comments" class="post-addendum">
+			<h2>Comments</h2>
+			<?php comments_template() ?>
 		</div>
 		<p><?php the_tags(); ?></p>
 	<?php else : // have_posts() ?>
