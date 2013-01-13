@@ -218,7 +218,7 @@ add_filter( 'ot_theme_mode', '__return_true' );
 include_once( 'option-tree/ot-loader.php' );
 include_once('theme-options.php');
 
-// filter cats
+// load posts
 add_action('wp_ajax_ek_load_posts', 'ek_load_posts');
 add_action('wp_ajax_nopriv_ek_load_posts', 'ek_load_posts');
 function ek_load_posts() 
