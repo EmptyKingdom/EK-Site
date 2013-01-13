@@ -1,5 +1,5 @@
 yepnope(themedir + '/js/jquery.cookie.js');
-$(document).ready(function(){
+$(document).ready(function($){
 
 	updateCarouselIndicator = function(e){
 		var $this = $(this);
@@ -193,6 +193,7 @@ $(document).ready(function(){
 	})
 	
 	filterPosts = function(){
+		var $ = jQuery;
 		var $this = $(this);
 		var cats = [];
 		var nsfw_tagid = $('#sfw-filter').data('nsfw_tagid');
