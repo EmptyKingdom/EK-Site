@@ -140,6 +140,18 @@ function ek_get_root_category($category)
 	return $category;
 }
 
+function ek_get_tagline()
+{
+	if (function_exists('ot_get_option')) 
+	{
+		$taglines = explode("\n", ot_get_option('taglines', array()));
+		$tagline = $taglines[array_rand($taglines)];
+		return $tagline;
+	}
+	return '';
+
+}
+
 function ek_display_carousels($carousels, $class_base = 'category', $side_captions = false, $hide_title = false)
 {
 	if (is_object($carousels))

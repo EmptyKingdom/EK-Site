@@ -126,7 +126,7 @@ $carousel_sections = array(
 
 /**
 * Custom settings array that will eventually be 
-* passes to the OptionTree Settings API Class.
+* passed to the OptionTree Settings API Class.
 */
 $custom_settings = array( 
 	'contextual_help' => array(
@@ -134,24 +134,37 @@ $custom_settings = array(
 	),
 	'sections'        => array( 
 		array(
-			'id' => 'home_page',
-			'title' => 'Home Page'
+			'id' => 'general',
+			'title' => 'General'
 		),
 	),
 	'settings'        => array(
 		array(
-        'id'          => 'home_carousels',
-        'label'       => 'Carousels',
-        'desc'        => 'Configure up to 3 carousels. Only the first 3 carousels added here will show up on the page.',
-        'std'         => '',
-        'type'        => 'list-item',
-        'section'     => 'home_page',
-        'rows'        => '',
-        'post_type'   => '',
-        'taxonomy'    => '',
-        'class'       => '',
-        'settings'    => $carousel_settings,
-      )	),
+	        'id'          => 'taglines',
+	        'label'       => 'Taglines',
+	        'desc'        => 'Enter a list of taglines, separated by line breaks. A random one will show up next to the site logo, each time a page on the site is visited.',
+	        'std'         => '',
+	        'type'        => 'textarea_simple',
+	        'section'     => 'general',
+	        'rows'        => '',
+	        'post_type'   => '',
+	        'taxonomy'    => '',
+	        'class'       => '',
+	       ),	
+		array(
+	        'id'          => 'home_carousels',
+	        'label'       => 'Home Page Carousels',
+	        'desc'        => 'Configure up to 3 carousels. Only the first 3 carousels added here will show up on the page.',
+	        'std'         => '',
+	        'type'        => 'list-item',
+	        'section'     => 'general',
+	        'rows'        => '',
+	        'post_type'   => '',
+	        'taxonomy'    => '',
+	        'class'       => '',
+	        'settings'    => $carousel_settings,
+	       ),	
+      ),
 );
 
 foreach ($carousel_sections as $id => $title)

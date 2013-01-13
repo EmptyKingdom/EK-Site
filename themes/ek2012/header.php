@@ -26,7 +26,7 @@
 			<div id="masthead" class="row">
 				<div class="span8 main">
 					<h1 id="logo"><a href="<?php echo site_url('/') ?>"><img src="<?php bloginfo('stylesheet_directory') ?>/img/logo.png" id="logo" alt="Empty Kingdom"></a></h1>
-					<h2 id="tagline">Tagline changes when you refresh page</h2>
+					<h2 id="tagline"><?php echo ek_get_tagline(); ?></h2>
 				</div> <!-- /span8 -->
 				<div class="span4 side">
 					<ul class="unstyled ek-social" id="utility-menu">
