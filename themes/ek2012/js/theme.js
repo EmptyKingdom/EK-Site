@@ -1,3 +1,4 @@
+yepnope(themedir + '/js/jquery.cookie.js');
 $(document).ready(function(){
 
 	updateCarouselIndicator = function(e){
@@ -89,9 +90,11 @@ $(document).ready(function(){
 	
 	$('#cat-filters').on({
 		click: function(e) {
+			e.preventDefault();
 			if ($(e.target).attr('id') == 'close-cat-filters') {
 				$('#cat-filters').slideUp();
-			} else {
+			} 
+			else {
 				$(this).parent('li').toggleClass('selected');
 			}
 		}
@@ -119,10 +122,21 @@ $(document).ready(function(){
 	yepnope({
 		test: $('#cat-filters, #filter-sfw').length,
 		yep: themedir + '/js/spin.min.js',
-		callback: function(){
+		callback: function(url, result, key){
 			$('#main').on({
 				click: filterPosts
 			}, '#filter-btn');
+			if (lastFilter.category__in) {
+				$.each(lastFilter.category__in, function(i, e){
+					$('#cat-filters').find('li[data-cat_id="'+e+'"]').addClass('selected');
+				})
+				if (lastFilter.tag__not_in == $('#sfw-filter').data('nsfw_tagid')) {
+					$('#sfw-filter').addClass('checked');
+				}
+				setTimeout(function(){
+					$('#filter-btn').trigger('click')	
+				}, 100);
+			}
 		}
 	});
 
@@ -142,7 +156,8 @@ $(document).ready(function(){
 					if (curPage-1 == 1) {
 						$clicked.css('visibility', 'hidden');
 					}
-				} else if ($clicked.hasClass('next')) {
+				} 
+				else if ($clicked.hasClass('next')) {
 						if (curPage == maxPage) {
 							var spinner = new Spinner(spinnerOpts).spin($clicked.parent().get(0));
 							$.post(ajaxurl, {
@@ -165,7 +180,8 @@ $(document).ready(function(){
 							$slider.data('nonce', $(result).filter('#nonce').text());
 							$clicked.prev('.prev').css('visibility', 'visible');
 						})
-						} else {
+						} 
+						else {
 							$slider.css('left', '-='+slideDistance);
 							$slider.data('cur_page', $slider.data('cur_page')+1)
 							$clicked.prev('.prev').css('visibility', 'visible');
@@ -179,30 +195,52 @@ $(document).ready(function(){
 	filterPosts = function(){
 		var $this = $(this);
 		var cats = [];
+		var nsfw_tagid = $('#sfw-filter').data('nsfw_tagid');
+		
 		$('#cat-filters').find('li.selected').each(function(i, el){
 			cats.push($(el).data('cat_id'))
 		})
+
 		var newQuery = {category__in: cats};
+
 		if ($('#sfw-filter').hasClass('checked')) {
-			newQuery.tag__not_in = $('#sfw-filter').data('nsfw_tagid');
+			newQuery.tag__not_in = nsfw_tagid;
+			newQuery.sfw = true;
 		}
+		else {
+			delete(origQuery.sfw);
+		}
+		
+		newQuery = $.extend({}, origQuery, newQuery);
 		
 		var spinner = new Spinner(spinnerOpts).spin($this.parent().get(0));
 		$('#post-list').load(ajaxurl, {
 			action: 'ek_load_posts',
 			nonce: $('#cat-filters').data('nonce'),
-			query: $.extend({}, origQuery, newQuery)
+			query: newQuery
 		}, function(result){
+			
+			$.cookie('lastFilter', JSON.stringify(newQuery), {
+				path: '/'
+			});
+		
 			// after content loads:
 			spinner.stop();
 			
 			// set the flag text on or off:
-			if (cats.length) {
+			if (newQuery.category__in.length) {
 				$('#cat-filter').addClass('active').find('a').text('Filter By Category [on]');
-			} else {
+			} 
+			else {
 				$('#cat-filter').removeClass('active').find('a').text('Filter By Category');
 			}
 			
+			if ( ! newQuery.sfw) {
+				$('#posts-pagination a').each(function(i, e){
+					$(this).attr('href', $(this).attr('href').replace('/sfw/', '/'));
+				});
+			} 
+
 			if ($this.attr('id') == 'filter-btn')
 			{
 				// close the filters box

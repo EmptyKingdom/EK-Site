@@ -11,7 +11,9 @@
 		<script type="text/javascript">
 			ajaxurl = '<?php echo admin_url('admin-ajax.php') ?>';
 			themedir = '<?php echo get_stylesheet_directory_uri() ?>';
+			siteurl = '<?php echo site_url('/') ?>';
 			origQuery = <?php echo json_encode($wp_query->query) ?>;
+			lastFilter = <?php echo stripslashes($_COOKIE['lastFilter']) ?: '{}' ?>;
 		</script>
 		<script type="text/javascript" src="//use.typekit.net/jxu3qru.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
