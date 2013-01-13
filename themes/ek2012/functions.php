@@ -98,7 +98,7 @@ add_action('init', 'ek_register_stuff');
 /* get ek main category */
 function ek_get_cat($post = false, $property = false, $parent = false)
 {
-	if (is_category())
+	if ( ! DOING_AJAX && is_category())
 	{
 		$the_category = get_queried_object();
 	}
@@ -107,7 +107,7 @@ function ek_get_cat($post = false, $property = false, $parent = false)
 		$categories = get_the_category($post->ID);
 		foreach($categories as $category)
 		{
-			if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum'))) 
+			if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum'), true)) 
 			{
 				$the_category = $category;
 				break;
