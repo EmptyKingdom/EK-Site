@@ -14,6 +14,7 @@
 			siteurl = '<?php echo site_url('/') ?>';
 			origQuery = <?php echo json_encode($wp_query->query) ?>;
 			lastFilter = <?php echo stripslashes($_COOKIE['lastFilter']) ?: '{}' ?>;
+			disqus_developer = 1;
 		</script>
 		<script type="text/javascript" src="//use.typekit.net/jxu3qru.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
