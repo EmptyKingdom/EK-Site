@@ -41,7 +41,7 @@
 					</ul>
 					<div id="basic-search">
 						<form action="<?php echo site_url('/') ?>">
-							<input type="text" name="s" value="Search your Empty Kingdom">
+							<a id="search-toggle" href="javascript:void(0)"></a><input type="text" name="s" placeholder="Search your Empty Kingdom" class="">
 						</form>
 					</div>
 				</div> <!-- /span4 -->

@@ -11,18 +11,15 @@ $(document).ready(function($){
 		$indicators.eq(index).addClass('active');
 	}
 
+	$('#search-toggle').on({
+		click: function(){
+			$('#basic-search').toggleClass('expanded');
+		},
+	})
+
 	$('#basic-search').on({
 		focus: function(){
-			$(this).addClass('expanded');
-			var val = this.value;
-			var $this = $(this);
-			$this.val("");
-			setTimeout(function () {
-			    $this.val(val);
-			}, 1);
-		},
-		blur: function(){
-			$(this).removeClass('expanded')
+			$(this).data('placeholder', $this.attr('placeholder')).removeAttr('placeholder')
 		}
 	}, 'input')
 	
@@ -127,7 +124,7 @@ $(document).ready(function($){
 			$('#main').on({
 				click: filterPosts
 			}, '#filter-btn');
-			if (lastFilter.category__in) {
+			if (lastFilter.category__in && lastFilter.category__in.length) {
 				$.each(lastFilter.category__in, function(i, e){
 					$('#cat-filters').find('li[data-cat_id="'+e+'"]').addClass('selected');
 				})
@@ -202,7 +199,7 @@ $(document).ready(function($){
 		$('#cat-filters').find('li.selected').each(function(i, el){
 			cats.push($(el).data('cat_id'))
 		})
-
+		
 		var newQuery = {category__in: cats};
 
 		if ($('#sfw-filter').hasClass('checked')) {
@@ -225,7 +222,10 @@ $(document).ready(function($){
 			$.cookie('lastFilter', JSON.stringify(newQuery), {
 				path: '/'
 			});
-		
+			
+			console.log(newQuery);
+			console.log($.cookie('lastFilter'));
+			
 			// after content loads:
 			spinner.stop();
 			
