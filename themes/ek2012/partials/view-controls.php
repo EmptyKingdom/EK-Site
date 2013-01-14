@@ -1,5 +1,5 @@
 		<ul class="unstyled" id="view-controls">
-			<li id="grid-view"><a href="javascript:void(0)" data-action="gridView" class="btn btn-primary">Grid View</a></li>
+			<li id="grid-view" class="active"><a href="javascript:void(0)" data-action="gridView" class="btn btn-primary">Grid View</a></li>
 			<li id="list-view"><a href="javascript:void(0)" data-action="listView" class="btn btn-primary">List View</a></li>
 			<?php if (is_home()) : ?>
 			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters" class="btn btn-primary">Filter By Category</a></li>

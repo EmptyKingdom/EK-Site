@@ -82,6 +82,7 @@ $(document).ready(function($){
 			var $clicked = $(e.target);
 			var action = $clicked.data('action');
 			var target = $clicked.data('target') || '#post-list';
+			$clicked.addClass('active');
 			if (typeof viewControls[action] == 'function') {
 				viewControls[action](target, e);
 			}
@@ -275,10 +276,14 @@ $(document).ready(function($){
 
 var viewControls = {
 	gridView: function(target) {
+		$('#grid-view').addClass('active');
+		$('#list-view').removeClass('active');
 		this.switchView('list', 'grid', target);
 	},
 
 	listView: function(target) {
+		$('#list-view').addClass('active');
+		$('#grid-view').removeClass('active');
 		this.switchView('grid', 'list', target);
 	},
 
