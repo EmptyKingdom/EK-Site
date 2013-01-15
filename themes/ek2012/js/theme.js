@@ -19,7 +19,8 @@ $(document).ready(function($){
 
 	$('#basic-search').on({
 		focus: function(){
-			$(this).data('placeholder', $this.attr('placeholder')).removeAttr('placeholder')
+			var $this = $(this);
+			$this.data('placeholder', $this.attr('placeholder')).removeAttr('placeholder')
 		}
 	}, 'input')
 	
