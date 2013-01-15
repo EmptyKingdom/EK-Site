@@ -84,7 +84,6 @@ $(document).ready(function($){
 			var $clicked = $(e.target);
 			var action = $clicked.data('action');
 			var target = $clicked.data('target') || '#post-list';
-/* 			$clicked.addClass('active'); */
 			if (typeof viewControls[action] == 'function') {
 				viewControls[action](target, e);
 			}
@@ -123,7 +122,7 @@ $(document).ready(function($){
 	
 	// cat filters
 	yepnope({
-		test: $('#cat-filters, #filter-sfw').length,
+		test: $('#cat-filters, #sfw-filter').length,
 		yep: themedir + '/js/spin.min.js',
 		callback: function(url, result, key){
 			$('#main').on({
@@ -139,6 +138,9 @@ $(document).ready(function($){
 				setTimeout(function(){
 					$('#filter-btn').trigger('click')	
 				}, 100);
+			}
+			else if (lastFilter.sfw && window.location.href.indexOf('/sfw/') == -1) {
+				$('#sfw-filter a').trigger('click')	
 			}
 		}
 	});
@@ -207,20 +209,20 @@ $(document).ready(function($){
 		
 		var newQuery = {category__in: cats};
 
+		newQuery = $.extend({}, origQuery, newQuery);
+		
 		if ($('#sfw-filter').hasClass('checked')) {
 			newQuery.tag__not_in = nsfw_tagid;
 			newQuery.sfw = true;
 		}
 		else {
-			delete(origQuery.sfw);
+			delete(newQuery.sfw);
 		}
-		
-		newQuery = $.extend({}, origQuery, newQuery);
 		
 		var spinner = new Spinner(spinnerOpts).spin($this.parent().get(0));
 		$('#post-list').load(ajaxurl, {
 			action: 'ek_load_posts',
-			nonce: $('#cat-filters').data('nonce'),
+			nonce: $('#view-controls').data('nonce'),
 			query: newQuery
 		}, function(result){
 			
@@ -240,8 +242,18 @@ $(document).ready(function($){
 			}
 			
 			if ( ! newQuery.sfw) {
-				$('#posts-pagination a').each(function(i, e){
-					$(this).attr('href', $(this).attr('href').replace('/sfw/', '/'));
+				$('.container a[href], #footer a[href]').each(function(i, e){
+					var $this = $(this);
+					$this.attr('href', $this.attr('href').replace('/sfw/', '/'));
+				});
+			} 
+			else {
+				$('.container a[href], #footer a[href]').each(function(i, e){
+					var $this = $(this);
+					if ($this.attr('href').indexOf('/sfw/') == -1)
+					{
+						$this.attr('href', $this.attr('href').replace(siteurl, siteurl+'sfw/'));
+					}
 				});
 			} 
 
@@ -255,7 +267,7 @@ $(document).ready(function($){
 				if ($('#wpadminbar').length) {
 					scrollTo -= $('#wpadminbar').outerHeight();
 				}
-				$('#cat-filters').data('nonce', $(result).filter('#nonce').text());
+				$('#view-controls').data('nonce', $(result).filter('#nonce').text());
 				$('html, body').animate({
 					scrollTop: scrollTo
 				}, 200);

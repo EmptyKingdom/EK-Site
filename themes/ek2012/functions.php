@@ -1,5 +1,14 @@
 <?php 
 
+if ($_GET['ref'] == 'ek_logo') 
+{
+	// unset saved category filter if you click on the logo
+	$lastFilter = json_encode(array('category__in' => array()));
+	setcookie('lastFilter', $lastFilter, 0, '/');
+	$_COOKIE['lastFilter'] = $lastFilter;
+	$_SERVER['REQUEST_URI'] = str_replace('ref=ek_logo', '', $_SERVER['REQUEST_URI']);
+}
+
 /* theme support */
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
@@ -253,15 +262,17 @@ function ek_sfw_pre_get_posts($query)
 	global $wp_query;
 	if (isset($wp_query->query_vars['sfw']))
 	{
-		$query->query_vars['tax_query'][] = array(
-            'taxonomy' => 'post_tag',
-            'field' => 'slug',
-            'terms' => 'nsfw',
-            'operator' => 'NOT IN',
-		);
-		if ( ! empty($wp_query->query_vars['sfw']))
+		add_filter('post_link', 'ek_add_sfw_to_link');
+		add_filter('category_link', 'ek_add_sfw_to_link');
+		add_filter('page_link', 'ek_add_sfw_to_link');
+		add_filter('author_link', 'ek_add_sfw_to_link');
+		if ( ! empty($wp_query->query_vars['sfw']) && $query->is_main_query())
 		{
 			$vars = explode('/', $wp_query->query_vars['sfw']);
+			if (count($vars) == 1)
+			{
+				$new_query = array('pagename' => $vars[0]);
+			}
 			foreach ($vars as $i => $var)
 			{
 				if ($i % 2 == 0)
@@ -269,17 +280,52 @@ function ek_sfw_pre_get_posts($query)
 					if ( ! $wp_query->is_singular() && $var == 'page')
 					{
 						$var = 'paged';
-						if ($vars[$i+1] > 1)
-						{
-							$wp_query->is_paged = true;
-						}
 					}
-					$wp_query->query_vars[$var] = $vars[$i+1];
+					else if ($var == 'category')
+					{
+						$var = 'category_name';
+					}
+					else if ($var == 'author')
+					{
+						$var = 'author_name';
+					}
+					else if ($var == 'featured')
+					{
+						$var = 'name';
+					}
+					$new_query[$var] = $vars[$i+1];
 				}
 			}
+			$query->parse_query($new_query);
+			$query->query_vars['sfw'] = '';
 		}
+		$query->query_vars['tax_query'][] = array(
+            'taxonomy' => 'post_tag',
+            'field' => 'slug',
+            'terms' => 'nsfw',
+            'operator' => 'NOT IN',
+		);
 	}
 }
+
+function ek_add_sfw_to_link($link)
+{
+	if (strpos('/sfw/', $link) === false)
+	{
+		$link = str_replace(site_url('/'), site_url('/').'sfw/', $link);
+	}
+	return $link;
+}
+
+/*
+add_action( 'posts_request', function($query){
+	if ($query->is_main_query())
+	{
+		print_r($query);
+	}
+}, 11 );
+*/
+
 
 add_filter('nav_menu_css_class', 'ek_nav_cat_classes', 10, 2);
 function ek_nav_cat_classes($classes, $item)

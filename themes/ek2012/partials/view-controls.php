@@ -1,4 +1,4 @@
-		<ul class="unstyled" id="view-controls">
+		<ul class="unstyled" id="view-controls" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
 			<li id="grid-view" class="active"><a href="javascript:void(0)" data-action="gridView" class="btn btn-primary">Grid View</a></li>
 			<li id="list-view"><a href="javascript:void(0)" data-action="listView" class="btn btn-primary">List View</a></li>
 			<?php if (is_home()) : ?>
@@ -7,7 +7,7 @@
 			<li id="sfw-filter" class="<?php global $wp_query; echo isset($wp_query->query_vars['sfw']) ? 'checked' : '' ?>" data-nsfw_tagid="<?php echo get_term_by('slug', 'nsfw', 'post_tag')->term_id ?>"><a href="javascript:void(0)" data-action="filterSfw" class="btn btn-primary">SFW</a></li>
 		</ul> <!-- /#view-controls -->
 		<?php if (is_home()) : ?>
-		<div id="cat-filters" class="well clearfix" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
+		<div id="cat-filters" class="well clearfix">
 			<a id="close-cat-filters" href="javascript:void(0)"></a>
 			<h3>Select specific categories you want to view.</h3>
 			<div class="row">
