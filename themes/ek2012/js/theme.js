@@ -21,6 +21,10 @@ $(document).ready(function($){
 		focus: function(){
 			var $this = $(this);
 			$this.data('placeholder', $this.attr('placeholder')).removeAttr('placeholder')
+		},
+		blur: function(){
+			var $this = $(this)
+			$this.attr('placeholder', $this.data('placeholder'));
 		}
 	}, 'input')
 	
