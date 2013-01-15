@@ -85,7 +85,7 @@ ul#view-controls li#cat-filter.active a,ul#view-controls li#cat-filter:hover a{b
 ul#view-controls li#sfw-filter{position:relative;}ul#view-controls li#sfw-filter a{background-image:url(../img/slices/icon-checkbox.png);}
 ul#view-controls li#sfw-filter.active a,ul#view-controls li#sfw-filter:hover a{background:url(../img/slices/icon-checkbox-active.png) no-repeat 10px center #333333 !important;}
 ul#view-controls li#sfw-filter.checked a{background:url(../img/slices/icon-checkbox-checked.png) no-repeat 10px center #333333 !important;}
-ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !important;}
+ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !important;margin-left:10px;}
 #cat-filters{display:none;position:relative;}#cat-filters #close-cat-filters{display:block;position:absolute;top:20px;right:20px;background:url(../img/slices/close-button.png) no-repeat;height:15px;width:15px;}
 #cat-filters #filter-btn{margin-left:20px;}
 #cat-filters h3{font-family:'myriad-pro',sans-serif;font-weight:normal;font-style:italic;font-size:22px;}
