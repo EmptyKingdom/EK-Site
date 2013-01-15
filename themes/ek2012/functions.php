@@ -107,7 +107,7 @@ add_action('init', 'ek_register_stuff');
 /* get ek main category */
 function ek_get_cat($post = false, $property = false, $parent = false)
 {
-	if ( ! DOING_AJAX && is_category())
+	if ( ! defined(DOING_AJAX) && is_category())
 	{
 		$the_category = get_queried_object();
 	}
