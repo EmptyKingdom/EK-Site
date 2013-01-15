@@ -228,9 +228,6 @@ $(document).ready(function($){
 				path: '/'
 			});
 			
-			console.log(newQuery);
-			console.log($.cookie('lastFilter'));
-			
 			// after content loads:
 			spinner.stop();
 			
@@ -251,7 +248,7 @@ $(document).ready(function($){
 			if ($this.attr('id') == 'filter-btn')
 			{
 				// close the filters box
-				$('#close-cat-filters').trigger('click');
+				$('#cat-filters').slideUp();
 
 				// scroll to top of view controls if it was the category filters that was clicked
 				var scrollTo = $('#view-controls').offset().top-10;
