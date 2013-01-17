@@ -5,5 +5,5 @@
 	<div class="thumbnail"><a href="<?php the_permalink() ?>"><?php the_post_thumbnail() ?></a></div>
 	<h5 class="category"><?php echo ek_get_cat($post, 'name') ?></h5>
 	<div class="excerpt"><?php the_excerpt() ?></div>
-	<a class="btn btn-default" href="<?php the_permalink() ?>">View More...</a>
+	<a class="view-more" href="<?php the_permalink() ?>">View More&hellip;</a>
 </div>
