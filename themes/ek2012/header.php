@@ -38,7 +38,6 @@
 						<li class="pinterest icon">Pinterest</li>
 						<li class="facebook icon">Facebook</li>
 						<li class="twitter icon">Twitter</li>
-						<li><a href="<?php bloginfo('url') ?>/store/" class="btn btn-primary">EK Store</a></li>
 					</ul>
 					<div id="basic-search">
 						<form action="<?php echo site_url('/') ?>">
