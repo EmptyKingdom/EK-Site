@@ -53,8 +53,8 @@
 		<?php endwhile; // slide loop ?>
 	</div> <!-- /.carousel-inner -->
 	<!-- Carousel nav -->
-	<a class="carousel-control left" href="#<?php echo $class_base ?>-carousel-<?php echo $i ?>" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#<?php echo $class_base ?>-carousel-<?php echo $i ?>" data-slide="next">&rsaquo;</a>
+	<a class="carousel-control left" href="#<?php echo $class_base ?>-carousel-<?php echo $i ?>" data-slide="prev">&nbsp;</a>
+	<a class="carousel-control right" href="#<?php echo $class_base ?>-carousel-<?php echo $i ?>" data-slide="next">&nbsp;</a>
 	<!-- Carousel indicator -->
 	<ul class="unstyled carousel-indicator">
 		<?php for ($j = 0; $j < $carousel->slides->post_count; $j++) : ?>

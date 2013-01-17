@@ -306,8 +306,11 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-photography.png) no-repeat;
 	}
-	.btn-default, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
+	.btn-default, .carousel-indicator li.active, ul.sub-menu {
 		background: @photographyColor !important;
+	}
+	.carousel-control {
+		background-color: @photographyColor;
 	}
 	.btn:hover {
 		background: @paleGray !important;
@@ -330,8 +333,11 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-illustration.png) no-repeat;
 	}
-	.btn-default, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
+	.btn-default, .carousel-indicator li.active, ul.sub-menu {
 		background: @illustrationartColor !important;
+	}
+	.carousel-control {
+		background-color: @illustrationartColor;
 	}
 	.btn:hover {
 		background: @paleGray !important;
@@ -354,8 +360,11 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-film.png) no-repeat;
 	}
-	.btn-default, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
+	.btn-default, .carousel-indicator li.active, ul.sub-menu {
 		background: @filmColor !important;
+	}
+	.carousel-control {
+		background-color: @filmColor;
 	}
 	.btn:hover {
 		background: @paleGray !important;
@@ -378,8 +387,11 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-new-media.png) no-repeat;
 	}
-	.btn-default, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
+	.btn-default, .carousel-indicator li.active, ul.sub-menu {
 		background: @newMediaColor !important;
+	}
+	.carousel-control {
+		background-color: @newMediaColor;
 	}
 	.btn:hover {
 		background: @paleGray !important;
@@ -402,8 +414,11 @@ h5.category {
 	h5.category {
 		background: url(../img/slices/category-event.png) no-repeat;
 	}
-	.btn-default, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
+	.btn-default, .carousel-indicator li.active, ul.sub-menu {
 		background: @eventColor !important;
+	}
+	.carousel-control {
+		background-color: @eventColor;
 	}
 	.btn:hover {
 		background: @paleGray !important;
@@ -426,8 +441,11 @@ h5.category {
 	h5.category,  {
 		background: url(../img/slices/category-interview.png) no-repeat;
 	}
-	.btn-default, .carousel-indicator li.active, .carousel-control, ul.sub-menu {
+	.btn-default, .carousel-indicator li.active, ul.sub-menu {
 		background: @interviewColor !important;
+	}
+	.carousel-control {
+		background-color: @interviewColor;
 	}
 	.btn:hover {
 		background: @paleGray !important;
@@ -489,6 +507,8 @@ body.home {
 	-webkit-border-radius: 0;
 	border: 0;
 	background-color: @linkHighlight;
+	background-repeat: no-repeat;
+	background-position: center center;
 	opacity: 1 !important;
 	color: #FFF !important;
 	width: 24px;
@@ -501,10 +521,12 @@ body.home {
 	z-index: 3;
 	&.left {
 		left: -12px;
+		background-image: url(../img/slices/arrow-left-carousel.png);
 	}
 	&.right {
 		left: auto;
 		right: -12px;
+		background-image: url(../img/slices/arrow-right-carousel.png);
 	}
 }
 

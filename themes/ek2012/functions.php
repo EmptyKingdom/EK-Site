@@ -214,7 +214,7 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
  * Optional: set 'ot_show_pages' filter to false.
  * This will hide the settings & documentation pages.
  */
-add_filter( 'ot_show_pages', '__return_false' );
+add_filter( 'ot_show_pages', '__return_true' );
 
 /**
  * Required: set 'ot_theme_mode' filter to true.
