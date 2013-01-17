@@ -40,7 +40,7 @@ class EK_Widget_Random_Articles extends WP_Widget {
 			<?php while ($random_articles->have_posts()) : $random_articles->the_post(); ?>
 			<li class="post">
 				<h3><?php the_title() ?></h3>
-				<div class="thumbnail"><?php the_post_thumbnail() ?></div>
+				<div class="thumbnail"><a href="<?php the_permalink() ?>"><?php the_post_thumbnail() ?></a></div>
 			</li>
 			<?php endwhile; ?>
 		</ul> <!-- /.content -->
