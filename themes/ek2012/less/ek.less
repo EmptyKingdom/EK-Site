@@ -962,8 +962,9 @@ body.home {
 	padding-top: 68px;
 	.widget {
 		background-color: whitesmoke;
-		padding: 0 @grid*3 @grid*2 @grid*3;
 		border-bottom: 4px solid @linkHighlight;
+		margin-top: 24px;
+		overflow: hidden;
 		h4 {
 			background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
 			padding: 0 @grid*3.5;
@@ -974,8 +975,24 @@ body.home {
 			font-weight: 500;
 			height: @grid*4;
 			line-height: @grid*4.5;
-			margin: @grid*3 -@grid*3;
+			margin: 0 0 @grid*3 0;
 			border-bottom: 1px solid #2AC8F8;
+			cursor: pointer;
+		}
+		div.content {
+			overflow: hidden;
+			padding: 0 @grid*3 @grid*2 @grid*3;
+		}
+		&.collapsed {
+			border-bottom-width: 0;
+			h4 {
+				margin-bottom: 0;
+/* 				border-bottom-color: @linkHighlight; */
+			}
+			div.content {
+				height: 0;
+				padding-bottom: 0;
+			}
 		}
 		&.newsletter-signup {
 			background: #FFF;
@@ -987,6 +1004,10 @@ body.home {
 				border: none;
 				margin-bottom: 0;
 				color: @textColor;
+			}
+			.content {
+				padding-left: 0;
+				padding-right:  0;
 			}
 		}
 		&.facebook {

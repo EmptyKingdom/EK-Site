@@ -29,9 +29,9 @@ foreach($widgets as $widget_file)
 register_sidebar(array(
 	'name'          => 'Right Sidebar',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
+	'after_widget'  => '</div></div>',
 	'before_title'  => '<h4>',
-	'after_title'   => '</h4>' ));
+	'after_title'   => '</h4><div class="content">' ));
 register_sidebar(array(
 	'name'          => 'Footer Left',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',

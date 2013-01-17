@@ -38,7 +38,7 @@ class EK_Widget_Facebook extends WP_Widget {
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 		</script>
-		<div class="content">
+		<div class="fb-content">
 			<div class="facebookOuter">
 				<div class="fb-like-box" 
 				data-href="https://www.facebook.com/pages/Empty-Kingdom/151292131589404" 

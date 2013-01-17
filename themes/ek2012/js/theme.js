@@ -285,7 +285,13 @@ $(document).ready(function($){
 			$parent.removeClass('active');
 		})
 	})
-
+	
+	$('.widget h4').on({
+		mouseup: function() {
+			$(this).closest('.widget').toggleClass('collapsed');
+		}
+	})
+	
 })
 
 var viewControls = {
