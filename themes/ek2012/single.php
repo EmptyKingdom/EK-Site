@@ -1,5 +1,6 @@
 <?php 
 global $post;
+$arr = apply_filters('comments_array', array(), $post->ID);
 $category = ek_get_cat($post);
 $related_artists = new WP_Query(array(
 	'category__in' => $category->term_id,
@@ -46,7 +47,7 @@ get_header(); ?>
 		</div>
 		<div id="comments" class="post-addendum">
 			<h2>Comments</h2>
-			<?php comments_template() ?>
+			<?php comments_template(); ?>
 		</div>
 		<p><?php the_tags(); ?></p>
 	<?php else : // have_posts() ?>
