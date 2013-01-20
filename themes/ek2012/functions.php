@@ -105,17 +105,25 @@ function ek_register_stuff() {
 add_action('init', 'ek_register_stuff');
 
 /* get ek main category */
-function ek_get_cat($post = false, $property = false, $parent = false)
+function ek_get_cat($post = false, $property = false, $parent = true)
 {
 	if ( ! defined(DOING_AJAX) && is_category())
 	{
 		$the_category = get_queried_object();
+		if ($parent)
+		{
+			$the_category = ek_get_root_category($the_category);
+		}
 	}
 	else 
 	{
 		$categories = get_the_category($post->ID);
 		foreach($categories as $category)
 		{
+			if ($parent)
+			{
+				$category = ek_get_root_category($category);
+			}
 			if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum'), true)) 
 			{
 				$the_category = $category;
@@ -125,10 +133,6 @@ function ek_get_cat($post = false, $property = false, $parent = false)
 	}
 	if ( ! $the_category)
 		return false;
-	if ($parent)
-	{
-		$the_category = ek_get_root_category($the_category);
-	}
 	if ($property)
 		return $the_category->$property;
 	return $the_category;
@@ -138,9 +142,13 @@ function ek_get_root_category($category)
 {
 	if (is_object($category))
 	{
-		$category = $category->term_id;
+		$_category = $category->term_id;
 	}
-	$parent_cats = get_category_parents($category, false, '/', true);
+	else
+	{
+		$_category = $category;
+	}
+	$parent_cats = get_category_parents($_category, false, '/', true);
 	if (is_string($parent_cats))
 	{
 		$split_arr = explode("/", $parent_cats);
