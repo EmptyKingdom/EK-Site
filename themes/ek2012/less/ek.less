@@ -327,8 +327,10 @@ h5.category {
 		}
 	}
 	&.post {
-		a.view-more {
+		a.view-more, h5.random-article {
 			color: @photographyColor;
+			background: none;
+			padding-left: 0px;
 		}
 	}
 }
@@ -354,8 +356,10 @@ h5.category {
 		}
 	}
 	&.post {
-		a.view-more {
+		a.view-more, h5.random-article {
 			color: @illustrationartColor;
+			background: none;
+			padding-left: 0px;
 		}
 	}
 }
@@ -381,8 +385,10 @@ h5.category {
 		}
 	}
 	&.post {
-		a.view-more {
+		a.view-more, h5.random-article {
 			color: @filmColor;
+			background: none;
+			padding-left: 0px;
 		}
 	}
 }
@@ -408,8 +414,10 @@ h5.category {
 		}
 	}
 	&.post {
-		a.view-more {
+		a.view-more, h5.random-article {
 			color: @newMediaColor;
+			background: none;
+			padding-left: 0px;
 		}
 	}
 }
@@ -435,8 +443,10 @@ h5.category {
 		}
 	}
 	&.post {
-		a.view-more {
+		a.view-more, h5.random-article {
 			color: @eventColor;
+			background: none;
+			padding-left: 0px;
 		}
 	}
 }
@@ -462,8 +472,10 @@ h5.category {
 		}
 	}
 	&.post {
-		a.view-more {
+		a.view-more, h5.random-article {
 			color: @interviewColor;
+			background: none;
+			padding-left: 0px;
 		}
 	}
 }
@@ -1046,9 +1058,28 @@ body.home {
 				margin: 0;
 				li {
 					padding-bottom: @grid;
-					h3 {
-						font-size: 16px;
-						margin-bottom: @grid;
+					position: relative;
+					.header {
+						position: absolute;
+						padding: 15px 6.25%;
+						background-color: rgba(51,51,51,.9);
+						width: 87.5%;
+						a {
+							display: block;
+						}
+						h3 {
+							font-size: 14px;
+							line-height: 14px;
+							margin: 0;
+							color: #FFF;
+							font-weight: normal;
+						}
+						h5 {
+							margin: 0 0 5px 0;
+							color: #F53773;
+							line-height: 11px;
+							font-weight: normal;
+						}
 					}
 					.thumbnail {
 						margin-bottom: @grid*2;

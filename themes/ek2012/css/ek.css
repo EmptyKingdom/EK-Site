@@ -38,37 +38,37 @@ h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-si
 .photography .carousel-control{background-color:#faa634;}
 .photography .btn:hover{background:#e5e5e5 !important;color:#faa634 !important;}
 .photography.menu-item.active,.photography.current-menu-item{border-bottom-color:#faa634 !important;}.photography.menu-item.active a,.photography.current-menu-item a,.photography.menu-item.active a:hover,.photography.current-menu-item a:hover{color:#faa634 !important;}
-.photography.post a.view-more{color:#faa634;}
+.photography.post a.view-more,.photography.post h5.random-article{color:#faa634;background:none;padding-left:0px;}
 .illustration-art h5.category{background:url(../img/slices/category-illustration.png) no-repeat;}
 .illustration-art .btn-default,.illustration-art .carousel-indicator li.active,.illustration-art ul.sub-menu{background:#f33737 !important;}
 .illustration-art .carousel-control{background-color:#f33737;}
 .illustration-art .btn:hover{background:#e5e5e5 !important;color:#f33737 !important;}
 .illustration-art.menu-item.active,.illustration-art.current-menu-item{border-bottom-color:#f33737 !important;}.illustration-art.menu-item.active a,.illustration-art.current-menu-item a,.illustration-art.menu-item.active a:hover,.illustration-art.current-menu-item a:hover{color:#f33737 !important;}
-.illustration-art.post a.view-more{color:#f33737;}
+.illustration-art.post a.view-more,.illustration-art.post h5.random-article{color:#f33737;background:none;padding-left:0px;}
 .film h5.category{background:url(../img/slices/category-film.png) no-repeat;}
 .film .btn-default,.film .carousel-indicator li.active,.film ul.sub-menu{background:#000000 !important;}
 .film .carousel-control{background-color:#000000;}
 .film .btn:hover{background:#e5e5e5 !important;color:#000000 !important;}
 .film.menu-item.active,.film.current-menu-item{border-bottom-color:#000000 !important;}.film.menu-item.active a,.film.current-menu-item a,.film.menu-item.active a:hover,.film.current-menu-item a:hover{color:#000000 !important;}
-.film.post a.view-more{color:#000000;}
+.film.post a.view-more,.film.post h5.random-article{color:#000000;background:none;padding-left:0px;}
 .new-media h5.category{background:url(../img/slices/category-new-media.png) no-repeat;}
 .new-media .btn-default,.new-media .carousel-indicator li.active,.new-media ul.sub-menu{background:#62bb46 !important;}
 .new-media .carousel-control{background-color:#62bb46;}
 .new-media .btn:hover{background:#e5e5e5 !important;color:#62bb46 !important;}
 .new-media.menu-item.active,.new-media.current-menu-item{border-bottom-color:#62bb46 !important;}.new-media.menu-item.active a,.new-media.current-menu-item a,.new-media.menu-item.active a:hover,.new-media.current-menu-item a:hover{color:#62bb46 !important;}
-.new-media.post a.view-more{color:#62bb46;}
+.new-media.post a.view-more,.new-media.post h5.random-article{color:#62bb46;background:none;padding-left:0px;}
 .event h5.category{background:url(../img/slices/category-event.png) no-repeat;}
 .event .btn-default,.event .carousel-indicator li.active,.event ul.sub-menu{background:#894e93 !important;}
 .event .carousel-control{background-color:#894e93;}
 .event .btn:hover{background:#e5e5e5 !important;color:#894e93 !important;}
 .event.menu-item.active,.event.current-menu-item{border-bottom-color:#894e93 !important;}.event.menu-item.active a,.event.current-menu-item a,.event.menu-item.active a:hover,.event.current-menu-item a:hover{color:#894e93 !important;}
-.event.post a.view-more{color:#894e93;}
+.event.post a.view-more,.event.post h5.random-article{color:#894e93;background:none;padding-left:0px;}
 .interview h5.category{background:url(../img/slices/category-interview.png) no-repeat;}
 .interview .btn-default,.interview .carousel-indicator li.active,.interview ul.sub-menu{background:#00b8eb !important;}
 .interview .carousel-control{background-color:#00b8eb;}
 .interview .btn:hover{background:#e5e5e5 !important;color:#00b8eb !important;}
 .interview.menu-item.active,.interview.current-menu-item{border-bottom-color:#00b8eb !important;}.interview.menu-item.active a,.interview.current-menu-item a,.interview.menu-item.active a:hover,.interview.current-menu-item a:hover{color:#00b8eb !important;}
-.interview.post a.view-more{color:#00b8eb;}
+.interview.post a.view-more,.interview.post h5.random-article{color:#00b8eb;background:none;padding-left:0px;}
 hr.dotted{display:block;clear:both;border-top:1px dotted #cccccc;margin-top:20px;margin-bottom:20px;}
 #ad-slot-1{background-color:#e5e5e5;}#ad-slot-1 img{padding:32px;}
 body.home #sidebar{padding-top:0;}
@@ -151,7 +151,9 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 #sidebar .widget.facebook .fb-like-box,#sidebar .widget.facebook .fb-like-box span,#sidebar .widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}
 #sidebar .widget.widget_ek-pinterest-widget .row{margin-bottom:16px;}
 #sidebar .widget.widget_ek-pinterest-widget .follow a{font-size:20px;line-height:20px;}#sidebar .widget.widget_ek-pinterest-widget .follow a .logo{width:85px;height:20px;display:inline-block;background:url(../img/slices/logo-pinterest.png) no-repeat right center;vertical-align:-10%;}
-#sidebar .widget.ek-random-articles ul{margin:0;}#sidebar .widget.ek-random-articles ul li{padding-bottom:8px;}#sidebar .widget.ek-random-articles ul li h3{font-size:16px;margin-bottom:8px;}
+#sidebar .widget.ek-random-articles ul{margin:0;}#sidebar .widget.ek-random-articles ul li{padding-bottom:8px;position:relative;}#sidebar .widget.ek-random-articles ul li .header{position:absolute;padding:15px 6.25%;background-color:rgba(51, 51, 51, 0.9);width:87.5%;}#sidebar .widget.ek-random-articles ul li .header a{display:block;}
+#sidebar .widget.ek-random-articles ul li .header h3{font-size:14px;line-height:14px;margin:0;color:#FFF;font-weight:normal;}
+#sidebar .widget.ek-random-articles ul li .header h5{margin:0 0 5px 0;color:#F53773;line-height:11px;font-weight:normal;}
 #sidebar .widget.ek-random-articles ul li .thumbnail{margin-bottom:16px;}
 #sidebar .widget .featured-archive{background:none;border:none;font-weight:600;line-height:18px;height:18px;font-size:18px;}
 #sidebar .widget.widget_text{padding:0;background-color:#FFF;}

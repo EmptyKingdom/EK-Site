@@ -38,8 +38,14 @@ class EK_Widget_Random_Articles extends WP_Widget {
 		?>
 		<ul class="unstyled post-list">
 			<?php while ($random_articles->have_posts()) : $random_articles->the_post(); ?>
-			<li class="post">
-				<h3><?php the_title() ?></h3>
+			<?php $category = ek_get_cat($post) ?>
+			<li class="post <?php echo $category->slug ?>">
+				<div class="header">
+					<a href="<?php the_permalink() ?>">
+						<h5 class="category random-article"><?php echo $category->name ?></h5>
+						<h3><?php the_title() ?></h3>
+					</a>
+				</div>
 				<div class="thumbnail"><a href="<?php the_permalink() ?>"><?php the_post_thumbnail() ?></a></div>
 			</li>
 			<?php endwhile; ?>
