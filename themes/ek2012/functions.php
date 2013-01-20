@@ -222,7 +222,7 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
  * Optional: set 'ot_show_pages' filter to false.
  * This will hide the settings & documentation pages.
  */
-add_filter( 'ot_show_pages', '__return_true' );
+add_filter( 'ot_show_pages', '__return_false' );
 
 /**
  * Required: set 'ot_theme_mode' filter to true.
@@ -561,4 +561,63 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+
+	register_field_group(array (
+		'id' => '50fb9867719cd',
+		'title' => 'Featured Video',
+		'fields' => 
+		array (
+			0 => 
+			array (
+				'key' => 'field_13',
+				'label' => 'Video URL',
+				'name' => 'featured_video',
+				'type' => 'text',
+				'order_no' => 0,
+				'instructions' => 'URL to any YouTube or Vimeo video.',
+				'required' => 0,
+				'conditional_logic' => 
+				array (
+					'status' => 0,
+					'rules' => 
+					array (
+						0 => 
+						array (
+							'field' => 'null',
+							'operator' => '==',
+							'value' => '',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'formatting' => 'html',
+			),
+		),
+		'location' => 
+		array (
+			'rules' => 
+			array (
+				0 => 
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+				),
+			),
+			'allorany' => 'all',
+		),
+		'options' => 
+		array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => 
+			array (
+			),
+		),
+		'menu_order' => 0,
+	));
+
+
 }
