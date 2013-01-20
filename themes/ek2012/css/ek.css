@@ -151,7 +151,8 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 #sidebar .widget.facebook .fb-like-box,#sidebar .widget.facebook .fb-like-box span,#sidebar .widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}
 #sidebar .widget.widget_ek-pinterest-widget .row{margin-bottom:16px;}
 #sidebar .widget.widget_ek-pinterest-widget .follow a{font-size:20px;line-height:20px;}#sidebar .widget.widget_ek-pinterest-widget .follow a .logo{width:85px;height:20px;display:inline-block;background:url(../img/slices/logo-pinterest.png) no-repeat right center;vertical-align:-10%;}
-#sidebar .widget.ek-random-articles ul{margin:0;}#sidebar .widget.ek-random-articles ul li{padding-bottom:8px;position:relative;}#sidebar .widget.ek-random-articles ul li .header{position:absolute;padding:15px 6.25%;background-color:rgba(51, 51, 51, 0.9);width:87.5%;}#sidebar .widget.ek-random-articles ul li .header a{display:block;}
+#sidebar .widget.ek-random-articles ul{margin:0;}#sidebar .widget.ek-random-articles ul li{padding-bottom:8px;position:relative;}#sidebar .widget.ek-random-articles ul li:hover .header{opacity:1.0;}
+#sidebar .widget.ek-random-articles ul li .header{position:absolute;padding:15px 6.25%;background-color:rgba(51, 51, 51, 0.9);width:87.5%;opacity:0;-webkit-transition:0.2s ease-in-out all;-moz-transition:0.2s ease-in-out all;-ms-transition:0.2s ease-in-out all;-o-transition:0.2s ease-in-out all;transition:0.2s ease-in-out all;}#sidebar .widget.ek-random-articles ul li .header a{display:block;}
 #sidebar .widget.ek-random-articles ul li .header h3{font-size:14px;line-height:14px;margin:0;color:#FFF;font-weight:normal;}
 #sidebar .widget.ek-random-articles ul li .header h5{margin:0 0 5px 0;color:#F53773;line-height:11px;font-weight:normal;}
 #sidebar .widget.ek-random-articles ul li .thumbnail{margin-bottom:16px;}
