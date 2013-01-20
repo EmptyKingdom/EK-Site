@@ -322,7 +322,6 @@ if (!class_exists('WPAL2Int')) {
 		static function Get_fb_comments_cached($user_ID, $link_id, $cached = true) {
 			global $blog_id;
 			$fb_key = c_al2fb_transient_cache . md5( 'c' . $blog_id . $user_ID . $link_id);
-			error_log($fb_key);
 			$fb_comments = get_transient($fb_key);
 			if (get_option(c_al2fb_option_debug) || !$cached)
 				$fb_comments = false;
