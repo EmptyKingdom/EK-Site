@@ -6,6 +6,7 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta name="keywords" content="Art, blog, empty kingdom, film, media, photography, illustration, website, artist">
 <!-- 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/bootstrap-responsive.min.css" type="text/css" media="screen" charset="utf-8"> -->
+		<link rel="SHORTCUT ICON" type='image/x-icon' href="http://www.emptykingdom.com/main/wp-content/uploads/2012/03/ekstar.png">
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/ek.css" type="text/css" media="screen" charset="utf-8">
 		<script type="text/javascript">
