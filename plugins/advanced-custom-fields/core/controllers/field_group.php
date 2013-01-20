@@ -31,10 +31,6 @@ class acf_field_group
 		$this->parent = $parent;
 		
 		
-		// filters
-		add_filter('name_save_pre', array($this, 'save_name'));
-		
-		
 		// actions
 		add_action('admin_print_scripts', array($this,'admin_print_scripts'));
 		add_action('admin_print_styles', array($this,'admin_print_styles'));
@@ -42,9 +38,14 @@ class acf_field_group
 		add_action('save_post', array($this, 'save_post'));
 		
 		
+		// filters
+		add_filter('name_save_pre', array($this, 'save_name'));
+		
+		
 		// ajax
 		add_action('wp_ajax_acf_field_options', array($this, 'ajax_acf_field_options'));
 		add_action('wp_ajax_acf_location', array($this, 'ajax_acf_location'));
+		add_action('wp_ajax_acf_next_field_id', array($this, 'ajax_acf_next_field_id'));
 	}
 	
 	
@@ -82,8 +83,7 @@ class acf_field_group
 		// return
 		return $return;
 	}
-	
-	
+		
 	
 	/*
 	*  admin_print_scripts
@@ -98,7 +98,17 @@ class acf_field_group
 		// validate page
 		if( ! $this->validate_page() ) return;
 		
+		
+		// no autosave
 		wp_dequeue_script( 'autosave' );
+		
+		
+		// custom scripts
+		wp_enqueue_script(array(
+			'acf-fields',
+		));
+		
+		
 		do_action('acf_print_scripts-fields');
 	}
 	
@@ -116,7 +126,16 @@ class acf_field_group
 		// validate page
 		if( ! $this->validate_page() ) return;
 		
+		
+		// custom styles
+		wp_enqueue_style(array(
+			'acf-global',
+			'acf-fields',
+		));
+		
+		
 		do_action('acf_print_styles-fields');
+		
 	}
 	
 	
@@ -134,13 +153,16 @@ class acf_field_group
 		if( ! $this->validate_page() ) return;
 		
 		
-		// add acf fields js + css
-		echo '<script type="text/javascript" src="' . $this->parent->dir . '/js/fields.js?ver=' . $this->parent->version . '" ></script>';
-		echo '<link rel="stylesheet" type="text/css" href="' . $this->parent->dir . '/css/global.css?ver=' . $this->parent->version . '" />';
-		echo '<link rel="stylesheet" type="text/css" href="' . $this->parent->dir . '/css/fields.css?ver=' . $this->parent->version . '" />';
+		global $post;
 		
 		
-		// add user js + css
+		// add js vars
+		echo '<script type="text/javascript">
+			acf.nonce = "' . wp_create_nonce( 'acf_nonce' ) . '";
+			acf.post_id = ' . $post->ID . ';
+		</script>';
+		
+		
 		do_action('acf_head-fields');
 		
 		
@@ -227,33 +249,44 @@ class acf_field_group
 	
 	function ajax_acf_field_options()
 	{
-		// defaults
-		$defaults = array(
-			'field_key' => null,
-			'field_type' => null,
-			'post_id' => null,
+		// vars
+		$options = array(
+			'field_key' => '',
+			'field_type' => '',
+			'post_id' => 0,
+			'nonce' => ''
 		);
 		
 		// load post options
-		$options = array_merge($defaults, $_POST);
+		$options = array_merge($options, $_POST);
 		
-		// required
-		if(!$options['field_type'])
+		
+		// verify nonce
+		if( ! wp_verify_nonce($options['nonce'], 'acf_nonce') )
 		{
-			echo "";
-			die();
+			die(0);
 		}
 		
+		
+		
+		// required
+		if( ! $options['field_type'] )
+		{
+			die(0);
+		}
+		
+		
+		// find key (not actual field key, more the html attr name)
 		$options['field_key'] = str_replace("fields[", "", $options['field_key']);
 		$options['field_key'] = str_replace("][type]", "", $options['field_key']) ;
 		
 		
-		// load field
-		//$field = $this->get_acf_field("field_" . $options['field_key'], $options['post_id']);
+
 		$field = array();
 		
 		// render options
-		$this->parent->fields[$options['field_type']]->create_options($options['field_key'], $field);
+		$this->parent->fields[ $options['field_type'] ]->create_options($options['field_key'], $field);
+		
 		die();
 		
 	}
@@ -301,50 +334,66 @@ class acf_field_group
 		{
 			case "post_type":
 				
-				$choices = get_post_types(array(
-					'public' => true
-				));
-				
-				unset($choices['attachment']);
-		
+				// all post types except attachment
+				$choices = $this->parent->get_post_types( array('attachment') );
+
 				break;
 			
 			
 			case "page":
 				
-				$pages = get_pages(array(
-					'numberposts' => -1,
-					'post_type' => 'page',
-					'sort_column' => 'menu_order',
-					'order' => 'ASC',
-					'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
-					'suppress_filters' => false,
-				));
-
-				foreach($pages as $page)
+				$optgroup = true;
+				$post_types = get_post_types( array('capability_type'  => 'page') );
+				unset( $post_types['attachment'], $post_types['revision'] , $post_types['nav_menu_item'], $post_types['acf']  );
+				
+				if( $post_types )
 				{
-					$title = '';
-					$ancestors = get_ancestors($page->ID, 'page');
-					if($ancestors)
+					foreach( $post_types as $post_type )
 					{
-						foreach($ancestors as $a)
+						$pages = get_pages(array(
+							'numberposts' => -1,
+							'post_type' => $post_type,
+							'sort_column' => 'menu_order',
+							'order' => 'ASC',
+							'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
+							'suppress_filters' => false,
+						));
+						
+						if( $pages )
 						{
-							$title .= '- ';
+							$choices[$post_type] = array();
+							
+							foreach($pages as $page)
+							{
+								$title = '';
+								$ancestors = get_ancestors($page->ID, 'page');
+								if($ancestors)
+								{
+									foreach($ancestors as $a)
+									{
+										$title .= '- ';
+									}
+								}
+								
+								$title .= apply_filters( 'the_title', $page->post_title, $page->ID );
+								
+								
+								// status
+								if($page->post_status != "publish")
+								{
+									$title .= " ($page->post_status)";
+								}
+								
+								$choices[$post_type][$page->ID] = $title;
+								
+							}
+							// foreach($pages as $page)
 						}
+						// if( $pages )
 					}
-					
-					$title .= apply_filters( 'the_title', $page->post_title, $page->ID );
-					
-					
-					// status
-					if($page->post_status != "publish")
-					{
-						$title .= " ($page->post_status)";
-					}
-					
-					$choices[$page->ID] = $title;
-					
+					// foreach( $post_types as $post_type )
 				}
+				// if( $post_types )
 				
 				break;
 			
@@ -352,8 +401,10 @@ class acf_field_group
 			case "page_type" :
 				
 				$choices = array(
-					'parent'	=>	__("Parent Page",'acf'),
-					'child'		=>	__("Child Page",'acf'),
+					'front_page'	=>	__("Front Page",'acf'),
+					'posts_page'	=>	__("Posts Page",'acf'),
+					'parent'		=>	__("Parent Page",'acf'),
+					'child'			=>	__("Child Page",'acf'),
 				);
 								
 				break;
@@ -374,24 +425,47 @@ class acf_field_group
 			
 			case "post" :
 				
-				$posts = get_posts(array(
-					'numberposts' => '-1',
-					'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
-					'suppress_filters' => false,
-				));
+				$optgroup = true;
+				$post_types = get_post_types( array('capability_type'  => 'post') );
+				unset( $post_types['attachment'], $post_types['revision'] , $post_types['nav_menu_item'], $post_types['acf']  );
 				
-				foreach($posts as $post)
+				if( $post_types )
 				{
-					$title = apply_filters( 'the_title', $post->post_title, $post->ID );
-					
-					// status
-					if($post->post_status != "publish")
+					foreach( $post_types as $post_type )
 					{
-						$title .= " ($post->post_status)";
+						
+						$posts = get_posts(array(
+							'numberposts' => '-1',
+							'post_type' => $post_type,
+							'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
+							'suppress_filters' => false,
+						));
+						
+						if( $posts)
+						{
+							$choices[$post_type] = array();
+							
+							foreach($posts as $post)
+							{
+								$title = apply_filters( 'the_title', $post->post_title, $post->ID );
+								
+								// status
+								if($post->post_status != "publish")
+								{
+									$title .= " ($post->post_status)";
+								}
+								
+								$choices[$post_type][$post->ID] = $title;
+
+							}
+							// foreach($posts as $post)
+						}
+						// if( $posts )
 					}
-					
-					$choices[$post->ID] = $title;
+					// foreach( $post_types as $post_type )
 				}
+				// if( $post_types )
+				
 				
 				break;
 			
@@ -423,20 +497,23 @@ class acf_field_group
 			
 			case "options_page" :
 				
+				$defaults = $this->parent->defaults['options_page'];
+				
 				$choices = array(
-					__('Options','acf') => __('Options','acf'), 
+					'acf-options' => $defaults['title']
 				);
-					
-				$custom = apply_filters('acf_register_options_page',array());
-				if(!empty($custom))
-				{	
+				
+				$titles = $defaults['pages'];
+				if( !empty($titles) )
+				{
 					$choices = array();
-					foreach($custom as $c)
+					foreach( $titles as $title )
 					{
-						$choices[$c['slug']] = $c['title'];
+						$slug = 'acf-options-' . sanitize_title( $title );
+						$choices[ $slug ] = $title;
 					}
 				}
-								
+	
 				break;
 			
 			case "taxonomy" :
@@ -530,15 +607,15 @@ class acf_field_group
 	function save_post($post_id)
 	{	
 		
-		// do not save if this is an auto save routine
-		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
-		
-		
 		// only for save acf
-		if( ! isset($_POST['save_fields']) || $_POST['save_fields'] != 'true')
+		if( ! isset($_POST['acf_field_group']) || ! wp_verify_nonce($_POST['acf_field_group'], 'acf_field_group') )
 		{
 			return $post_id;
 		}
+		
+		
+		// do not save if this is an auto save routine
+		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
 		
 		
 		// only save once! WordPress save's a revision as well.
@@ -552,41 +629,51 @@ class acf_field_group
 		*  save fields
 		*/
 		
-		$fields = $_POST['fields'];
-		
-		// get all keys to find fields
+
+		// vars
 		$dont_delete = array();
 		
-		if($fields)
+		
+		
+		if( $_POST['fields'] )
 		{
 			$i = -1;
 			
-			// remove dummy field
-			unset($fields['999']);
+
+			// remove clone field
+			unset( $_POST['fields']['field_clone'] );
 			
+
 			// loop through and save fields
-			foreach($fields as $field)
+			foreach( $_POST['fields'] as $key => $field )
 			{
 				$i++;
 				
-				// each field has a unique id!
-				if(!isset($field['key'])) $field['key'] = 'field_' . uniqid();
+				
+				// order + key
+				$field['order_no'] = $i;
+				$field['key'] = $key;
+				
+				
+				// trim key
+				$field['key'] = preg_replace('/\s+/' , '' , $field['key']);
+				
+				
+				// save
+				$this->parent->update_field( $post_id, $field);
+				
 				
 				// add to dont delete array
 				$dont_delete[] = $field['key'];
-				
-				// order
-				$field['order_no'] = $i;
-				
-				// update field
-				$this->parent->update_field($post_id, $field);
 			}
 		}
 		
+		
 		// delete all other field
-		foreach(get_post_custom_keys($post_id) as $key)
+		$keys = get_post_custom_keys($post_id);
+		foreach( $keys as $key )
 		{
-			if(strpos($key, 'field_') !== false && !in_array($key, $dont_delete))
+			if( strpos($key, 'field_') !== false && !in_array($key, $dont_delete) )
 			{
 				// this is a field, and it wasn't found in the dont_delete array
 				delete_post_meta($post_id, $key);
@@ -599,11 +686,6 @@ class acf_field_group
 		*/
 		
 		$location = $_POST['location'];
-		
-		if( ! isset($location['allorany']) )
-		{
-			$location['allorany'] = 'all';
-		}
 		update_post_meta($post_id, 'allorany', $location['allorany']);
 		
 		delete_post_meta($post_id, 'rule');
@@ -634,7 +716,44 @@ class acf_field_group
 	
 		
 	}
+		
 	
+	/*
+	*  ajax_next_field_id
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 5/12/12
+	*/
+	
+	function ajax_acf_next_field_id()
+	{
+		// vars
+		$options = array(
+			'nonce' => '',
+		);
+		$options = array_merge($options, $_POST);
+		
+		
+		// verify nonce
+		if( ! wp_verify_nonce($options['nonce'], 'acf_nonce') )
+		{
+			die(0);
+		}
+		
+		
+		// get next id
+		$next_id = intval( get_option('acf_next_field_id', 1) );
+		
+		
+		// update the acf_next_field_id
+		update_option('acf_next_field_id', ($next_id + 1) );
+		
+		
+		// return id
+		die('field_' . $next_id);
+	}
+
 }
 
 ?>

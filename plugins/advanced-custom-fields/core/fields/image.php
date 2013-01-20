@@ -66,36 +66,43 @@ class acf_Image extends acf_Field
 	
    	function acf_get_preview_image()
    	{
+   		$options = array(
+   			'id' => false,
+   			'preview_size' => 'thumbnail'
+   		);
+   		$options = array_merge($options, $_GET);
+   		
+   		
    		
    		// vars
-   		$id_string = isset($_GET['id']) ? $_GET['id'] : false;
-   		$preview_size = isset($_GET['preview_size']) ? $_GET['preview_size'] : 'thumbnail';
 		$return = array();
 		
 		
-		// attachment ID is required
-   		if($id_string)
-   		{
+		// validate
+		if( ! $options['id'] )
+		{
+			die( 0 );
+		}
+		
+		
+		// convert id_string into an array
+		$ids = explode(',' , $options['id']);
+		if( ! is_array($ids) )
+		{
+			$ids = array( $options['id'] );
+		}
+		
+		
+		// find image preview url for each image
+		foreach( $ids as $k => $v )
+		{
+			$url = wp_get_attachment_image_src( $v, $options['preview_size'] );
+			$return[] = array(
+				'id' => $v,
+				'url' => $url[0],
+			);
+		}
    		
-   			// convert id_string into an array
-   			$id_array = explode(',' , $id_string);
-   			if(!is_array($id_array))
-   			{
-   				$id_array = array( $id_string );
-   			}
-   			
-   			
-   			// find image preview url for each image
-   			foreach($id_array as $id)
-   			{
-   				$file_src = wp_get_attachment_image_src($id, $preview_size);
-				$return[] = array(
-					'id' => $id,
-					'url' => $file_src[0],
-				);
-   			}
-   		}
-
 
 		// return json
 		echo json_encode( $return );
@@ -116,35 +123,6 @@ class acf_Image extends acf_Field
 	{
 	    $vars['send'] = true;
 	    return($vars);
-	}
-	
-   	
-   	/*--------------------------------------------------------------------------------------
-	*
-	*	admin_print_scripts / admin_print_styles
-	*
-	*	@author Elliot Condon
-	*	@since 3.0.0
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-	function admin_print_scripts()
-	{
-		wp_enqueue_script(array(
-			'jquery',
-			'jquery-ui-core',
-			'jquery-ui-tabs',
-
-			'thickbox',
-			'media-upload',			
-		));
-	}
-	
-	function admin_print_styles()
-	{
-  		wp_enqueue_style(array(
-			'thickbox',		
-		));
 	}
 	
 	
@@ -183,8 +161,8 @@ class acf_Image extends acf_Field
 	<div class="has-image">
 		<div class="hover">
 			<ul class="bl">
-				<li><a class="remove-image ir" href="#"><?php _e("Remove",'acf'); ?></a></li>
-				<li><a class="edit-image ir" href="#"><?php _e("Edit",'acf'); ?></a></li>
+				<li><a class="acf-button-delete ir" href="#"><?php _e("Remove",'acf'); ?></a></li>
+				<li><a class="acf-button-edit ir" href="#"><?php _e("Edit",'acf'); ?></a></li>
 			</ul>
 		</div>
 		<img src="<?php echo $file_src; ?>" alt=""/>
@@ -261,45 +239,43 @@ class acf_Image extends acf_Field
 		<?php
 	}
 
-
-	 
-	/*---------------------------------------------------------------------------------------------
-	 * popup_head - STYLES MEDIA THICKBOX
-	 *
-	 * @author Elliot Condon
-	 * @since 1.1.4
-	 * 
-	 ---------------------------------------------------------------------------------------------*/
+	
+	/*
+	*  popup_head
+	*
+	*  @description: css + js for thickbox
+	*  @since: 1.1.4
+	*  @created: 7/12/12
+	*/
+	
 	function popup_head()
 	{
-	
-		// defults
-		$access = false;
-		$tab = "type";
-		$preview_size = "thumbnail";
+		// options
+		$defaults = array(
+			'acf_type' => '',
+			'acf_preview_size' => 'thumbnail',
+			'tab'	=>	'type',	
+		);
+		
+		$options = array_merge($defaults, $_GET);
 		
 		
-		// GET
-		if(isset($_GET["acf_type"]) && $_GET['acf_type'] == 'image')
+		// validate
+		if( $options['acf_type'] != 'image' )
 		{
-			$access = true;
-			if( isset($_GET['tab']) ) $tab = $_GET['tab'];
-			if( isset($_GET['acf_preview_size']) ) $preview_size = $_GET['acf_preview_size'];
-			
-			if( isset($_POST["attachments"]) )
-			{
-				echo '<div class="updated"><p>' . __("Media attachment updated.") . '</p></div>';
-			}
-			
+			return;
 		}
 		
 		
-		if( $access )
+		// update attachment
+		if( isset($_POST["attachments"]) )
 		{
-			
+			echo '<div class="updated"><p>' . __("Media attachment updated.") . '</p></div>';
+		}
+		
+		
 ?><style type="text/css">
 	#media-upload-header #sidemenu li#tab-type_url,
-	#media-upload-header #sidemenu li#tab-gallery,
 	#media-items .media-item a.toggle,
 	#media-items .media-item tr.image-size,
 	#media-items .media-item tr.align,
@@ -309,7 +285,8 @@ class acf_Image extends acf_Field
 	}
 	
 	#media-items .media-item {
-		min-height: 68px;
+		position: relative;
+		overflow: hidden;
 	}
 	
 	#media-items .media-item .acf-checkbox {
@@ -321,6 +298,7 @@ class acf_Image extends acf_Field
 		max-width: 64px;
 		max-height: 64px;
 		display: block !important;
+		margin: 2px;
 	}
 	
 	#media-items .media-item .filename.new {
@@ -355,6 +333,15 @@ class acf_Image extends acf_Field
 		float: left;
 		margin: 0 10px 0 0;
 	}
+	
+<?php if( $options['tab'] == 'gallery' ): ?>
+	#sort-buttons,
+	#gallery-form > .widefat,
+	#media-items .menu_order,
+	#gallery-settings {
+		display: none !important;
+	}
+<?php endif; ?>
 
 </style>
 <script type="text/javascript">
@@ -363,20 +350,32 @@ class acf_Image extends acf_Field
 	/*
 	*  Select Image
 	*
-	*  @created : 28/03/2012
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 11/12/12
 	*/
 	
 	$('#media-items .media-item a.acf-select').live('click', function(){
 		
 		var id = $(this).attr('href');
 		
+		
+		// IE7 Fix
+		if( id.indexOf("/") != -1 )
+		{
+			var split = id.split("/");
+			id = split[split.length-1];
+		}
+		
+		
 		var data = {
 			action: 'acf_get_preview_image',
 			id: id,
-			preview_size : "<?php echo $preview_size; ?>"
+			preview_size : "<?php echo $options['acf_preview_size']; ?>"
 		};
 	
-		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+		
+		// ajax
 		$.ajax({
 			url: ajaxurl,
 			data : data,
@@ -420,11 +419,19 @@ class acf_Image extends acf_Field
 	});
 	
 	
+	/*
+	*  Select Images
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 11/12/12
+	*/
+	
 	$('#acf-add-selected').live('click', function(){ 
 		 
 		// check total 
 		var total = $('#media-items .media-item .acf-checkbox:checked').length;
-		if(total == 0) 
+		if( total == 0 ) 
 		{ 
 			alert("<?php _e("No images selected",'acf'); ?>"); 
 			return false; 
@@ -442,7 +449,7 @@ class acf_Image extends acf_Field
 		var data = {
 			action: 'acf_get_preview_image',
 			id: attachment_ids.join(','),
-			preview_size : "<?php echo $preview_size; ?>"
+			preview_size : "<?php echo $options['acf_preview_size']; ?>"
 		};
 		
 		
@@ -493,27 +500,49 @@ class acf_Image extends acf_Field
 	}); 
 	
 	
-	// edit toggle
+	/*
+	*  Edit Attachment Toggle
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 11/12/12
+	*/
+	
 	$('#media-items .media-item a.acf-toggle-edit').live('click', function(){
 		
-		if( $(this).hasClass('active') )
+		// vars
+		var a = $(this),
+			item = a.closest('.media-item');
+		
+		
+		// toggle
+		if( a.hasClass('active') )
 		{
-			$(this).removeClass('active');
-			$(this).closest('.media-item').find('.slidetoggle').attr('style', 'display: none !important');
-			return false;
+			a.removeClass('active');
+			item.find('.slidetoggle').attr('style', 'display: none !important');
 		}
 		else
 		{
-			$(this).addClass('active');
-			$(this).closest('.media-item').find('.slidetoggle').attr('style', 'display: table !important');
-			return false;
+			a.addClass('active');
+			item.find('.slidetoggle').attr('style', 'display: table !important');
 		}
+		
+		
+		// return
+		return false;
 		
 	});
 	
 	
-	// set a interval function to add buttons to media items
-	function acf_add_buttons()
+	/*
+	*  add_buttons
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 11/12/12
+	*/
+
+	function add_buttons()
 	{
 		// vars
 		var is_sub_field = (self.parent.acf_div && self.parent.acf_div.closest('.repeater').length > 0) ? true : false;
@@ -522,7 +551,7 @@ class acf_Image extends acf_Field
 		// add submit after media items (on for sub fields)
 		if($('.acf-submit').length == 0 && is_sub_field)
 		{
-			$('#media-items').after('<div class="acf-submit"><a id="acf-add-selected" class="button"><?php _e("Add selected Images",'acf'); ?></a></div>');
+			$('#media-items').after('<div class="acf-submit"><a id="acf-add-selected" class="button"><?php _e("Add Selected Images",'acf'); ?></a></div>');
 		}
 		
 		
@@ -544,7 +573,7 @@ class acf_Image extends acf_Field
 			// if inside repeater, add checkbox
 			if(is_sub_field)
 			{
-				$(this).prepend('<input type="checkbox" class="acf-checkbox" value="' + id + '" <?php if($tab == "type"){echo 'checked="checked"';} ?> />');
+				$(this).prepend('<input type="checkbox" class="acf-checkbox" value="' + id + '" <?php if( $options['tab'] == "type" ){echo 'checked="checked"';} ?> />');
 			}
 			
 			// Add edit button
@@ -562,9 +591,9 @@ class acf_Image extends acf_Field
 	<?php
 	
 	// run the acf_add_buttons ever 500ms when on the image upload tab
-	if($tab == 'type'): ?>
+	if( $options['tab'] == "type" ): ?>
 	var acf_t = setInterval(function(){
-		acf_add_buttons();
+		add_buttons();
 	}, 500);
 	<?php endif; ?>
 	
@@ -573,13 +602,13 @@ class acf_Image extends acf_Field
 	$(document).ready(function(){
 		
 		setTimeout(function(){
-			acf_add_buttons();
+			add_buttons();
 		}, 1);
 		
 		
 		$('form#filter').each(function(){
 			
-			$(this).append('<input type="hidden" name="acf_preview_size" value="<?php echo $preview_size; ?>" />');
+			$(this).append('<input type="hidden" name="acf_preview_size" value="<?php echo $options['acf_preview_size']; ?>" />');
 			$(this).append('<input type="hidden" name="acf_type" value="image" />');
 						
 		});
@@ -587,7 +616,7 @@ class acf_Image extends acf_Field
 		$('form#image-form, form#library-form').each(function(){
 			
 			var action = $(this).attr('action');
-			action += "&acf_type=image&acf_preview_size=<?php echo $preview_size; ?>";
+			action += "&acf_type=image&acf_preview_size=<?php echo $options['acf_preview_size']; ?>";
 			$(this).attr('action', action);
 			
 		});
@@ -597,11 +626,11 @@ class acf_Image extends acf_Field
 	
 		// add support for media tags
 		
-		if($tab == 'mediatags'): ?>
+		if( $options['tab'] == 'mediatags' ): ?>
 		$('#media-items .mediatag-item-count a').each(function(){
 			
 			var href = $(this).attr('href');
-			href += "&acf_type=image&acf_preview_size=<?php echo $preview_size; ?>";
+			href += "&acf_type=image&acf_preview_size=<?php echo $options['acf_preview_size']; ?>";
 			$(this).attr('href', href);
 			
 		});
@@ -611,7 +640,6 @@ class acf_Image extends acf_Field
 })(jQuery);
 </script><?php
 
-		}
 	}
 	
 
@@ -646,6 +674,14 @@ class acf_Image extends acf_Field
 		elseif($format == 'object')
 		{
 			$attachment = get_post( $value );
+			
+			
+			// validate
+			if( !$attachment )
+			{
+				return false;	
+			}
+			
 			
 			// create array to hold value data
 			$value = array(

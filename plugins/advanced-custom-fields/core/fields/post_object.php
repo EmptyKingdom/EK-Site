@@ -46,21 +46,27 @@ class acf_Post_object extends acf_Field
 		);
 		
 		$defaults = array(
-			'multiple'		=>	'0',
+			'multiple'		=>	0,
 			'post_type' 	=>	false,
 			'taxonomy' 		=>	array('all'),
-			'allow_null'	=>	'0',
+			'allow_null'	=>	0,
 		);
 		
 
 		$field = array_merge($defaults, $field);
 		
+		// validate taxonomy
+		if( !is_array($field['taxonomy']) )
+		{
+			$field['taxonomy'] = array('all');
+		}
 		
 		// load all post types by default
 		if( !$field['post_type'] || !is_array($field['post_type']) || $field['post_type'][0] == "" )
 		{
-			$field['post_type'] = get_post_types( array('public' => true) );
+			$field['post_type'] = $this->parent->get_post_types();
 		}
+		
 
 		
 		// create tax queries
@@ -204,8 +210,8 @@ class acf_Post_object extends acf_Field
 		// defaults
 		$defaults = array(
 			'post_type' 	=>	'',
-			'multiple'		=>	'0',
-			'allow_null'	=>	'0',
+			'multiple'		=>	0,
+			'allow_null'	=>	0,
 			'taxonomy' 		=>	array('all'),
 		);
 		
@@ -223,7 +229,7 @@ class acf_Post_object extends acf_Field
 					''	=>	__("All",'acf')
 				);
 				
-				$post_types = get_post_types( array('public' => true) );
+				$post_types = $this->parent->get_post_types();
 				
 				foreach( $post_types as $post_type )
 				{
@@ -235,7 +241,7 @@ class acf_Post_object extends acf_Field
 					'name'	=>	'fields['.$key.'][post_type]',
 					'value'	=>	$field['post_type'],
 					'choices'	=>	$choices,
-					'multiple'	=>	'1',
+					'multiple'	=>	1,
 				));
 				?>
 			</td>
@@ -258,7 +264,7 @@ class acf_Post_object extends acf_Field
 					'value'	=>	$field['taxonomy'],
 					'choices' => $choices,
 					'optgroup' => true,
-					'multiple'	=>	'1',
+					'multiple'	=>	1,
 				));
 				?>
 			</td>
@@ -274,8 +280,8 @@ class acf_Post_object extends acf_Field
 					'name'	=>	'fields['.$key.'][allow_null]',
 					'value'	=>	$field['allow_null'],
 					'choices'	=>	array(
-						'1'	=>	__("Yes",'acf'),
-						'0'	=>	__("No",'acf'),
+						1	=>	__("Yes",'acf'),
+						0	=>	__("No",'acf'),
 					),
 					'layout'	=>	'horizontal',
 				));
@@ -293,8 +299,8 @@ class acf_Post_object extends acf_Field
 					'name'	=>	'fields['.$key.'][multiple]',
 					'value'	=>	$field['multiple'],
 					'choices'	=>	array(
-						'1'	=>	__("Yes",'acf'),
-						'0'	=>	__("No",'acf'),
+						1	=>	__("Yes",'acf'),
+						0	=>	__("No",'acf'),
 					),
 					'layout'	=>	'horizontal',
 				));
@@ -341,7 +347,7 @@ class acf_Post_object extends acf_Field
 			$posts = get_posts(array(
 				'numberposts' => -1,
 				'post__in' => $value,
-				'post_type'	=>	get_post_types( array('public' => true) ),
+				'post_type'	=>	$this->parent->get_post_types(),
 				'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
 			));
 	

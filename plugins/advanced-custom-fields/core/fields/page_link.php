@@ -58,8 +58,8 @@ class acf_Page_link extends acf_Field
 		// defaults
 		$defaults = array(
 			'post_type' 	=>	'',
-			'multiple'		=>	'0',
-			'allow_null'	=>	'0',
+			'multiple'		=>	0,
+			'allow_null'	=>	0,
 		);
 		
 		$field = array_merge($defaults, $field);
@@ -76,19 +76,14 @@ class acf_Page_link extends acf_Field
 					''	=>	__("All",'acf')
 				);
 				
-				$post_types = get_post_types( array('public' => true) );
-				
-				foreach( $post_types as $post_type )
-				{
-					$choices[$post_type] = $post_type;
-				}
+				$choices = $this->parent->get_post_types();
 				
 				$this->parent->create_field(array(
 					'type'	=>	'select',
 					'name'	=>	'fields['.$key.'][post_type]',
 					'value'	=>	$field['post_type'],
 					'choices'	=>	$choices,
-					'multiple'	=>	'1',
+					'multiple'	=>	1,
 				));
 				?>
 			</td>
@@ -104,8 +99,8 @@ class acf_Page_link extends acf_Field
 					'name'	=>	'fields['.$key.'][allow_null]',
 					'value'	=>	$field['allow_null'],
 					'choices'	=>	array(
-						'1'	=>	__("Yes",'acf'),
-						'0'	=>	__("No",'acf'),
+						1	=>	__("Yes",'acf'),
+						0	=>	__("No",'acf'),
 					),
 					'layout'	=>	'horizontal',
 				));
@@ -123,8 +118,8 @@ class acf_Page_link extends acf_Field
 					'name'	=>	'fields['.$key.'][multiple]',
 					'value'	=>	$field['multiple'],
 					'choices'	=>	array(
-						'1'	=>	__("Yes",'acf'),
-						'0'	=>	__("No",'acf'),
+						1	=>	__("Yes",'acf'),
+						0	=>	__("No",'acf'),
 					),
 					'layout'	=>	'horizontal',
 				));

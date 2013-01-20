@@ -20,7 +20,10 @@ class acf_Relationship extends acf_Field
     	$this->name = 'relationship';
 		$this->title = __("Relationship",'acf');
 		
+		
+		// actions
 		add_action('wp_ajax_acf_get_relationship_results', array($this, 'acf_get_relationship_results'));
+		
    	}
    	
    	
@@ -30,6 +33,7 @@ class acf_Relationship extends acf_Field
    	*  @description: 
    	*  @created: 3/09/12
    	*/
+   	
    	function posts_where( $where, &$wp_query )
 	{
 	    global $wpdb;
@@ -67,9 +71,12 @@ class acf_Relationship extends acf_Field
 			'suppress_filters' => false,
 			's' => '',
 			'lang' => false,
+			'update_post_meta_cache' => false,
+			'field_name' => '',
+			'field_key' => ''
 		);
 		$ajax = isset( $_POST['action'] ) ? true : false;
-
+		
 		
 		// override options with posted values
 		if( $ajax )
@@ -95,7 +102,7 @@ class acf_Relationship extends acf_Field
 		// load all post types by default
 		if( !$options['post_type'] || !is_array($options['post_type']) || $options['post_type'][0] == "" )
 		{
-			$options['post_type'] = get_post_types( array('public' => true) );
+			$options['post_type'] = $this->parent->get_post_types();
 		}
 		
 		
@@ -159,36 +166,57 @@ class acf_Relationship extends acf_Field
 		unset( $options['s'] );
 		
 		
-		// load the posts
-		$posts = get_posts( $options );
+		// filters
+		$options = apply_filters('acf_relationship_query', $options);
+		$options = apply_filters('acf_relationship_query-' . $options['field_name'] , $options);
+		$options = apply_filters('acf_relationship_query-' . $options['field_key'], $options);
 		
-		if( $posts )
+		
+		$results = false;
+		$results = apply_filters('acf_relationship_results', $results, $options);
+		$results = apply_filters('acf_relationship_results-' . $options['field_name'] , $results, $options);
+		$results = apply_filters('acf_relationship_results-' . $options['field_key'], $results, $options);
+		
+		
+		if( ! $results )
 		{
-			foreach( $posts  as $post )
+			// load the posts
+			$posts = get_posts( $options );
+			
+			if( $posts )
 			{
-				// right aligned info
-				$title = '<span class="relationship-item-info">';
-				
-					$title .= $post->post_type;
+				foreach( $posts  as $post )
+				{
+					// right aligned info
+					$title = '<span class="relationship-item-info">';
 					
-					// WPML
-					if( $options['lang'] )
+						$title .= $post->post_type;
+						
+						// WPML
+						if( $options['lang'] )
+						{
+							$title .= ' (' . $options['lang'] . ')';
+						}
+						
+					$title .= '</span>';
+					
+					// find title. Could use get_the_title, but that uses get_post(), so I think this uses less Memory
+					$title .= apply_filters( 'the_title', $post->post_title, $post->ID );
+	
+					// status
+					if($post->post_status != "publish")
 					{
-						$title .= ' (' . $options['lang'] . ')';
+						$title .= " ($post->post_status)";
 					}
 					
-				$title .= '</span>';
-				
-				// find title. Could use get_the_title, but that uses get_post(), so I think this uses less Memory
-				$title .= apply_filters( 'the_title', $post->post_title, $post->ID );
-
-				// status
-				if($post->post_status != "publish")
-				{
-					$title .= " ($post->post_status)";
+					
+					$title = apply_filters('acf_relationship_result', $title);
+					$title = apply_filters('acf_relationship_result-' . $options['field_name'] , $title);
+					$title = apply_filters('acf_relationship_result-' . $options['field_key'], $title);
+					
+					
+					echo '<li><a href="' . get_permalink($post->ID) . '" data-post_id="' . $post->ID . '">' . $title .  '<span class="acf-button-add"></span></a></li>';
 				}
-				
-				echo '<li><a href="' . get_permalink($post->ID) . '" data-post_id="' . $post->ID . '">' . $title .  '<span class="add"></span></a></li>';
 			}
 		}
 		
@@ -199,28 +227,6 @@ class acf_Relationship extends acf_Field
 			die();
 		}
 		
-	}
-	
-	
-   	/*--------------------------------------------------------------------------------------
-	*
-	*	admin_print_scripts / admin_print_styles
-	*
-	*	@author Elliot Condon
-	*	@since 3.0.0
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-	function admin_print_scripts()
-	{
-		wp_enqueue_script(array(
-			'jquery-ui-sortable',
-		));
-	}
-	
-	function admin_print_styles()
-	{
-  
 	}
    		
 	
@@ -260,12 +266,12 @@ class acf_Relationship extends acf_Field
 		// load all post types by default
 		if( !$field['post_type'] || !is_array($field['post_type']) || $field['post_type'][0] == "" )
 		{
-			$field['post_type'] = get_post_types( array('public' => true) );
+			$field['post_type'] = $this->parent->get_post_types();
 		}
 		
 		
 		?>
-<div class="acf_relationship" data-max="<?php echo $field['max']; ?>" data-s="" data-paged="1" data-post_type="<?php echo implode(',', $field['post_type']); ?>" data-taxonomy="<?php echo implode(',', $field['taxonomy']); ?>" <?php if( defined('ICL_LANGUAGE_CODE') ){ echo 'data-lang="' . ICL_LANGUAGE_CODE . '"';} ?>">
+<div class="acf_relationship" data-max="<?php echo $field['max']; ?>" data-s="" data-paged="1" data-post_type="<?php echo implode(',', $field['post_type']); ?>" data-taxonomy="<?php echo implode(',', $field['taxonomy']); ?>" <?php if( defined('ICL_LANGUAGE_CODE') ){ echo 'data-lang="' . ICL_LANGUAGE_CODE . '"';} ?>>
 	
 	<!-- Hidden Blank default value -->
 	<input type="hidden" name="<?php echo $field['name']; ?>" value="" />
@@ -273,7 +279,7 @@ class acf_Relationship extends acf_Field
 	<!-- Template for value -->
 	<script type="text/html" class="tmpl-li">
 	<li>
-		<a href="#" data-post_id="{post_id}">{title}<span class="remove"></span></a>
+		<a href="#" data-post_id="{post_id}">{title}<span class="acf-button-remove"></span></a>
 		<input type="hidden" name="<?php echo $field['name']; ?>[]" value="{post_id}" />
 	</li>
 	</script>
@@ -339,7 +345,7 @@ class acf_Relationship extends acf_Field
 				}
 				
 				echo '<li>
-					<a href="' . get_permalink($post->ID) . '" class="" data-post_id="' . $post->ID . '">' . $title . '<span class="remove"></span></a>
+					<a href="' . get_permalink($post->ID) . '" class="" data-post_id="' . $post->ID . '">' . $title . '<span class="acf-button-remove"></span></a>
 					<input type="hidden" name="' . $field['name'] . '[]" value="' . $post->ID . '" />
 				</li>';
 				
@@ -380,6 +386,14 @@ class acf_Relationship extends acf_Field
 		
 		$field = array_merge($defaults, $field);
 		
+		
+		// validate taxonomy
+		if( !is_array($field['taxonomy']) )
+		{
+			$field['taxonomy'] = array('all');
+		}
+		
+		
 		?>
 		<tr class="field_option field_option_<?php echo $this->name; ?>">
 			<td class="label">
@@ -392,7 +406,7 @@ class acf_Relationship extends acf_Field
 					''	=>	__("All",'acf')
 				);
 				
-				$post_types = get_post_types( array('public' => true) );
+				$post_types = $this->parent->get_post_types();
 				
 				foreach( $post_types as $post_type )
 				{
@@ -404,7 +418,7 @@ class acf_Relationship extends acf_Field
 					'name'	=>	'fields['.$key.'][post_type]',
 					'value'	=>	$field['post_type'],
 					'choices'	=>	$choices,
-					'multiple'	=>	'1',
+					'multiple'	=>	1,
 				));
 				
 				?>
@@ -428,7 +442,7 @@ class acf_Relationship extends acf_Field
 					'value'	=>	$field['taxonomy'],
 					'choices' => $choices,
 					'optgroup' => true,
-					'multiple'	=>	'1',
+					'multiple'	=>	1,
 				));
 				?>
 			</td>
@@ -491,7 +505,7 @@ class acf_Relationship extends acf_Field
 		$posts = get_posts(array(
 			'numberposts' => -1,
 			'post__in' => $value,
-			'post_type'	=>	get_post_types( array('public' => true) ),
+			'post_type'	=>	$this->parent->get_post_types(),
 			'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),
 		));
 

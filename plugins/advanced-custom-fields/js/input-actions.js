@@ -21,7 +21,10 @@ var acf = {
 		'gallery_tb_title_edit' : "Edit Image",
 		'repeater_min_alert' : "Minimum rows reached ( {min} rows )",
 		'repeater_max_alert' : "Maximum rows reached ( {max} rows )"
-	}
+	},
+	conditional_logic : {},
+	sortable_helper : null,
+	tinyMCE_settings : null
 };
 
 (function($){
@@ -54,25 +57,25 @@ var acf = {
 		$('#adv-settings label[for*="acf_"]').addClass('acf_hide_label');
 		
 		// hide acf stuff
-		$('#poststuff .acf_postbox').hide();
+		$('#poststuff .acf_postbox').addClass('acf-hidden');
 		$('#adv-settings .acf_hide_label').hide();
 		
 		// loop through acf metaboxes
 		$('#poststuff .postbox.acf_postbox').each(function(){
 			
 			// vars
-			var options = $(this).find('> .inside > .options');
-			var show = options.attr('data-show');
-			var layout = options.attr('data-layout');
-			var id = $(this).attr('id').replace('acf_', '');
+			var options = $(this).find('> .inside > .options'),
+				show = options.attr('data-show'),
+				layout = options.attr('data-layout'),
+				id = $(this).attr('id').replace('acf_', '');
 			
 			// layout
 			$(this).addClass(layout);
 			
 			// show / hide
-			if(show == 'true')
+			if( show == "1" )
 			{
-				$(this).show();
+				$(this).removeClass('acf-hidden');
 				$('#adv-settings .acf_hide_label[for="acf_' + id + '-hide"]').show();
 			}
 			
@@ -104,13 +107,13 @@ var acf = {
 	
 	$('form#post').live("submit", function(){
 		
-		if( !save_post )
+		if( ! save_post )
 		{
 			// do validation
 			do_validation();
 			
 			
-			if(acf.validation == false)
+			if( ! acf.validation )
 			{
 				// show message
 				$(this).siblings('#message').remove();
@@ -120,13 +123,15 @@ var acf = {
 				// hide ajax stuff on submit button
 				$('#publish').removeClass('button-primary-disabled');
 				$('#ajax-loading').attr('style','');
+				$('#publishing-action .spinner').hide();
 				
 				return false;
 			}
 		}
 
-
-		$('.acf_postbox:hidden').remove();
+		
+		// remove hidden postboxes
+		$('.acf_postbox.acf-hidden').remove();
 		
 		
 		// submit the form
@@ -146,96 +151,113 @@ var acf = {
 		
 		acf.validation = true;
 		
-		$('.field.required:visible, .form-field.required').each(function(){
+		$('.postbox:not(.acf-hidden) .field.required, .form-field.required').each(function(){
 			
-			var validation = true;
+			// vars
+			var div = $(this);
+			
+			
+			// set validation data
+			div.data('validation', true);
+			
 
 			// text / textarea
-			if($(this).find('input[type="text"], input[type="number"], input[type="hidden"], textarea').val() == "")
+			if( div.find('input[type="text"], input[type="number"], input[type="hidden"], textarea').val() == "" )
 			{
-				validation = false;
+				div.data('validation', false);
+			}
+			
+			
+			// wysiwyg
+			if( div.find('.acf_wysiwyg').exists() && typeof(tinyMCE) == "object")
+			{
+				div.data('validation', true);
+				
+				var id = div.find('.wp-editor-area').attr('id'),
+					editor = tinyMCE.get( id );
+
+				if( ! editor.getContent() )
+				{
+					div.data('validation', false);
+				}
 			}
 			
 			
 			// select
-			if($(this).find('select').exists())
+			if( div.find('select').exists() )
 			{
-				validation = true;
-				if($(this).find('select').val() == "null" || !$(this).find('select').val())
+				div.data('validation', true);
+
+				if( div.find('select').val() == "null" || ! div.find('select').val() )
 				{
-					validation = false;
+					div.data('validation', false);
 				}
 			}
 
 			
 			// checkbox
-			if($(this).find('input[type="checkbox"]:checked').exists())
+			if( div.find('input[type="checkbox"]:checked').exists() )
 			{
-				validation = true;
+				div.data('validation', true);
 			}
+			
 			
 			// relationship
-			if($(this).find('.acf_relationship').exists())
+			if( div.find('.acf_relationship').exists() )
 			{
-				if($(this).find('.acf_relationship .relationship_right input').exists())
-				{
-					validation = true;
-				}
-				else
-				{
-					validation = false;
-				}
+				div.data('validation', false);
 				
+				if( div.find('.acf_relationship .relationship_right input').exists() )
+				{
+					div.data('validation', true);
+				}
 			}
+			
 			
 			// repeater
-			if($(this).find('.repeater').exists())
+			if( div.find('.repeater').exists() )
 			{
-
-				if($(this).find('.repeater tr.row').exists())
-				{
-					validation = true;
-				}
-				else
-				{
-					validation = false;
-				}
+				div.data('validation', false);
 				
+				if( div.find('.repeater tr.row').exists() )
+				{
+					div.data('validation', true);
+				}			
 			}
+			
 			
 			// flexible content
-			if($(this).find('.acf_flexible_content').exists())
+			if( div.find('.acf_flexible_content').exists() )
 			{
-				if($(this).find('.acf_flexible_content .values table').exists())
+				div.data('validation', false);
+				if( div.find('.acf_flexible_content .values table').exists() )
 				{
-					validation = true;
-				}
-				else
-				{
-					validation = false;
-				}
-				
+					div.data('validation', true);
+				}	
 			}
+			
 			
 			// gallery
-			if($(this).find('.acf-gallery').exists())
+			if( div.find('.acf-gallery').exists() )
 			{
-				if($(this).find('.acf-gallery .thumbnail').exists())
-				{
-					validation = true;
-				}
-				else
-				{
-					validation = false;
-				}
+				div.data('validation', false);
 				
+				if( div.find('.acf-gallery .thumbnail').exists())
+				{
+					div.data('validation', true);
+				}
 			}
 			
+			
+			// hook for custom validation
+			$(document).trigger('acf/validate_field', div );
+			
+			
 			// set validation
-			if(!validation)
+			if( ! div.data('validation') )
 			{
 				acf.validation = false;
-				$(this).closest('.field').addClass('error');
+				div.closest('.field').addClass('error');
 			}
 			
 		});
@@ -261,11 +283,6 @@ var acf = {
 		$(this).closest('.field').removeClass('error');
 	});
 	
-	// wysiwyg
-	$('.field.required .acf_wysiwyg').live('mousedown', function(){
-		$(this).closest('.field').removeClass('error');
-	});
-	
 	
 	/*
 	*  Field: Color Picker
@@ -277,7 +294,7 @@ var acf = {
 	$(document).ready(function(){
 	
 		// validate
-		if( ! $.farbtastic)
+		if( ! $.farbtastic )
 		{
 			return;
 		}
@@ -292,23 +309,22 @@ var acf = {
 	// update colors
 	$(document).live('acf/setup_fields', function(e, postbox){
 		
+		// validate
+		if( ! $.farbtastic )
+		{
+			return;
+		}
+		
+
 		$(postbox).find('input.acf_color_picker').each(function(){
 			
 			// vars
 			var input = $(this);
-			
-			
-			// validate
-			if( ! $.farbtastic )
-			{
-				return;
-			}
-			
+
 			
 			// is clone field?
 			if( acf.is_clone_field(input) )
 			{
-				//console.log('Clone Field: Color Picker');
 				return;
 			}
 			
@@ -385,7 +401,7 @@ var acf = {
 		window.acf_div = div;
 			
 		// show the thickbox
-		tb_show( acf.text.file_tb_title_add , acf.admin_url + 'media-upload.php?post_id=' + acf.post_id + '&type=file&acf_type=file&TB_iframe=1');
+		tb_show( acf.text.file_tb_title_add , acf.admin_url + 'media-upload.php?post_id=' + acf.post_id + '&post_ID=' + acf.post_id + '&type=file&acf_type=file&TB_iframe=1');
 	
 		return false;
 	});
@@ -441,13 +457,13 @@ var acf = {
 		window.acf_div = div;
 			
 		// show the thickbox
-		tb_show( acf.text.image_tb_title_add , acf.admin_url + 'media-upload.php?post_id=' + acf.post_id + '&type=image&acf_type=image&acf_preview_size=' + preview_size + 'TB_iframe=1');
+		tb_show( acf.text.image_tb_title_add , acf.admin_url + 'media-upload.php?post_id=' + acf.post_id + '&post_ID=' + acf.post_id + '&type=image&acf_type=image&acf_preview_size=' + preview_size + 'TB_iframe=1');
 	
 		return false;
 	});
 	
 	// remove image
-	$('.acf-image-uploader .remove-image').live('click', function(){
+	$('.acf-image-uploader .acf-button-delete').live('click', function(){
 		
 		// vars
 		var div = $(this).closest('.acf-image-uploader');
@@ -461,7 +477,7 @@ var acf = {
 	});
 	
 	// edit image
-	$('.acf-image-uploader .edit-image').live('click', function(){
+	$('.acf-image-uploader .acf-button-edit').live('click', function(){
 		
 		// vars
 		var div = $(this).closest('.acf-image-uploader'),
@@ -481,14 +497,13 @@ var acf = {
 	});
 	
 	
-	/*--------------------------------------------------------------------------------------
-	*
+	/*
 	*  Field: Relationship
 	*
 	*  @description: 
-	*  @created: 3/03/2011
-	* 
-	*-------------------------------------------------------------------------------------*/
+	*  @since: 2.0.4
+	*  @created: 11/12/12
+	*/
 	
 	// add sortable
 	$(document).live('acf/setup_fields', function(e, postbox){
@@ -498,7 +513,6 @@ var acf = {
 			// is clone field?
 			if( acf.is_clone_field($(this).children('input[type="hidden"]')) )
 			{
-				//console.log('Clone Field: Relationship');
 				return;
 			}
 			
@@ -706,7 +720,9 @@ var acf = {
 				'paged' : paged,
 				'taxonomy' : taxonomy,
 				'post_type' : post_type,
-				'lang' : lang
+				'lang' : lang,
+				'field_name' : div.parent().attr('data-field_name'),
+				'field_key' : div.parent().attr('data-field_key')
 			},
 			success: function( html ){
 				
@@ -748,131 +764,296 @@ var acf = {
 	
 	
 	/*
-	*  Field: WYSIWYG
+	*  acf/wysiwyg_activate
 	*
 	*  @description: 
 	*  @created: 3/03/2011
 	*/
 	
-	// store wysiwyg buttons
-	var acf_wysiwyg_buttons = {};
-	
-	
-	// destroy wysiwyg
-	$.fn.acf_deactivate_wysiwyg = function(){
+	$(document).live('acf/wysiwyg_activate', function(e, div){
 		
-		$(this).find('.acf_wysiwyg textarea').each(function(){
-			wpActiveEditor = null;
-			tinyMCE.execCommand("mceRemoveControl", false, $(this).attr('id'));
-		});
+		// validate tinymce
+		if( typeof(tinyMCE) != "object" )
+		{
+			return;
+		}
 		
-	};
-	
-	
-	// create wysiwyg
-	$.fn.acf_activate_wysiwyg = function(){
 		
+		// store settings
+		if( ! acf.tinyMCE_settings )
+		{
+			acf.tinyMCE_settings = $.extend( {}, tinyMCE.settings );
+		}
+				
+		
+		// activate
+		$(div).find('.acf_wysiwyg textarea').each(function(){
 
-		// add tinymce to all wysiwyg fields
-		$(this).find('.acf_wysiwyg textarea').each(function(){
+			// vars
+			var textarea = $(this),
+				id = textarea.attr('id'),
+				toolbar = textarea.closest('.acf_wysiwyg').attr('data-toolbar');
+			
 			
 			// is clone field?
-			if( acf.is_clone_field($(this)) )
-			{
-				//console.log('Clone Field: WYSIWYG');
-				return;
-			}
-			
-			
-			// validate tinymce
-			if( tinyMCE == undefined || tinyMCE.settings == undefined )
+			if( acf.is_clone_field(textarea) )
 			{
 				return;
 			}
 			
 			
-			// reset buttons
-			tinyMCE.settings.theme_advanced_buttons1 = acf_wysiwyg_buttons.theme_advanced_buttons1;
-			tinyMCE.settings.theme_advanced_buttons2 = acf_wysiwyg_buttons.theme_advanced_buttons2;
-		
-			var toolbar = $(this).closest('.acf_wysiwyg').attr('data-toolbar');
+			// reset tinyMCE settings
+			tinyMCE.settings = $.extend( {}, acf.tinyMCE_settings );
 			
-			if(toolbar == 'basic')
+			
+			// Set toolbar
+			if( toolbar == 'basic' )
 			{
 				tinyMCE.settings.theme_advanced_buttons1 = "bold, italic, underline, blockquote, |, strikethrough, bullist, numlist, justifyleft, justifycenter, justifyright, undo, redo, link, unlink, fullscreen";
 				tinyMCE.settings.theme_advanced_buttons2 = "";
 			}
 			else
 			{
-				// add images + code buttons
 				tinyMCE.settings.theme_advanced_buttons2 += ",code";
 			}
-
 			
-			// activate editor
-			wpActiveEditor = null;
-			tinyMCE.execCommand('mceAddControl', false, $(this).attr('id'));
+			
+			// add functionality back in
+			tinyMCE.execCommand("mceAddControl", false, id);
+			
+			
+			// events - load
+			$(document).trigger('acf/wysiwyg/load', id);
+			
+			
+			// add events (click, focus, blur) for inserting image into correct editor
+			acf.add_wysiwyg_events( id );
+			
+		});
+		
+		
+		wpActiveEditor = null;
 
+	});
+	
+	
+	/*
+	*  add_wysiwyg_events
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 16/12/12
+	*/
+	
+	acf.add_wysiwyg_events = function( id ){
+		
+		// validate tinymce
+		if( typeof(tinyMCE) != "object" )
+		{
+			return;
+		}
+		
+		
+		var editor = tinyMCE.get( id );
+		
+		if( !editor )
+		{
+			return;
+		}
+		
+		
+		var	container = $('#wp-' + id + '-wrap'),
+			body = $( editor.getBody() );
+
+
+		container.click(function(){
+			$(document).trigger('acf/wysiwyg/click', id);
+		});
+		
+		body.focus(function(){
+			$(document).trigger('acf/wysiwyg/focus', id);
+		}).blur(function(){
+			$(document).trigger('acf/wysiwyg/blur', id);
 		});
 		
 	};
 	
 	
-	// create wysiwygs
-	$(document).live('acf/setup_fields', function(e, postbox){
+	/*
+	*  acf/wysiwyg_deactivate
+	*
+	*  @description: 
+	*  @created: 3/03/2011
+	*/
+	
+	$(document).live('acf/wysiwyg_deactivate', function(e, div){
 		
+		// validate tinymce
 		if( typeof(tinyMCE) != "object" )
 		{
-			return false;
+			return;
 		}
 		
-		$(postbox).acf_activate_wysiwyg();
+		
+		$(div).find('.acf_wysiwyg textarea').each(function(){
+			
+			// vars
+			var textarea = $(this),
+				id = textarea.attr('id'),
+				wysiwyg = tinyMCE.get( id );
+			
+			
+			// if wysiwyg was found (should be always...), remove its functionality and set the value (to keep line breaks)
+			if( wysiwyg )
+			{
+				var val = wysiwyg.getContent();
+				
+				tinyMCE.execCommand("mceRemoveControl", false, id);
+			
+				textarea.val( val );
+			}
+			
+		});
+		
+		
+		wpActiveEditor = null;
 
 	});
 	
-	$(document).ready( function(){
+	
+	// set active wysiwyg
+	$(document).live('acf/wysiwyg/click', function(e, id){
 		
-		if( typeof(tinyMCE) != "object" )
-		{
-			return false;
-		}
+		wpActiveEditor = id;
 		
-		// store variables
-		if( tinyMCE.settings != undefined )
-		{
-			acf_wysiwyg_buttons.theme_advanced_buttons1 = tinyMCE.settings.theme_advanced_buttons1;
-			acf_wysiwyg_buttons.theme_advanced_buttons2 = tinyMCE.settings.theme_advanced_buttons2;
-		}
+		container = $('#wp-' + id + '-wrap').closest('.field').removeClass('error');
+		
+	}).live('acf/wysiwyg/focus', function(e, id){
+		
+		wpActiveEditor = id;
+		
+		container = $('#wp-' + id + '-wrap').closest('.field').removeClass('error');
+		
+	}).live('acf/wysiwyg/blur', function(e, id){
+		
+		wpActiveEditor = null;
 		
 	});
 	
+	
+	// create wysiwygs
+	$(document).live('acf/setup_fields', function(e, div){
+		
+		$(document).trigger('acf/wysiwyg_activate', div);
+
+	});
+
+	
+	/*
+	*  window load
+	*
+	*  @description: 
+	*  @since: 3.5.5
+	*  @created: 22/12/12
+	*/
+	
 	$(window).load(function(){
 		
-		setTimeout(function(){
-			$('#acf_settings-tmce').trigger('click');
-		}, 1);
+		// vars
+		var wp_content = $('#wp-content-wrap').exists(),
+			wp_acf_settings = $('#wp-acf_settings-wrap').exists()
+			mode = 'tmce';
+		
+		
+		// has_editor
+		if( wp_content )
+		{
+			// html_mode
+			if( $('#wp-content-wrap').hasClass('html-active') )
+			{
+				mode = 'html';
+			}
+		}
+		
 		
 		setTimeout(function(){
+			
+			// trigger click on hidden wysiwyg (to get in HTML mode)
+			if( wp_acf_settings && mode == 'html' )
+			{
+				$('#acf_settings-tmce').trigger('click');
+			}
+			
+		}, 1);
+		
+		
+		setTimeout(function(){
+
+			// setup fields
 			$(document).trigger('acf/setup_fields', $('#poststuff'));
+			
+			
+			// trigger html mode for people who want to stay in HTML mode
+			if( wp_acf_settings && mode == 'html' )
+			{
+				$('#acf_settings-html').trigger('click');
+			}
+			
+			// Add events to content editor
+			if( wp_content )
+			{
+				acf.add_wysiwyg_events( 'content' );
+			}
+			
+			
 		}, 10);
 		
 	});
 	
-	// Sortable: Start
-	$('.repeater > table > tbody, .acf_flexible_content > .values').live( "sortstart", function(event, ui) {
-		
-		$(ui.item).find('.acf_wysiwyg textarea').each(function(){
-			tinyMCE.execCommand("mceRemoveControl", false, $(this).attr('id'));
+	
+	/*
+	*  Sortable Helper
+	*
+	*  @description: keeps widths of td's inside a tr
+	*  @since 3.5.1
+	*  @created: 10/11/12
+	*/
+	
+	acf.sortable_helper = function(e, ui)
+	{
+		ui.children().each(function(){
+			$(this).width($(this).width());
 		});
+		return ui;
+	};
+
+
+	/*
+	*  acf/sortable_start
+	*
+	*  @description:
+	*  @since 3.5.1
+	*  @created: 10/11/12
+	*/
+	
+	$(document).live('acf/sortable_start', function(e, div) {
+		
+		$(document).trigger('acf/wysiwyg_deactivate', div);
 		
 	});
 	
-	// Sortable: End
-	$('.repeater > table > tbody, .acf_flexible_content > .values').live( "sortstop", function(event, ui) {
+	
+	/*
+	*  acf/sortable_stop
+	*
+	*  @description:
+	*  @since 3.5.1
+	*  @created: 10/11/12
+	*/
+	
+	$(document).live('acf/sortable_stop', function(e, div) {
 		
-		$(ui.item).find('.acf_wysiwyg textarea').each(function(){
-			tinyMCE.execCommand("mceAddControl", false, $(this).attr('id'));
-		});
+		$(document).trigger('acf/wysiwyg_activate', div);
 		
 	});
 	
@@ -891,44 +1072,14 @@ var acf = {
     	return newDate.getTime();
     }
     
-    
-	// update order numbers
+	
+	// update order
 	function repeater_update_order( repeater )
 	{
 		repeater.find('> table > tbody > tr.row').each(function(i){
-			$(this).children('td.order').html(i+1);
+			$(this).children('td.order').html( i+1 );
 		});
 	
-	};
-	
-	
-	// make sortable
-	function repeater_add_sortable( repeater ){
-		
-		var fixHelper = function(e, ui) {
-			ui.children().each(function() {
-				$(this).width($(this).width());
-			});
-			return ui;
-		};
-		
-		repeater.find('> table > tbody').unbind('sortable').sortable({
-			update: function(event, ui){
-				repeater_update_order( repeater );
-			},
-			items : '> tr.row',
-			handle: '> td.order',
-			helper: fixHelper,
-			forceHelperSize: true,
-			forcePlaceholderSize: true,
-			scroll: true,
-			start: function (event, ui) {
-				
-				// add markup to the placeholder
-				var td_count = ui.item.children('td').length;
-        		ui.placeholder.html('<td colspan="' + td_count + '"></td>');
-   			}
-		});
 	};
 	
 	
@@ -937,64 +1088,90 @@ var acf = {
 		
 		$(postbox).find('.repeater').each(function(){
 			
-			var repeater = $(this),
-				min_rows = parseInt( repeater.attr('data-min_rows') ),
-				max_rows = parseInt( repeater.attr('data-max_rows') );	
+			var repeater = $(this)
 			
 			
 			// set column widths
-			if( ! repeater.find('> table').hasClass('row_layout') )
-			{
-				// accomodate for order / remove th widths
-				var column_width = 93;
-				
-				// find columns that already have a width and remove these amounts from the column_width var
-				repeater.find('> table > thead > tr > th[width]').each(function( i ){
-					
-					column_width -= parseInt( $(this).attr('width') );
-				});
-
-				
-				var ths = repeater.find('> table > thead > tr th').not('[width]').has('span');
-				if( ths.length > 1 )
-				{
-					column_width = column_width / ths.length;
-					
-					ths.each(function( i ){
-						
-						// dont add width to last th
-						if( (i+1) == ths.length  )
-						{
-							return;
-						}
-						
-						$(this).attr('width', column_width + '%');
-						
-					});
-				}
-				
-			}
+			repeater_set_column_widths( repeater );
 			
 			
 			// update classes based on row count
-			repeater_check_rows( repeater );
+			repeater_update_classes( repeater );
 			
 			
-			// sortable
-			if( max_rows > 1 ){
-				repeater_add_sortable( repeater );
-			}
-			
+			// add sortable
+			repeater_add_sortable( repeater );
+						
 		});
 			
 	});
 	
 	
-	// repeater_check_rows
-	function repeater_check_rows( repeater )
+	/*
+	*  repeater_set_column_widths
+	*
+	*  @description: 
+	*  @since 3.5.1
+	*  @created: 11/11/12
+	*/
+	
+	function repeater_set_column_widths( repeater )
+	{
+		// validate
+		if( repeater.children('.acf-input-table').hasClass('row_layout') )
+		{
+			return;
+		}
+		
+
+		// accomodate for order / remove
+		var column_width = 100;
+		if( repeater.find('> .acf-input-table > thead > tr > th.order').exists() )
+		{
+			column_width = 93;
+		}
+		
+		
+		// find columns that already have a width and remove these amounts from the column_width var
+		repeater.find('> .acf-input-table  > thead > tr > th[width]').each(function( i ){
+			
+			column_width -= parseInt( $(this).attr('width') );
+		});
+
+		
+		var ths = repeater.find('> .acf-input-table > thead > tr > th').not('[width]').has('span');
+		if( ths.length > 1 )
+		{
+			column_width = column_width / ths.length;
+			
+			ths.each(function( i ){
+				
+				// dont add width to last th
+				if( (i+1) == ths.length  )
+				{
+					return;
+				}
+				
+				$(this).attr('width', column_width + '%');
+				
+			});
+		}
+				
+	}
+	
+	
+	/*
+	*  repeater_update_classes
+	*
+	*  @description: 
+	*  @since 3.5.2
+	*  @created: 11/11/12
+	*/
+	
+	function repeater_update_classes( repeater )
 	{
 		// vars
-		var max_rows = parseInt( repeater.attr('data-max_rows') ),
+		var max_rows = parseFloat( repeater.attr('data-max_rows') ),
 			row_count = repeater.find('> table > tbody > tr.row').length;	
 
 		
@@ -1021,6 +1198,56 @@ var acf = {
 	}
 	
 	
+	/*
+	*  repeater_add_sortable
+	*
+	*  @description: 
+	*  @since 3.5.2
+	*  @created: 11/11/12
+	*/
+	
+	function repeater_add_sortable( repeater ){
+		
+		// vars
+		var max_rows = parseFloat( repeater.attr('data-max_rows') );
+		
+		
+		// validate
+		if( max_rows <= 1 )
+		{
+			return;
+		}
+			
+		repeater.find('> table > tbody').unbind('sortable').sortable({
+			items : '> tr.row',
+			handle : '> td.order',
+			helper : acf.sortable_helper,
+			forceHelperSize : true,
+			forcePlaceholderSize : true,
+			scroll : true,
+			start : function (event, ui) {
+			
+				$(document).trigger('acf/sortable_start', ui.item);
+				$(document).trigger('acf/sortable_start_repeater', ui.item);
+
+				// add markup to the placeholder
+				var td_count = ui.item.children('td').length;
+        		ui.placeholder.html('<td colspan="' + td_count + '"></td>');
+        		
+   			},
+   			stop : function (event, ui) {
+			
+				$(document).trigger('acf/sortable_stop', ui.item);
+				$(document).trigger('acf/sortable_stop_repeater', ui.item);
+				
+				// update order numbers	
+				repeater_update_order( repeater );		
+				
+   			}
+		});
+	};
+	
+	
 	// add field
 	function repeater_add_field( repeater, before )
 	{
@@ -1039,7 +1266,7 @@ var acf = {
 	
 		// create and add the new field
 		var new_id = uniqid(),
-			new_field_html = repeater.find('> table > tbody > tr.row-clone').html().replace(/(=["]*[\w-\[\]]*?)(\[999\])/g, '$1[' + new_id + ']'),
+			new_field_html = repeater.find('> table > tbody > tr.row-clone').html().replace(/(=["]*[\w-\[\]]*?)(acfcloneindex)/g, '$1' + new_id),
 			new_field = $('<tr class="row"></tr>').append( new_field_html );
 		
 		
@@ -1061,7 +1288,7 @@ var acf = {
 		
 		
 		// update classes based on row count
-		repeater_check_rows( repeater );
+		repeater_update_classes( repeater );
 		
 		
 		// setup fields
@@ -1134,7 +1361,7 @@ var acf = {
 			
 			
 			// update classes based on row count
-			repeater_check_rows( repeater );
+			repeater_update_classes( repeater );
 			
 		}, 400);
 		
@@ -1142,7 +1369,7 @@ var acf = {
 	
 	
 	// remove field
-	$('.repeater .remove-row').live('click', function(){
+	$('.repeater .acf-button-remove').live('click', function(){
 		var tr = $(this).closest('tr');
 		repeater_remove_row( tr );
 		return false;
@@ -1152,7 +1379,7 @@ var acf = {
 	// hover over tr, align add-row button to top
 	$('.repeater tr').live('mouseenter', function(){
 		
-		var button = $(this).find('> td.remove > a.add-row');
+		var button = $(this).find('> td.remove > a.acf-button-add');
 		var margin = ( button.parent().height() / 2 ) + 9; // 9 = padding + border
 		
 		button.css('margin-top', '-' + margin + 'px' );
@@ -1181,7 +1408,24 @@ var acf = {
 		// remove (if clone) and add sortable
 		div.children('.values').unbind('sortable').sortable({
 			items : '> .layout',
-			handle: '> .actions .order'
+			handle : '> .menu-item-handle',
+			forceHelperSize : true,
+			forcePlaceholderSize : true,
+			scroll : true,
+			start : function (event, ui) {
+			
+				$(document).trigger('acf/sortable_start', ui.item);
+				$(document).trigger('acf/sortable_start_flexible_content', ui.item);
+        		
+   			},
+   			stop : function (event, ui) {
+			
+				$(document).trigger('acf/sortable_stop', ui.item);
+				$(document).trigger('acf/sortable_stop_flexible_content', ui.item);
+				
+				// update order numbers				
+				flexible_content_update_order( div );
+   			}
 		});
 		
 	};
@@ -1246,11 +1490,22 @@ var acf = {
 	}
 	
 	
-	$('.acf_flexible_content .actions .delete').live('click', function(){
+	$('.acf_flexible_content .fc-delete-layout').live('click', function(){
 		var layout = $(this).closest('.layout');
 		flexible_content_remove_layout( layout );
 		return false;
 	});
+		
+	
+	
+	// update order
+	function flexible_content_update_order( div )
+	{
+		div.find('> .values .layout').each(function(i){
+			$(this).find('> .menu-item-handle .fc-layout-order').html(i+1);
+		});
+	
+	};
 	
 	
 	// add layout
@@ -1263,7 +1518,8 @@ var acf = {
 		
 		// create new field
 		var new_id = uniqid(),
-			new_field_html = div.find('> .clones > .layout[data-layout="' + layout + '"]').html().replace(/(=["]*[\w-\[\]]*?)(\[999\])/g, '$1[' + new_id + ']'),
+		
+			new_field_html = div.find('> .clones > .layout[data-layout="' + layout + '"]').html().replace(/(=["]*[\w-\[\]]*?)(acfcloneindex)/g, '$1' + new_id),
 			new_field = $('<div class="layout" data-layout="' + layout + '"></div>').append( new_field_html );
 			
 			
@@ -1275,8 +1531,12 @@ var acf = {
 		div.children('.values').append(new_field); 
 		
 		
-		// activate wysiwyg
+		// acf/setup_fields
 		$(document).trigger('acf/setup_fields',new_field);
+		
+		
+		// update order numbers
+		flexible_content_update_order( div );
 		
 		
 		// validation
@@ -1295,8 +1555,44 @@ var acf = {
 
 			// sortable
 			flexible_content_add_sortable( div );
+			
+			
+			// set column widths
+			$(div).find('.layout').each(function(){
+				repeater_set_column_widths( $(this) );
+			});
+			
+			
 		});
 		
+	});
+
+	
+	/*
+	*  Hide Show Flexible Content
+	*
+	*  @description: 
+	*  @since 3.5.2
+	*  @created: 11/11/12
+	*/
+	
+	$('.acf_flexible_content .layout .menu-item-handle').live('click', function(){
+		
+		// vars
+		var layout = $(this).closest('.layout');
+		
+		
+		if( layout.attr('data-toggle') == 'closed' )
+		{
+			layout.attr('data-toggle', 'open');
+			layout.children('.acf-input-table').show();
+		}
+		else
+		{
+			layout.attr('data-toggle', 'closed');
+			layout.children('.acf-input-table').hide();
+		}
+			
 	});
 	
 	
@@ -1309,7 +1605,7 @@ var acf = {
 	
 	acf.is_clone_field = function( input )
 	{
-		if( input.attr('name') && input.attr('name').indexOf('[999]') != -1 )
+		if( input.attr('name') && input.attr('name').indexOf('[acfcloneindex]') != -1 )
 		{
 			return true;
 		}
@@ -1331,7 +1627,7 @@ var acf = {
 			
 			// vars
 			var input = $(this),
-				alt_field = input.siblings('.acf-hidden-datepicker');
+				alt_field = input.siblings('.acf-hidden-datepicker'),
 				save_format = input.attr('data-save_format'),
 				display_format = input.attr('data-display_format');
 			
@@ -1353,6 +1649,7 @@ var acf = {
 				altField : alt_field,
 				altFormat :  save_format,
 				changeYear: true,
+				yearRange: "-100:+100",
 				changeMonth: true,
 				showButtonPanel : true
 			});
@@ -1473,7 +1770,7 @@ var acf = {
 	
 	
 	// remove image
-	$('.acf-gallery .thumbnail .remove-image').live('click', function(){
+	$('.acf-gallery .thumbnail .acf-button-delete').live('click', function(){
 		
 		// vars
 		var thumbnail = $(this).closest('.thumbnail'),
@@ -1496,7 +1793,7 @@ var acf = {
 	
 	
 	// remove image
-	$('.acf-gallery .thumbnail .edit-image').live('click', function(){
+	$('.acf-gallery .thumbnail .acf-button-edit').live('click', function(){
 		
 		// vars
 		var div = $(this).closest('.thumbnail'),
@@ -1529,7 +1826,7 @@ var acf = {
 			
 			
 		// show the thickbox
-		tb_show( acf.text.gallery_tb_title_add , acf.admin_url + 'media-upload.php?post_id=' + acf.post_id + '&type=image&acf_type=gallery&acf_preview_size=' + preview_size + 'TB_iframe=1');
+		tb_show( acf.text.gallery_tb_title_add , acf.admin_url + 'media-upload.php?post_id=' + acf.post_id + '&post_ID=' + acf.post_id + '&type=image&acf_type=gallery&acf_preview_size=' + preview_size + 'TB_iframe=1');
 			
 			
 		return false;
@@ -1544,7 +1841,6 @@ var acf = {
 			// is clone field?
 			if( acf.is_clone_field($(this).children('input[type="hidden"]')) )
 			{
-				//console.log('Clone Field: Gallery');
 				return;
 			}
 			
@@ -1576,6 +1872,200 @@ var acf = {
 			
 		});
 	
+	});
+	
+	
+	// gallery ajax
+	acf.gallery_update_tile = function(){
+	
+		// vars
+		var div = window.acf_edit_attachment,
+			attachment_id = div.attr('data-id');
+		
+		
+		// ajax find new list data
+		$.ajax({
+			url: ajaxurl,
+			data : {
+				'action' : 'acf_get_gallery_list_data',
+				'attachment_id' : attachment_id
+			},
+			cache: false,
+			dataType: "html",
+			success: function( html ) {
+		    	
+	
+				// validate
+				if(!html)
+				{
+					return false;
+				}
+				
+				
+				// update list-item html
+				div.find('.list-data').html( html ); 	
+	 	
+			}
+		});
+		
+	};
+	
+	
+	/*
+	*  Conditional Logic Calculate
+	*
+	*  @description: 
+	*  @since 3.5.1
+	*  @created: 15/10/12
+	*/
+	
+	acf.conditional_logic.calculate = function( options )
+	{
+		// vars
+		var field = $('.field-' + options.field),
+			toggle = $('.field-' + options.toggle),
+			r = false;
+		
+		
+		// compare values
+		if( toggle.hasClass('field-true_false') || toggle.hasClass('field-checkbox') || toggle.hasClass('field-radio') )
+		{
+			if( options.operator == "==" )
+			{
+				if( toggle.find('input[value="' + options.value + '"]:checked').exists() )
+				{
+					r = true;
+				}
+			}
+			else
+			{
+				if( !toggle.find('input[value="' + options.value + '"]:checked').exists() )
+				{
+					r = true;
+				}
+			}
+			
+		}
+		else
+		{
+			if( options.operator == "==" )
+			{
+				if( toggle.find('*[name]').val() == options.value )
+				{
+					r = true;
+				}
+			}
+			else
+			{
+				if( toggle.find('*[name]').val() != options.value )
+				{
+					r = true;
+				}
+			}
+			
+		}
+		
+		return r;
+	}
+	
+	
+	/*
+	*  Field: Tab
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 14/12/12
+	*/
+	
+	$(document).live('acf/setup_fields', function(e, postbox){
+		
+		$(postbox).find('.acf-tab').each(function(){
+			
+			// vars
+			var tab = $(this),
+				id = tab.attr('data-id'),
+				label = tab.html(),
+				postbox = tab.closest('.acf_postbox'),
+				inside = postbox.children('.inside');
+			
+
+			
+			// only run once for each tab
+			if( tab.hasClass('acf-tab-added') )
+			{
+				return;
+			}
+			tab.addClass('acf-tab-added');
+			
+			
+			// create tab group if it doesnt exist
+			if( ! inside.children('.acf-tab-group').exists() )
+			{
+				inside.children('.field-tab:first').before('<ul class="hl clearfix acf-tab-group"></ul>');
+			}
+			
+			
+			// add tab
+			inside.children('.acf-tab-group').append('<li><a class="acf-tab-button" href="#" data-id="' + id + '">' + label + '</a></li>');
+			
+			
+		});
+		
+		
+		// trigger
+		$(postbox).find('.acf-tab-group').each(function(){
+			
+			$(this).find('li:first a').trigger('click');
+			
+		});
+
+	
+	});
+	
+	
+	/*
+	*  Tab group click
+	*
+	*  @description: 
+	*  @since: 2.0.4
+	*  @created: 14/12/12
+	*/
+	
+	$('.acf-tab-button').live('click', function(){
+		
+		// vars
+		var a = $(this),
+			id = a.attr('data-id'),
+			ul = a.closest('ul'),
+			inside = ul.closest('.acf_postbox').children('.inside'),
+			field = inside.children('.field-' + id);
+		
+		
+		// classes
+		ul.find('li').removeClass('active');
+		a.parent('li').addClass('active');
+		
+		
+		// hide / show
+		inside.children('.field-tab').each(function(){
+			
+			var tab = $(this);
+			
+			if( tab.attr('id') == field.attr('id') )
+			{
+				tab.nextUntil('.field-tab').removeClass('acf-tab_group-hide').addClass('acf-tab_group-show');
+			}
+			else
+			{
+				tab.nextUntil('.field-tab').removeClass('acf-tab_group-show').addClass('acf-tab_group-hide');
+			}
+			
+		});
+
+		$(this).trigger('blur');
+		
+		return false;
+		
 	});
 	
 	

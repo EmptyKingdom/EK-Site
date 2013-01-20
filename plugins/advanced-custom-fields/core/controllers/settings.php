@@ -48,11 +48,39 @@ class acf_settings
 	{
 		$page = add_submenu_page('edit.php?post_type=acf', __('Settings','acf'), __('Settings','acf'), 'manage_options','acf-settings',array($this,'html'));
 		
+		add_action('load-' . $page, array($this,'load'));
+		
 		add_action('admin_print_scripts-' . $page, array($this, 'admin_print_scripts'));
 		add_action('admin_print_styles-' . $page, array($this, 'admin_print_styles'));
 		
 		add_action('admin_head-' . $page, array($this,'admin_head'));
 		
+	}
+	
+	
+	/*
+	*  load
+	*
+	*  @description: 
+	*  @since 3.5.2
+	*  @created: 16/11/12
+	*  @thanks: Kevin Biloski and Charlie Eriksen via Secunia SVCRP
+	*/
+	
+	function load()
+	{
+		// vars
+		$defaults = array(
+			'action' => ''
+		);
+		$options = array_merge($defaults, $_POST);
+		
+
+		if( $options['action'] == "export_xml" )
+		{
+			include_once($this->parent->path . 'core/actions/export.php');
+			die;
+		}
 	}
 	
 	
@@ -80,7 +108,11 @@ class acf_settings
 	
 	function admin_print_styles()
 	{
-		wp_enqueue_style( 'wp-pointer' );
+		wp_enqueue_style(array(
+			'wp-pointer',
+			'acf-global',
+			'acf',
+		));
 	}
 	
 	
@@ -166,14 +198,6 @@ class acf_settings
 			
 			$this->parent->admin_message($message);
 		}
-		
-
-		
-		// Style
-		?>
-		<link rel="stylesheet" type="text/css" href="<?php echo $this->parent->dir ?>/css/global.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo $this->parent->dir ?>/css/acf.css" />
-		<?php
 	}
 	
 	
@@ -329,8 +353,8 @@ class acf_settings
 				</div>
 			</th>
 			<td>
-				<form class="acf-export-form" method="post" action="<?php echo $this->parent->dir; ?>/core/actions/export.php">
-					<input type="hidden" name="acf_abspath" value="<?php echo ABSPATH; ?>" />
+				<form class="acf-export-form" method="post">
+					<input type="hidden" name="action" value="export_xml" />
 					<?php
 
 					$this->parent->create_field(array(
@@ -338,7 +362,7 @@ class acf_settings
 						'name'	=>	'acf_posts',
 						'value'	=>	'',
 						'choices'	=>	$choices,
-						'multiple'	=>	'1',
+						'multiple'	=>	1,
 					));
 					
 					?>
@@ -375,7 +399,7 @@ class acf_settings
 						'name'	=>	'acf_posts',
 						'value'	=>	'',
 						'choices'	=>	$choices,
-						'multiple'	=>	'1',
+						'multiple'	=>	1,
 					));
 					
 					?>
@@ -480,11 +504,16 @@ class acf_settings
 					<li><?php _e("To activate any Add-ons, edit and use the code in the first few lines.",'acf'); ?></li>
 				</ol>
 				
+				<br />
+				
+				<h3><?php _e("ACF Lite",'acf'); ?></h3>
+				<p><?php _e("Advanced Custom Fields has a lite version to be included in premium themes. You can find out more on github",'acf'); ?> <a href="https://github.com/elliotcondon/acf/" target="_blank"><?php _e("here",'acf'); ?></a>.</p>
+				
 			</th>
 			<td valign="top">
 				<div class="wp-box">
 					<div class="inner">
-						<textarea class="pre" readonly="true" onclick="this.focus();this.select()"><?php
+						<textarea class="pre" readonly="true"><?php
 		
 		$acfs = array();
 		
@@ -504,16 +533,24 @@ class acf_settings
 <?php _e("/**
  * Activate Add-ons
  * Here you can enter your activation codes to unlock Add-ons to use in your theme. 
- * Since all activation codes are multi-site licenses, you are allowed to include your key in premium themes. 
- * Use the commented out code to update the database with your activation code. 
- * You may place this code inside an IF statement that only runs on theme activation.
+ * Since all activation codes are multi-site licenses, you are allowed to include your key in premium themes.
  */",'acf'); ?>
  
- 
-// if(!get_option('acf_repeater_ac')) update_option('acf_repeater_ac', "xxxx-xxxx-xxxx-xxxx");
-// if(!get_option('acf_options_page_ac')) update_option('acf_options_page_ac', "xxxx-xxxx-xxxx-xxxx");
-// if(!get_option('acf_flexible_content_ac')) update_option('acf_flexible_content_ac', "xxxx-xxxx-xxxx-xxxx");
-// if(!get_option('acf_gallery_ac')) update_option('acf_gallery_ac', "xxxx-xxxx-xxxx-xxxx");
+
+function my_acf_settings( $options )
+{
+    // activate add-ons
+    $options['activation_codes']['repeater'] = 'XXXX-XXXX-XXXX-XXXX';
+    $options['activation_codes']['options_page'] = 'XXXX-XXXX-XXXX-XXXX';
+    $options['activation_codes']['flexible_content'] = 'XXXX-XXXX-XXXX-XXXX';
+    $options['activation_codes']['gallery'] = 'XXXX-XXXX-XXXX-XXXX';
+    
+    // setup other options (http://www.advancedcustomfields.com/docs/filters/acf_settings/)
+    
+    return $options;
+    
+}
+add_filter('acf_settings', 'my_acf_settings');
 
 
 <?php _e("/**
@@ -566,6 +603,22 @@ if(function_exists("register_field_group"))
 </table>
 <script type="text/javascript">
 (function($){
+	
+	var i = 0;
+	
+	$('textarea.pre').live( 'mousedown', function (){
+		
+		if( i == 0 )
+		{
+			i++;
+			
+			$(this).focus().select();
+			
+			return false;
+		}
+				
+	});
+	
 	
 	$('textarea.pre').live( 'keyup', function (){
 	    $(this).height( 0 );

@@ -1,12 +1,11 @@
 /*---------------------------------------------------------------------------------------------
 	Postbox
 ---------------------------------------------------------------------------------------------*/
-#icon-edit {
-	background: url(../images/sprite.png) 0 0 no-repeat !important;
-}
 
-#toplevel_page_edit-post_type-acf .wp-menu-image { background: url("../../../../wp-admin/images/menu.png") no-repeat scroll 0 -1px transparent; }
-		
+#icon-edit {
+	background: url(../images/sprite.png) 0 0 no-repeat;
+}
+	
 #message p a {
 	display: none;
 }
@@ -32,10 +31,24 @@
 	text-decoration: none;
 }
 
-#minor-publishing,
-#misc-publishing-actions {
+#minor-publishing-actions,
+#misc-publishing-actions #visibility,
+#misc-publishing-actions .curtime {
 	display: none;
 }
+
+#minor-publishing {
+	border-bottom: 0 none;
+}
+#misc-pub-section {
+	border-bottom: 0 none;
+}
+
+#misc-publishing-actions .misc-pub-section {
+	border-bottom-color: #F5F5F5;
+}
+
+
 
 .postbox {
 	background: #FFFFFF;
@@ -170,14 +183,15 @@ table.widefat.acf td {
 }
 
 #acf_fields .field.form_open > .field_meta {
-	background: #6e6e6e url(../images/sprite.png) 0 -200px repeat-x;
+	background-color: #767676;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#6E6E6E)); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #808080, #6E6E6E); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #808080, #6E6E6E); /* Firefox 3.6-15 */
+	background-image:      -o-linear-gradient(top, #808080, #6E6E6E); /* Opera 11.10-12.00 */
+	background-image:         linear-gradient(to bottom, #808080, #6E6E6E); /* Firefox 16+, IE10, Opera 12.50+ */
 	color: #fff;
 	text-shadow: #000 0 1px 0;
 	border: #565656 solid 1px;
-	/*border-top: #565656 solid 1px;
-	border-left:0 none;
-	border-right:0 none;*/
-	
 }
 
 #acf_fields .field.form_open > .field_meta td,
@@ -190,25 +204,28 @@ table.widefat.acf td {
 }
 
 #acf_fields .fields .field .field_meta .circle {
-	width: 20px;
-	height: 20px;
+	width: 19px;
+	height: 19px;
 	text-align: center;
 	font-size: 11px;
-	line-height: 20px;
+	line-height: 19px;
 	display: block;
 	float: left;
 	margin: 7px 0 0 7px;
 	text-indent: 0;
-	background: url(../images/sprite.png) 0 -350px no-repeat;
+	background: #eeeeee;
+	border-radius: 9px;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
 }
 
 #acf_fields .fields .field:nth-child(2n) .field_meta .circle {
-	background-position: 0 -400px;
+	background: #F7F7F7;
 
 }
 
 #acf_fields .field.form_open > .field_meta .circle {
-	background-position: 0 -300px !important;
+	background: #636363 !important;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.4), 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 
@@ -224,28 +241,27 @@ table.widefat.acf td {
 	background: #F9F9F9;
 }
 
-#acf_fields .field.ui-sortable-helper {
-	
-}
-#acf_fields .field.ui-sortable-helper {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+#acf_fields .ui-sortable-helper {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+	background: #fff;
 }
 
-#acf_fields .field.ui-sortable-placeholder {
-	background: #f5f5f5;
-	box-shadow: inset 0 0px 3px rgba(0,0,0,0.1);
-	visibility: visible !important;	
-	border: #dfdfdf solid 1px;
-	border-top: 0 none;
-	border-bottom: 0 none;
+#acf_fields .ui-sortable-placeholder {
+	visibility: visible !important;
 }
 
+#acf_fields .ui-sortable-placeholder td {
+	border: 0 none !important;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.075);
+}
 
 .fields .field:nth-child(even) {
 	background: #FCFCFC;
 }
 
-.fields .field_clone {
+.fields .field-field_clone {
 	display: none;
 }
 
@@ -257,6 +273,11 @@ table.widefat.acf td {
 	border-bottom: 0 none;
 }
 
+.fields .field.ui-sortable-placeholder {
+	border: 0 none !important;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.075);
+}
 
 
 /*---------------------------------------------------------------------------------------------
@@ -284,17 +305,17 @@ table.widefat.acf td {
 }
 
 #acf_fields .table_footer .order_message {
-	background: url(../images/sprite.png) -50px -300px no-repeat;
-	color: #7a9bbe;
-	font-size: 11px;
-	line-height: 1em;
-	padding: 7px 0 0 22px;
-	width: 161px;
-	height: 13px;
-	float: left;
-	margin-left: 13px;
-	text-shadow: #fff 0 1px 0;
-	font-family: Comic Sans MS, sans-serif;
+	background: url(../images/sprite.png) -50px 0px no-repeat;
+    color: #7A9BBE;
+    float: left;
+    font-family: Comic Sans MS, sans-serif;
+    font-size: 11px;
+    height: 13px;
+    line-height: 1em;
+    margin: 2px 0 0 11px;
+    padding: 6px 0 0 24px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    width: 161px;
 }
 
 #acf_fields .table_footer a#add_field{
@@ -341,6 +362,11 @@ table.widefat.acf td {
 .field_save td {
 	line-height: 25px;
 }
+
+.field_instructions textarea {
+	height: 70px;
+}
+
 /*---------------------------------------------------------------------------------------------
 	Repeater
 ---------------------------------------------------------------------------------------------*/
@@ -358,6 +384,10 @@ table.acf_input tr td .acf tr td {
 
 .field_column_width input[type="number"] {
 	width: 50%;
+}
+
+.repeater.layout-row > .fields > .field > .field_form_mask > .field_form > .widefat > tbody > tr.field_column_width {
+	display: none;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -427,64 +457,43 @@ td.operator {
 	
 }
 
-table#location_rules {
+table.acf-rules {
 
 }
 
-table#location_rules tr {
+table.acf-rules tbody tr {
 
 }
 
-table#location_rules tr td {
+table.acf-rules tbody tr td {
 	padding: 4px;
 	border: 0 none;
 }
 
-table#location_rules tr td:first-child {
+table.acf-rules tbody tr td:first-child {
 	padding-left: 0;
 }
 
-table#location_rules tr td:last-child {
+table.acf-rules tbody tr td:last-child {
 	padding-right: 0;
 }
 
-table#location_rules tr td.buttons {
-	width: 40px;
+table.acf-rules tbody tr td.buttons {
+	width: 48px;
 	vertical-align: middle;
 }
 
-table#location_rules a.remove {
-	display: block;
-	width: 16px;
-	height: 16px;
-	background: url(../images/button_remove.png) 0 0 no-repeat;
-	float: left;
-	margin-right: 4px;
+table.acf-rules tbody tr td.buttons li {
+	padding-left: 5px;
 }
 
-table#location_rules a.remove:hover {
-	background-position: 0 100%;
-}
-
-table#location_rules a.remove.disabled {
+table.acf-rules.remove-disabled tbody .acf-button-remove {
 	opacity: 0.4;
-	background-position: 0 0 !important;
 	cursor: default;
+	background-position: -66px -116px !important;
 }
 
-table#location_rules a.add {
-	display: block;
-	width: 16px;
-	height: 16px;
-	background: url(../images/button_add.png) 0 0 no-repeat;
-	float: left;
-}
-
-table#location_rules a.add:hover {
-	background-position: 0 100%;
-}
-
-table#location_rules .acf-loading {
+table.acf-rules tbody .acf-loading {
 	margin: 0 auto;
 	margin-top: -2px;
 }
@@ -558,9 +567,8 @@ table.acf_input table.acf_cf_meta select {
 	cursor: move;
 }
 
-.ui-state-highlight {
-	height: 40px;
-}
+
+
 
 
 /*---------------------------------------------------------------------------------------------
@@ -626,6 +634,7 @@ table.acf_input table.acf_cf_meta select {
 *	Select with Optgroup
 *	
 *---------------------------------------------------------------------------------------------*/
+
 #acf_fields select optgroup,
 #acf_location select optgroup {
 	padding: 5px 2px;
@@ -650,4 +659,81 @@ table.acf_input table.acf_cf_meta select {
 #acf_fields select optgroup:nth-child(2n),
 #acf_location select optgroup:nth-child(2n) {
     background: #F9F9F9;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*	Conditional Logic
+*	
+*---------------------------------------------------------------------------------------------*/
+
+table.conditional-logic-rules {
+	background: transparent;
+	border: 0 none;
+	border-radius: 0;
+}
+
+table.conditional-logic-rules tbody td {
+	background: transparent;
+	border: 0 none;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*	Field: Tab
+*	
+*---------------------------------------------------------------------------------------------*/
+
+
+#acf_fields .fields .field-tab tr.field_name,
+#acf_fields .fields .field-tab tr.field_instructions,
+#acf_fields .fields .field-tab tr.required,
+#acf_fields .fields .field-tab tr.conditional-logic {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------------------
+*
+*	Retina
+*	
+*-------------------------------------------------------------------------*/
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+	
+	#icon-edit,
+	#acf_fields .table_footer .order_message {
+		background-image: url(../images/sprite@2x.png);
+		background-size: 100px 600px;
+	}
+	
+	
+	/*
+#toplevel_page_edit-post_type-acf .wp-menu-image { 
+		background-image: url("../../../../wp-admin/images/menu-2x.png") !important;
+	}
+*/
+
+	
+}
+
+
+/*--------------------------------------------------------------------------
+*
+*	Firefox
+*	
+*-------------------------------------------------------------------------*/
+
+@-moz-document url-prefix() {
+    #acf_fields .fields .field .field_meta .circle {
+	    line-height: 21px;
+    }
 }
