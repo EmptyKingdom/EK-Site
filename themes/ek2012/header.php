@@ -35,10 +35,10 @@
 				<div class="span4 side">
 					<ul class="unstyled ek-social" id="utility-menu">
 						<li><span><a href="#">Register</a> | <a href="#">Login</a></span></li>
-						<li class="vimeo icon">Vimeo</li>
-						<li class="pinterest icon">Pinterest</li>
-						<li class="facebook icon">Facebook</li>
-						<li class="twitter icon">Twitter</li>
+						<li class="vimeo icon"><a href="http://vimeo.com/emptykingdom" target="_blank">Vimeo</a></li>
+						<li class="pinterest icon"><a href="http://pinterest.com/emptykingdom/" target="_blank">Pinterest</a></li>
+						<li class="facebook icon"><a href="https://www.facebook.com/myemptykingdom" target="_blank">Facebook</a></li>
+						<li class="twitter icon"><a href="http://twitter.com/emptykingdom" target="_blank">Twitter</a></li>
 					</ul>
 					<div id="basic-search">
 						<form action="<?php echo site_url('/') ?>">

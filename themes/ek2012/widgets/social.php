@@ -31,10 +31,10 @@ class EK_Widget_Social extends WP_Widget {
 		} 
 		?>
 		<ul class="unstyled">
-			<li class="vimeo icon">Vimeo</li>
-			<li class="pinterest icon">Pinterest</li>
-			<li class="facebook icon">Facebook</li>
-			<li class="twitter icon">Twitter</li>
+			<li class="vimeo icon"><a href="http://vimeo.com/emptykingdom" target="_blank">Vimeo</a></li>
+			<li class="pinterest icon"><a href="http://pinterest.com/emptykingdom/" target="_blank">Pinterest</a></li>
+			<li class="facebook icon"><a href="https://www.facebook.com/myemptykingdom" target="_blank">Facebook</a></li>
+			<li class="twitter icon"><a href="http://twitter.com/emptykingdom" target="_blank">Twitter</a></li>
 		</ul>
 		<?php 
 		echo $after_widget; 
