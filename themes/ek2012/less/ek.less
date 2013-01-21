@@ -1282,8 +1282,11 @@ body.single, body.page {
 			float: left;
 		}
 		.date {
+			margin-left: 10px;
+		}
+		h5.category {
 			float: right;
-			margin-right: 32px;
+			margin: 0 40px 0 0;
 		}
 		.posts-nav {
 			position: absolute;
@@ -1315,11 +1318,11 @@ body.single, body.page {
 	}
 	.post-actions {
 		border-top: 1px dotted @lightGray;
-		border-bottom: 1px dotted @lightGray;
+		// border-bottom: 1px dotted @lightGray;
 		height: 21px;
 		line-height: 21px;
 		font-size: 14px;
-		padding: 6px 0;
+		padding: 0;
 		margin: 16px 0;
 		.heart {
 			float: right;
@@ -1329,122 +1332,61 @@ body.single, body.page {
 			background: url(../img/heart-add.png) no-repeat;
 		}
 		.post-share {
-			float: left;
 			margin: 0;
-			vertical-align: middle;
 		}
 	}
 	.post-share {
+		height: 20px;
 	    li {
-	    	display: inline-block;
-	    	padding-right: 24px;
-	    	font-size: 10px;
+	    	float: left;
+	    	// width: 100px;
+	    	height: 40px;
+	    	padding: 11px 20px 10px 15px;
+	    	font-size: 11px;
+	    	line-height: 11px;
 	    	text-transform: uppercase;
 	    	position: relative;
 	    	font-weight: @semiBold;
+	    	top: -1px;
 	    	a.service {
 		    	color: @darkGray;
 		    	position: relative;
+		    	line-height: 11px;
+		    	color: inherit !important;
 	    	}
 	    	.action {
-		    	display: none;
-		    	min-width: 51%;
+		    	visibility: hidden;
+		    	position: absolute;
+		    	padding-top: 10px;
 	    	}
 	    	&.active {
+	    		border-top: 1px solid;
+	    		padding-top: 10px;
 	    		a.service {
-		    		border: 1px solid @paleGray;
-		    		border-bottom-color: #FFF;
-		    		padding: 5px 10px 0px 20px;
-		    		left: -21px;
-		    		margin-right: -32px;
 		    		z-index: 10000001;
 		    		background: #FFF;
 	    		}
 		    	.action {
-		    		display: block;
-		    		height: 24px;
-		    		overflow: hidden;
-			    	position: absolute;
-			    	z-index: 1000000;
-			    	visibility: visible;
-			    	background: #FFF;
-		    		border-left: 1px solid @paleGray;
-		    		border-top: 1px solid @paleGray;
-		    		box-shadow: 1px 1px 1px @paleGray;
-			    	padding: 16px 16px 10px 16px;
-			    	top: 0px;
-			    	left: -3px;
-			    	margin-top: 16px;
+		    		visibility: visible;
 			    	.btn {
 				    	white-space: nowrap;
 			    	}
 		    	}
 	    	}
-		    &:before {
-				content: '';
-				display: inline-block;
-				position: relative;
-				height: 12px;
-				width: 12px;
-				.border-radius(6px);
-				margin-right: 4px;
-				top: 2px;
-			}
 			&.facebook {
-				&:before {
-					background-color: #2e89ce;
-				}
-				a:hover {
-					color: #2e89ce !important;
-				}
+				color: #2e89ce;
 			}
 			&.twitter {
-				&:before {
-					background-color: #16caf4;
-				}
-				a:hover {
-					color: #16caf4 !important;
-				}
+				color: #16caf4;
 			}
 			&.stumbleupon {
-				&:before {
-					background-color: #29e273;
-				}
-				a:hover {
-					color: #29e273 !important;
-				}
+				color: #29e273;
 			}
 			&.pinterest {
-				&:before {
-					background-color: #d84b1e;
-				}
-				a:hover {
-					color: #d84b1e !important;
-				}
+				color: #d84b1e;
 			}
 			&.email {
-				&:before {
-					background-color: @darkGray;
-				}
-				a:hover {
-					color: @darkGray !important;
-				}
-			}
-			&.permalink {
-				&:before {
-					background-color: #b2b2b2;
-				}
-				a:hover {
-					color: #b2b2b2 !important;
-				}
-				.action {
-					text-transform: none;
-					input {
-						width: 150px;
-						padding: 3px;
-						margin: 0;
-					}
-				}
+				color: @darkGray;
 			}
 		}
 	}
@@ -1459,7 +1401,7 @@ body.single, body.page {
 			font-size: @grid*2;
 			font-weight: 500;
 			height: @grid*4;
-			line-height: @grid*4.5;
+			line-height: @grid*4;
 			margin: @grid*3 0;
 			overflow: hidden;
 		}		

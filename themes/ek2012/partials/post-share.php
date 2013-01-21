@@ -40,10 +40,4 @@
 						<a class="btn btn-inverse" href="mailto:?subject=<?php echo htmlentities(get_the_title()) ?> on Empty Kingdom&body=Check this out: <?php echo htmlentities(get_permalink()) ?>">Email Link</a>
 					</div>
 				</li>
-				<li class="permalink">
-					<a href="javascript:void(0)" class="service">Permalink</a>
-					<div class="action">
-						<input type="text" value="<?php echo get_permalink() ?>" onclick="this.select()">
-					</div>
-				</li>
 			</ul> <!-- /.post-share.unstyled -->

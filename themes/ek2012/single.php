@@ -10,19 +10,18 @@ get_header(); ?>
 <div class="row">
 	<div class="span8" id="main">
 	<?php if (have_posts()) : ?>
-		<div class="post-full <?php echo $category->slug ?>">
+		<div class="post-full <?php echo $category->slug ?> clearfix">
 		<?php while(have_posts()) : the_post(); ?>
 			<h1><?php the_title(); ?></h1>
 			<div class="meta clearfix">
-				<p class="author">by <?php the_author(); ?></p>
-				<p class="date">Published on <?php the_time(get_option('date_format')) ?></p>
+				<p class="author">by <?php the_author(); ?><span class="date">Published on <?php the_time(get_option('date_format')) ?></span></p>
+				<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
 				<p class="posts-nav">
 					<a class="prev" href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>"></a>
 					<a class="next" href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"></a>
 				</p>
 			</div> <!-- /.meta -->
 			<?php get_template_part('/partials/post', 'actions') ?>
-			<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div> <!-- /.post-content -->
