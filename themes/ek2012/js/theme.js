@@ -184,20 +184,22 @@ $(document).ready(function($){
 		}
 	}, 'a.video.vimeo');
 
-	$('.post .social a').click(function(event) {
-		event.preventDefault();
-		var width  = 575,
-		    height = 400,
-		    left   = ($(window).width()  - width)  / 2,
-		    top    = ($(window).height() - height) / 2,
-		    url    = this.href,
-		    opts   = 'status=1' +
-		             ',width='  + width  +
-		             ',height=' + height +
-		             ',top='    + top    +
-		             ',left='   + left
-		window.open(url, 'sharer', opts);
-	});
+	$(document).on({
+		click: function(event) {
+			event.preventDefault();
+			var width  = 575,
+			    height = 400,
+			    left   = ($(window).width()  - width)  / 2,
+			    top    = ($(window).height() - height) / 2,
+			    url    = this.href,
+			    opts   = 'status=1' +
+			             ',width='  + width  +
+		    	         ',height=' + height +
+		        	     ',top='    + top    +
+		            	 ',left='   + left
+			window.open(url, 'sharer', opts);
+		}
+	}, '.post .social a');
 
 	// cat filters
 	yepnope({
