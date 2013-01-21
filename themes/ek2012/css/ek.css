@@ -134,11 +134,18 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .post-list .post .date{float:right;}
 .post-list .post img{clear:both;}
 .post-list .post h3{font-size:18px;line-height:18px;font-weight:600;margin:0;}.post-list .post h3 a{position:relative;top:3px;}
-.post-list .post h5{margin-bottom:0;height:14px;margin:10px 0 0 0;}
-.post-list .post .excerpt{margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
+.post-list .post h5{margin-bottom:0;height:14px;margin:10px 0 0 0;float:left;}
+.post-list .post .social{float:right;margin:10px 0 0 0;line-height:15px;height:15px;}.post-list .post .social li{display:inline-block;background-image:url(../img/slices/post-list-social.png);background-repeat:no-repeat;background-position-y:top;height:15px;width:15px;line-height:15px;padding-left:6px;}.post-list .post .social li a{display:inline-block;height:15px;width:15px;}
+.post-list .post .social li.facebook{background-position-x:8px;}
+.post-list .post .social li.twitter{background-position-x:-15px;}
+.post-list .post .social li.pinterest{background-position-x:-33px;}
+.post-list .post .social li.add{background-position-x:-53px;}
+.post-list .post .social li:hover{background-position-y:bottom;}
+.post-list .post .excerpt{clear:both;margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
 .post-list .post .excerpt p{margin-bottom:5px;}
 .post-list .post .view-more{text-transform:uppercase;font-size:12px;line-height:12px;height:12px;overflow:hidden;font-weight:bold;}
 a.video{display:block;position:relative;}a.video div{position:absolute;height:100%;width:100%;background:url(../img/slices/btn-play.png) no-repeat center center;}a.video div.load{background:#333333;}
+a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat center center;}
 #posts-pagination h4{text-transform:uppercase;font-weight:bold;font-size:18px;}
 #posts-pagination a{color:#00b8ec;}
 #posts-pagination .next{text-align:right;}

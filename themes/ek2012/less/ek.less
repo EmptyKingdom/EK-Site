@@ -932,8 +932,46 @@ body.home {
 			margin-bottom: 0;
 			height: 14px;
 			margin: 10px 0 0 0;
+			float: left;
+		}
+		.social {
+			float: right;
+			margin: 10px 0 0 0;
+			line-height: 15px;
+			height: 15px;
+			li {
+				display: inline-block;
+				background-image: url(../img/slices/post-list-social.png);
+				background-repeat: no-repeat;
+				background-position-y: top;
+				height: 15px;
+				width: 15px;
+				line-height: 15px;
+				padding-left: 6px;
+				a {
+					display: inline-block;
+					height: 15px;
+					width: 15px;
+				}
+				&.facebook {
+					background-position-x: 8px;
+				}
+				&.twitter {
+					background-position-x: -15px;
+				}
+				&.pinterest {
+					background-position-x: -33px;
+				}
+				&.add {
+					background-position-x: -53px;
+				}
+				&:hover {
+					background-position-y: bottom;
+				}
+			}
 		}
 		.excerpt {
+			clear: both;
 			margin-top: 10px;
 			margin-bottom: 0;
 			padding: 10px 0 0 0;
