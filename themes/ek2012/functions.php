@@ -574,7 +574,7 @@ if(function_exists("register_field_group"))
 				'name' => 'featured_video',
 				'type' => 'text',
 				'order_no' => 0,
-				'instructions' => 'URL to any YouTube or Vimeo video.',
+				'instructions' => 'URL to any Vimeo video.',
 				'required' => 0,
 				'conditional_logic' => 
 				array (
