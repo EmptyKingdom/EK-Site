@@ -138,6 +138,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .post-list .post .excerpt{margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
 .post-list .post .excerpt p{margin-bottom:5px;}
 .post-list .post .view-more{text-transform:uppercase;font-size:12px;line-height:12px;height:12px;overflow:hidden;font-weight:bold;}
+a.video{display:block;position:relative;}a.video div{position:absolute;height:100%;width:100%;background:url(../img/slices/btn-play.png) no-repeat center center;}a.video div.load{background:#333333;}
 #posts-pagination h4{text-transform:uppercase;font-weight:bold;font-size:18px;}
 #posts-pagination a{color:#00b8ec;}
 #posts-pagination .next{text-align:right;}

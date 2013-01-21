@@ -605,8 +605,15 @@ if(function_exists("register_field_group"))
 					'value' => 'post',
 					'order_no' => 0,
 				),
+				1 => 
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'slide',
+					'order_no' => '0',
+				),
 			),
-			'allorany' => 'all',
+			'allorany' => 'any',
 		),
 		'options' => 
 		array (
