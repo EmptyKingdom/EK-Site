@@ -6,6 +6,8 @@ $related_artists = new WP_Query(array(
 	'category__in' => $category->term_id,
 	'posts_per_page' => 3,
 ));
+$p = get_adjacent_post(false,'',true);
+$n = get_adjacent_post(false,'',false);
 get_header(); ?>
 <div class="row">
 	<div class="span8" id="main">
@@ -17,8 +19,16 @@ get_header(); ?>
 				<p class="author">by <?php the_author(); ?><span class="date">Published on <?php the_time(get_option('date_format')) ?></span></p>
 				<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
 				<p class="posts-nav">
-					<a class="prev" href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>"></a>
-					<a class="next" href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"></a>
+					<?php if ($p) : ?>
+						<a class="prev" href="<?php echo get_permalink($p->ID); ?>" title="<?php echo $p->post_title ?>"></a>
+					<?php else : ?>
+						<a class="prev" href="javascript:void(0)" title="No previous post."></a>
+					<?php endif; ?>
+					<?php  if ($n) : ?>
+						<a class="next" href="<?php echo get_permalink($n->ID); ?>" title="<?php echo $n->post_title ?>"></a>
+					<?php else : ?>
+						<a class="next" href="javascript:void(0)" title="No next post."></a>
+					<?php endif; ?>
 				</p>
 			</div> <!-- /.meta -->
 			<?php get_template_part('/partials/post', 'actions') ?>
@@ -49,6 +59,19 @@ get_header(); ?>
 			<?php comments_template(); ?>
 		</div>
 		<p><?php the_tags(); ?></p>
+		<div class="row posts-nav">
+			<div class="span4 prev">
+				<?php if ($p) : ?>
+				<h3><a href="<?php echo get_permalink($p->ID) ?>">&laquo; <?php echo $p->post_title ?></a></h3>
+				<?php endif; ?>
+			</div>
+			<div class="span4 next">
+				<?php if ($n) : ?>
+				<h3><a href="<?php echo get_permalink($n->ID); ?>"><?php echo $n->post_title ?> &raquo;</a></h3>
+				<?php endif; ?>
+			</div>
+		</div>
+
 	<?php else : // have_posts() ?>
 		<p>Post not found.</p>
 	<?php endif; // have_posts() ?>
