@@ -35,7 +35,7 @@
 					</div>
 				</li>
 				<li class="gplus">
-					<a href="javascript:void(0)" class="service">Google</a>
+					<a href="javascript:void(0)" class="service">Google+</a>
 					<div class="action">
 						<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 						<g:plusone size="medium"></g:plusone>

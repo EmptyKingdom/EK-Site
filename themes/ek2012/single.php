@@ -34,6 +34,9 @@ get_header(); ?>
 			<?php get_template_part('/partials/post', 'actions') ?>
 			<div class="post-content">
 				<?php the_content(); ?>
+				<hr>
+				<p><span class="highlight">Posted in:</span> <?php the_category(', ') ?><br>
+				<span class="highlight">Tags:</span> <?php the_tags(''); ?></p>
 			</div> <!-- /.post-content -->
 			<?php get_template_part('/partials/post', 'actions') ?>
 		<?php endwhile; // have_posts() ?>
@@ -58,7 +61,6 @@ get_header(); ?>
 			<h2>Comments</h2>
 			<?php comments_template(); ?>
 		</div>
-		<p><?php the_tags(); ?></p>
 		<div class="row posts-nav">
 			<div class="span4 prev">
 				<?php if ($p) : ?>

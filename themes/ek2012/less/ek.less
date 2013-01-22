@@ -15,6 +15,15 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
+hr {
+	margin: 10px 0;
+	border-top: 1px dotted @lightGray;
+}
+
+.highlight {
+	color: @linkHighlight;
+}
+
 .btn {
 	.border-radius(0px) !important;
 	.box-shadow();
@@ -1147,6 +1156,7 @@ a.video {
 							color: #F53773;
 							line-height: 11px;
 							font-weight: normal;
+							float: none;
 						}
 					}
 					.thumbnail {
@@ -1615,93 +1625,93 @@ body.author {
 	}
 }
 
-body.post-type-archive-offsite_product {
-	#feature {
-		position: relative;
-		.tempshop-credits {
-			position: absolute;
-			bottom: 60px;
-			right: -16px;
-		}
-	}
-	#main {
-		h1 {
-			font-size: 22px;
-			font-family: @sansSerifFamily;
-			color: @linkHighlight;
-			font-weight: normal;
-			text-transform: uppercase;
-			line-height: 22px;
-			margin: 0;	
-		}
-		h2 {
-			color: @midGray;
-			font-size: 13px;
-			font-family: @sansSerifFamily;
-			font-weight: normal;
-			line-height: 13px;
-			margin: 10px 0 40px 0;	
-		}
-	}
-	#sidebar {
-		padding-top: 0px;
-	}
-	.post-list {
-		margin-bottom: 20px;
-		.row {
-			margin-left: -15px;
-		}
-		.span2 {
-			margin-left: 15px;
-			width: 196.666666666667px;
-			@media (min-width: 1200px) {
-				margin-left: 15px;
-				width: 246.666666666667px;
-			}
-			@media (max-width: 979px) and (min-width: 768px) {
-				margin-left: 15px;
-				width: 148.666666666667px;
-			}
-			@media (max-width: 767px) {
-			    display: block;
-			    float: none;
-			    width: 100%;
-			    margin-left: 0;
-			    -webkit-box-sizing: border-box;
-			       -moz-box-sizing: border-box;
-			            box-sizing: border-box;
-			    img {
-				    width: 100%;
-			    }
-			}
-			.author {
-				float: none;
-			}
-		}
-	}
-	.btn-large.tempshop {
-		border: 2px solid @linkHighlight;
-		background-color: #dbff08;
-		text-align: center;
-		vertical-align: middle;
-		color: @linkHighlight !important;
-		line-height: 12px;
-		font-size: 12px;
-		font-weight: @semiBold;
-		padding: 18px 27px;
-		font-family: @sansSerifFamily;
-		margin-bottom: 18px;
-		&:before {
-			content: url(../img/slices/star-blue-hdr.png);
-			padding-right: 8px;
-			display: inline-block;
-			vertical-align: middle;
-		}
-	}
-	.tempshop-credits {
-		margin-left: 0px;
-		em {
-			color: @midGray;
-		}
-	}
-}
+// body.post-type-archive-offsite_product {
+// 	#feature {
+// 		position: relative;
+// 		.tempshop-credits {
+// 			position: absolute;
+// 			bottom: 60px;
+// 			right: -16px;
+// 		}
+// 	}
+// 	#main {
+// 		h1 {
+// 			font-size: 22px;
+// 			font-family: @sansSerifFamily;
+// 			color: @linkHighlight;
+// 			font-weight: normal;
+// 			text-transform: uppercase;
+// 			line-height: 22px;
+// 			margin: 0;	
+// 		}
+// 		h2 {
+// 			color: @midGray;
+// 			font-size: 13px;
+// 			font-family: @sansSerifFamily;
+// 			font-weight: normal;
+// 			line-height: 13px;
+// 			margin: 10px 0 40px 0;	
+// 		}
+// 	}
+// 	#sidebar {
+// 		padding-top: 0px;
+// 	}
+// 	.post-list {
+// 		margin-bottom: 20px;
+// 		.row {
+// 			margin-left: -15px;
+// 		}
+// 		.span2 {
+// 			margin-left: 15px;
+// 			width: 196.666666666667px;
+// 			@media (min-width: 1200px) {
+// 				margin-left: 15px;
+// 				width: 246.666666666667px;
+// 			}
+// 			@media (max-width: 979px) and (min-width: 768px) {
+// 				margin-left: 15px;
+// 				width: 148.666666666667px;
+// 			}
+// 			@media (max-width: 767px) {
+// 			    display: block;
+// 			    float: none;
+// 			    width: 100%;
+// 			    margin-left: 0;
+// 			    -webkit-box-sizing: border-box;
+// 			       -moz-box-sizing: border-box;
+// 			            box-sizing: border-box;
+// 			    img {
+// 				    width: 100%;
+// 			    }
+// 			}
+// 			.author {
+// 				float: none;
+// 			}
+// 		}
+// 	}
+// 	.btn-large.tempshop {
+// 		border: 2px solid @linkHighlight;
+// 		background-color: #dbff08;
+// 		text-align: center;
+// 		vertical-align: middle;
+// 		color: @linkHighlight !important;
+// 		line-height: 12px;
+// 		font-size: 12px;
+// 		font-weight: @semiBold;
+// 		padding: 18px 27px;
+// 		font-family: @sansSerifFamily;
+// 		margin-bottom: 18px;
+// 		&:before {
+// 			content: url(../img/slices/star-blue-hdr.png);
+// 			padding-right: 8px;
+// 			display: inline-block;
+// 			vertical-align: middle;
+// 		}
+// 	}
+// 	.tempshop-credits {
+// 		margin-left: 0px;
+// 		em {
+// 			color: @midGray;
+// 		}
+// 	}
+// }
