@@ -1339,13 +1339,14 @@ body.single, body.page {
 	    li {
 	    	float: left;
 	    	// width: 100px;
-	    	height: 40px;
+	    	height: 45px;
 	    	padding: 10px 35px 10px 0;
 	    	font-size: 11px;
 	    	line-height: 11px;
 	    	text-transform: uppercase;
 	    	position: relative;
 	    	font-weight: @semiBold;
+	    	color: @darkGray;
 	    	// top: -1px;
 	    	a.service {
 		    	color: @darkGray;
@@ -1354,7 +1355,7 @@ body.single, body.page {
 		    	color: inherit !important;
 	    	}
 	    	.action {
-		    	visibility: hidden;
+		    	display: none;
 		    	position: absolute;
 		    	padding-top: 10px;
 		    	padding-left: 17px;
@@ -1367,14 +1368,11 @@ body.single, body.page {
 		    		background: #FFF;
 	    		}
 		    	.action {
-		    		visibility: visible;
+		    		display: block;
 			    	.btn {
 				    	white-space: nowrap;
 			    	}
 		    	}
-				&:before {
-					visibility: hidden;
-				}
 
 	    	}
 		    &:before {
@@ -1391,7 +1389,7 @@ body.single, body.page {
 				&:before {
 					background-color: #2e89ce;
 				}
-				a:hover {
+				&.active {
 					color: #2e89ce !important;
 				}
 			}
@@ -1399,23 +1397,31 @@ body.single, body.page {
 				&:before {
 					background-color: #16caf4;
 				}
-				a:hover {
+				&.active {
 					color: #16caf4 !important;
 				}
 			}
 			&.stumbleupon {
 				&:before {
-					background-color: #29e273;
+					background-color: #EC4A25;
 				}
-				a:hover {
-					color: #29e273 !important;
+				&.active {
+					color: #EC4A25 !important;
+				}
+			}
+			&.gplus {
+				&:before {
+					background-color: #0FA720;
+				}
+				&.active {
+					color: #0FA720 !important;
 				}
 			}
 			&.pinterest {
 				&:before {
 					background-color: #d84b1e;
 				}
-				a:hover {
+				&.active {
 					color: #d84b1e !important;
 				}
 			}
@@ -1423,7 +1429,7 @@ body.single, body.page {
 				&:before {
 					background-color: @darkGray;
 				}
-				a:hover {
+				&.active {
 					color: @darkGray !important;
 				}
 			}

@@ -34,6 +34,13 @@
 						<a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink()) ?>&media=<?php echo urlencode(wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "standard" )) ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
 					</div>
 				</li>
+				<li class="gplus">
+					<a href="javascript:void(0)" class="service">Google</a>
+					<div class="action">
+						<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+						<g:plusone size="medium"></g:plusone>
+					</div>
+				</li>
 				<li class="email">
 					<a href="javascript:void(0)" class="service">Email</a>
 					<div class="action">
