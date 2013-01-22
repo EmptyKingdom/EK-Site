@@ -1340,13 +1340,13 @@ body.single, body.page {
 	    	float: left;
 	    	// width: 100px;
 	    	height: 40px;
-	    	padding: 11px 20px 10px 15px;
+	    	padding: 10px 35px 10px 0;
 	    	font-size: 11px;
 	    	line-height: 11px;
 	    	text-transform: uppercase;
 	    	position: relative;
 	    	font-weight: @semiBold;
-	    	top: -1px;
+	    	// top: -1px;
 	    	a.service {
 		    	color: @darkGray;
 		    	position: relative;
@@ -1357,9 +1357,10 @@ body.single, body.page {
 		    	visibility: hidden;
 		    	position: absolute;
 		    	padding-top: 10px;
+		    	padding-left: 17px;
 	    	}
 	    	&.active {
-	    		border-top: 1px solid;
+	    		// border-top: 1px solid;
 	    		padding-top: 10px;
 	    		a.service {
 		    		z-index: 10000001;
@@ -1371,21 +1372,60 @@ body.single, body.page {
 				    	white-space: nowrap;
 			    	}
 		    	}
+				&:before {
+					visibility: hidden;
+				}
+
 	    	}
+		    &:before {
+				content: '';
+				display: inline-block;
+				position: relative;
+				height: 12px;
+				width: 12px;
+				.border-radius(6px);
+				margin-right: 4px;
+				top: 2px;
+			}
 			&.facebook {
-				color: #2e89ce;
+				&:before {
+					background-color: #2e89ce;
+				}
+				a:hover {
+					color: #2e89ce !important;
+				}
 			}
 			&.twitter {
-				color: #16caf4;
+				&:before {
+					background-color: #16caf4;
+				}
+				a:hover {
+					color: #16caf4 !important;
+				}
 			}
 			&.stumbleupon {
-				color: #29e273;
+				&:before {
+					background-color: #29e273;
+				}
+				a:hover {
+					color: #29e273 !important;
+				}
 			}
 			&.pinterest {
-				color: #d84b1e;
+				&:before {
+					background-color: #d84b1e;
+				}
+				a:hover {
+					color: #d84b1e !important;
+				}
 			}
 			&.email {
-				color: @darkGray;
+				&:before {
+					background-color: @darkGray;
+				}
+				a:hover {
+					color: @darkGray !important;
+				}
 			}
 		}
 	}

@@ -115,13 +115,11 @@ $(document).ready(function($){
 	// social share bar
 	if ($('.post-share').length)
 	{
-		$('.post-share li').each(function(i, e){
-			$(this).hover(function(){
-				$(this).addClass('active');
-			},
-			function(){
-				$(this).removeClass('active');
-			});
+		$('.post-share li a.service').mouseenter(function(){
+			$(this).parent().addClass('active');
+		});
+		$('.post-share li').mouseleave(function(){
+			$(this).removeClass('active');
 		})
 	}
 
