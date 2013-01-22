@@ -81,7 +81,7 @@ body.home #sidebar{padding-top:0;}
 .carousel .carousel-indicator{position:absolute;margin:0;bottom:8px;right:8px;z-index:10;}.carousel .carousel-indicator li{float:left;width:8px;height:8px;background-color:#cccccc;margin-left:4px;}.carousel .carousel-indicator li.active{background-color:#00b8ec;}
 .carousel .carousel-indicator li a{display:block;height:100%;width:100%;}
 .carousel .caption p{line-height:20px;}
-#carousel-sections{padding-left:16px;position:relative;}#carousel-sections #carousel-section-nav{width:100%;}#carousel-sections #carousel-section-nav li{display:inline-block;width:32.5%;}#carousel-sections #carousel-section-nav li a{display:block;text-align:center;border-bottom:2px solid;}
+#carousel-sections{padding-left:16px;position:relative;}#carousel-sections #carousel-section-nav{width:100%;margin-top:10px;}#carousel-sections #carousel-section-nav li{display:inline-block;width:32.5%;}#carousel-sections #carousel-section-nav li a{display:block;text-align:center;border-bottom:2px solid;}
 #carousel-sections #carousel-section-nav li.active a,#carousel-sections #carousel-section-nav li:hover a{color:#00b8ec;}
 #carousel-sections .carousel-section-content{opacity:0;}#carousel-sections .carousel-section-content h3{line-height:normal;font-weight:normal;}
 #carousel-sections .carousel-section-content p{line-height:20px;}
