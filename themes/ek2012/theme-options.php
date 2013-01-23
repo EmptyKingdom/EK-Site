@@ -115,7 +115,7 @@ This is the quickest way to set up a carousel that shows a stream of recent post
 
 $carousel_sections = array(
 	'film_cat' 					=> 'Film Category',
-	'galleries_cat' 			=> 'Galleries Category',
+	'gallery_spotlight_cat' 	=> 'Galleries Category',
 	'illustration_art_cat' 		=> 'Illustration & Art Category',
 	'new_media_cat' 			=> 'New Media Category',
 	'photography_cat' 			=> 'Photography Category',
