@@ -19,8 +19,32 @@
 		</script>
 		<script type="text/javascript" src="//use.typekit.net/jxu3qru.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		<script type='text/javascript'>
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+		(function() {
+		var gads = document.createElement('script');
+		gads.async = true;
+		gads.type = 'text/javascript';
+		var useSSL = 'https:' == document.location.protocol;
+		gads.src = (useSSL ? 'https:' : 'http:') + 
+		'//www.googletagservices.com/tag/js/gpt.js';
+		var node = document.getElementsByTagName('script')[0];
+		node.parentNode.insertBefore(gads, node);
+		})();
+		</script>
+
+		<script type='text/javascript'>
+		googletag.cmd.push(function() {
+		googletag.defineSlot('/59182986/EK_ATF_Sidebar_300x250', [300, 250], 'div-gpt-ad-1358972561550-0').addService(googletag.pubads());
+		googletag.defineSlot('/59182986/EK_BTF_Footer_728x90', [728, 90], 'div-gpt-ad-1358972561550-1').addService(googletag.pubads());
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+		});
+		</script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/yepnope.1.5.4-min.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/mediaCheck-min.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/theme.js"></script>
 		<?php wp_head(); ?>

@@ -500,10 +500,31 @@ hr.dotted {
 	margin-bottom: 20px;
 }
 
-#ad-slot-1 {
-	background-color: @paleGray;
-	img {
-		padding: 32px;
+.ad-slot {
+	div {
+		max-width: 100%;
+		iframe {
+			margin: auto;
+			max-width: 100%;
+			display: block;
+		}
+	}
+	&#ad-slot-1 {
+		div {
+			padding: 32px 0;
+			@media (min-width: 768px) and (max-width: 979px) {
+				padding: 0;
+				iframe {
+					height: 190px;
+				}
+			}
+			@media (min-width: 1200px) {
+				background-color: @paleGray;
+			}
+		}
+	}
+	&#ad-slot-2 {
+		margin: @grid*3 auto;
 	}
 }
 
@@ -1261,11 +1282,6 @@ a.video {
 			}
 		}
 	}
-	#ad-slot-2 {
-		width: 728px;
-		height: 90px;
-		margin: @grid*3 auto;
-	}
 }
 
 /* SINGLE POST PAGE */
@@ -1623,6 +1639,20 @@ body.author {
 			font-style: italic;
 		}
 	}
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) and (max-width: 979px) {
+  // #sidebar {
+  //   width: 352px;
+  // }
+  // #main {
+  //   width: 352px;
+  //   .span4 {
+	 //    width: 352px;
+  //   }
+  // }
 }
 
 // body.post-type-archive-offsite_product {

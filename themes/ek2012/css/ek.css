@@ -73,7 +73,9 @@ h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-si
 .interview.menu-item.active,.interview.current-menu-item{border-bottom-color:#00b8eb !important;}.interview.menu-item.active a,.interview.current-menu-item a,.interview.menu-item.active a:hover,.interview.current-menu-item a:hover{color:#00b8eb !important;}
 .interview.post a.view-more,.interview.post h5.random-article{color:#00b8eb;background:none;padding-left:0px;}
 hr.dotted{display:block;clear:both;border-top:1px dotted #cccccc;margin-top:20px;margin-bottom:20px;}
-#ad-slot-1{background-color:#e5e5e5;}#ad-slot-1 img{padding:32px;}
+.ad-slot div{max-width:100%;}.ad-slot div iframe{margin:auto;max-width:100%;display:block;}
+.ad-slot#ad-slot-1 div{padding:32px 0;}@media (min-width:768px) and (max-width:979px){.ad-slot#ad-slot-1 div{padding:0;}.ad-slot#ad-slot-1 div iframe{height:190px;}}@media (min-width:1200px){.ad-slot#ad-slot-1 div{background-color:#e5e5e5;}}
+.ad-slot#ad-slot-2{margin:24px auto;}
 body.home #sidebar{padding-top:0;}
 #feature .carousel{margin-top:16px;display:none;}#feature .carousel.active{display:block;}
 .carousel-control{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background-color:#00b8ec;background-repeat:no-repeat;background-position:center center;opacity:1 !important;color:#FFF !important;width:24px;height:52px;font-weight:normal !important;line-height:40px;font-size:52px;top:50%;margin-top:-26px;z-index:3;}.carousel-control.left{left:-12px;background-image:url(../img/slices/arrow-left-carousel.png);}
@@ -181,7 +183,6 @@ a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat cen
 #footer .widget.newsletter-signup input{background:#333333;border-bottom:2px solid #00b8ec !important;display:block;margin:16px 0;width:63%;color:#e5e5e5;}
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
-#footer #ad-slot-2{width:728px;height:90px;margin:24px auto;}
 body.single,body.page{font-size:16px;line-height:24px;}body.single h1,body.page h1{font-size:23px;margin-bottom:11px;height:23px;line-height:23px;}
 body.single .meta,body.page .meta{position:relative;margin-bottom:11px;font-size:13px;line-height:normal;}body.single .meta p,body.page .meta p{height:13px;margin:0;}
 body.single .meta .author,body.page .meta .author{float:left;}
@@ -225,3 +226,4 @@ body.author #author-panel .author-general .social{margin-top:12px;}body.author #
 body.author #author-panel .author-general .social ul{display:inline;}
 body.author #author-panel .author-details h3{text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:18px;color:#00b8ec;font-weight:normal;margin:0 0 8px 0;line-height:normal;}
 body.author h3.recent{font-family:'myriad-pro',sans-serif;text-transform:uppercase;background-color:#00b8ec;color:#FFF;display:inline-block;padding:8px 12px;font-weight:normal;line-height:normal;font-size:16px;margin:36px 0 18px 0;}body.author h3.recent span{font-family:'minion-pro',serif;text-transform:none;font-style:italic;}
+@media (min-width:768px) and (max-width:979px){}
