@@ -53,6 +53,7 @@ h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-si
 .film .btn:hover{background:#e5e5e5 !important;color:#000000 !important;}
 .film.menu-item.active,.film.current-menu-item{border-bottom-color:#000000 !important;}.film.menu-item.active a,.film.current-menu-item a,.film.menu-item.active a:hover,.film.current-menu-item a:hover{color:#000000 !important;}
 .film.post a.view-more,.film.post h5.random-article{color:#000000;background:none;padding-left:0px;}
+.film.post h5.random-article{color:#FFF;}
 .new-media h5.category{background:url(../img/slices/category-new-media.png) no-repeat;}
 .new-media .btn-default,.new-media .carousel-indicator li.active,.new-media ul.sub-menu{background:#62bb46 !important;}
 .new-media .carousel-control{background-color:#62bb46;}
@@ -164,7 +165,7 @@ a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat cen
 #sidebar .widget.ek-random-articles ul{margin:0;}#sidebar .widget.ek-random-articles ul li{padding-bottom:8px;position:relative;}#sidebar .widget.ek-random-articles ul li:hover .header{opacity:1.0;}
 #sidebar .widget.ek-random-articles ul li .header{position:absolute;padding:15px 6.25%;background-color:rgba(51, 51, 51, 0.9);width:87.5%;opacity:0;-webkit-transition:0.2s ease-in-out all;-moz-transition:0.2s ease-in-out all;-ms-transition:0.2s ease-in-out all;-o-transition:0.2s ease-in-out all;transition:0.2s ease-in-out all;}#sidebar .widget.ek-random-articles ul li .header a{display:block;}
 #sidebar .widget.ek-random-articles ul li .header h3{font-size:14px;line-height:14px;margin:0;color:#FFF;font-weight:normal;}
-#sidebar .widget.ek-random-articles ul li .header h5{margin:0 0 5px 0;color:#F53773;line-height:11px;font-weight:normal;float:none;}
+#sidebar .widget.ek-random-articles ul li .header h5{margin:0 0 5px 0;line-height:11px;font-weight:normal;float:none;}
 #sidebar .widget.ek-random-articles ul li .thumbnail{margin-bottom:16px;}
 #sidebar .widget .featured-archive{background:none;border:none;font-weight:600;line-height:18px;height:18px;font-size:18px;}
 #sidebar .widget.widget_text{padding:0;background-color:#FFF;}
