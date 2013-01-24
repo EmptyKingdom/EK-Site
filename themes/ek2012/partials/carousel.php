@@ -67,7 +67,7 @@
 						<h5 class="category"><?php echo ek_get_cat($post, 'name'); ?></h5>
 						<?php the_excerpt() ?>
 					<?php endif; ?>
-					<a class="btn btn-default" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post) ?>">View More...</a>
+					<a class="view-more" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More&hellip;</a></li>
 				</div> <!-- /.caption -->
 				<?php endif; ?>
 			</div> <!-- /.item -->
