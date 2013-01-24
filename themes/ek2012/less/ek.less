@@ -82,6 +82,11 @@ input {
 	}
 }
 
+h2 {
+	font-family: @sansSerifFamily;
+	font-size: 16px;
+}
+
 h4 {
 	font-family: @sansSerifFamily;
 	font-weight: normal;
@@ -211,7 +216,7 @@ h5 {
 	}
 }
 #main-nav {
-	margin-bottom: @grid*3;
+	margin-bottom: 15px;
 	#main-menu-container {
 	    display: table;
 	    margin-top: @grid * 5;
@@ -329,14 +334,14 @@ h5.category {
 		background: @paleGray !important;
 		color: @photographyColor !important;
 	}
-	&.menu-item.active, &.current-menu-item {
+	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
 		border-bottom-color: @photographyColor !important;
 		a, a:hover {
 			color: @photographyColor !important;
 		}
 	}
 	// &.post {
-		a.view-more, h5.random-article {
+		a.view-more, h5.random-article, h1.sub {
 			color: @photographyColor;
 			background: none;
 			padding-left: 0px;
@@ -358,14 +363,14 @@ h5.category {
 		background: @paleGray !important;
 		color: @illustrationartColor !important;
 	}
-	&.menu-item.active, &.current-menu-item {
+	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
 		border-bottom-color: @illustrationartColor !important;
 		a, a:hover {
 			color: @illustrationartColor !important;
 		}
 	}
 	// &.post {
-		a.view-more, h5.random-article {
+		a.view-more, h5.random-article, h1.sub {
 			color: @illustrationartColor;
 			background: none;
 			padding-left: 0px;
@@ -387,14 +392,14 @@ h5.category {
 		background: @paleGray !important;
 		color: @filmColor !important;
 	}
-	&.menu-item.active, &.current-menu-item {
+	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
 		border-bottom-color: @filmColor !important;
 		a, a:hover {
 			color: @filmColor !important;
 		}
 	}
 	// &.post {
-		a.view-more, h5.random-article {
+		a.view-more, h5.random-article, h1.sub {
 			color: @filmColor;
 			background: none;
 			padding-left: 0px;
@@ -419,14 +424,14 @@ h5.category {
 		background: @paleGray !important;
 		color: @newMediaColor !important;
 	}
-	&.menu-item.active, &.current-menu-item {
+	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
 		border-bottom-color: @newMediaColor !important;
 		a, a:hover {
 			color: @newMediaColor !important;
 		}
 	}
 	// &.post {
-		a.view-more, h5.random-article {
+		a.view-more, h5.random-article, h1.sub {
 			color: @newMediaColor;
 			background: none;
 			padding-left: 0px;
@@ -448,14 +453,14 @@ h5.category {
 		background: @paleGray !important;
 		color: @eventColor !important;
 	}
-	&.menu-item.active, &.current-menu-item {
+	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
 		border-bottom-color: @eventColor !important;
 		a, a:hover {
 			color: @eventColor !important;
 		}
 	}
 	// &.post {
-		a.view-more, h5.random-article {
+		a.view-more, h5.random-article, h1.sub {
 			color: @eventColor;
 			background: none;
 			padding-left: 0px;
@@ -477,14 +482,14 @@ h5.category {
 		background: @paleGray !important;
 		color: @interviewColor !important;
 	}
-	&.menu-item.active, &.current-menu-item {
+	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
 		border-bottom-color: @interviewColor !important;
 		a, a:hover {
 			color: @interviewColor !important;
 		}
 	}
 	// &.post {
-		a.view-more, h5.random-article {
+		a.view-more, h5.random-article, h1.sub {
 			color: @interviewColor;
 			background: none;
 			padding-left: 0px;
@@ -1286,17 +1291,32 @@ a {
 	}
 }
 
+h1 {
+	font-size: 23px;
+	margin-bottom: 11px;
+	height: 23px;
+	line-height: 23px;
+}
+
+/* ARCHIVE PAGES */
+
+h1 {
+	&.sub, &.tag {
+		font-family: @sansSerifFamily;
+		font-size: 19px;
+		font-weight: @semiBold;
+		margin: 0 0 15px 0;
+		text-transform: uppercase;
+	}
+}
+
+
+
 /* SINGLE POST PAGE */
 
 body.single, body.page {
 	font-size: 16px;
 	line-height: 24px;
-	h1 {
-		font-size: 23px;
-		margin-bottom: 11px;
-		height: 23px;
-		line-height: 23px;
-	}
 	.meta {
 		position: relative;
 		margin-bottom: 11px;
