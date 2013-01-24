@@ -7,7 +7,7 @@
 			<h1 class="sub"><?php echo get_queried_object()->name // subcat title ?></h1>
 		<?php endif; ?>
 		<?php if (is_tag()) : ?>
-			<h1>Posts tagged with "<?php echo get_queried_object()->name ?>"</h1>
+			<h1 class="tag">Posts tagged with "<?php echo get_queried_object()->name ?>"</h1>
 		<?php endif; ?>
 		<?php get_template_part('/partials/view-controls') ?>
 		<div id="post-list" class="post-list grid">
