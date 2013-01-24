@@ -22,6 +22,10 @@ class EK_Widget_Random_Articles extends WP_Widget {
 	function widget($args, $instance) 
 	{
 	    extract( $args );
+
+	    // don't lazy load images in this widget
+		remove_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
+		remove_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
 		
 		echo $before_widget;
 		if ($instance['title'])
@@ -54,6 +58,10 @@ class EK_Widget_Random_Articles extends WP_Widget {
 		echo $after_widget; ?>
 		<h4 class="featured-archive"><a href="" class="arrow-right">EK Featured Article Archive</a></h4>
 		<?php
+
+		// put lazyload filters back 
+		add_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
+		add_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
 	}
  
     /** @see WP_Widget::update -- do not rename this */
