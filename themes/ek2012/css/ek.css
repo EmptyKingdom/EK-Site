@@ -217,7 +217,7 @@ body.single #related-artists h2 .more-posts a.prev,body.page #related-artists h2
 body.single #related-artists h2 .more-posts a.next,body.page #related-artists h2 .more-posts a.next{padding-right:28px;padding-left:16px;}
 body.single #related-artists .span4,body.page #related-artists .span4{width:29.5%;}body.single #related-artists .span4 .excerpt,body.page #related-artists .span4 .excerpt{display:none;}
 body.single #related-artists .span4 .category,body.page #related-artists .span4 .category{display:none;}
-body.single #related-artists .span4 .btn,body.page #related-artists .span4 .btn{display:none;}
+body.single #related-artists .span4 .view-more,body.page #related-artists .span4 .view-more{display:none;}
 body.single #related-artists .post-list,body.page #related-artists .post-list{position:relative;left:0px;-webkit-transition:0.2s ease-in-out left;-moz-transition:0.2s ease-in-out left;-ms-transition:0.2s ease-in-out left;-o-transition:0.2s ease-in-out left;transition:0.2s ease-in-out left;}
 body.single .posts-nav h3,body.page .posts-nav h3{font-size:18px;font-weight:normal;}
 body.single .posts-nav .next,body.page .posts-nav .next{text-align:right;}
