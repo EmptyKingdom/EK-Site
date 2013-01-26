@@ -189,7 +189,7 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 					)
 				),
 				'posts_per_page' => $carousel->max_num ? $carousel->max_num : 5,
-				'order' => 'asc',
+				'order' => 'desc',
 			));
 		} 
 		
