@@ -765,6 +765,9 @@ ul#view-controls {
 			&.active a, &:hover a {
 				background: url(../img/slices/icon-gridview-active.png) no-repeat 10px center @darkGray !important;
 			}
+			@media (max-width: 767px) {
+				display: none;
+			}
 		}
 		&#list-view {
 			a {
@@ -772,6 +775,9 @@ ul#view-controls {
 			}
 			&.active a, &:hover a {
 				background: url(../img/slices/icon-listview-active.png) no-repeat 10px center @darkGray !important;
+			}
+			@media (max-width: 767px) {
+				display: none;
 			}
 		}
 		&#cat-filter {

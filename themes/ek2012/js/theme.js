@@ -382,6 +382,17 @@ $(document).ready(function($){
 		}
 	})
 	
+	mediaCheck({
+		media: '(max-width: 767px)',
+		entry: function() {
+			if ( ! $('#list-view').hasClass('active')) {
+				setTimeout(function(){
+					$('#list-view > a').trigger('click')
+				}, 100);
+			}
+		},
+	});
+
 })
 
 var viewControls = {
