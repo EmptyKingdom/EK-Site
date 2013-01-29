@@ -217,6 +217,9 @@ h5 {
 }
 #main-nav {
 	margin-bottom: 15px;
+	@media(max-width:768px) {
+		margin-bottom: 25px;
+	}
 	#main-menu-container {
 	    display: table;
 	    margin-top: @grid * 5;
@@ -231,20 +234,21 @@ h5 {
 			    text-align: center;
 			    border-bottom: @grid/2 solid @linkColor;
 			    vertical-align: bottom;
-			    padding: 0 16px @grid 16px;
+			    padding: 0 16px;
 			    text-transform: uppercase;
 			    font-size: 11px;
 			    font-weight: bold;
 			    line-height: 0;
 			    &.fixed-width {
 				    width: 150px;
-				    padding: 0 0 @grid 0;
+				    padding: 0;
 				    div {
 					    width: 150px;
 				    }
 			    }
 			    >a {
 				    vertical-align: text-bottom;
+				    line-height: normal;
 			    }
 		    	div {
 		    		position: absolute;
@@ -546,6 +550,7 @@ body.home {
 }
 
 #feature {
+	position: relative;
 	.carousel {
 		margin-top: @grid * 2;
 		display: none;
@@ -629,7 +634,6 @@ body.home {
 
 #carousel-sections {
 	padding-left: @grid*2;
-	position: relative;
 	#carousel-section-nav {
 		width: 100%;
 		margin: 10px 0 25px 0;
@@ -653,6 +657,11 @@ body.home {
 					margin: 0px;
 				}
 			}
+		}
+		@media (max-width: 768px) {
+			position: absolute;
+			top: -25px;
+			left: 0px;
 		}
 	}
 	.carousel-section-content {
