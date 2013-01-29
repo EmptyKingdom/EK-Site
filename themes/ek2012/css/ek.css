@@ -189,6 +189,7 @@ a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat cen
 #footer .widget.newsletter-signup input{background:#333333;border-bottom:2px solid #00b8ec !important;display:block;margin:16px 0;width:63%;color:#e5e5e5;}
 #footer .widget.ek-social li{margin-left:0;margin-right:8px;}
 #footer .widget.featured-post p{font-size:13px;margin:16px 0;}
+@media (max-width:767px){#footer .span4{padding:20px;}#footer .span4 .span1{float:left;width:20%;} #footer .span4 .span2{float:left;width:40%;}}@media (max-width:480px){#footer .span4{padding:20px;}#footer .span4 .span1{width:25%;} #footer .span4 .span2{width:50%;}}
 h1{font-size:23px;margin:0 0 15px 0;height:23px;line-height:23px;}
 h1.sub,h1.tag{font-family:'myriad-pro',sans-serif;font-size:19px;font-weight:600;text-transform:uppercase;}
 body.single,body.page{font-size:16px;line-height:24px;}body.single .meta,body.page .meta{position:relative;margin-bottom:11px;font-size:13px;line-height:normal;}body.single .meta p,body.page .meta p{height:13px;margin:0;}
