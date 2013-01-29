@@ -632,24 +632,31 @@ body.home {
 	position: relative;
 	#carousel-section-nav {
 		width: 100%;
-		margin-top: 10px;
+		margin: 10px 0 25px 0;
+		overflow: visible;
+		display: table;
 		li {
-			display: inline-block;
-			width: 32.5%;
+			display: table-cell;
 			a {
 				display: block;
 				text-align: center;
 				border-bottom: 2px solid;
+				margin-right: 4px;
 			}
 			&.active, &:hover {
 				a {
 					color: @linkHighlight;
 				}
 			}
+			&:last-child {
+				a {
+					margin: 0px;
+				}
+			}
 		}
 	}
 	.carousel-section-content {
-		opacity: 0;
+		display: none;
 		h3 {
 			line-height: normal;
 			font-weight: normal;
@@ -658,12 +665,12 @@ body.home {
 			line-height: 20px;
 		}
 		&.active {
-			opacity: 1;
+			display: block;
 		}
 		ul {
 			position: relative;
 			li {
-				position: absolute;
+				// position: absolute;
 				top: 0;
 				left: 0;
 				opacity: 0;
@@ -1293,7 +1300,7 @@ a {
 
 h1 {
 	font-size: 23px;
-	margin-bottom: 11px;
+	margin: 0 0 15px 0;
 	height: 23px;
 	line-height: 23px;
 }
@@ -1305,7 +1312,6 @@ h1 {
 		font-family: @sansSerifFamily;
 		font-size: 19px;
 		font-weight: @semiBold;
-		margin: 0 0 15px 0;
 		text-transform: uppercase;
 	}
 }
