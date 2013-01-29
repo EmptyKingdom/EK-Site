@@ -67,7 +67,7 @@
 				</div> <!-- /span8 -->
 				<div class="span4 side">
 					<ul class="unstyled ek-social" id="utility-menu">
-						<li><span><a href="#">Register</a> | <a href="#">Login</a></span></li>
+						<!-- <li><span><a href="#">Register</a> | <a href="#">Login</a></span></li> -->
 						<li class="vimeo icon"><a href="http://vimeo.com/emptykingdom" target="_blank">Vimeo</a></li>
 						<li class="pinterest icon"><a href="http://pinterest.com/emptykingdom/" target="_blank">Pinterest</a></li>
 						<li class="facebook icon"><a href="https://www.facebook.com/myemptykingdom" target="_blank">Facebook</a></li>
