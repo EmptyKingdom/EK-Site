@@ -72,7 +72,7 @@ input {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	.span2 {
-		width: 134px;
+		width: 130px;
 		@media (min-width: 1200px) {
 			width: 160px;
 		}
@@ -833,6 +833,12 @@ body.home {
 	}
 	a {
 		color: @midGray;
+	}
+	.span2 {
+		float: left;
+		@media(max-width: 480px) {
+			float: none;
+		}
 	}
 	.illustration-art {
 		h5 {
