@@ -113,6 +113,9 @@ h5 {
 			position: absolute;
 			top: 20px;
 		}
+		@media (max-width: 480px) {
+			position: static;
+		}
 	}
 	position: relative;
 	h1#logo {
@@ -237,8 +240,15 @@ h5 {
 	    margin-left: -@grid/2;
 	    width: 100.8%;
 	    position: relative;
+	    @media (max-width: 480px) {
+	    	display: block;
+	    }
 	    #main-menu {
 		    display: table-row;
+    	    @media (max-width: 480px) {
+    	    	display: block;
+    	    	margin: 0;
+    	    }
 		    >li {
 			    display: table-cell;
 			    text-align: center;
@@ -249,16 +259,29 @@ h5 {
 			    font-size: 11px;
 			    font-weight: bold;
 			    line-height: 0;
+	    	    @media (max-width: 480px) {
+	    	    	display: block;
+	    	    	position: relative;
+	    	    }
 			    &.fixed-width {
 				    width: 150px;
 				    padding: 0;
+		    	    @media (max-width: 480px) {
+		    	    	width: 100%;
+		    	    }
 				    div {
 					    width: 150px;
+			    	    @media (max-width: 480px) {
+			    	    	width: 100%;
+			    	    }
 				    }
 			    }
 			    >a {
 				    vertical-align: text-bottom;
 				    line-height: normal;
+	        	    @media (max-width: 480px) {
+		    	    line-height: 20px;
+					}
 			    }
 		    	div {
 		    		position: absolute;
@@ -266,6 +289,10 @@ h5 {
 		    		z-index: 10000000;
 					overflow: visible;
 					height: 0px;
+		    	    @media (max-width: 480px) {
+		    	    	top: 24px;
+		    	    	width: 100%;
+		    	    }
 				    >ul {
 				    	text-transform: lowercase;
 				    	font-weight: bold;
