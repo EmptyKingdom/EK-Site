@@ -107,11 +107,6 @@ $(document).ready(function($){
 		}
 	}, 'a')
 
-	var $slider = $('#related-artists .post-list');
-	var relatedArtistPostWidth = $slider.find('.post:first').outerWidth();
-	$('#related-artists .post').width(relatedArtistPostWidth);
-	var slideDistance = $slider.find('.post:first').outerWidth(true)*3;
-	
 	// social share bar
 	if ($('.post-share').length)
 	{
@@ -229,19 +224,25 @@ $(document).ready(function($){
 		test: $('#related-artists').length,
 		yep: themedir + '/js/spin.min.js',
 		callback: function(){
+			var $slider = $('#related-artists .post-list');
 			$('#related-artists').on({
 				click: function(e) {
 					var $clicked = $(e.target);
 					var curPage = $slider.data('cur_page');
 					var maxPage = $slider.data('max_page');
+					$slider.find('.active').removeClass('active');
 					if ($clicked.hasClass('prev')) {
-					$slider.css('left', '+='+slideDistance);
-					$slider.data('cur_page', curPage-1)
-					if (curPage-1 == 1) {
-						$clicked.css('visibility', 'hidden');
-					}
-				} 
-				else if ($clicked.hasClass('next')) {
+						curPage--;
+						$slider.data('cur_page', curPage)
+						$slider.css({
+							'left': parseInt($slider[0].style.left)+100+'%'
+						});
+						if (curPage == 1) {
+							$clicked.css('visibility', 'hidden');
+						}
+						$slider.find('.slide-container').eq(curPage-1).addClass('active');
+					} 
+					else if ($clicked.hasClass('next')) {
 						if (curPage == maxPage) {
 							var spinner = new Spinner(spinnerOpts).spin($clicked.parent().get(0));
 							$.post(ajaxurl, {
@@ -253,21 +254,31 @@ $(document).ready(function($){
 									category__in: [$slider.data('cats')]
 								}
 							}, function(result){
-							spinner.stop();
-							$slider.css({
-								'width': '+='+slideDistance,
-								'left': '-='+slideDistance
-							});
-							$slider.append($(result).find('.span4').width(relatedArtistPostWidth));
-							$slider.data('max_page', $slider.data('max_page')+1);
-							$slider.data('cur_page', $slider.data('cur_page')+1);
-							$slider.data('nonce', $(result).filter('#nonce').text());
-							$clicked.prev('.prev').css('visibility', 'visible');
-						})
+								spinner.stop();
+								$(result).find('.span4')
+									.wrapAll('<div class="row"></div>')
+									.parent()
+									.wrap('<div class="span8"></div>')
+									.parent()
+									.wrap('<div class="slide-container active row"></div>')
+									.parent()
+									.appendTo($slider);
+								$slider.data('max_page', $slider.data('max_page')+1);
+								$slider.data('cur_page', $slider.data('cur_page')+1);
+								$slider.data('nonce', $(result).filter('#nonce').text());
+								$slider.css({
+									'width': $slider.data('max_page')*100+'%',
+									'left': parseInt($slider[0].style.left)-100+'%'
+								});
+								$clicked.prev('.prev').css('visibility', 'visible');
+							})
 						} 
 						else {
-							$slider.css('left', '-='+slideDistance);
-							$slider.data('cur_page', $slider.data('cur_page')+1)
+							$slider.data('cur_page', curPage+1)
+							$slider.css({
+								'left': parseInt($slider[0].style.left)-100+'%'
+							});
+							$slider.find('.slide-container').eq(curPage).addClass('active');
 							$clicked.prev('.prev').css('visibility', 'visible');
 						}
 					}

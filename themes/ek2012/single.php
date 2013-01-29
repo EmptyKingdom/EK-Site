@@ -43,18 +43,24 @@ get_header(); ?>
 		</div> <!-- /.post-full -->
 		<div id="related-artists" class="post-addendum">
 			<h2>
-				Artists You Might Also Like
+				More Dope
 				<span class="more-posts">
 					<a class="prev" href="javascript:void(0)">prev posts</a>
 					<a class="next" href="javascript:void(0)">more posts</a>
 				</span>
 			</h2>
-			<div class="post-list row" data-cats="<?php echo $category->term_id ?>" data-cur_page="1" data-max_page="1" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
-			<?php 
-			while ($related_artists->have_posts()) : $related_artists->the_post();
-			get_template_part('/partials/loop', 'post');
-			endwhile;
-			?>
+			<div class="post-list" data-cats="<?php echo $category->term_id ?>" data-cur_page="1" data-max_page="1" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>" style="left: 0%">
+				<div class="slide-container row active">
+					<div class="span8">
+						<div class="row">
+							<?php 
+							while ($related_artists->have_posts()) : $related_artists->the_post();
+								get_template_part('/partials/loop', 'post');
+							endwhile;
+							?>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="comments" class="post-addendum">
