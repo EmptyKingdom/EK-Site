@@ -1,6 +1,10 @@
 yepnope(themedir + '/js/jquery.cookie.js');
 $(document).ready(function($){
 
+	if ('ontouchstart' in document.documentElement) {
+		$('body').addClass('touchdevice');
+	}
+
 	updateCarouselIndicator = function(e){
 		var $this = $(this);
 		var index = $this.find('.item.active').index();
