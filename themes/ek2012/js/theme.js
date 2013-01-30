@@ -15,20 +15,18 @@ $(document).ready(function($){
 		$indicators.eq(index).addClass('active');
 	}
 
-	$('#search-toggle').on({
-		click: function(){
-			$('#basic-search').toggleClass('expanded');
-		},
-	})
-
 	$('#basic-search').on({
 		focus: function(){
+			$(this).addClass('expanded');
+			var val = this.value;
 			var $this = $(this);
-			$this.data('placeholder', $this.attr('placeholder')).removeAttr('placeholder')
+			$this.val("");
+			setTimeout(function () {
+			    $this.val(val);
+			}, 1);
 		},
 		blur: function(){
-			var $this = $(this)
-			$this.attr('placeholder', $this.data('placeholder'));
+			$(this).removeClass('expanded')
 		}
 	}, 'input')
 	
