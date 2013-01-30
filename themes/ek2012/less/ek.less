@@ -1311,8 +1311,14 @@ a {
 		.btn-arrow-left;
 		&:hover {
 			.btn-arrow-left-hover;
+			@media (min-width: 768px) and (max-width: 979px){
+				background-image: none !important;
+			}
 		}
 		width: 35%;
+		@media (min-width: 768px) and (max-width: 979px){
+			background-image: none !important;
+		}
 	}
 }
 
