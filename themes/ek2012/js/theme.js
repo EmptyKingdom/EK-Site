@@ -1,4 +1,3 @@
-yepnope(themedir + '/js/jquery.cookie.js');
 $(document).ready(function($){
 
 	if ('ontouchstart' in document.documentElement) {
@@ -380,7 +379,36 @@ $(document).ready(function($){
 	
 	$('.widget h4').on({
 		mouseup: function() {
-			$(this).closest('.widget').toggleClass('collapsed');
+
+			var $widget = $(this).closest('.widget');
+			var collapsedWidgets = $.cookie('collapsedWidgets') ? $.parseJSON($.cookie('collapsedWidgets')) : [];
+
+			$widget.toggleClass('collapsed');
+
+			if ($widget.hasClass('collapsed')) {
+				if ($.inArray($widget.attr('id'), collapsedWidgets) == -1) {
+					collapsedWidgets.push($widget.attr('id'))
+				}
+			}
+			else {
+				if ($.inArray($widget.attr('id'), collapsedWidgets) > -1) {
+					collapsedWidgets.splice( $.inArray($widget.attr('id'), collapsedWidgets), 1 );
+				}
+			}
+
+			$.cookie('collapsedWidgets', JSON.stringify(collapsedWidgets), {
+				path: '/'
+			});
+		}
+	})
+
+	$('.widget').each(function(i, e){
+		if ($.cookie('collapsedWidgets')) {
+			var $this = $(this);
+			var collapsedWidgets = $.parseJSON($.cookie('collapsedWidgets'));
+			if ($.inArray($this.attr('id'), collapsedWidgets) > -1) {
+				$this.addClass('collapsed');
+			}
 		}
 	})
 	
@@ -407,7 +435,6 @@ $(document).ready(function($){
 				var $e = $(e);
 				var origText = $e.data('orig_text');
 				if (origText) {
-					console.log(origText);
 					$e.text(origText);
 				}
 			});
@@ -424,26 +451,22 @@ $(document).ready(function($){
 			mediaCheck({
 				media: '(min-width: 980px) and (max-width: 1200px)',
 				entry: function() {
-					console.log('enter (min-width: 980px) and (max-width: 1200px)');
 					$('.slide-description p').not('.postmeta').each(function(i, e){
 				        $clamp(e, {clamp: 6, useNativeClamp: false});
 					})
 				},
 				exit: function() {
-					console.log('exit (min-width: 980px) and (max-width: 1200px)');
 					resetClamped($('.slide-description p').not('.postmeta'));
 				}
 			});
 			mediaCheck({
 				media: '(min-width: 768px) and (max-width: 979px)',
 				entry: function() {
-					console.log('enter (min-width: 768px) and (max-width: 979px)');
 					$('.slide-description p').not('.postmeta').each(function(i, e){
 				        $clamp(e, {clamp: 2, useNativeClamp: false});
 					})
 				},
 				exit: function() {
-					console.log('exit (min-width: 768px) and (max-width: 979px)');
 					resetClamped($('.slide-description p').not('.postmeta'));
 				}
 			});
