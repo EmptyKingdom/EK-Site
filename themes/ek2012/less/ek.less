@@ -1150,9 +1150,11 @@ a {
 			margin: 0 0 @grid*3 0;
 			border-bottom: 1px solid #2AC8F8;
 			cursor: pointer;
+			position: relative;
 			&:after {
 				content: url(../img/slices/widget-collapse.png);
-				float: right;
+				right: 15px;
+				position: absolute;
 			}
 		}
 		div.content {
@@ -1183,6 +1185,7 @@ a {
 				border: none;
 				margin-bottom: 0;
 				color: @textColor;
+				padding-left: 0;
 			}
 			.content {
 				padding-left: 0;
