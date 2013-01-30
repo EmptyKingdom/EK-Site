@@ -77,7 +77,7 @@
 					</ul>
 					<div id="basic-search">
 						<form action="<?php echo site_url('/') ?>">
-							<input type="text" name="s" value="Search your Empty Kingdom">
+							<input type="text" name="s" value="">
 						</form>
 					</div>
 				</div> <!-- /span4 -->
