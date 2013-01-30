@@ -157,9 +157,9 @@ a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat cen
 #posts-pagination h4{text-transform:uppercase;font-weight:bold;font-size:18px;}
 #posts-pagination a{color:#00b8ec;}
 #posts-pagination .next{text-align:right;}
-#sidebar{padding-top:68px;}#sidebar .widget{background-color:whitesmoke;border-bottom:4px solid #00b8ec;margin-top:24px;overflow:hidden;}#sidebar .widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:0 0 24px 0;border-bottom:1px solid #2AC8F8;cursor:pointer;}
+#sidebar{padding-top:68px;}#sidebar .widget{background-color:whitesmoke;border-bottom:4px solid #00b8ec;margin-top:24px;overflow:hidden;}#sidebar .widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 15px 0 28px;color:#FFF;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:0 0 24px 0;border-bottom:1px solid #2AC8F8;cursor:pointer;}#sidebar .widget h4:after{content:url(../img/slices/widget-collapse.png);float:right;}
 #sidebar .widget div.content{overflow:hidden;padding:0 24px 16px 24px;}
-#sidebar .widget.collapsed{border-bottom-width:0;}#sidebar .widget.collapsed h4{margin-bottom:0;}
+#sidebar .widget.collapsed{border-bottom-width:0;}#sidebar .widget.collapsed h4{margin-bottom:0;}#sidebar .widget.collapsed h4:after{content:url(../img/slices/widget-collapsed.png);}
 #sidebar .widget.collapsed div.content{height:0;padding-bottom:0;}
 #sidebar .widget.newsletter-signup{background:#FFF;border:none;padding:0px;}#sidebar .widget.newsletter-signup h4{font-size:13px;background:#FFF;border:none;margin-bottom:0;color:#898989;}
 #sidebar .widget.newsletter-signup .content{padding-left:0;padding-right:0;}

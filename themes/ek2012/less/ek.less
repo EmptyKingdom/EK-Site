@@ -1139,7 +1139,7 @@ a {
 		overflow: hidden;
 		h4 {
 			background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
-			padding: 0 @grid*3.5;
+			padding: 0 15px 0 28px;
 			color: #FFF;
 			text-transform: uppercase;
 			font-family: @sansSerifFamily;
@@ -1150,6 +1150,10 @@ a {
 			margin: 0 0 @grid*3 0;
 			border-bottom: 1px solid #2AC8F8;
 			cursor: pointer;
+			&:after {
+				content: url(../img/slices/widget-collapse.png);
+				float: right;
+			}
 		}
 		div.content {
 			overflow: hidden;
@@ -1160,6 +1164,9 @@ a {
 			h4 {
 				margin-bottom: 0;
 /* 				border-bottom-color: @linkHighlight; */
+				&:after {
+					content: url(../img/slices/widget-collapsed.png);
+				}
 			}
 			div.content {
 				height: 0;
