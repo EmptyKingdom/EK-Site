@@ -43,13 +43,15 @@
 		googletag.enableServices();
 		});
 		</script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+
+		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>-->
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/clamp.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/yepnope.1.5.4-min.js"></script>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.cookie.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/mediaCheck-min.js"></script>
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/theme.js"></script>
+		<!--<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>-->
+		<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.cookie.js"></script>-->
+		<!-- <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/theme.js"></script> -->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class() ?>>
