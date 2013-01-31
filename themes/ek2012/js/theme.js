@@ -4,6 +4,37 @@ $(document).ready(function($){
 		$('body').addClass('touch-device');
 	}
 
+	$('body.single-post .post-content img').each(function(){
+
+		var shareData = {},
+			$this = $(this),
+			$shareServices = $('#img-sharer ul').clone();
+
+		if ($this.closest('a').length) {
+			shareData.shareURL = encodeURIComponent($this.closest('a').attr('href'));
+		}
+		else {
+			shareData.shareURL = encodeURIComponent($this.attr('src'));
+		}
+
+		$this.wrap('<div class="img-sharer"></div>');
+
+		shareData.shareTitle = encodeURIComponent(document.title);
+		shareData.shareDescription = $this.attr('title') || $this.attr('alt') || '';
+		shareData.shareDescription = encodeURIComponent(shareData.shareDescription);
+		shareData.shareImg = encodeURIComponent($this.attr('src'));
+
+		$shareServices.find('a').each(function(){
+			for (var key in shareData) {
+		        $(this).attr('href', $(this).attr('href').replace('~'+key+'~', shareData[key]));
+			}
+			// console.log($(this));
+		});
+
+		$this.parent().prepend($shareServices);
+
+	});
+
 	updateCarouselIndicator = function(e){
 		var $this = $(this);
 		var index = $this.find('.item.active').index();
@@ -193,7 +224,7 @@ $(document).ready(function($){
 		            	 ',left='   + left
 			window.open(url, 'sharer', opts);
 		}
-	}, '.post .social a');
+	}, '.social a');
 
 	// cat filters
 	yepnope({

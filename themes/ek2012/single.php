@@ -88,4 +88,12 @@ get_header(); ?>
 		<?php get_sidebar(); ?>
 	</div> <!-- /#sidebar -->
 </div> <!-- /.row -->
+<div id="img-sharer">
+	<ul class="unstyled social">
+		<li class="facebook"><a href="http://www.facebook.com/share.php?s=100&p[url]=~shareURL~&p[title]=~shareTitle~&p[summary]=~shareDescription~&p[images][0]=~shareImg~"></a></li>
+		<li class="twitter"><a href="https://twitter.com/share?url=~shareURL~"></a></li>
+		<li class="pinterest"><a href="https://pinterest.com/pin/create/button/?url=~shareURL~&media=~shareImg~&description=~shareDescription~"></a></li>
+		<!-- <li class="add"><a href=""></a></li> -->
+	</ul>
+</div>
 <?php get_footer(); ?>

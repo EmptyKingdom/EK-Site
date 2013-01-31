@@ -1032,38 +1032,6 @@ body.home {
 		.social {
 			float: right;
 			margin: 10px 0 0 0;
-			line-height: 15px;
-			height: 15px;
-			li {
-				display: inline-block;
-				background-image: url(../img/slices/post-list-social.png);
-				background-repeat: no-repeat;
-				background-position-y: top;
-				height: 15px;
-				width: 15px;
-				line-height: 15px;
-				padding-left: 6px;
-				a {
-					display: inline-block;
-					height: 15px;
-					width: 15px;
-				}
-				&.facebook {
-					background-position-x: 8px;
-				}
-				&.twitter {
-					background-position-x: -15px;
-				}
-				&.pinterest {
-					background-position-x: -33px;
-				}
-				&.add {
-					background-position-x: -53px;
-				}
-				&:hover {
-					background-position-y: bottom;
-				}
-			}
 		}
 		.excerpt {
 			clear: both;
@@ -1080,6 +1048,42 @@ body.home {
 		}
 	}
 }
+
+.social {
+	line-height: 15px;
+	height: 15px;
+	li {
+		display: inline-block;
+		background-image: url(../img/slices/post-list-social.png);
+		background-repeat: no-repeat;
+		background-position-y: top;
+		height: 15px;
+		width: 15px;
+		line-height: 15px;
+		padding-left: 6px;
+		a {
+			display: inline-block;
+			height: 15px;
+			width: 15px;
+		}
+		&.facebook {
+			background-position-x: 8px;
+		}
+		&.twitter {
+			background-position-x: -15px;
+		}
+		&.pinterest {
+			background-position-x: -33px;
+		}
+		&.add {
+			background-position-x: -53px;
+		}
+		&:hover {
+			background-position-y: bottom;
+		}
+	}
+}
+
 
 a {
 	&.view-more {
@@ -1112,7 +1116,6 @@ a {
 		}
 	}
 }
-
 
 #posts-pagination {
 	h4 {
@@ -1579,6 +1582,30 @@ body.single, body.page {
 			}
 		}
 	}
+	.post-content {
+		clear: both;
+		.img-sharer {
+			position: relative;
+			display: inline-block;
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+			ul {
+				display: none;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				margin-bottom: 0px;
+				li {
+					background-color: #FFF;
+					border: 7px solid #FFF;
+					border-width: 7px 5px 8px 4px;
+				}
+			}
+		}
+	}
 	.post-addendum {
 		margin-bottom: 30px;
 		h2 {
@@ -1687,6 +1714,9 @@ body.single, body.page {
 		.next {
 			text-align: right;
 		}
+	}
+	#img-sharer {
+		display: none;
 	}
 }
 
