@@ -1075,7 +1075,6 @@ body.home {
 		display: inline-block;
 		background-image: url(../img/slices/post-list-social.png);
 		background-repeat: no-repeat;
-		background-position-y: top;
 		height: 15px;
 		width: 15px;
 		line-height: 15px;
@@ -1086,20 +1085,29 @@ body.home {
 			width: 15px;
 		}
 		&.facebook {
-			background-position-x: 8px;
+			background-position: 8px top;
+			&:hover {
+				background-position: 8px bottom;
+			}
 		}
 		&.twitter {
-			background-position-x: -15px;
+			background-position: -15px top;
+			&:hover {
+				background-position: -15px bottom;
+			}
 		}
 		&.pinterest {
-			background-position-x: -33px;
+			background-position: -33px top;
+			&:hover {
+				background-position: -33px bottom;
+			}
 		}
-		&.add {
-			background-position-x: -53px;
-		}
-		&:hover {
-			background-position-y: bottom;
-		}
+		// &.add {
+		// 	background-position: -53px top;
+		// 	&:hover {
+		// 		background-position: -53px bottom;
+		// 	}
+		// }
 	}
 }
 

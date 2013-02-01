@@ -147,12 +147,10 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .post-list .post .social{float:right;margin:10px 0 0 0;}
 .post-list .post .excerpt{clear:both;margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
 .post-list .post .excerpt p{margin-bottom:5px;}
-.social{line-height:15px;height:15px;}.social li{display:inline-block;background-image:url(../img/slices/post-list-social.png);background-repeat:no-repeat;background-position-y:top;height:15px;width:15px;line-height:15px;padding-left:6px;}.social li a{display:inline-block;height:15px;width:15px;}
-.social li.facebook{background-position-x:8px;}
-.social li.twitter{background-position-x:-15px;}
-.social li.pinterest{background-position-x:-33px;}
-.social li.add{background-position-x:-53px;}
-.social li:hover{background-position-y:bottom;}
+.social{line-height:15px;height:15px;}.social li{display:inline-block;background-image:url(../img/slices/post-list-social.png);background-repeat:no-repeat;height:15px;width:15px;line-height:15px;padding-left:6px;}.social li a{display:inline-block;height:15px;width:15px;}
+.social li.facebook{background-position:8px top;}.social li.facebook:hover{background-position:8px bottom;}
+.social li.twitter{background-position:-15px top;}.social li.twitter:hover{background-position:-15px bottom;}
+.social li.pinterest{background-position:-33px top;}.social li.pinterest:hover{background-position:-33px bottom;}
 a.view-more{text-transform:uppercase;font-size:12px;line-height:12px;height:12px;overflow:hidden;font-weight:bold;}
 a.video{display:block;position:relative;}a.video div{position:absolute;height:100%;width:100%;background:url(../img/slices/btn-play.png) no-repeat center center;}a.video div.load{background:#333333;}
 a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat center center;}
