@@ -239,10 +239,10 @@ body.touch-device .post-share .action{display:block !important;}
 body.touch-device ul.sub-menu{display:none !important;}
 body.touch-device #basic-search input{width:182px;background-color:#e5e5e5;padding-left:24px;}
 @media (min-width:1200px){body.author #author-panel{border:1px solid #00B8EC;padding:30px 0;}}@media (max-width:767px){body.author #author-panel{border-bottom:1px solid #00B8EC;}}@media (min-width:768px){body.author #author-panel .author-general{border-right:1px solid #00B8EC;position:relative;left:-1px;margin-right:-1px;border-bottom:none;}}@media (max-width:767px){body.author #author-panel .author-general div.avatar{display:none;}}@media (min-width:1200px){body.author #author-panel .author-general div.avatar img{margin:0 0 0 30px;}}
-body.author #author-panel .author-general .bio{margin-left:0px;font-size:14px;line-height:24px;}body.author #author-panel .author-general .bio h1{font-style:italic;margin-top:0;font-weight:normal;margin-bottom:12px;}
+body.author #author-panel .author-general .bio{margin-left:0px;font-size:14px;line-height:24px;}body.author #author-panel .author-general .bio h1{font-style:italic;margin-top:0;font-weight:normal;margin-bottom:35px;font-size:41px;line-height:41px;}
 body.author #author-panel .author-general .bio h2{text-transform:uppercase;font-size:12px;font-family:'myriad-pro',sans-serif;margin-top:0px;line-height:normal;color:#999999;}body.author #author-panel .author-general .bio h2 span{color:#00b8ec;}
-body.author #author-panel .author-general .social{margin-top:12px;}body.author #author-panel .author-general .social p{display:inline;line-height:24px;font-size:16px;font-weight:600;color:black;vertical-align:bottom;}
-body.author #author-panel .author-general .social ul{display:inline;}
+body.author #author-panel .author-general .social-links{position:absolute;bottom:0px;right:30px;}body.author #author-panel .author-general .social-links p{display:inline;line-height:24px;font-size:16px;font-weight:600;color:black;vertical-align:bottom;}
+body.author #author-panel .author-general .social-links ul{display:inline;}
 body.author #author-panel .author-details h3{text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:18px;color:#00b8ec;font-weight:normal;margin:0 0 8px 0;line-height:normal;}
-body.author h3.recent{font-family:'myriad-pro',sans-serif;text-transform:uppercase;background-color:#00b8ec;color:#FFF;display:inline-block;padding:8px 12px;font-weight:normal;line-height:normal;font-size:16px;margin:36px 0 18px 0;}body.author h3.recent span{font-family:'minion-pro',serif;text-transform:none;font-style:italic;}
+body.author h3.recent{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-weight:normal;line-height:normal;font-size:18px;font-weight:600;}body.author h3.recent span{font-family:'minion-pro',serif;text-transform:none;font-style:italic;font-weight:normal;font-size:22px;padding-left:5px;}
 @media (min-width:768px) and (max-width:979px){}

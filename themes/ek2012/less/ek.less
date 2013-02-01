@@ -28,7 +28,7 @@ a.btn, button.btn {
 	.border-radius(0px) !important;
 	.box-shadow();
 	border: none;
-	color: #FFF;
+	color: #FFF !important;
 	text-transform: uppercase;
 	font-family: @sansSerifFamily;
 	font-size: 13px;
@@ -39,13 +39,13 @@ a.btn, button.btn {
 	.text-shadow;
 	&:hover {
 		background: @paleGray;
-		color: @textColor;
+		color: @textColor !important;
 	}
 	&.btn-primary {
 		background: @linkHighlight;
 		&:hover {
 			background: @darkGray;
-			color: #FFF;
+			color: #FFF !important;
 		}
 	}
 	&.btn-inverse {
