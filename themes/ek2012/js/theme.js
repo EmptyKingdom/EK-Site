@@ -516,6 +516,9 @@ function clampGrid() {
 	$('#post-list.grid .excerpt p').each(function(i, e){
 		$clamp(e, {clamp: 3, useNativeClamp: true});
 	})
+	$('#post-list.grid h3 a').each(function(i, e){
+		$clamp(e, {clamp: 1, useNativeClamp: true});
+	})
 }
 
 
