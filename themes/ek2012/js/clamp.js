@@ -171,7 +171,7 @@
                 //It fits
                 if (element.clientHeight <= maxHeight) {
                     //There's still more characters to try splitting on, not quite done yet
-                    if (splitOnChars.length >= 0 && splitChar != '') {
+                    if (splitOnChars.length > 0 && splitChar != '') {
                         applyEllipsis(target, chunks.join(splitChar) + splitChar + lastChunk);
                         chunks = null;
                     }
