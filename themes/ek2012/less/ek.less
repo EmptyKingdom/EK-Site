@@ -24,11 +24,11 @@ hr {
 	color: @linkHighlight;
 }
 
-.btn {
+a.btn, button.btn {
 	.border-radius(0px) !important;
 	.box-shadow();
 	border: none;
-	color: #FFF !important;
+	color: #FFF;
 	text-transform: uppercase;
 	font-family: @sansSerifFamily;
 	font-size: 13px;
@@ -38,11 +38,15 @@ hr {
 	font-weight: bold;
 	.text-shadow;
 	&:hover {
-		background: @paleGray !important;
-		color: @textColor !important;
+		background: @paleGray;
+		color: @textColor;
 	}
 	&.btn-primary {
 		background: @linkHighlight;
+		&:hover {
+			background: @darkGray;
+			color: #FFF;
+		}
 	}
 	&.btn-inverse {
 		background: @darkGray;
@@ -1147,15 +1151,17 @@ a {
 
 #posts-pagination {
 	h4 {
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 18px;
-	}
-	a {
-		color: @linkHighlight;
-	}
-	.next {
-		text-align: right;
+		a {
+			font-weight: normal;
+			font-size: 14px;
+			padding: 11px 10px 11px 40px;
+		}
+		&.next {
+			text-align: right;
+			a {
+				padding: 11px 40px 11px 10px;
+			}
+		}
 	}
 }
 
@@ -1340,7 +1346,8 @@ a {
 		text-align: left;
 		.btn-arrow-left;
 		&:hover {
-			.btn-arrow-left-hover;
+			background-color: @linkHighlight !important;
+			color: #FFF !important;
 			@media (min-width: 768px) and (max-width: 979px){
 				background-image: none !important;
 			}
@@ -1676,7 +1683,9 @@ body.single, body.page {
 					position: relative;
 					.btn-arrow-left;
 					&:hover {
-						.btn-arrow-left-hover;
+						background-color: @linkHighlight !important;
+						color: #FFF !important;
+						background-color: @linkHighlight !important;
 					}
 					&.prev {
 						visibility: hidden;

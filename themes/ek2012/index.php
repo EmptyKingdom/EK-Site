@@ -9,11 +9,11 @@
 			<?php get_template_part('/partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
 		<div class="row" id="posts-pagination">
-			<div class="prev span4">
-				<h4><?php previous_posts_link('&laquo; Previous') ?></h4>
-			</div>
-			<div class="next span4">
-				<h4><?php next_posts_link('Next &raquo;') ?></h4>
+			<div class="offset4 span4">
+				<div class="row">
+					<h4 class="span2 prev"><?php previous_posts_link('Previous') ?></h4>
+					<h4 class="span2 next"><?php next_posts_link('Next') ?></h4>
+				</div>
 			</div>
 		</div>
 	</div> <!-- /#main -->

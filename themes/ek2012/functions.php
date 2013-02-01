@@ -226,6 +226,20 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 	include(locate_template('partials/carousels.php'));
 }
 
+add_filter('next_posts_link_attributes', 'ek_next_posts_attr');
+function ek_next_posts_attr($attr)
+{
+	$attr .= ' class="btn btn-primary btn-arrow-left"';
+	return $attr;
+}
+
+add_filter('previous_posts_link_attributes', 'ek_prev_posts_attr');
+function ek_prev_posts_attr($attr)
+{
+	$attr .= ' class="btn btn-primary btn-arrow-right"';
+	return $attr;
+}
+
 
 /**
  * Optional: set 'ot_show_pages' filter to false.

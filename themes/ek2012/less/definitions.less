@@ -19,17 +19,24 @@
 @semiBold: 600;
 
 .btn-arrow-left {
-	background-image: url(../img/slices/arrow-right-white.png) !important;
+  background-image: url(../img/slices/arrow-right-white.png) !important;
 	background-repeat: no-repeat !important;
 	background-position: 90% center !important;
+  &:hover {
+    background-image: url(../img/slices/arrow-right-white.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: 90% center !important;
+  }
 }
 
-.btn-arrow-left-hover(@textcolor: #FFF, @bgcolor: @linkHighlight) {
-	background-color: @bgcolor !important;
-	background-image: url(../img/slices/arrow-right-white.png) !important;
-	background-repeat: no-repeat !important;
-	background-position: 90% center !important;
-	color: @textcolor !important;
+.btn-arrow-right {
+  .btn-arrow-left;
+  background-image: url(../img/slices/arrow-left-white.png) !important;
+  background-position: 10% center !important;
+  &:hover {
+    background-image: url(../img/slices/arrow-left-white.png) !important;
+    background-position: 10% center !important;
+  }
 }
 
 .border-radius (@radius: @grid * .5) {
