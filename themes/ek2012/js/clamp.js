@@ -231,7 +231,7 @@
         }
         else {
             var height = getMaxHeight(clampValue);
-            if (height <= element.clientHeight) {
+            if (height < element.clientHeight) {
                 truncate(getLastChild(element), height);
             }
         }
