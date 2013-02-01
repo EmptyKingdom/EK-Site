@@ -1815,7 +1815,9 @@ body.author {
 					font-style: italic;
 					margin-top: 0;
 					font-weight: normal;
-					margin-bottom: 12px;
+					margin-bottom: 35px;
+					font-size: 41px;
+					line-height: 41px;
 				}
 				h2 {
 					text-transform: uppercase;
@@ -1829,8 +1831,10 @@ body.author {
 					}
 				}
 			}
-			.social {
-				margin-top: 12px;
+			.social-links {
+				position: absolute;
+				bottom: 0px;
+				right: 30px;
 				p {
 					display: inline;
 					line-height: 24px;
@@ -1859,18 +1863,17 @@ body.author {
 	h3.recent {
 		font-family: @sansSerifFamily;
 		text-transform: uppercase;
-		background-color: @linkHighlight;
-		color: #FFF;
-		display: inline-block;
-		padding: 8px 12px;
 		font-weight: normal;
 		line-height: normal;
-		font-size: 16px;
-		margin: 36px 0 18px 0;
+		font-size: 18px;
+		font-weight: @semiBold;
 		span {
 			font-family: @serifFamily;
 			text-transform: none;
 			font-style: italic;
+			font-weight: normal;
+			font-size: 22px;
+			padding-left: 5px;
 		}
 	}
 }
