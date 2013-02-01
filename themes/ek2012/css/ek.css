@@ -142,7 +142,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .post-list .post .author,.post-list .post .date{float:left;font-size:12px;margin:10px 0;line-height:16px;color:#999999;}
 .post-list .post .date{float:right;}
 .post-list .post img{clear:both;}
-.post-list .post h3{font-size:22px;line-height:19px;font-weight:normal;margin:0;}.post-list .post h3 a{position:relative;top:3px;}
+.post-list .post h3{font-size:22px;line-height:19px;font-weight:normal;margin:0;}.post-list .post h3 a{position:relative;top:3px;display:block;}
 .post-list .post h5{margin-bottom:0;height:14px;margin:10px 0 0 0;float:left;}
 .post-list .post .social{float:right;margin:10px 0 0 0;}
 .post-list .post .excerpt{clear:both;margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
