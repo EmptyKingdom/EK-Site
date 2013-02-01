@@ -76,8 +76,9 @@ hr.dotted{display:block;clear:both;border-top:1px solid #cccccc;margin-top:20px;
 .ad-slot#ad-slot-2{margin:24px auto;}
 body.home #sidebar{padding-top:0;}
 #feature{position:relative;}#feature .carousel{margin-top:16px;display:none;}#feature .carousel.active{display:block;}
-.carousel-control{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background-color:rgba(255, 255, 255, 0.8);background-repeat:no-repeat;background-position:center center;opacity:1 !important;color:#FFF !important;width:30px;height:60px;font-weight:normal !important;line-height:40px;font-size:52px;top:50%;margin-top:-26px;z-index:3;}.carousel-control.left{left:0px;background-image:url(../img/slices/arrow-left-carousel.png);}
-.carousel-control.right{left:auto;right:0px;background-image:url(../img/slices/arrow-right-carousel.png);}
+.carousel-control{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background-color:rgba(255, 255, 255, 0.8);background-repeat:no-repeat;background-position:center center;opacity:1 !important;color:#FFF !important;width:30px;height:60px;font-weight:normal !important;line-height:40px;font-size:52px;top:50%;margin-top:-26px;z-index:3;}.carousel-control:hover{background-color:rgba(0, 0, 0, 0.8);}
+.carousel-control.left{left:0px;background-image:url(../img/slices/arrow-left-carousel.png);}.carousel-control.left:hover{background-image:url(../img/slices/arrow-left-carousel-white.png);}
+.carousel-control.right{left:auto;right:0px;background-image:url(../img/slices/arrow-right-carousel.png);}.carousel-control.right:hover{background-image:url(../img/slices/arrow-right-carousel-white.png);}
 .carousel{margin-bottom:0;}.carousel.carousel-fade .item{-webkit-transition:0.4s ease-in-out opacity;-moz-transition:0.4s ease-in-out opacity;-ms-transition:0.4s ease-in-out opacity;-o-transition:0.4s ease-in-out opacity;transition:0.4s ease-in-out opacity;left:0 !important;}
 .carousel.carousel-fade .next.left,.carousel.carousel-fade .prev.right{opacity:1;z-index:1;}
 .carousel.carousel-fade .active.left,.carousel.carousel-fade .active.right{opacity:0;z-index:2;}

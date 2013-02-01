@@ -607,14 +607,23 @@ body.home {
 	top: 50%;
 	margin-top: -26px;
 	z-index: 3;
+	&:hover {
+		background-color: rgba(0, 0, 0, .8);
+	}
 	&.left {
 		left: 0px;
 		background-image: url(../img/slices/arrow-left-carousel.png);
+		&:hover {
+			background-image: url(../img/slices/arrow-left-carousel-white.png);
+		}
 	}
 	&.right {
 		left: auto;
 		right: 0px;
 		background-image: url(../img/slices/arrow-right-carousel.png);
+		&:hover {
+			background-image: url(../img/slices/arrow-right-carousel-white.png);
+		}
 	}
 }
 
