@@ -169,24 +169,33 @@ h5 {
 			height: @grid*3;
 			width: @grid*3;
 			.transition(.3s ease-in-out all);
-			&:hover {
-				background-position-y: -24px;
-			}
 			a {
 				display: block;
 			}
 		}
 		&.vimeo {
 			background-position: 0px 0px;
+			&:hover {
+				background-position: 0px -24px;
+			}
 		}
 		&.pinterest {
 			background-position: -@grid*4 0px;
+			&:hover {
+				background-position: -@grid*4 -24px;
+			}
 		}
 		&.facebook {
 			background-position: -@grid*8 0px;
+			&:hover {
+				background-position: -@grid*8 -24px;
+			}
 		}
 		&.twitter {
 			background-position: -@grid*12px 0px;
+			&:hover {
+				background-position: -@grid*12 -24px;
+			}
 		}
 		span {
 			vertical-align: -30%;
