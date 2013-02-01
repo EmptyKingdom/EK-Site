@@ -28,6 +28,6 @@
 			<!-- <li class="add"><a href=""></a></li> -->
 		</ul>
 	</div>
-	<div class="excerpt"><?php the_excerpt() ?></div>
+	<div class="excerpt" data-orig_text="<?php echo htmlspecialchars(get_the_excerpt()); ?>"><?php the_excerpt() ?></div>
 	<a class="view-more" href="<?php the_permalink() ?>">View More&hellip;</a>
 </div>

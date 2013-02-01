@@ -351,6 +351,8 @@ $(document).ready(function($){
 			$.cookie('lastFilter', JSON.stringify(newQuery), {
 				path: '/'
 			});
+
+			clampGrid();
 			
 			// after content loads:
 			spinner.stop();
@@ -454,22 +456,14 @@ $(document).ready(function($){
 		}
 	});
 
+	clampGrid();
+
 	if ($('.slide-description').length) {
 
 		$('.slide-description p').not('.postmeta').each(function(i, e){
 			var $this = $(this);
 			$this.data('orig_text', $this.text());
 		})
-
-		function resetClamped(els) {
-			els.each(function(i, e) {
-				var $e = $(e);
-				var origText = $e.data('orig_text');
-				if (origText) {
-					$e.text(origText);
-				}
-			});
-		}
 
 		setTimeout(function(){
 			mediaCheck({
@@ -506,17 +500,40 @@ $(document).ready(function($){
 
 })
 
+function resetClamped(els) {
+	els.each(function(i, e) {
+		var $e = $(e);
+		var origText = $e.data('orig_text');
+		if (origText) {
+			$e.html(origText);
+		}
+	});
+	return els;
+}
+
+function clampGrid() {
+	$('#post-list.grid .excerpt p').each(function(i, e){
+		$clamp(e, {clamp: 3, useNativeClamp: true});
+	})
+}
+
+
+
 var viewControls = {
 	gridView: function(target) {
 		$('#grid-view').addClass('active');
 		$('#list-view').removeClass('active');
 		this.switchView('list', 'grid', target);
+		setTimeout(function(){
+			clampGrid();
+		}, 500);
 	},
 
 	listView: function(target) {
 		$('#list-view').addClass('active');
 		$('#grid-view').removeClass('active');
 		this.switchView('grid', 'list', target);
+		resetClamped($('#post-list.list .excerpt')).wrapInner('<p></p>');
 	},
 
 	switchView: function(from, to, target) {
