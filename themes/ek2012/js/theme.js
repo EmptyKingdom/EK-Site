@@ -538,6 +538,7 @@ var viewControls = {
 		$('#grid-view').removeClass('active');
 		this.switchView('grid', 'list', target);
 		resetClamped($('#post-list.list .excerpt')).wrapInner('<p></p>');
+		resetClamped($('#post-list.list h3 a'));
 	},
 
 	switchView: function(from, to, target) {

@@ -11,7 +11,7 @@
 	$sharer_descr = urlencode(get_the_excerpt());
  ?>
 <div class="post <?php echo ek_get_cat($post, 'slug', true) ?> span4">
-	<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+	<h3><a href="<?php the_permalink() ?>" data-orig_text="<?php echo htmlspecialchars(get_the_title()) ?>"><?php the_title() ?></a></h3>
 	<p class="author">by <?php the_author_posts_link() ?></p>
 	<p class="date"><?php the_time(get_option('date_format')) ?></p>
 	<div class="thumbnail"><a href="<?php the_permalink() ?>"
