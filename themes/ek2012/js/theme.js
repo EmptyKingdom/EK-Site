@@ -144,6 +144,7 @@ $(document).ready(function($){
 	{
 		$('.post-share li a.service').mouseenter(function(){
 			$(this).parent().addClass('active');
+			$(".fb-like-inactive").removeClass("fb-like-inactive").addClass("fb-like");FB.XFBML.parse();
 		});
 		$('.post-share li').mouseleave(function(){
 			$(this).removeClass('active');
