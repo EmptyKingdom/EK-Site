@@ -9,6 +9,7 @@
 	$sharer_url = urlencode(get_permalink($post->ID));
 	$sharer_img = urlencode(wp_get_attachment_url(get_post_thumbnail_id()));
 	$sharer_descr = urlencode(get_the_excerpt());
+	$category = ek_get_cat($post);
  ?>
 <div class="post <?php echo ek_get_cat($post, 'slug', true) ?> span4">
 	<h3><a href="<?php the_permalink() ?>" data-orig_text="<?php echo htmlspecialchars(get_the_title()) ?>"><?php the_title() ?></a></h3>
@@ -20,7 +21,7 @@
 		<?php endif; ?>
 		><?php the_post_thumbnail() ?></a></div>
 	<div class="clearfix">
-		<h5 class="category"><?php echo ek_get_cat($post, 'name', true) ?></h5>
+		<h5 class="category"><a href="<?php echo get_term_link($category) ?>"><?php echo $category->name ?></a></h5>
 		<ul class="unstyled social">
 			<li class="facebook"><a href="http://www.facebook.com/share.php?s=100&p[url]=<?php echo $sharer_url ?>&p[title]=<?php echo $sharer_title ?>&p[summary]=<?php echo $sharer_descr ?>&p[images][0]=<?php echo $sharer_img ?>"></a></li>
 			<li class="twitter"><a href="https://twitter.com/share?url=<?php echo $sharer_url ?>"></a></li>

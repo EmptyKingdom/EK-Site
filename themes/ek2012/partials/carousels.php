@@ -34,7 +34,7 @@ endforeach;
 				<?php while($carousel->slides->have_posts()) : $carousel->slides->the_post(); global $post; ?>
 				<li class="slide-description <?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> <?php echo $post->category->slug ?>" id="section-<?php echo $i ?>-slide-<?php the_id() ?>">
 					<?php if ($post->category) : ?>
-					<h5 class="category"><?php echo $post->category->name ?></h5>
+					<h5 class="category"><a href="<?php echo get_term_link($post->category) ?>"><?php echo $post->category->name ?></a></h5>
 					<?php endif; ?>
 					<h3><?php echo $post->title ?></h3>
 					<?php if ($post->date || $post->author) : ?>
