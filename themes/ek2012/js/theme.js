@@ -1,5 +1,6 @@
 $(document).ready(function($){
 
+	// add "touch-device" class to body when viewed on touch devices
 	if ('ontouchstart' in document.documentElement) {
 		$('body').addClass('touch-device');
 	}
@@ -36,16 +37,7 @@ $(document).ready(function($){
 
 	});
 
-	updateCarouselIndicator = function(e){
-		var $this = $(this);
-		var index = $this.find('.item.active').index();
-		var $indicators = $this.find('.carousel-indicator li');
-		
-		// update the blue square indicator
-		$indicators.removeClass('active');
-		$indicators.eq(index).addClass('active');
-	}
-
+	// search box expand / collapse
 	$('#basic-search').on({
 		focus: function(){
 			$(this).addClass('expanded');
@@ -61,6 +53,18 @@ $(document).ready(function($){
 		}
 	}, 'input')
 	
+	// set active class on current carousel indicator
+	updateCarouselIndicator = function(e){
+		var $this = $(this);
+		var index = $this.find('.item.active').index();
+		var $indicators = $this.find('.carousel-indicator li');
+		
+		// update the blue square indicator
+		$indicators.removeClass('active');
+		$indicators.eq(index).addClass('active');
+	}
+
+	// set up carousel behavior (interval, switch descriptions, stop videos, update indicator)
 	$('.carousel').carousel({
 		interval: 7000
 	}).on({
@@ -87,6 +91,7 @@ $(document).ready(function($){
 		slid: updateCarouselIndicator
 	});
 	
+	// jump to slide when carousel indicator clicked
 	$('.carousel-indicator').on({
 		click: function(e) {
 			var $indicator = $(e.target);
@@ -95,10 +100,7 @@ $(document).ready(function($){
 		}
 	}, 'a');
 	
-	$('#category-carousel').carousel({interval: 20000}).on({
-		slid: updateCarouselIndicator
-	});
-	
+	// carousel section switcher
 	$('ul#carousel-section-nav > li').on({
 		click: function(e){
 
@@ -125,6 +127,7 @@ $(document).ready(function($){
 		}
 	}, 'a');
 	
+	// attach event handlers to view control buttons
 	$('#view-controls').on({
 		click: function(e) {
 			e.preventDefault();
@@ -137,6 +140,7 @@ $(document).ready(function($){
 		}
 	}, 'a');
 	
+	// category filters box slide up / down functionality
 	$('#cat-filters').on({
 		click: function(e) {
 			e.preventDefault();
@@ -149,7 +153,7 @@ $(document).ready(function($){
 		}
 	}, 'a')
 
-	// social share bar
+	// social share bar hide/show functionality
 	if ($('.post-share').length)
 	{
 		$('.post-share li a.service').mouseenter(function(){
@@ -161,6 +165,7 @@ $(document).ready(function($){
 		})
 	}
 
+	// youtube video loader
 	if ($('a.video.youtube').length) {
 		// $.getScript('//www.youtube.com/iframe_api', function(){
 			$(document).on({
@@ -186,6 +191,7 @@ $(document).ready(function($){
 		// });
 	}
 
+	// vimeo video loader
 	$(document).on({
 		click: function(e){
 			e.preventDefault();
@@ -220,6 +226,7 @@ $(document).ready(function($){
 		}
 	}, 'a.video.vimeo');
 
+	// popwin functionality for share links
 	$(document).on({
 		click: function(event) {
 			event.preventDefault();
@@ -237,180 +244,91 @@ $(document).ready(function($){
 		}
 	}, '.social a');
 
-	// cat filters
-	yepnope({
-		test: $('#cat-filters, #sfw-filter').length,
-		yep: themedir + '/js/spin.min.js',
-		callback: function(url, result, key){
-			$('#main').on({
-				click: filterPosts
-			}, '#filter-btn');
-			if (lastFilter.category__in && lastFilter.category__in.length) {
-				$.each(lastFilter.category__in, function(i, e){
-					$('#cat-filters').find('li[data-cat_id="'+e+'"]').addClass('selected');
-				})
-				if (lastFilter.tag__not_in == $('#sfw-filter').data('nsfw_tagid')) {
-					$('#sfw-filter').addClass('checked');
-				}
-				setTimeout(function(){
-					$('#filter-btn').trigger('click')	
-				}, 100);
-			}
-			else if (lastFilter.sfw && window.location.href.indexOf('/sfw/') == -1) {
-				$('#sfw-filter a').trigger('click')	
-			}
-		}
-	});
+	// attach event handler for filter button
+	$('#main').on({
+		click: filterPosts
+	}, '#filter-btn');
 
-	// related artists
-	yepnope({
-		test: $('#related-artists').length,
-		yep: themedir + '/js/spin.min.js',
-		callback: function(){
-			var $slider = $('#related-artists .post-list');
-			$('#related-artists').on({
-				click: function(e) {
-					var $clicked = $(e.target);
-					var curPage = $slider.data('cur_page');
-					var maxPage = $slider.data('max_page');
-					$slider.find('.active').removeClass('active');
-					if ($clicked.hasClass('prev')) {
-						curPage--;
-						$slider.data('cur_page', curPage)
-						$slider.css({
-							'left': parseInt($slider[0].style.left)+100+'%'
-						});
-						if (curPage == 1) {
-							$clicked.css('visibility', 'hidden');
-						}
-						$slider.find('.slide-container').eq(curPage-1).addClass('active');
-					} 
-					else if ($clicked.hasClass('next')) {
-						if (curPage == maxPage) {
-							var spinner = new Spinner(spinnerOpts).spin($clicked.parent().get(0));
-							$.post(ajaxurl, {
-								action: 'ek_load_posts',
-								nonce: $slider.data('nonce'),
-								query: {
-									posts_per_page: 3,
-									paged: $slider.data('max_page')+1,
-									category__in: [$slider.data('cats')]
-								}
-							}, function(result){
-								spinner.stop();
-								$(result).find('.span4')
-									.wrapAll('<div class="row"></div>')
-									.parent()
-									.wrap('<div class="span8"></div>')
-									.parent()
-									.wrap('<div class="slide-container active row"></div>')
-									.parent()
-									.appendTo($slider);
-								$slider.data('max_page', $slider.data('max_page')+1);
-								$slider.data('cur_page', $slider.data('cur_page')+1);
-								$slider.data('nonce', $(result).filter('#nonce').text());
-								$slider.css({
-									'width': $slider.data('max_page')*100+'%',
-									'left': parseInt($slider[0].style.left)-100+'%'
-								});
-								$clicked.prev('.prev').css('visibility', 'visible');
-							})
-						} 
-						else {
-							$slider.data('cur_page', curPage+1)
-							$slider.css({
-								'left': parseInt($slider[0].style.left)-100+'%'
-							});
-							$slider.find('.slide-container').eq(curPage).addClass('active');
-							$clicked.prev('.prev').css('visibility', 'visible');
-						}
-					}
-				}
-			}, 'a.prev, a.next')
-		}
-	})
-	
-	filterPosts = function(){
-		var $ = jQuery;
-		var $this = $(this);
-		var cats = [];
-		var nsfw_tagid = $('#sfw-filter').data('nsfw_tagid');
-		
-		$('#cat-filters').find('li.selected').each(function(i, el){
-			cats.push($(el).data('cat_id'))
+	// check for lastFilter cookie and apply; also apply sfw setting
+	if (lastFilter.category__in && lastFilter.category__in.length) {
+		$.each(lastFilter.category__in, function(i, e){
+			$('#cat-filters').find('li[data-cat_id="'+e+'"]').addClass('selected');
 		})
-		
-		var newQuery = {category__in: cats};
-
-		newQuery = $.extend({}, origQuery, newQuery);
-		
-		if ($('#sfw-filter').hasClass('checked')) {
-			newQuery.tag__not_in = nsfw_tagid;
-			newQuery.sfw = true;
+		if (lastFilter.tag__not_in == $('#sfw-filter').data('nsfw_tagid')) {
+			$('#sfw-filter').addClass('checked');
 		}
-		else {
-			delete(newQuery.sfw);
-		}
-		
-		var spinner = new Spinner(spinnerOpts).spin($this.parent().get(0));
-		$('#post-list').load(ajaxurl, {
-			action: 'ek_load_posts',
-			nonce: $('#view-controls').data('nonce'),
-			query: newQuery
-		}, function(result){
-			
-			$.cookie('lastFilter', JSON.stringify(newQuery), {
-				path: '/'
-			});
-
-			clampGrid();
-			
-			// after content loads:
-			spinner.stop();
-			
-			// set the flag text on or off:
-			if (newQuery.category__in.length) {
-				$('#cat-filter').addClass('active').find('a').text('Filter By Category [on]');
-			} 
-			else {
-				$('#cat-filter').removeClass('active').find('a').text('Filter By Category');
-			}
-			
-			if ( ! newQuery.sfw) {
-				$('.container a[href], #footer a[href]').each(function(i, e){
-					var $this = $(this);
-					$this.attr('href', $this.attr('href').replace('/sfw/', '/'));
-				});
-			} 
-			else {
-				$('.container a[href], #footer a[href]').each(function(i, e){
-					var $this = $(this);
-					if ($this.attr('href').indexOf('/sfw/') == -1)
-					{
-						$this.attr('href', $this.attr('href').replace(siteurl, siteurl+'sfw/'));
-					}
-				});
-			} 
-
-			if ($this.attr('id') == 'filter-btn')
-			{
-				// close the filters box
-				$('#cat-filters').slideUp();
-
-				// scroll to top of view controls if it was the category filters that was clicked
-				var scrollTo = $('#view-controls').offset().top-10;
-				if ($('#wpadminbar').length) {
-					scrollTo -= $('#wpadminbar').outerHeight();
-				}
-				$('#view-controls').data('nonce', $(result).filter('#nonce').text());
-				$('html, body').animate({
-					scrollTop: scrollTo
-				}, 200);
-			}
-		})
+		setTimeout(function(){
+			$('#filter-btn').trigger('click')	
+		}, 100);
+	}
+	else if (lastFilter.sfw && window.location.href.indexOf('/sfw/') == -1) {
+		$('#sfw-filter a').trigger('click')	
 	}
 
 
+	// more dope slider on single post page functionality
+	$('#related-artists').on({
+		click: function(e) {
+			var $moreDopeSlider = $('#related-artists .post-list');
+			var $clicked = $(e.target);
+			var curPage = $moreDopeSlider.data('cur_page');
+			var maxPage = $moreDopeSlider.data('max_page');
+			$moreDopeSlider.find('.active').removeClass('active');
+			if ($clicked.hasClass('prev')) {
+				curPage--;
+				$moreDopeSlider.data('cur_page', curPage)
+				$moreDopeSlider.css({
+					'left': parseInt($moreDopeSlider[0].style.left)+100+'%'
+				});
+				if (curPage == 1) {
+					$clicked.css('visibility', 'hidden');
+				}
+				$moreDopeSlider.find('.slide-container').eq(curPage-1).addClass('active');
+			} 
+			else if ($clicked.hasClass('next')) {
+				if (curPage == maxPage) {
+					var spinner = new Spinner(spinnerOpts).spin($clicked.parent().get(0));
+					$.post(ajaxurl, {
+						action: 'ek_load_posts',
+						nonce: $moreDopeSlider.data('nonce'),
+						query: {
+							posts_per_page: 3,
+							paged: $moreDopeSlider.data('max_page')+1,
+							category__in: [$moreDopeSlider.data('cats')]
+						}
+					}, function(result){
+						spinner.stop();
+						$(result).find('.span4')
+							.wrapAll('<div class="row"></div>')
+							.parent()
+							.wrap('<div class="span8"></div>')
+							.parent()
+							.wrap('<div class="slide-container active row"></div>')
+							.parent()
+							.appendTo($moreDopeSlider);
+						$moreDopeSlider.data('max_page', $moreDopeSlider.data('max_page')+1);
+						$moreDopeSlider.data('cur_page', $moreDopeSlider.data('cur_page')+1);
+						$moreDopeSlider.data('nonce', $(result).filter('#nonce').text());
+						$moreDopeSlider.css({
+							'width': $moreDopeSlider.data('max_page')*100+'%',
+							'left': parseInt($moreDopeSlider[0].style.left)-100+'%'
+						});
+						$clicked.prev('.prev').css('visibility', 'visible');
+					})
+				} 
+				else {
+					$moreDopeSlider.data('cur_page', curPage+1)
+					$moreDopeSlider.css({
+						'left': parseInt($moreDopeSlider[0].style.left)-100+'%'
+					});
+					$moreDopeSlider.find('.slide-container').eq(curPage).addClass('active');
+					$clicked.prev('.prev').css('visibility', 'visible');
+				}
+			}
+		}
+	}, 'a.prev, a.next')
+	
+	// dropdown functionality
 	$('ul.sub-menu').each(function(i, e){
 		var $dropdown = $(this);
 		var $parent = $dropdown.closest('li');
@@ -421,6 +339,7 @@ $(document).ready(function($){
 		})
 	})
 	
+	// collapseable widgets functionality
 	$('.widget h4').on({
 		mouseup: function() {
 
@@ -446,6 +365,7 @@ $(document).ready(function($){
 		}
 	})
 
+	// apply collapsed class to widgets set in collapsedWidgets cookie
 	$('.widget').each(function(i, e){
 		if ($.cookie('collapsedWidgets')) {
 			var $this = $(this);
@@ -456,6 +376,7 @@ $(document).ready(function($){
 		}
 	})
 	
+	// only show list view on narrow screens
 	mediaCheck({
 		media: '(max-width: 767px)',
 		entry: function() {
@@ -467,6 +388,7 @@ $(document).ready(function($){
 		}
 	});
 
+	// limit grid to 3 line excerpts
 	clampGrid();
 
 	if ($('.slide-description').length) {
@@ -582,5 +504,86 @@ spinnerOpts = {
 	zIndex: 2e9, // The z-index (defaults to 2000000000)
 	top: 'auto', // Top position relative to parent in px
 	left: -10 // Left position relative to parent in px
+}
+
+// function to query a set of posts from wp via ajax
+function filterPosts() {
+	var $ = jQuery;
+	var $this = $(this);
+	var cats = [];
+	var nsfw_tagid = $('#sfw-filter').data('nsfw_tagid');
+	
+	$('#cat-filters').find('li.selected').each(function(i, el){
+		cats.push($(el).data('cat_id'))
+	})
+	
+	var newQuery = {category__in: cats};
+
+	newQuery = $.extend({}, origQuery, newQuery);
+	
+	if ($('#sfw-filter').hasClass('checked')) {
+		newQuery.tag__not_in = nsfw_tagid;
+		newQuery.sfw = true;
+	}
+	else {
+		delete(newQuery.sfw);
+	}
+	
+	var spinner = new Spinner(spinnerOpts).spin($this.parent().get(0));
+	$('#post-list').load(ajaxurl, {
+		action: 'ek_load_posts',
+		nonce: $('#view-controls').data('nonce'),
+		query: newQuery
+	}, function(result){
+		
+		$.cookie('lastFilter', JSON.stringify(newQuery), {
+			path: '/'
+		});
+
+		clampGrid();
+		
+		// after content loads:
+		spinner.stop();
+		
+		// set the flag text on or off:
+		if (newQuery.category__in.length) {
+			$('#cat-filter').addClass('active').find('a').text('Filter By Category [on]');
+		} 
+		else {
+			$('#cat-filter').removeClass('active').find('a').text('Filter By Category');
+		}
+		
+		if ( ! newQuery.sfw) {
+			$('.container a[href], #footer a[href]').each(function(i, e){
+				var $this = $(this);
+				$this.attr('href', $this.attr('href').replace('/sfw/', '/'));
+			});
+		} 
+		else {
+			$('.container a[href], #footer a[href]').each(function(i, e){
+				var $this = $(this);
+				if ($this.attr('href').indexOf('/sfw/') == -1)
+				{
+					$this.attr('href', $this.attr('href').replace(siteurl, siteurl+'sfw/'));
+				}
+			});
+		} 
+
+		if ($this.attr('id') == 'filter-btn')
+		{
+			// close the filters box
+			$('#cat-filters').slideUp();
+
+			// scroll to top of view controls if it was the category filters that was clicked
+			var scrollTo = $('#view-controls').offset().top-10;
+			if ($('#wpadminbar').length) {
+				scrollTo -= $('#wpadminbar').outerHeight();
+			}
+			$('#view-controls').data('nonce', $(result).filter('#nonce').text());
+			$('html, body').animate({
+				scrollTop: scrollTo
+			}, 200);
+		}
+	})
 }
 
