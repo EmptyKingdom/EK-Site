@@ -116,7 +116,8 @@ add_action('init', 'ek_register_stuff');
 /* get ek main category */
 function ek_get_cat($post = false, $property = false, $parent = true)
 {
-	if ( ! defined('DOING_AJAX') && is_category())
+	global $wp_query;
+	if ( ! defined('DOING_AJAX') && is_category() && $wp_query->in_the_loop)
 	{
 		$the_category = get_queried_object();
 		if ($parent)

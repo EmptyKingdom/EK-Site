@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-	<div class="span8 <?php echo ek_get_cat(false, 'slug', true) ?>" id="main">
+	<div class="span8 <?php echo is_category() ? get_queried_object()->slug : '' ?>" id="main">
 		<?php if (is_category() && ! is_paged() && ! get_queried_object()->parent) : ?>
 			<?php get_template_part('/partials/category', 'carousel') ?>
 		<?php elseif (is_category()) : ?>
