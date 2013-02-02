@@ -4,11 +4,12 @@ $(document).ready(function($){
 		$('body').addClass('touch-device');
 	}
 
+	// inject share icons on all images in single post content
 	$('body.single-post .post-content img').each(function(){
 
 		var shareData = {},
 			$this = $(this),
-			$shareServices = $('#img-sharer ul').clone();
+			$shareServices = $('#img-sharer ul').clone(); // this is a placeholder for the icons in the page src
 
 		if ($this.closest('a').length) {
 			shareData.shareURL = encodeURIComponent($this.closest('a').attr('href'));
@@ -22,7 +23,7 @@ $(document).ready(function($){
 		shareData.shareTitle = encodeURIComponent(document.title);
 		shareData.shareDescription = $this.attr('title') || $this.attr('alt') || '';
 		shareData.shareDescription = encodeURIComponent(shareData.shareDescription);
-		shareData.shareImg = encodeURIComponent($this.attr('src'));
+		shareData.shareImg = $this.data('lazy-src') ? encodeURIComponent($this.data('lazy-src')) : encodeURIComponent($this.attr('src'));
 
 		$shareServices.find('a').each(function(){
 			for (var key in shareData) {
