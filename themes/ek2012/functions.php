@@ -202,7 +202,6 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 				'order' => 'desc',
 			));
 		} 
-		
 		else if ($carousel->type == 'recent_posts')
 		{
 			$carousel->slides = new WP_Query(array(

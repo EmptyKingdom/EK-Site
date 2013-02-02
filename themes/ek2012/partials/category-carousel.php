@@ -1,6 +1,6 @@
 <?php 
 if (function_exists('ot_get_option')) :
-	$category = ek_get_cat(); 
+	$category = get_queried_object(); 
 	$option_str = str_replace('-', '_', $category->slug).'_cat';
 	$carousel->type = ot_get_option($option_str.'_carousel_type');
 	$carousel->slide_collection = ot_get_option($option_str.'_carousel_slide_collection');
