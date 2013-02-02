@@ -186,7 +186,7 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 	}
 	foreach ($carousels as $i => &$carousel)
 	{
-		if ($carousel->type == 'slide_collection' && $carousel->slide_collection)
+		if ($carousel->type == 'slide_collection')
 		{
 			$carousel->slides = new WP_Query(array(
 				'post_type' => 'slide',
@@ -213,10 +213,6 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 			));
 		}
 		
-		if ( ! $carousel->slides->post_count)
-		{
-			unset($carousels[$i]);
-		}
 		if ( ! $side_captions)
 		{
 			$carousel->show_caption = true;
@@ -268,6 +264,10 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 				endif;
 			endif;
 		endwhile;
+	}
+	if ( ! $carousel->slides->post_count)
+	{
+		unset($carousels[$i]);
 	}
 	$carousels = array_values($carousels);
 	include(locate_template('partials/carousels.php'));
