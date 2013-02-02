@@ -99,6 +99,13 @@ $(document).ready(function($){
 
 			var $this = $(this);
 			
+			// stop all videos 
+			$('.carousel a.video iframe').each(function(i, e){
+				var f = $(e),
+    			url = f.attr('src').split('?')[0];
+			    f[0].contentWindow.postMessage(JSON.stringify({method: 'pause'}), url);
+			})
+
 			// switch the selected carousel section nav
 			$('#carousel-section-nav > li').removeClass('active');
 			$this.parent('li').addClass('active');
