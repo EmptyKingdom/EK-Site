@@ -600,13 +600,6 @@ body.home {
 	.carousel {
 		margin-top: @grid * 2;
 		display: none;
-		height: 318px;
-		@media (min-width: 1200px) {
-			height: 395px;
-		}
-		@media(max-width: 979px) {
-			height: auto;
-		}
 		&.active {
 			display: block;
 		}
@@ -653,6 +646,13 @@ body.home {
 
 .carousel {
 	margin-bottom: 0;
+	height: 318px;
+	@media (min-width: 1200px) {
+		height: 395px;
+	}
+	@media(max-width: 979px) {
+		height: auto;
+	}
 	&.carousel-fade {
 		.item {
 			.transition(.4s ease-in-out opacity);
@@ -660,11 +660,11 @@ body.home {
 		}
 		.next.left, .prev.right {
 			opacity: 1;
-			z-index: 2;
+			z-index: 1;
 		}
 		.active.left, .active.right {
 			opacity: 0;
-			z-index: 1;
+			z-index: 2;
 		}
 	}
 	.carousel-indicator {
