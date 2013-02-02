@@ -2,11 +2,9 @@
 	<div class="span8">
 <?php endif; ?>
 <?php
-foreach ($carousels as $i => &$carousel) :
+foreach ($carousels as $i => $carousel) :
 	if ($carousel->slides->have_posts()) : 
 		include(locate_template('partials/carousel.php'));
-	else : 
-		unset($carousels[$i]); // slides->has_posts
 	endif; // slides->has_posts
 endforeach; 
 ?>
@@ -33,22 +31,19 @@ endforeach;
 		<div class="<?php echo $i == 0 ? 'active' : '' ?> carousel-section-content" id="carousel-section-<?php echo $i ?>">
 			<?php if ($carousel->slides->have_posts()) : ?>
 			<ul class="unstyled">
-				<?php while($carousel->slides->have_posts()) : $carousel->slides->the_post(); ?>
-				<?php 
-				global $post;
-				$featured_post = ($carousel->type == 'slide_collection') ? get_field('featured_post') : array($post); ?>
-				<li class="slide-description <?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> <?php echo $featured_post ? ek_get_cat($featured_post[0], 'slug') : '' ?>" id="slide-<?php the_id() ?>">
-					<?php if ($featured_post) : ?>
-					<h5 class="category"><?php echo ek_get_cat($featured_post[0], 'name'); ?></h5>
+				<?php while($carousel->slides->have_posts()) : $carousel->slides->the_post(); global $post; ?>
+				<li class="slide-description <?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> <?php echo $post->category->slug ?>" id="slide-<?php the_id() ?>">
+					<?php if ($post->category) : ?>
+					<h5 class="category"><?php echo $post->category->name ?></h5>
 					<?php endif; ?>
-					<h3><?php echo get_the_title() != '' ? get_the_title() : $featured_post[0]->post_title; ?></h3>
-					<?php if ($featured_post) : ?>
-					<p class="postmeta"><?php echo get_the_time(get_option('date_format'), $featured_post[0]) ?> by  <?php echo get_the_author($featured_post[0]); ?></p>
-					<p><?php echo wp_trim_words($featured_post[0]->post_content) ?></p>
-					<?php else: ?>
-					<?php echo $carousel->type == 'slide_collection' ? '<p>'.get_the_content().'</p>' : '<p>'.get_the_excerpt().'</p>'; ?>
+					<h3><?php echo $post->title ?></h3>
+					<?php if ($post->date || $post->author) : ?>
+					<p class="postmeta"><?php echo $post->date ?> by  <?php echo $post->author ?></p>
 					<?php endif; ?>
-					<a class="btn btn-default" href="<?php echo get_field('link') ? get_field($link) : get_permalink($featured_post[0]) ?>">View More...</a>
+					<p><?php echo $post->excerpt ?></p>
+					<?php if ($post->link) : ?>
+						<a class="btn btn-default" href="<?php echo $post->link ?>">View More...</a>
+					<?php endif; ?>
 				</li>
 				<?php endwhile; // slide loop ?>
 			</ul>
