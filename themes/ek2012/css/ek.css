@@ -143,7 +143,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .category-carousel .item .caption{height:153px;}.category-carousel .item .caption p{margin-top:10px;margin-bottom:0;padding:16px 0;border-top:1px dotted #cccccc;background-color:#FFF;}
 .category-carousel .carousel-indicator{bottom:177px;}
 .category-carousel .carousel-control{top:41.5%;}
-.post-list.grid .row{margin-bottom:45px;height:450px;}.post-list.grid .row .span4{-webkit-transition:.4s ease width;-moz-transition:.4s ease width;-ms-transition:.4s ease width;-o-transition:.4s ease width;transition:.4s ease width;}.post-list.grid .row .span4 .thumbnail{overflow:hidden;max-height:190px;}
+.post-list.grid .row{margin-bottom:45px;height:360px;}.post-list.grid .row .span4{-webkit-transition:.4s ease width;-moz-transition:.4s ease width;-ms-transition:.4s ease width;-o-transition:.4s ease width;transition:.4s ease width;}.post-list.grid .row .span4 .thumbnail{overflow:hidden;max-height:190px;}
 .post-list.list .row{margin-left:0;}.post-list.list .row .span4{width:100%;margin-left:0;margin-bottom:45px;-webkit-transition:.4s ease width;-moz-transition:.4s ease width;-ms-transition:.4s ease width;-o-transition:.4s ease width;transition:.4s ease width;}.post-list.list .row .span4 .thumbnail{max-height:none;}
 .post-list .span4 .thumbnail{clear:both;}.post-list .span4 .thumbnail img{width:100%;height:auto;}
 .post-list .post .author,.post-list .post .date{float:left;font-size:12px;margin:10px 0;line-height:16px;color:#999999;}
