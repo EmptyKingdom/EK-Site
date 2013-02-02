@@ -155,6 +155,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .post-list .post .social{float:right;margin:10px 0 0 0;}
 .post-list .post .excerpt{clear:both;margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
 .post-list .post .excerpt p{margin-bottom:5px;}
+.post-list .post.the-interviews strong{font-weight:normal;color:#00b8ec;}
 .social{line-height:15px;height:15px;}.social li{display:inline-block;background-image:url(../img/slices/post-list-social.png);background-repeat:no-repeat;height:15px;width:15px;line-height:15px;padding-left:6px;}.social li a{display:inline-block;height:15px;width:15px;}
 .social li.facebook{background-position:8px top;}.social li.facebook:hover{background-position:8px bottom;}
 .social li.twitter{background-position:-15px top;}.social li.twitter:hover{background-position:-15px bottom;}

@@ -287,6 +287,13 @@ function ek_prev_posts_attr($attr)
 	return $attr;
 }
 
+add_filter('the_title', 'ek_filter_title');
+function ek_filter_title($title)
+{
+	$title = str_replace('EK Interview:', '<strong>EK Interview:</strong>', $title);
+	return $title;
+}
+
 
 /**
  * Optional: set 'ot_show_pages' filter to false.
