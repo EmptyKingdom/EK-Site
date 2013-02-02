@@ -48,7 +48,6 @@ h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-si
 .illustration-art a.view-more,.illustration-art h5.random-article,.illustration-art h1.sub{color:#f33737;background:none;padding-left:0px;}
 .film h5.category{background:url(../img/slices/category-film.png) no-repeat;}.film h5.category a:hover{color:#000000;}
 .film .btn-default,.film .carousel-indicator li.active,.film ul.sub-menu{background:#000000 !important;}
-.film .carousel-control{background-color:#000000;}
 .film .btn:hover{background:#e5e5e5 !important;color:#000000 !important;}
 .film.menu-item.active,.film.current-menu-item,.film.current-menu-ancestor{border-bottom-color:#000000 !important;}.film.menu-item.active a,.film.current-menu-item a,.film.current-menu-ancestor a,.film.menu-item.active a:hover,.film.current-menu-item a:hover,.film.current-menu-ancestor a:hover{color:#000000 !important;}
 .film a.view-more,.film h5.random-article,.film h1.sub{color:#000000;background:none;padding-left:0px;}
