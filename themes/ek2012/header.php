@@ -46,6 +46,7 @@
 
 
 		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>-->
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/spin.min.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/clamp.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/mediaCheck-min.js"></script>
 		<!--<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>-->
