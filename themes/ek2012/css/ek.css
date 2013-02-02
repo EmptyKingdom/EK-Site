@@ -16,7 +16,7 @@ h2{font-family:'myriad-pro',sans-serif;font-size:16px;}
 h4{font-family:'myriad-pro',sans-serif;font-weight:normal;}h4 strong{color:#00b8ec;font-weight:600;}
 h5{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-size:11px;}
 #masthead{position:relative;}#masthead .main{position:relative;z-index:2;}
-#masthead .side{text-align:right;}@media (max-width:768px){#masthead .side{position:absolute;top:20px;}}@media (max-width:480px){#masthead .side{position:static;}}
+#masthead .side{text-align:right;}@media (max-width:768px){#masthead .side{position:absolute;top:20px;right:0px;}}@media (max-width:480px){#masthead .side{position:static;}}
 #masthead h1#logo{display:inline;}#masthead h1#logo img{margin:15px 0 0 0;}
 #masthead h2#tagline{font-size:14px;font-family:'myriad-pro',sans-serif;color:#999999;font-weight:normal;position:absolute;line-height:normal;display:inline;bottom:-3px;margin:0;left:392px;}@media (max-width:979px){#masthead h2#tagline{position:static;padding-left:0;display:block;margin:10px 0;}}
 #utility-menu{margin-bottom:0;height:24px;}
