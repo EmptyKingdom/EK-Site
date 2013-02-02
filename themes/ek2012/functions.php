@@ -213,62 +213,84 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 			));
 		}
 		
-		if ( ! $side_captions)
+		if ($carousel->slides->have_posts())
 		{
-			$carousel->show_caption = true;
-		}
-		// initialize all values
-		while($carousel->slides->have_posts()) : $carousel->slides->the_post(); global $post;
-			if ($carousel->type == 'slide_collection') :
-				// check for featured post
-				$featured_post = get_field('featured_post');
-				if (is_array($featured_post)) $featured_post = $featured_post[0];
-				if ($featured_post) :
-					// setup values from $post, falling back to $featured_post
-					$post->title = get_the_title() ? get_the_title() : $featured_post->title;
-					$post->link = $post->link ? $post->link : get_permalink($featured_post->ID);
-					$post->thumbnail = has_post_thumbnail() ? get_the_post_thumbnail($post->ID) : get_the_post_thumbnail($featured_post->ID);
-					$post->video_url = $post->featured_video ? $post->featured_video : $featured_post->featured_video;
-					$post->author = get_the_author_meta('display_name', $featured_post->post_author);
-					$post->author_link = get_author_posts_url($featured_post->post_author);
-					$post->date = get_the_time(get_option('date_format'), $featured_post);
-					$post->category = ek_get_cat($featured_post);
-					$post->excerpt = $post->post_content != '' ? get_the_content() : wp_trim_words($featured_post->post_content);
-				else :
-					// it's a slide with no related post, get all values from $post
-					$post->title = $post->post_title;
-					$post->link = $post->link ? $post->link : false;
+			// initialize all values
+			while($carousel->slides->have_posts()) 
+			{
+				$carousel->slides->the_post(); 
+				global $post;
+				if ($carousel->type == 'slide_collection')
+				{
+					// check for featured post
+					$featured_post = get_field('featured_post');
+					if (is_array($featured_post)) 
+					{
+						$featured_post = $featured_post[0];
+					}
+					if ($featured_post) 
+					{
+						// setup values from $post, falling back to $featured_post
+						$post->title = get_the_title() ? get_the_title() : $featured_post->title;
+						$post->link = $post->link ? $post->link : get_permalink($featured_post->ID);
+						$post->thumbnail = has_post_thumbnail() ? get_the_post_thumbnail($post->ID) : get_the_post_thumbnail($featured_post->ID);
+						$post->video_url = $post->featured_video ? $post->featured_video : $featured_post->featured_video;
+						$post->author = get_the_author_meta('display_name', $featured_post->post_author);
+						$post->author_link = get_author_posts_url($featured_post->post_author);
+						$post->date = get_the_time(get_option('date_format'), $featured_post);
+						$post->category = ek_get_cat($featured_post);
+						$post->excerpt = $post->post_content != '' ? get_the_content() : wp_trim_words($featured_post->post_content);
+					}
+					else
+					{
+						// it's a slide with no related post, get all values from $post
+						$post->title = $post->post_title;
+						$post->link = $post->link ? $post->link : false;
+						$post->thumbnail = get_the_post_thumbnail($post->ID);
+						$post->video_url = $post->featured_video;
+						$post->excerpt = get_the_content();
+					}
+				}  
+				else
+				{
+					// carousel is recent posts, get all values from $post
+					$post->title = get_the_title();
+					$post->link = get_permalink($post->ID);
 					$post->thumbnail = get_the_post_thumbnail($post->ID);
 					$post->video_url = $post->featured_video;
-					$post->excerpt = get_the_content();
-				endif;
-			else : 
-				// carousel is recent posts, get all values from $post
-				$post->title = get_the_title();
-				$post->link = get_permalink($post->ID);
-				$post->thumbnail = get_the_post_thumbnail($post->ID);
-				$post->video_url = $post->featured_video;
-				$post->author = get_the_author_meta('display_name', $post->post_author);
-				$post->date = get_the_time(get_option('date_format'));
-				$post->category = ek_get_cat($post);
-				$post->excerpt = get_the_excerpt();
-			endif;
-			if ($post->video_url) :
-				// determine video provider
-				if (preg_match('%vimeo\.com\/([0-9]*)%', $post->video_url, $video_code)) :
-					$post->video_provider = 'vimeo';
-					$post->video_code = $video_code;
-				elseif (preg_match('%(?:youtube\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->video_url, $video_code)) :
-					$post->video_provider = 'youtube';
-					$post->video_code = $video_code;
-				endif;
-			endif;
-		endwhile;
+					$post->author = get_the_author_meta('display_name', $post->post_author);
+					$post->date = get_the_time(get_option('date_format'));
+					$post->category = ek_get_cat($post);
+					$post->excerpt = get_the_excerpt();
+				}
+				if ($post->video_url)
+				{
+					// determine video provider
+					if (preg_match('%vimeo\.com\/([0-9]*)%', $post->video_url, $video_code))
+					{
+						$post->video_provider = 'vimeo';
+						$post->video_code = $video_code;
+					}
+					else if (preg_match('%(?:youtube\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->video_url, $video_code))
+					{
+						$post->video_provider = 'youtube';
+						$post->video_code = $video_code;
+					}
+				}
+				if ( ! $side_captions)
+				{
+					$carousel->show_caption = true;
+				}
+			}
+		}
+		else
+		{
+			unset($carousels[$i]);
+		}
 	}
-	if ( ! $carousel->slides->post_count)
-	{
-		unset($carousels[$i]);
-	}
+
+	unset($carousel);
+
 	$carousels = array_values($carousels);
 	include(locate_template('partials/carousels.php'));
 }
