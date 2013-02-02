@@ -1038,7 +1038,8 @@ body.home {
 			margin-bottom: 45px;
 			height: 360px;
 			.span4 {
-				.transition(e('.4s ease width'));
+				min-width: 45%;
+				.transition(e('.4s ease min-width'));
 				.thumbnail {
 					overflow: hidden;
 					max-height: 190px;
@@ -1050,10 +1051,10 @@ body.home {
 		.row {
 			margin-left: 0;
 			.span4 {
-				width: 100%;
+				min-width: 100%;
 				margin-left: 0;
 				margin-bottom: 45px;
-				.transition(e('.4s ease width'));
+				.transition(e('.4s ease min-width'));
 				.thumbnail {
 					max-height:none;
 				}
