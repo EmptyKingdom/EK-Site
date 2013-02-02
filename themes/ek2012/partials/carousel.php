@@ -5,12 +5,12 @@
  			<div class="<?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> item" data-description="#section-<?php echo $i ?>-slide-<?php the_id() ?>">
 				<?php if ( ! $hide_title) : ?>
 						<h1><a href="<?php echo $post->link ?>"><?php echo $post->title; ?></a></h1>
-						<?php if ($post->author || $post->date) : ?>
 							<div class="postmeta clearfix">
-								<p class="author">by <a href="<?php echo $post->author_link ?>" rel="author"><?php echo $post->author ?></a></p>
-								<p class="date"><?php echo $post->date ?></p>
+								<?php if ($post->author || $post->date) : ?>
+									<p class="author">by <a href="<?php echo $post->author_link ?>" rel="author"><?php echo $post->author ?></a></p>
+									<p class="date"><?php echo $post->date ?></p>
+								<?php endif; ?>
 							</div> <!-- /.postmeta -->
-						<?php endif; ?>
 				<?php endif; // ! $hide_title ?>
 				<a href="<?php echo $post->link ? $post->link : 'javascript:void(0)' ?>"<?php
 					if ($post->video_code) : ?>
@@ -21,6 +21,8 @@
 					<div class="caption">
 						<?php if ($post->category) : ?>
 							<h5 class="category"><?php echo $post->category->name ?></h5>
+						<?php else :  ?>
+							<h5>&nbsp;</h5>
 						<?php endif; ?>
 						<p><?php echo $post->excerpt; ?></p>
 						<?php if ($post->link) : ?>

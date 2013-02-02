@@ -566,14 +566,14 @@ hr.dotted {
 	}
 	&#ad-slot-1 {
 		div {
-			padding: 32px 0;
+			padding: 0;
 			@media (min-width: 768px) and (max-width: 979px) {
-				padding: 0;
 				iframe {
 					height: 190px;
 				}
 			}
 			@media (min-width: 1200px) {
+				padding: 32px 0;
 				background-color: @paleGray;
 			}
 		}
@@ -653,6 +653,13 @@ body.home {
 
 .carousel {
 	margin-bottom: 0;
+	height: 578px;
+	@media (min-width: 1200px) {
+		height: 625px;
+	}
+	@media(max-width: 979px) {
+		height: auto;
+	}
 	&.carousel-fade {
 		.item {
 			.transition(.4s ease-in-out opacity);
@@ -688,6 +695,10 @@ body.home {
 				width: 100%;
 			}
 		}
+	}
+	.postmeta {
+		height: 13px;
+		margin-bottom: 10px;
 	}
 	.caption p {
 		line-height: 20px;
@@ -1188,7 +1199,7 @@ a {
 /* SIDEBAR & WIDGETS */
 
 #sidebar {
-	padding-top: 68px;
+	padding-top: 61px;
 	.widget {
 		background-color: whitesmoke;
 		border-bottom: 4px solid @linkHighlight;
