@@ -1,5 +1,5 @@
 <?php if ($side_captions) : ?>
-	<div class="span8">
+	<div class="span8 has-side-captions">
 <?php endif; ?>
 <?php
 foreach ($carousels as $i => $carousel) :
@@ -32,7 +32,7 @@ endforeach;
 			<?php if ($carousel->slides->have_posts()) : ?>
 			<ul class="unstyled">
 				<?php while($carousel->slides->have_posts()) : $carousel->slides->the_post(); global $post; ?>
-				<li class="slide-description <?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> <?php echo $post->category->slug ?>" id="slide-<?php the_id() ?>">
+				<li class="slide-description <?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> <?php echo $post->category->slug ?>" id="section-<?php echo $i ?>-slide-<?php the_id() ?>">
 					<?php if ($post->category) : ?>
 					<h5 class="category"><?php echo $post->category->name ?></h5>
 					<?php endif; ?>

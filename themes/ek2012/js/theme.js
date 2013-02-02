@@ -60,18 +60,24 @@ $(document).ready(function($){
 		}
 	}, 'input')
 	
-	$('#feature .carousel').carousel({
-		interval: 100000
+	$('.carousel').carousel({
+		interval: 7000
 	}).on({
 		slide: function(e){
-			// e.relatedTarget is the slide coming in, but it's broken when the first slide is the one coming in
-			var nextSlide = e.relatedTarget || $(this).find('.item:first').get(0);
+			var $this = $(this);
 			
-			// activate the description element in the carousel sidebar
-			var $descriptionEl = $($(nextSlide).data('description'));
-			$descriptionEl.siblings().removeClass('active');
-			$descriptionEl.addClass('active');
-			$(this).find('a.video iframe').each(function(i, e){
+			if ($this.parent().hasClass('has-side-captions')) {
+				// e.relatedTarget is the slide coming in, but it's broken when the first slide is the one coming in
+				var nextSlide = e.relatedTarget || $(this).find('.item:first').get(0);
+
+				// activate the description element in the carousel sidebar
+				var $descriptionEl = $($(nextSlide).data('description'));
+				$descriptionEl.siblings().removeClass('active');
+				$descriptionEl.addClass('active');
+			}
+
+			// stop all videos
+			$this.find('a.video iframe').each(function(i, e){
 				var f = $(e),
     			url = f.attr('src').split('?')[0];
 			    f[0].contentWindow.postMessage(JSON.stringify({method: 'pause'}), url);
@@ -79,8 +85,6 @@ $(document).ready(function($){
 		}, 
 		slid: updateCarouselIndicator
 	});
-	
-/* 	$('#category-carousel .carousel').carousel({interval: 5000}); */
 	
 	$('.carousel-indicator').on({
 		click: function(e) {
@@ -113,8 +117,6 @@ $(document).ready(function($){
 			// switch the selected carousel section content
 			$('.carousel-section-content').removeClass('active');
 			$($this.data('section')).addClass('active');
-			$('.carousel-section-content').not('.active').hide();
-			$('.carousel-section-content.active').show();
 			
 			// switch the selected carousel
 			$('#feature .carousel').removeClass('active');
