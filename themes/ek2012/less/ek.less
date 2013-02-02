@@ -600,6 +600,10 @@ body.home {
 	.carousel {
 		margin-top: @grid * 2;
 		display: none;
+		height: 318px;
+		@media (min-width: 1200px) {
+			height: 395px;
+		}
 		&.active {
 			display: block;
 		}
