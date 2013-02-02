@@ -99,7 +99,7 @@ function ek_register_stuff() {
 		'supports' => array('title', 'editor', 'thumbnail'),
 	); 
 
-	register_post_type('offsite_product', $args);
+	// register_post_type('offsite_product', $args);
 
 	if ( ! is_admin())
 	{
