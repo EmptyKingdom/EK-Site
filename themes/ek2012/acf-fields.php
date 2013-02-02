@@ -1,81 +1,81 @@
 <?php 
  
 	// Field groups on Offsite Products
-	register_field_group(array (
-		'id' => '50ca13fd17677',
-		'title' => 'Offsite Products',
-		'fields' => 
-		array (
-			0 => 
-			array (
-				'key' => 'field_50c3bd6f7cfc4',
-				'label' => 'Artist Name',
-				'name' => 'artist_name',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => '0',
-				'default_value' => '',
-				'formatting' => 'html',
-				'order_no' => '0',
-			),
-			1 => 
-			array (
-				'key' => 'field_50c3bd6f7f8ac',
-				'label' => 'Artist URL',
-				'name' => 'artist_url',
-				'type' => 'text',
-				'instructions' => 'Enter the entire url, including "http://"',
-				'required' => '0',
-				'default_value' => '',
-				'formatting' => 'none',
-				'order_no' => '1',
-			),
-			2 => 
-			array (
-				'key' => 'field_50c3bd9965f6c',
-				'label' => 'Product URL',
-				'name' => 'product_url',
-				'type' => 'text',
-				'instructions' => 'Enter the entire url, including "http://"',
-				'required' => '0',
-				'default_value' => '',
-				'formatting' => 'none',
-				'order_no' => '2',
-			),
-		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'offsite_product',
-					'order_no' => '0',
-				),
-			),
-			'allorany' => 'all',
-		),
-		'options' => 
-		array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => 
-			array (
-				0 => 'the_content',
-				1 => 'excerpt',
-				2 => 'custom_fields',
-				3 => 'discussion',
-				4 => 'comments',
-				5 => 'revisions',
-				6 => 'slug',
-				7 => 'author',
-				8 => 'format',
-			),
-		),
-		'menu_order' => 0,
-	));
+	// register_field_group(array (
+	// 	'id' => '50ca13fd17677',
+	// 	'title' => 'Offsite Products',
+	// 	'fields' => 
+	// 	array (
+	// 		0 => 
+	// 		array (
+	// 			'key' => 'field_50c3bd6f7cfc4',
+	// 			'label' => 'Artist Name',
+	// 			'name' => 'artist_name',
+	// 			'type' => 'text',
+	// 			'instructions' => '',
+	// 			'required' => '0',
+	// 			'default_value' => '',
+	// 			'formatting' => 'html',
+	// 			'order_no' => '0',
+	// 		),
+	// 		1 => 
+	// 		array (
+	// 			'key' => 'field_50c3bd6f7f8ac',
+	// 			'label' => 'Artist URL',
+	// 			'name' => 'artist_url',
+	// 			'type' => 'text',
+	// 			'instructions' => 'Enter the entire url, including "http://"',
+	// 			'required' => '0',
+	// 			'default_value' => '',
+	// 			'formatting' => 'none',
+	// 			'order_no' => '1',
+	// 		),
+	// 		2 => 
+	// 		array (
+	// 			'key' => 'field_50c3bd9965f6c',
+	// 			'label' => 'Product URL',
+	// 			'name' => 'product_url',
+	// 			'type' => 'text',
+	// 			'instructions' => 'Enter the entire url, including "http://"',
+	// 			'required' => '0',
+	// 			'default_value' => '',
+	// 			'formatting' => 'none',
+	// 			'order_no' => '2',
+	// 		),
+	// 	),
+	// 	'location' => 
+	// 	array (
+	// 		'rules' => 
+	// 		array (
+	// 			0 => 
+	// 			array (
+	// 				'param' => 'post_type',
+	// 				'operator' => '==',
+	// 				'value' => 'offsite_product',
+	// 				'order_no' => '0',
+	// 			),
+	// 		),
+	// 		'allorany' => 'all',
+	// 	),
+	// 	'options' => 
+	// 	array (
+	// 		'position' => 'normal',
+	// 		'layout' => 'no_box',
+	// 		'hide_on_screen' => 
+	// 		array (
+	// 			0 => 'the_content',
+	// 			1 => 'excerpt',
+	// 			2 => 'custom_fields',
+	// 			3 => 'discussion',
+	// 			4 => 'comments',
+	// 			5 => 'revisions',
+	// 			6 => 'slug',
+	// 			7 => 'author',
+	// 			8 => 'format',
+	// 		),
+	// 	),
+	// 	'menu_order' => 0,
+	// ));
  
 	// Field groups on Slide post type
 	register_field_group(array (

@@ -121,7 +121,7 @@ $carousel_sections = array(
 	'photography_cat' 			=> 'Photography Category',
 	'the_interviews_cat'		=> 'The Interviews Category',
 	'the_mausoleum_cat' 		=> 'The Mausoleum Category',
-	'offsite_products'			=> 'Offsite Products',
+	// 'offsite_products'			=> 'Offsite Products',
 );
 
 /**
