@@ -16,7 +16,7 @@ get_header(); ?>
 		<?php while(have_posts()) : the_post(); ?>
 			<h1><?php the_title(); ?></h1>
 			<div class="meta clearfix">
-				<p class="author">by <?php the_author(); ?><span class="date">Published on <?php the_time(get_option('date_format')) ?></span></p>
+				<p class="author">by <?php the_author_posts_link(); ?><span class="date">Published on <?php the_time(get_option('date_format')) ?></span></p>
 				<h5 class="category"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></h5>
 				<p class="posts-nav">
 					<?php if ($p) : ?>

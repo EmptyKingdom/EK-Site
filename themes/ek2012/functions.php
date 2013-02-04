@@ -263,6 +263,7 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 					$post->thumbnail = get_the_post_thumbnail($post->ID);
 					$post->video_url = $post->featured_video;
 					$post->author = get_the_author_meta('display_name', $post->post_author);
+					$post->author_link = get_author_posts_url($post->post_author);
 					$post->date = get_the_time(get_option('date_format'));
 					$post->category = ek_get_cat($post);
 					$post->excerpt = get_the_excerpt();

@@ -38,9 +38,9 @@ endforeach;
 					<?php endif; ?>
 					<h3><?php echo $post->title ?></h3>
 					<?php if ($post->date || $post->author) : ?>
-					<p class="postmeta"><?php echo $post->date ?> by  <?php echo $post->author ?></p>
+						<p class="author">by <a href="<?php echo $post->author_link ?>" rel="author"><?php echo $post->author ?></a></p>
 					<?php endif; ?>
-					<p><?php echo $post->excerpt ?></p>
+					<p class="excerpt"><?php echo $post->excerpt ?></p>
 					<?php if ($post->link) : ?>
 						<a class="btn btn-default" href="<?php echo $post->link ?>">View More...</a>
 					<?php endif; ?>

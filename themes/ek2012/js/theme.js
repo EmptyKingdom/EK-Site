@@ -393,7 +393,7 @@ $(document).ready(function($){
 
 	if ($('.slide-description').length) {
 
-		$('.slide-description p').not('.postmeta').each(function(i, e){
+		$('.slide-description p.excerpt').each(function(i, e){
 			var $this = $(this);
 			$this.data('orig_text', $this.text());
 		})
@@ -402,30 +402,30 @@ $(document).ready(function($){
 			mediaCheck({
 				media: '(max-width: 767px)',
 				entry: function(){
-					resetClamped($('.slide-description p').not('.postmeta'));
+					resetClamped($('.slide-description p.excerpt'));
 				}
 			})
 
 			mediaCheck({
 				media: '(min-width: 980px) and (max-width: 1200px)',
 				entry: function() {
-					$('.slide-description p').not('.postmeta').each(function(i, e){
+					$('.slide-description p.excerpt').each(function(i, e){
 				        $clamp(e, {clamp: 6, useNativeClamp: false});
 					})
 				},
 				exit: function() {
-					resetClamped($('.slide-description p').not('.postmeta'));
+					resetClamped($('.slide-description p.excerpt'));
 				}
 			});
 			mediaCheck({
 				media: '(min-width: 768px) and (max-width: 979px)',
 				entry: function() {
-					$('.slide-description p').not('.postmeta').each(function(i, e){
+					$('.slide-description p.excerpt').each(function(i, e){
 				        $clamp(e, {clamp: 2, useNativeClamp: false});
 					})
 				},
 				exit: function() {
-					resetClamped($('.slide-description p').not('.postmeta'));
+					resetClamped($('.slide-description p.excerpt'));
 				}
 			});
 		}, 100);
