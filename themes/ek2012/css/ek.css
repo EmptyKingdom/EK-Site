@@ -223,6 +223,7 @@ body.single .post-share li.pinterest:before,body.page .post-share li.pinterest:b
 body.single .post-share li.pinterest.active,body.page .post-share li.pinterest.active{color:#d84b1e !important;}
 body.single .post-share li.email:before,body.page .post-share li.email:before{background-color:#333333;}
 body.single .post-share li.email.active,body.page .post-share li.email.active{color:#333333 !important;}
+body.single .post-share li.email.action,body.page .post-share li.email.action{width:auto;overflow:visible;}
 body.single .post-content,body.page .post-content{clear:both;}body.single .post-content .img-sharer,body.page .post-content .img-sharer{position:relative;display:inline-block;max-width:100%;}body.single .post-content .img-sharer:hover ul,body.page .post-content .img-sharer:hover ul{display:block;}
 body.single .post-content .img-sharer ul,body.page .post-content .img-sharer ul{display:none;position:absolute;top:10px;right:10px;margin-bottom:0px;}body.single .post-content .img-sharer ul li,body.page .post-content .img-sharer ul li{background-color:#FFF;border:7px solid #FFF;border-width:7px 5px 8px 4px;}
 body.single .post-addendum,body.page .post-addendum{margin-bottom:30px;}body.single .post-addendum h2,body.page .post-addendum h2{background:#000000 url(../img/slices/star-blue-hdr.png) no-repeat 8px center;padding:0 28px;color:#FFF;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:32px;margin:24px 0;overflow:hidden;}
