@@ -138,7 +138,7 @@ function ek_get_cat($post = false, $property = false, $parent = true)
 			{
 				$category = ek_get_root_category($category);
 			}
-			if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum', 'gallery-spotlight'), true)) 
+			if (in_array($category->slug, array('illustration-art', 'film', 'photography', 'new-media', 'the-interviews', 'the-mausoleum', 'gallery-spotlight', 'featured'), true)) 
 			{
 				$the_category = $category;
 				break;
@@ -146,7 +146,7 @@ function ek_get_cat($post = false, $property = false, $parent = true)
 		}
 	}
 	if ( ! $the_category)
-		return false;
+		$the_category = new stdClass;
 	if ($property)
 		return $the_category->$property;
 	return $the_category;
