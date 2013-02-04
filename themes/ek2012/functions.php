@@ -216,8 +216,8 @@ function ek_display_carousels($carousels, $class_base = 'category', $side_captio
 				'meta_key' => '_thumbnail_id',
 			));
 		}
-		
-		if ($carousel->slides->have_posts())
+
+		if ($carousel->slides->post_count)
 		{
 			// initialize all values
 			while($carousel->slides->have_posts()) 
