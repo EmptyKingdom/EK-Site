@@ -24,9 +24,8 @@ class EK_Widget_Random_Articles extends WP_Widget {
 	    extract( $args );
 
 	    // don't lazy load images in this widget
-		remove_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
-		remove_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
-		
+		ek_pause_lazyload();
+
 		echo $before_widget;
 		if ($instance['title'])
 		{
@@ -60,8 +59,7 @@ class EK_Widget_Random_Articles extends WP_Widget {
 		<?php
 
 		// put lazyload filters back 
-		add_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
-		add_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+		ek_resume_lazyload();
 	}
  
     /** @see WP_Widget::update -- do not rename this */

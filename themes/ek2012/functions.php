@@ -321,6 +321,18 @@ function ek_filter_title($title)
 	return $title;
 }
 
+function ek_pause_lazyload()
+{
+	remove_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
+	remove_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+}
+
+function ek_resume_lazyload()
+{
+	add_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
+	add_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+}
+
 
 /**
  * Optional: set 'ot_show_pages' filter to false.

@@ -33,7 +33,9 @@ get_header(); ?>
 			</div> <!-- /.meta -->
 			<?php get_template_part('/partials/post', 'actions') ?>
 			<div class="post-content">
+				<?php ek_pause_lazyload(); ?>
 				<?php the_content(); ?>
+				<?php ek_resume_lazyload(); ?>
 				<hr>
 				<p><span class="highlight">Posted in:</span> <?php the_category(', ') ?><br>
 				<span class="highlight">Tags:</span> <?php the_tags(''); ?></p>
