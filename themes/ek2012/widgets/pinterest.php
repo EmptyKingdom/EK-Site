@@ -114,7 +114,7 @@ class EK_Pinterest_Widget extends WP_Widget {
                 $title = $pin['title'];
                 $url = $pin['url'];
                 $image = $pin['image'];
-                echo("<a class=\"span1\" href=\"$url\"><img src=\"$image\" alt=\"$title\" title=\"$title\" /></a>");
+                echo("<a class=\"span1\" href=\"$url\" target="_blank"><img src=\"$image\" alt=\"$title\" title=\"$title\" /></a>");
                 $count++;
                 if ($count >= $cols) {
                     echo("</div>");
