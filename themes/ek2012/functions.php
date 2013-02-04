@@ -63,11 +63,15 @@ function ek_register_stuff() {
 		'add_new_item' => __('Add New Slide', 'ek'),
 	);
 	$args = array(
+		'label' => 'slides',
 		'labels' => $labels,
+		'description' => 'Slides that can be assigned to collections for the various slide carousels used throughout the site.',
 		'public' => true,
+		'exclude_from_search' => true,
 		'publicly_queryable' => true,
 		'show_ui' => true, 
 		'show_in_menu' => true, 
+		'show_in_nav_menus' => false,
 		'query_var' => true,
 		'rewrite' => false,
 		'capability_type' => 'post',
