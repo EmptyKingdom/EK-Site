@@ -220,7 +220,6 @@ $(document).ready(function($){
 				function(data) {
 		        	$container.html(data.html);
 					player = $container.find('iframe')[0];
-					$(player).attr('id', videoData.id).css({'width' : '100%', 'height' : '100%'});
 				}
 			);
 		}
@@ -457,15 +456,27 @@ function clampGrid() {
 
 var viewControls = {
 	gridView: function(target) {
+		$('iframe', target).css('height', '');
+		$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
+			clampGrid();
+			$('iframe', target).each(function(){
+				var $this = $(this);
+				$this.height($this.closest('.thumbnail').outerHeight());		
+			});
+		});
 		$('#grid-view').addClass('active');
 		$('#list-view').removeClass('active');
 		this.switchView('list', 'grid', target);
-		setTimeout(function(){
-			clampGrid();
-		}, 500);
 	},
 
 	listView: function(target) {
+		$('iframe', target).css('height', '');
+		$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
+			$('iframe', target).each(function(){
+				var $this = $(this);
+				$this.height($this.closest('.thumbnail').outerHeight());		
+			});
+		});
 		$('#list-view').addClass('active');
 		$('#grid-view').removeClass('active');
 		this.switchView('grid', 'list', target);
