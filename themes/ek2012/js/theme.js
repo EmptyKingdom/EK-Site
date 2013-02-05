@@ -249,7 +249,8 @@ $(document).ready(function($){
 			             ',width='  + width  +
 		    	         ',height=' + height +
 		        	     ',top='    + top    +
-		            	 ',left='   + left
+		            	 ',left='   + left;
+		        console.log(opts);
 			window.open(url, 'sharer', opts);
 		}
 	}, '.social a');
