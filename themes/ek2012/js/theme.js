@@ -249,8 +249,7 @@ $(document).ready(function($){
 			             ',width='  + width  +
 		    	         ',height=' + height +
 		        	     ',top='    + top    +
-		            	 ',left='   + left;
-		        console.log(opts);
+		            	 ',left='   + left
 			window.open(url, 'sharer', opts);
 		}
 	}, '.social a');
