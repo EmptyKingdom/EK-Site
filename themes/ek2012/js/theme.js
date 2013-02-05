@@ -66,7 +66,8 @@ $(document).ready(function($){
 
 	// set up carousel behavior (interval, switch descriptions, stop videos, update indicator)
 	$('.carousel').carousel({
-		interval: 7000
+		interval: 7000, 
+		pause: 'hover'
 	}).on({
 		slide: function(e){
 			var $this = $(this);
@@ -126,6 +127,16 @@ $(document).ready(function($){
 			$($this.data('carousel')).addClass('active');
 		}
 	}, 'a');
+
+	// pause carousel when descriptions hovered 
+	$('#carousel-sections').hover(
+		function(){
+			$('#feature .carousel').carousel('pause');
+		},
+		function(){
+			$('#feature .carousel').carousel('cycle');
+		}
+	)
 	
 	// attach event handlers to view control buttons
 	$('#view-controls').on({
@@ -219,7 +230,7 @@ $(document).ready(function($){
 				'&title=0&byline=0&portrait=0&api=1&autoplay=1&portrait=0&callback=?', 
 				function(data) {
 		        	$container.html(data.html);
-					player = $container.find('iframe')[0];
+		        	$('.carousel').carousel('pause');
 				}
 			);
 		}
