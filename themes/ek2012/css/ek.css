@@ -33,7 +33,7 @@ h5{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-size:11px;}
 #main-nav #main-menu-container #main-menu>li div>ul li:hover{background-color:#333 !important;}
 #main-nav #main-menu-container #main-menu>li.active div>ul{left:0px;max-height:600px;opacity:1;visibility:visible;}
 #main-nav #main-menu-container #main-menu>li:hover,#main-nav #main-menu-container #main-menu>li.current-menu-item{border-bottom-color:#00b8ec;cursor:pointer;}#main-nav #main-menu-container #main-menu>li:hover a,#main-nav #main-menu-container #main-menu>li.current-menu-item a{color:#00b8ec;}
-h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-size:11px;background:url(../img/slices/sprites.png) no-repeat;height:11px;padding-top:2px;line-height:13px;padding-left:17px;margin:16px 0;vertical-align:90%;}
+h5.category{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-size:11px;background:url(../img/slices/sprites.png) no-repeat;height:11px;padding-top:2px;line-height:11px;padding-left:17px;margin:16px 0;vertical-align:90%;}
 .photography h5.category{background:url(../img/slices/category-photography.png) no-repeat;}.photography h5.category a:hover{color:#faa634;}
 .photography .btn-default,.photography .carousel-indicator li.active,.photography ul.sub-menu{background:#faa634 !important;}
 .photography .carousel-control{background-color:#faa634;}
