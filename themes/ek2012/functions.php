@@ -105,7 +105,7 @@ function ek_register_stuff() {
 
 	// register_post_type('offsite_product', $args);
 
-	if ( ! is_admin())
+	if ( ! is_admin() && ! in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))
 	{
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js', false, '1.8.1');
