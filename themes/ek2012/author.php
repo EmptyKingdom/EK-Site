@@ -4,6 +4,7 @@ $curauth = $wp_query->get_queried_object();
 $pinterest = get_field('pinterest', 'user_'.$curauth->ID);
 $facebook = get_field('facebook', 'user_'.$curauth->ID);
 $twitter = get_field('twitter', 'user_'.$curauth->ID);
+$tumblr = get_field('tumblr', 'user_'.$curauth->ID);
 $location = get_field('location', 'user_'.$curauth->ID);
 get_header(); ?>
 <div id="author-panel" class="container">
@@ -20,7 +21,8 @@ get_header(); ?>
 					<?php if ($pinterest || $facebook || $twitter) : ?>
 					<div class="social-links pull-right">
 						<p>Stalk me here: </p>
-						<ul class="unstyled ek-social" id="utility-menu">
+						<ul class="unstyled ek-social">
+							<?php if ($tumblr) : ?><li class="tumblr icon"><a href="<?php echo $tumblr ?>" target="_blank">Tumblr</a></li><?php endif; ?>
 							<?php if ($pinterest) : ?><li class="pinterest icon"><a href="<?php echo $pinterest ?>" target="_blank">Pinterest</a></li><?php endif; ?>
 							<?php if ($facebook) : ?><li class="facebook icon"><a href="<?php echo $facebook ?>" target="_blank">Facebook</a></li><?php endif; ?>
 							<?php if ($twitter) : ?><li class="twitter icon"><a href="<?php echo $twitter ?>" target="_blank">Twitter</a></li><?php endif; ?>

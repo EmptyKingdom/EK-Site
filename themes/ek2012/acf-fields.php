@@ -316,6 +316,32 @@
 				'default_value' => '',
 				'formatting' => 'none',
 			),
+			4 => 
+			array (
+				'key' => 'field_19',
+				'label' => 'Tumblr',
+				'name' => 'tumblr',
+				'type' => 'text',
+				'order_no' => 4,
+				'instructions' => 'Full link to your Tumblr',
+				'required' => 0,
+				'conditional_logic' => 
+				array (
+					'status' => 0,
+					'rules' => 
+					array (
+						0 => 
+						array (
+							'field' => 'null',
+							'operator' => '==',
+							'value' => '',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'formatting' => 'none',
+			),
 		),
 		'location' => 
 		array (

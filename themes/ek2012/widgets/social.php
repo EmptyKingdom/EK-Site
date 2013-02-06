@@ -31,7 +31,8 @@ class EK_Widget_Social extends WP_Widget {
 		} 
 		?>
 		<ul class="unstyled">
-			<li class="vimeo icon"><a href="http://vimeo.com/emptykingdom" target="_blank">Vimeo</a></li>
+			<li class="tumblr icon"><a href="http://emptykingdom.tumblr.com" target="_blank">Tumblr</a></li>
+			<li class="vimeo icon"><a href="http://vimeo.com/emptykingdomstudios" target="_blank">Vimeo</a></li>
 			<li class="pinterest icon"><a href="http://pinterest.com/emptykingdom/" target="_blank">Pinterest</a></li>
 			<li class="facebook icon"><a href="https://www.facebook.com/myemptykingdom" target="_blank">Facebook</a></li>
 			<li class="twitter icon"><a href="http://twitter.com/emptykingdom" target="_blank">Twitter</a></li>
