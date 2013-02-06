@@ -305,6 +305,9 @@ h5 {
 		    	    	width: 100%;
 		    	    }
 				    >ul {
+				    	@media(max-width: 767px) {
+				    		display: none !important;
+				    	}
 				    	text-transform: lowercase;
 				    	font-weight: bold;
 				    	left: -100000px;
@@ -1835,9 +1838,6 @@ body.touch-device {
 		.action {
 			display: block !important;
 		}
-	}
-	ul.sub-menu {
-		display: none !important;
 	}
 	#basic-search input {
 		width: 182px;
