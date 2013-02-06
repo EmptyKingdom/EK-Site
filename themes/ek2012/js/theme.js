@@ -5,6 +5,12 @@ $(document).ready(function($){
 		$('body').addClass('touch-device');
 	}
 
+	var features;
+	(function(s, features) {
+	    features.transitions = 'transition' in s || 'webkitTransition' in s || 'MozTransition' in s || 'msTransition' in s || 'OTransition' in s;
+	})(document.createElement('div').style, features || (features = {}));
+	console.log(features.transitions);
+
 	// inject share icons on all images in single post content
 	$('body.single-post .post-content img').each(function(){
 
