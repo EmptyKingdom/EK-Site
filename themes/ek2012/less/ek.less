@@ -120,8 +120,12 @@ h5 {
 			top: 20px;
 			right: 0px;
 		}
-		@media (max-width: 480px) {
+		@media (max-width: 568px) { // iphone5 landscape needs the social links and search below the tagline, or else tumblr collides with logo
 			position: static;
+			text-align: left;
+			.ek-social {
+				margin-left: -8px;
+			}
 		}
 	}
 	position: relative;
@@ -233,11 +237,22 @@ h5 {
 		line-height: normal;
 		.transition(.4s ease-in-out all);
 		color: @linkHighlight;
-		&.expanded {
+			&.expanded {
 			width: 182px;
 			background-color: @paleGray;
 			padding-left: @grid*3;
 			cursor: auto;
+		}
+		@media(max-width: 568px) { // iphone5 landscape
+			background-color: @paleGray;
+			padding-left: @grid*3;
+			line-height: normal;
+			width: 100%;
+			height: 24px;
+			position: static;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
 		}
 	}
 }
@@ -254,15 +269,15 @@ h5 {
 	    margin-left: -6px;
 	    width: 100.8%;
 	    position: relative;
-	    @media (max-width: 480px) {
-	    	display: block;
+	    @media (max-width: 568px) { // iphone5 landscape
+	    	display: none;
 	    }
 	    #main-menu {
 		    display: table-row;
-    	    @media (max-width: 480px) {
-    	    	display: block;
-    	    	margin: 0;
-    	    }
+    	    // @media (max-width: 480px) {
+    	    // 	display: block;
+    	    // 	margin: 0;
+    	    // }
 		    >li {
 			    display: table-cell;
 			    text-align: center;
@@ -273,21 +288,21 @@ h5 {
 			    font-size: 12px;
 			    font-weight: bold;
 			    line-height: 0;
-	    	    @media (max-width: 480px) {
-	    	    	display: block;
-	    	    	position: relative;
-	    	    }
+	    	    // @media (max-width: 480px) {
+	    	    // 	display: block;
+	    	    // 	position: relative;
+	    	    // }
 			    &.fixed-width {
 				    width: 150px;
 				    padding: 0;
-		    	    @media (max-width: 480px) {
-		    	    	width: 100%;
-		    	    }
+		    	    // @media (max-width: 480px) {
+		    	    // 	width: 100%;
+		    	    // }
 				    div {
 					    width: 150px;
-			    	    @media (max-width: 480px) {
-			    	    	width: 100%;
-			    	    }
+			    	    // @media (max-width: 480px) {
+			    	    // 	width: 100%;
+			    	    // }
 				    }
 			    }
 			    >a {
@@ -300,10 +315,10 @@ h5 {
 		    		z-index: 10000000;
 					overflow: visible;
 					height: 0px;
-		    	    @media (max-width: 480px) {
-		    	    	top: 24px;
-		    	    	width: 100%;
-		    	    }
+		    	    // @media (max-width: 480px) {
+		    	    // 	top: 24px;
+		    	    // 	width: 100%;
+		    	    // }
 				    >ul {
 				    	@media(max-width: 767px) {
 				    		display: none !important;
@@ -602,6 +617,11 @@ hr.dotted {
 			@media (min-width: 1200px) {
 				padding: 32px 0;
 				background-color: @paleGray;
+			}
+			@media (max-width: 568px) { // iphone5 landscape
+				margin-top: 20px;
+				border-top: 1px solid @lightGray;
+				padding-top: 20px;
 			}
 		}
 	}
@@ -1245,6 +1265,9 @@ a {
 		border-bottom: 4px solid @linkHighlight;
 		margin-top: 24px;
 		overflow: hidden;
+		@media(max-width: 568px) { // iphone5 landcsape
+			display: none;
+		}
 		h4 {
 			background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
 			padding: 0 15px 0 28px;
@@ -1369,14 +1392,6 @@ a {
 				}
 			}
 		}
-		.featured-archive {
-			background: none;
-			border: none;
-			font-weight: 600;
-			line-height: 18px;
-			height: 18px;
-			font-size: 18px;
-		}
 		&.widget_text {
 			padding: 0;
 			background-color: #FFF;
@@ -1390,6 +1405,18 @@ a {
 			}
 		}
 	}
+	.featured-archive {
+		background: none;
+		border: none;
+		font-weight: 600;
+		line-height: 18px;
+		height: 18px;
+		font-size: 18px;
+		@media (max-width: 568px) { // iphone5 landscape
+			display: none !important;
+		}
+	}
+
 }
 
 .newsletter-signup {
@@ -1427,6 +1454,9 @@ a {
 		@media (min-width: 768px) and (max-width: 979px){
 			background-image: none !important;
 		}
+		@media (max-width: 480px){
+			background-image: none !important;
+		}
 	}
 }
 
@@ -1435,6 +1465,12 @@ a {
 #footer {
 	background: #111;
 	font-size: 11px;
+	@media (max-width: 767px) {
+		position: relative;
+		margin-left: -20px;
+		margin-right: -20px;
+		top: 20px;
+	}
 	h4 {
 		margin: 18px 0;
 		color: @lightGray;
@@ -1447,6 +1483,9 @@ a {
 	}
 	.widget {
 		margin-bottom: 45px;
+		@media (max-width: 568px) { // iphone5 landscape
+			margin-bottom: 20px;
+		}
 		&.newsletter-signup {
 			h4 {
 			}
@@ -1474,22 +1513,26 @@ a {
 	}
 	.span4 {
 		@media (max-width: 767px) {
-			padding: 20px;
-			.span1 {
-				float: left;
-				width: 20%;
-			}
-			.span2 {
-				float: left;
-				width: 40%;
-			}
+			padding: 0 20px;
+			// .span1 {
+			// 	float: left;
+			// 	width: 20%;
+			// }
+			// .span2 {
+			// 	float: left;
+			// 	width: 40%;
+			// }
 		}
-		@media (max-width: 480px) {
-			padding: 20px;
-			.span1 {
-				width: 25%;
+		@media (max-width: 568px) { // iphone5 landscape
+			padding: 0 20px;
+			.quicklinks, .authors {
+				float: left;
+				-webkit-box-sizing: border-box;
+				   -moz-box-sizing: border-box;
+				        box-sizing: border-box;
+				width: 50%;
 			}
-			.span2 {
+			.authors {
 				width: 50%;
 			}
 		}
