@@ -5,6 +5,15 @@ $(document).ready(function($){
 		$('body').addClass('touch-device');
 	}
 
+	var features;
+	(function(s, features) {
+	    features.transitions = 'transition' in s || 'webkitTransition' in s || 'MozTransition' in s || 'msTransition' in s || 'OTransition' in s;
+	    if ( ! features.transitions) {
+	    	$('body').addClass('no-transitions');
+	    }
+	})(document.createElement('div').style, features || (features = {}));
+
+
 	// inject share icons on all images in single post content
 	$('body.single-post .post-content img').each(function(){
 
@@ -463,18 +472,34 @@ function clampGrid() {
 	})
 }
 
+function afterGrid(target) {
+	clampGrid();
+	$('iframe', target).each(function(){
+		var $this = $(this);
+		$this.height($this.closest('.thumbnail').outerHeight());		
+	});
+}
 
+function afterList(target) {
+	$('iframe', target).each(function(){
+		var $this = $(this);
+		$this.height($this.closest('.thumbnail').outerHeight());		
+	});
+}
 
 var viewControls = {
 	gridView: function(target) {
 		$('iframe', target).css('height', '');
-		$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
-			clampGrid();
-			$('iframe', target).each(function(){
-				var $this = $(this);
-				$this.height($this.closest('.thumbnail').outerHeight());		
+		if ( ! $('body').hasClass('no-transitions')) {
+			$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
+				afterGrid(target);
 			});
-		});
+		}
+		else {
+			setTimeout(function(){
+				afterGrid(target)
+			}, 600)
+		}
 		$('#grid-view').addClass('active');
 		$('#list-view').removeClass('active');
 		this.switchView('list', 'grid', target);
@@ -482,12 +507,16 @@ var viewControls = {
 
 	listView: function(target) {
 		$('iframe', target).css('height', '');
-		$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
-			$('iframe', target).each(function(){
-				var $this = $(this);
-				$this.height($this.closest('.thumbnail').outerHeight());		
+		if ( ! $('body').hasClass('no-transitions')) {
+			$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
+				afterList(target)
 			});
-		});
+		}
+		else {
+			setTimeout(function(){
+				afterList(target)
+			}, 600)
+		}
 		$('#list-view').addClass('active');
 		$('#grid-view').removeClass('active');
 		this.switchView('grid', 'list', target);
