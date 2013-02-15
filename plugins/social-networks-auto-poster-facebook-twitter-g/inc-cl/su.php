@@ -57,7 +57,7 @@ if (!class_exists("nxs_snapClassSU")) { class nxs_snapClassSU {
   
               <select name="su[<?php echo $ii; ?>][apSUCat]" id="apSUCat<?php echo $ii; ?>"><option value="error" selected="selected" disabled="">Select default StumbleUpon Category</option>
             <?php  $suCats = $this->suCats(); 
-              if (isset($options['suCat']) && $options['suCat']!='') $suCats = str_replace($options['suCat'].'"', $options['suCat'].'" selected="selected"', $suCats);  echo $suCats; 
+              if (isset($options['suCat']) && $options['suCat']!='') $suCats = str_replace('"'.$options['suCat'].'"', '"'.$options['suCat'].'" selected="selected"', $suCats);  echo $suCats; 
             
              ?>
             </select>
@@ -146,7 +146,9 @@ if (!class_exists("nxs_snapClassSU")) { class nxs_snapClassSU {
     if (isset($pMeta['nsfw'])) $optMt['nsfw'] = $pMeta['nsfw'];
     if (isset($pMeta['SNAPformat'])) $optMt['suMsgFormat'] = $pMeta['SNAPformat']; 
     if (isset($pMeta['apSUCat'])) $optMt['suCat'] = $pMeta['apSUCat'];     
-    if (isset($pMeta['doSU'])) $optMt['doSU'] = $pMeta['doSU'] == 1?1:0; else { if (isset($pMeta['SNAPformat'])) $optMt['doSU'] = 0; } return $optMt;
+    if (isset($pMeta['doSU'])) $optMt['doSU'] = $pMeta['doSU'] == 1?1:0; else { if (isset($pMeta['SNAPformat'])) $optMt['doSU'] = 0; } 
+    if (isset($pMeta['SNAPincludeSU']) && $pMeta['SNAPincludeSU'] == '1' ) $optMt['doSU'] = 1;  
+    return $optMt;
   }  
 }}
 if (!function_exists("nxs_rePostToSU_ajax")) {
