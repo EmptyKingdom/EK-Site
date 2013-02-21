@@ -21,7 +21,7 @@
 									</div> <!-- /.span1 -->
 									<div class="span1 footer-categories">
 										<ul class="unstyled">
-											<?php wp_list_categories('depth=1&title_li=') ?>
+											<?php wp_list_categories('depth=1&exclude=1&title_li=') ?>
 										</ul>
 									</div> <!-- /.span1 -->
 								</div> <!-- /.row -->
