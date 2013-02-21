@@ -220,11 +220,11 @@ h5 {
 	padding-top: 14px;
 	input {
 		display: inline-block;
-		width: 0px;
+		width: 40px;
+		text-transform: uppercase;
+		font-weight: bold;
 		height: 11px;
-		padding-top: 7px;
-		padding-bottom: 6px;
-		padding-left: @grid*2;
+		padding: 7px 0 6px 24px;
 		background: url(../img/icon-search.png) @grid/2 @grid/2 no-repeat;
 		background-color: #FFF;
 		position: absolute;
@@ -237,12 +237,12 @@ h5 {
 		line-height: normal;
 		.transition(.4s ease-in-out all);
 		color: @linkHighlight;
+		.placeholder-color(@linkHighlight);
 			&.expanded {
-			width: 182px;
-			background-color: @paleGray;
-			padding-left: @grid*3;
-			cursor: auto;
-		}
+				width: 182px;
+				background-color: @paleGray;
+				cursor: auto;
+			}
 		@media(max-width: 568px) { // iphone5 landscape
 			background-color: @paleGray;
 			padding-left: @grid*3;

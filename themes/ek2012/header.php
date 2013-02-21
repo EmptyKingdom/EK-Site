@@ -81,7 +81,7 @@
 					</ul>
 					<div id="basic-search">
 						<form action="<?php echo site_url('/') ?>">
-							<input type="text" name="s" value="">
+							<input type="text" name="s" placeholder="search">
 						</form>
 					</div>
 				</div> <!-- /span4 -->
