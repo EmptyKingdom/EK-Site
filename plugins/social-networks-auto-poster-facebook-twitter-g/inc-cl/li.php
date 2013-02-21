@@ -216,7 +216,7 @@ if (!class_exists("nxs_snapClassLI")) { class nxs_snapClassLI {
                     
                     <?php if (is_array($pMeta) && is_array($pMeta[$ii]) && isset($pMeta[$ii]['pgID']) ) {                         
                         ?> <span id="pstdLI<?php echo $ii; ?>" style="float: right;padding-top: 4px; padding-right: 10px;">
-                      <a style="font-size: 10px;" href="<?php if ($options['uPage']!='') echo $options['uPage']; else { echo "http://www.linkedin.com/profile/view?id=".CutFromTo("XWEXW".$pMeta[$ii]['pgID'], "XWEXW", ' - '); } ?>" target="_blank"><?php $nType="LinkedIn"; printf( __( 'Posted on', 'nxs_snap' ), $nType); ?>  <?php echo (isset($pMeta[$ii]['pDate']) && $pMeta[$ii]['pDate']!='')?(" (".$pMeta[$ii]['pDate'].")"):""; ?></a>
+                      <a style="font-size: 10px;" href="<?php if ($options['uPage']!='') echo $options['uPage']; else { echo $pMeta[$ii]['pgID']; } ?>" target="_blank"><?php $nType="LinkedIn"; printf( __( 'Posted on', 'nxs_snap' ), $nType); ?>  <?php echo (isset($pMeta[$ii]['pDate']) && $pMeta[$ii]['pDate']!='')?(" (".$pMeta[$ii]['pDate'].")"):""; ?></a>
                     </span><?php } ?>
                     
                 </td></tr>
@@ -237,7 +237,9 @@ if (!class_exists("nxs_snapClassLI")) { class nxs_snapClassLI {
   function adjMetaOpt($optMt, $pMeta){ if (isset($pMeta['isPosted'])) $optMt['isPosted'] = $pMeta['isPosted']; else  $optMt['isPosted'] = '';
      if (isset($pMeta['SNAPformat'])) $optMt['liMsgFormat'] = $pMeta['SNAPformat']; if (trim($optMt['liMsgFormat'])=='') $optMt['liMsgFormat'] = '&nbsp;';
      if (isset($pMeta['AttachPost'])) $optMt['liAttch'] = $pMeta['AttachPost'] == 1?1:0; else { if (isset($pMeta['SNAPformat'])) $optMt['liAttch'] = 0; }
-     if (isset($pMeta['doLI'])) $optMt['doLI'] = $pMeta['doLI'] == 1?1:0; else { if (isset($pMeta['SNAPformat'])) $optMt['doLI'] = 0; } return $optMt;
+     if (isset($pMeta['doLI'])) $optMt['doLI'] = $pMeta['doLI'] == 1?1:0; else { if (isset($pMeta['SNAPformat'])) $optMt['doLI'] = 0; } 
+     if (isset($pMeta['SNAPincludeLI']) && $pMeta['SNAPincludeLI'] == '1' ) $optMt['doLI'] = 1;  
+     return $optMt;
   }
 }}
 
@@ -288,6 +290,7 @@ if (!function_exists("nxs_doPublishToLI")) { //## Second Function to Post to LI
       //$liPostID = $linkedin->getCurrentShare(); prr($liPostID);
       $liPostID = $options['liUserInfo'];
     }
+    if (stripos($ret, 'update-url')!==false) { $liPostID = CutFromTo($ret, '<update-url>','</update-url>'); $ret = '201'; }     
     if ($ret!='201') { if ($postID=='0') prr($ret); nxs_addToLog($logNT, 'E', '-=ERROR=- '.print_r($ret, true), $extInfo); } 
       else if ($postID=='0') { echo 'OK - Linkedin status updated successfully';  nxs_addToLog($logNT, 'M', 'OK - TEST Message Posted '); } else 
         { nxs_metaMarkAsPosted($postID, 'LI', $options['ii'], array('isPosted'=>'1', 'pgID'=>$liPostID, 'pDate'=>date('Y-m-d H:i:s'))); nxs_addToLog($logNT, 'M', 'OK - Message Posted ', $extInfo); }
