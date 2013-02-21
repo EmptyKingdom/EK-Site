@@ -94,7 +94,7 @@ body.home #sidebar{padding-top:0;}
 .carousel .carousel-indicator li a{display:block;height:100%;width:100%;}
 .carousel .postmeta{height:13px;margin-bottom:10px;}
 .carousel .caption p{line-height:20px;}
-#carousel-sections{padding-left:16px;padding-top:5px;}@media (max-width:768px){#carousel-sections{padding-left:0;}}#carousel-sections #carousel-section-nav{width:100.8%;margin-top:10px;overflow:visible;display:table;border-spacing:3px 0;margin-left:-3px;}@media (max-width:767px){#carousel-sections #carousel-section-nav{width:100%;}}#carousel-sections #carousel-section-nav li{display:table-cell;}#carousel-sections #carousel-section-nav li a{display:block;text-align:center;border:1px solid #333;padding:6px 0;}
+#carousel-sections{padding-left:16px;padding-top:5px;}@media (max-width:768px){#carousel-sections{padding-left:0;}}#carousel-sections #carousel-section-nav{width:100.8%;margin-top:10px;overflow:visible;display:table;border-spacing:4px 0;margin-left:-3px;}@media (max-width:767px){#carousel-sections #carousel-section-nav{width:100%;}}#carousel-sections #carousel-section-nav li{display:table-cell;}#carousel-sections #carousel-section-nav li a{display:block;text-align:center;border:1px solid #333;padding:6px 0;}
 #carousel-sections #carousel-section-nav li.active a,#carousel-sections #carousel-section-nav li:hover a{color:#fff;background-color:#333333;}
 #carousel-sections #carousel-section-nav li:last-child a{margin:0px;}
 @media (max-width:768px){#carousel-sections #carousel-section-nav{position:absolute;top:-40px;left:0px;}}
