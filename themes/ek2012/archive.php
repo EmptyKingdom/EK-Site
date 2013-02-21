@@ -10,7 +10,7 @@
 			<h1 class="tag">Posts tagged with "<?php echo get_queried_object()->name ?>"</h1>
 		<?php endif; ?>
 		<?php get_template_part('/partials/view-controls') ?>
-		<div id="post-list" class="post-list grid">
+		<div id="post-list" class="post-list list">
 			<?php get_template_part('/partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
 		<?php get_template_part('partials/posts-pagination') ?>

@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="span8" id="main">
 		<?php get_template_part('/partials/view-controls') ?>
-		<div id="post-list" class="post-list grid">
+		<div id="post-list" class="post-list list">
 			<?php get_template_part('/partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
 		<?php get_template_part('partials/posts-pagination') ?>
