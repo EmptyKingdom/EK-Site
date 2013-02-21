@@ -55,7 +55,6 @@ class EK_Widget_Random_Articles extends WP_Widget {
 		</ul> <!-- /.content -->
 		<?php 
 		echo $after_widget; ?>
-		<h4 class="featured-archive"><a href="<?php echo site_url('/category/featured/') ?>" class="arrow-right">EK Featured Article Archive</a></h4>
 		<?php
 
 		// put lazyload filters back 
