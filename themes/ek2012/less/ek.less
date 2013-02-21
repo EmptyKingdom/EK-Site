@@ -1129,6 +1129,10 @@ body.home {
 				top: 3px;
 				display: block;
 			}
+			strong {
+				font-weight: normal;
+				color: @linkHighlight;
+			}
 		}
 		h5 {
 			margin-bottom: 0;
@@ -1151,12 +1155,6 @@ body.home {
 			}
 			p {
 				margin-bottom: 5px;
-			}
-		}
-		&.the-interviews {
-			strong {
-				font-weight: normal;
-				color: @linkHighlight;
 			}
 		}
 	}
@@ -1239,7 +1237,9 @@ a {
 }
 
 #posts-pagination {
+	margin-bottom: 30px;
 	h4 {
+		margin: 0;
 		display: inline-block;
 		a {
 			font-weight: normal;

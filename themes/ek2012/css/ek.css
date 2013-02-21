@@ -152,11 +152,11 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .post-list .post .date{float:right;}
 .post-list .post img{clear:both;}
 .post-list .post h3{font-size:22px;line-height:19px;font-weight:normal;margin:0;}.post-list .post h3 a{position:relative;top:3px;display:block;}
+.post-list .post h3 strong{font-weight:normal;color:#00b8ec;}
 .post-list .post h5{margin-bottom:0;height:14px;margin:10px 0 0 0;float:left;}
 .post-list .post .social{float:right;margin:10px 0 0 0;}
 .post-list .post .excerpt{clear:both;margin-top:10px;margin-bottom:0;padding:10px 0 0 0;border-top:1px dotted #cccccc;}.post-list .post .excerpt img{display:none;}
 .post-list .post .excerpt p{margin-bottom:5px;}
-.post-list .post.the-interviews strong{font-weight:normal;color:#00b8ec;}
 .social{line-height:15px;height:15px;}.social li{display:inline-block;background-image:url(../img/slices/post-list-social.png);background-repeat:no-repeat;height:15px;width:15px;line-height:15px;padding-left:6px;}.social li a{display:inline-block;height:15px;width:15px;}
 .social li.facebook{background-position:8px top;}.social li.facebook:hover{background-position:8px bottom;}
 .social li.twitter{background-position:-15px top;}.social li.twitter:hover{background-position:-15px bottom;}
@@ -164,7 +164,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 a.view-more{text-transform:uppercase;font-size:12px;line-height:12px;height:12px;overflow:hidden;font-weight:bold;}
 a.video{display:block;position:relative;}a.video div{position:absolute;height:100%;width:100%;background:url(../img/slices/btn-play.png) no-repeat center center;}a.video div.load{background:#333333;}
 a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat center center;}
-#posts-pagination h4{display:inline-block;}#posts-pagination h4 a{font-weight:normal;font-size:14px;padding:11px 10px 11px 40px;}
+#posts-pagination{margin-bottom:30px;}#posts-pagination h4{margin:0;display:inline-block;}#posts-pagination h4 a{font-weight:normal;font-size:14px;padding:11px 10px 11px 40px;}
 #posts-pagination h4.next{text-align:right;margin-left:8px;}#posts-pagination h4.next a{padding:11px 40px 11px 10px;}
 #sidebar{padding-top:61px;}#sidebar .widget{background-color:whitesmoke;border-bottom:4px solid #00b8ec;margin-top:24px;overflow:hidden;}@media (max-width:568px){#sidebar .widget{display:none;}}#sidebar .widget h4{background:#00b8ec url(../img/slices/star-widget-hdr.png) no-repeat 8px center;padding:0 15px 0 28px;color:#FFF;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:0 0 24px 0;border-bottom:1px solid #2AC8F8;cursor:pointer;position:relative;}#sidebar .widget h4:after{content:url(../img/slices/widget-collapse.png);right:15px;position:absolute;}
 #sidebar .widget div.content{overflow:hidden;padding:0 24px 16px 24px;}
