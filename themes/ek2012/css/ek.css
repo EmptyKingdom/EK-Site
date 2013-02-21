@@ -170,7 +170,7 @@ a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat cen
 #sidebar .widget div.content{overflow:hidden;padding:0 24px 16px 24px;}
 #sidebar .widget.collapsed{border-bottom-width:0;}#sidebar .widget.collapsed h4{margin-bottom:0;}#sidebar .widget.collapsed h4:after{content:url(../img/slices/widget-collapsed.png);}
 #sidebar .widget.collapsed div.content{height:0;padding-bottom:0;}
-#sidebar .widget.newsletter-signup{background:#FFF;border:none;padding:0px;}#sidebar .widget.newsletter-signup h4{font-size:13px;background:#FFF;border:none;margin-bottom:0;color:#898989;padding-left:0;}
+#sidebar .widget.newsletter-signup{background:#FFF;border:none;padding:0px;}#sidebar .widget.newsletter-signup h4{font-size:13px;background:#FFF;border:none;margin-bottom:0;color:#898989;padding-left:0;cursor:auto;}
 #sidebar .widget.newsletter-signup .content{padding-left:0;padding-right:0;}
 #sidebar .widget.facebook .facebookOuter{width:auto;height:auto;overflow:hidden;}
 #sidebar .widget.facebook .fb-like-box,#sidebar .widget.facebook .fb-like-box span,#sidebar .widget.facebook .fb-like-box.fb_iframe_widget span iframe{border:none !important;margin:-1px !important;width:101% !important;}

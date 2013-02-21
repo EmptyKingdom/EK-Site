@@ -359,7 +359,7 @@ $(document).ready(function($){
 	})
 	
 	// collapseable widgets functionality
-	$('.widget h4').on({
+	$('.widget').not('.newsletter-signup').find('h4').on({
 		mouseup: function() {
 
 			var $widget = $(this).closest('.widget');
