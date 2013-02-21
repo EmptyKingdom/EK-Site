@@ -9,8 +9,7 @@
 						<div class="row">
 							<div class="span2 quicklinks">
 								<h4>EK Quicklinks</h4>
-								<div class="row">
-									<div class="span1 footer-nav">
+								<div class="footer-nav">
 									<?php wp_nav_menu(array(
 										'theme_location' => 'quick-links-footer',
 										'container_class' => '',
@@ -18,13 +17,12 @@
 										'items_wrap'      => '<ul id="%1$s" class="unstyled">%3$s</ul>',
 										'fallback_cb' => false,
 									)) ?>
-									</div> <!-- /.span1 -->
-									<div class="span1 footer-categories">
-										<ul class="unstyled">
-											<?php wp_list_categories('depth=1&exclude=1&title_li=') ?>
-										</ul>
-									</div> <!-- /.span1 -->
-								</div> <!-- /.row -->
+								</div> <!-- /.footer-nav -->
+								<div class="footer-categories">
+									<ul class="unstyled">
+										<?php wp_list_categories('depth=1&exclude=1&orderby=count&order=desc&title_li=') ?>
+									</ul>
+								</div> <!-- /.footer-categories -->
 							</div> <!-- /.span2 -->
 							<div class="span2 authors">
 								<h4>Authors</h4>
