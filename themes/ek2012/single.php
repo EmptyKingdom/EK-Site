@@ -59,6 +59,7 @@ get_header(); ?>
 							while ($related_artists->have_posts()) : $related_artists->the_post();
 								get_template_part('/partials/loop', 'post');
 							endwhile;
+							wp_reset_postdata();
 							?>
 						</div>
 					</div>
