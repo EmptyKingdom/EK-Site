@@ -2,8 +2,8 @@
 Contributors: adityamooley
 Tags: Post, thumbnail, automatic, posts, featured image, image, featured, images, admin
 Requires at least: 2.9.1
-Tested up to: 3.4
-Stable tag: 3.3.0
+Tested up to: 3.5.1
+Stable tag: 3.3.1
 
 Automatically generate the Post Thumbnail (Featured Thumbnail) from the first image in post or any custom post type only if Post Thumbnail is not set manually.
 
@@ -25,8 +25,11 @@ For more details, see http://www.sanisoft.com/blog/2010/04/19/wordpress-plugin-a
 
 == Changelog ==
 
+= 3.3.1 =
+* Tested with WordPress-3.5.1
+
 = 3.3.0 =
-* Added fix for featured images behaving differently in Wordpress version 3.4. NOTE: This version will fix only images in future posts. For fixing images of past posts see http://www.clickthrough-marketing.com/how-to-fix-auto-post-thumbnail-on-wordpress-3.4-seo-friendly-800610805/ 
+* Added fix for featured images behaving differently in Wordpress version 3.4. NOTE: This version will fix only images in future posts. For fixing images of past posts see http://www.clickthrough-marketing.com/how-to-fix-auto-post-thumbnail-on-wordpress-3.4-seo-friendly-800610805/
 
 = 3.2.3 =
 * Added fix for jquery progress bar error causing due to Wordpress version 3.1
