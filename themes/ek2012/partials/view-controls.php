@@ -1,10 +1,10 @@
 		<ul class="unstyled" id="view-controls" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
-			<li id="list-view" class="active"><a href="javascript:void(0)" data-action="listView" class="btn btn-primary">List View</a></li>
-			<li id="grid-view"><a href="javascript:void(0)" data-action="gridView" class="btn btn-primary">Grid View</a></li>
+			<li id="list-view" class="active"><a href="javascript:void(0)" data-action="listView" class="">List View</a></li>
+			<li id="grid-view"><a href="javascript:void(0)" data-action="gridView" class="">Grid View</a></li>
 			<?php if (is_home()) : ?>
-			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters" class="btn btn-primary">Filter By Category</a></li>
+			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters" class="">Filter By Category</a></li>
 			<?php endif; ?>
-			<li id="sfw-filter" class="<?php global $wp_query; echo isset($wp_query->query_vars['sfw']) ? 'checked' : '' ?>" data-nsfw_tagid="<?php echo get_term_by('slug', 'nsfw', 'post_tag')->term_id ?>"><a href="javascript:void(0)" data-action="filterSfw" class="btn btn-primary">SFW</a></li>
+			<li id="sfw-filter" class="<?php global $wp_query; echo isset($wp_query->query_vars['sfw']) ? 'checked' : '' ?>" data-nsfw_tagid="<?php echo get_term_by('slug', 'nsfw', 'post_tag')->term_id ?>"><a href="javascript:void(0)" data-action="filterSfw" class="">SFW</a></li>
 		</ul> <!-- /#view-controls -->
 		<?php if (is_home()) : ?>
 		<div id="cat-filters" class="well clearfix">
