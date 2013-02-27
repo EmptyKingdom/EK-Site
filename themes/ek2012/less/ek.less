@@ -505,6 +505,7 @@ body.home {
 .carousel {
 	margin-bottom: 0;
 	height: 578px;
+	overflow: hidden;
 	@media (min-width: 1200px) {
 		height: 625px;
 	}
@@ -846,11 +847,9 @@ body.home {
 			}
 		}
 		.caption {
-			height: 153px;
 			p {
-				margin-top: @grid+2;
-				margin-bottom: 0;
-				padding: @grid*2 0;
+				margin-top: @grid*2+2;
+				margin-bottom: @grid*2;
 				border-top: 1px dotted @lightGray;
 				background-color: #FFF;
 			}

@@ -100,6 +100,15 @@ $(document).ready(function($){
 		}, 
 		slid: updateCarouselIndicator
 	});
+
+	$('.category-carousel').on({
+		slid: function(e){
+			var nextSlide = e.relatedTarget || $(this).find('.item:first').get(0);
+			$('.caption p', nextSlide).each(function(i, e){
+		        $clamp(e, {clamp: 2, useNativeClamp: false});
+			})
+		}
+	})
 	
 	// jump to slide when carousel indicator clicked
 	$('.carousel-indicator').on({
@@ -115,6 +124,7 @@ $(document).ready(function($){
 		click: function(e){
 
 			var $this = $(this);
+			var $newCarousel = $($this.data('carousel'));
 			
 			// stop all videos 
 			$('.carousel a.video iframe').each(function(i, e){
@@ -133,7 +143,8 @@ $(document).ready(function($){
 			
 			// switch the selected carousel
 			$('#feature .carousel').removeClass('active');
-			$($this.data('carousel')).addClass('active');
+			$newCarousel.addClass('active');
+			$newCarousel.trigger('switchedto')
 		}
 	}, 'a');
 
@@ -407,7 +418,7 @@ $(document).ready(function($){
 		}
 	});
 
-	// limit grid to 3 line excerpts
+	// limit text elements in grid view
 	clampGrid();
 
 	if ($('.slide-description').length) {
@@ -428,29 +439,48 @@ $(document).ready(function($){
 			mediaCheck({
 				media: '(min-width: 980px) and (max-width: 1200px)',
 				entry: function() {
-					$('.slide-description p.excerpt').each(function(i, e){
-				        $clamp(e, {clamp: 6, useNativeClamp: false});
+					clampCurrentSlide($('.carousel.active').get(0), 6)
+					$('.carousel').on({
+						slid: function(e){
+							clampCurrentSlide(this, 6);
+						},
+						switchedto: function(e){
+							clampCurrentSlide(this, 6);
+						}
 					})
 				},
 				exit: function() {
 					resetClamped($('.slide-description p.excerpt'));
+					$('.carousel').unbind('slid').unbind('switchedto').bind('slid', updateCarouselIndicator);
 				}
 			});
 			mediaCheck({
 				media: '(min-width: 768px) and (max-width: 979px)',
 				entry: function() {
-					$('.slide-description p.excerpt').each(function(i, e){
-				        $clamp(e, {clamp: 2, useNativeClamp: false});
+					clampCurrentSlide($('.carousel.active').get(0), 2)
+					$('.carousel').on({
+						slid: function(e){
+							clampCurrentSlide(this, 2);
+						},
+						switchedto: function(e){
+							clampCurrentSlide(this, 2);
+						}
 					})
 				},
 				exit: function() {
 					resetClamped($('.slide-description p.excerpt'));
+					$('.carousel').unbind('slid').unbind('switchedto').bind('slid', updateCarouselIndicator);
 				}
 			});
 		}, 100);
 	}
-
 })
+
+function clampCurrentSlide(carousel, clampLines) {
+	var curSlide = $(carousel).find('.item.active').get(0);
+	var $descriptionEl = $($(curSlide).data('description'))
+	$clamp($descriptionEl.find('p.excerpt').get(0), {clamp: clampLines, useNativeClamp: false});
+}
 
 function resetClamped(els) {
 	els.each(function(i, e) {
@@ -464,9 +494,12 @@ function resetClamped(els) {
 }
 
 function clampGrid() {
+	// excerpts
 	$('#post-list.grid .excerpt p').each(function(i, e){
 		$clamp(e, {clamp: 3, useNativeClamp: false});
 	})
+
+	// titles
 	$('#post-list.grid h3 a').each(function(i, e){
 		$clamp(e, {clamp: 1, useNativeClamp: false});
 	})
@@ -489,6 +522,7 @@ function afterList(target) {
 
 var viewControls = {
 	gridView: function(target) {
+		$(window).trigger('scroll');
 		$('iframe', target).css('height', '');
 		if ( ! $('body').hasClass('no-transitions')) {
 			$('.span4', target).one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(){
