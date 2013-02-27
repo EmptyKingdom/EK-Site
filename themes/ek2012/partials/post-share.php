@@ -42,9 +42,6 @@
 					</div>
 				</li>
 				<li class="email">
-					<a href="javascript:void(0)" class="service">Email</a>
-					<div class="action">
-						<a class="btn btn-inverse" href="mailto:?subject=<?php echo htmlentities(get_the_title()) ?> on Empty Kingdom&body=Check this out: <?php echo htmlentities(get_permalink()) ?>">Email Link</a>
-					</div>
+					<a href="mailto:?subject=<?php echo htmlentities(get_the_title()) ?> on Empty Kingdom&body=Check this out: <?php echo htmlentities(get_permalink()) ?>" class="service">Email</a>
 				</li>
 			</ul> <!-- /.post-share.unstyled -->
