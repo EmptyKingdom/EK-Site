@@ -131,7 +131,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 a.view-more{text-transform:uppercase;font-size:12px;line-height:12px;height:12px;overflow:hidden;font-weight:bold;}
 a.video{display:block;position:relative;}a.video div{position:absolute;height:100%;width:100%;background:url(../img/slices/btn-play.png) no-repeat center center;}a.video div.load{background:#333333;}
 a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat center center;}
-#posts-pagination{margin-bottom:30px;}#posts-pagination h4{margin:0;display:inline-block;}#posts-pagination h4 a{font-weight:normal;font-size:14px;padding:11px 10px 11px 40px;}
+#posts-pagination h4{margin:0;display:inline-block;}#posts-pagination h4 a{font-weight:normal;font-size:14px;padding:11px 10px 11px 40px;}
 #posts-pagination h4.next{text-align:right;margin-left:8px;}#posts-pagination h4.next a{padding:11px 40px 11px 10px;}
 #sidebar{padding-top:61px;}#sidebar .widget{background-color:whitesmoke;border-bottom:4px solid #00b8ec;margin-top:24px;overflow:hidden;}@media (max-width:568px){#sidebar .widget{display:none;}}#sidebar .widget h4{background-color:#00b8ec;padding:0 15px 0 15px;color:#FFF;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:16px;font-weight:500;height:32px;line-height:36px;margin:0 0 24px 0;border-bottom:1px solid #2AC8F8;cursor:pointer;position:relative;}#sidebar .widget h4:after{content:url(../img/slices/widget-collapse.png);right:15px;position:absolute;}
 #sidebar .widget div.content{overflow:hidden;padding:0 24px 16px 24px;}
@@ -156,7 +156,7 @@ a.video div:hover{background:url(../img/slices/btn-play-hover.png) no-repeat cen
 .newsletter-signup button{height:32px;padding:8px;font-family:'myriad-pro',sans-serif;font-size:15px;text-transform:none;font-weight:normal;text-align:left;background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;width:35%;}.newsletter-signup button:hover{background-image:url(../img/slices/arrow-right-white.png) !important;background-repeat:no-repeat !important;background-position:90% center !important;}
 .newsletter-signup button:hover{background-color:#00b8ec !important;color:#FFF !important;}@media (min-width:768px) and (max-width:979px){.newsletter-signup button:hover{background-image:none !important;}}
 @media (min-width:768px) and (max-width:979px){.newsletter-signup button{background-image:none !important;}}@media (max-width:480px){.newsletter-signup button{background-image:none !important;}}
-#footer{background:#111;font-size:11px;}@media (max-width:767px){#footer{position:relative;margin-left:-20px;margin-right:-20px;top:20px;}}#footer h4{margin:18px 0;color:#cccccc;}
+#footer{margin-top:30px;background:#111;font-size:11px;}@media (max-width:767px){#footer{position:relative;margin-left:-20px;margin-right:-20px;top:20px;}}#footer h4{margin:18px 0;color:#cccccc;}
 #footer a,#footer a:link{color:#898989;}
 #footer a:hover,#footer a:active{color:#00b8ec;}
 #footer .widget{margin-bottom:45px;}@media (max-width:568px){#footer .widget{margin-bottom:20px;}}
