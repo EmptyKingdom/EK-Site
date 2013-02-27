@@ -105,6 +105,11 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 .category-carousel .date{float:left;color:#BABABA;float:right;}
 .category-carousel .item .img{height:318px;overflow:hidden;}@media (min-width:1200px){.category-carousel .item .img{height:395px;}}@media (max-width:979px) and (min-width:768px){.category-carousel .item .img{width:auto;}}.category-carousel .item .img img{width:100%;height:auto;}
 .category-carousel .item .caption{height:153px;}.category-carousel .item .caption p{margin-top:10px;margin-bottom:0;padding:16px 0;border-top:1px dotted #cccccc;background-color:#FFF;}
+.category-carousel.carousel-fade .item{-webkit-transition:0s ease-in-out opacity;-moz-transition:0s ease-in-out opacity;-ms-transition:0s ease-in-out opacity;-o-transition:0s ease-in-out opacity;transition:0s ease-in-out opacity;left:0 !important;}.category-carousel.carousel-fade .item img{-webkit-transition:0.4s ease-in-out opacity;-moz-transition:0.4s ease-in-out opacity;-ms-transition:0.4s ease-in-out opacity;-o-transition:0.4s ease-in-out opacity;transition:0.4s ease-in-out opacity;opacity:0;}
+.category-carousel.carousel-fade .item .hdr,.category-carousel.carousel-fade .item .caption{opacity:0;}
+.category-carousel.carousel-fade .item.active img,.category-carousel.carousel-fade .item.active .hdr,.category-carousel.carousel-fade .item.active .caption{opacity:1;}
+.category-carousel.carousel-fade .next.left,.category-carousel.carousel-fade .prev.right{opacity:1;z-index:1;}.category-carousel.carousel-fade .next.left img,.category-carousel.carousel-fade .prev.right img{opacity:1;z-index:1;}
+.category-carousel.carousel-fade .active.left,.category-carousel.carousel-fade .active.right{opacity:1;z-index:2;}.category-carousel.carousel-fade .active.left img,.category-carousel.carousel-fade .active.right img{opacity:0;z-index:2;}
 .category-carousel .carousel-indicator{bottom:177px;}
 .category-carousel .carousel-control{top:41.5%;}
 .post-list.grid .row{margin-bottom:45px;height:360px;}.post-list.grid .row .span4{min-width:45%;-webkit-transition:.4s ease min-width;-moz-transition:.4s ease min-width;-ms-transition:.4s ease min-width;-o-transition:.4s ease min-width;transition:.4s ease min-width;}.post-list.grid .row .span4 .thumbnail{overflow:hidden;max-height:190px;}

@@ -4,6 +4,7 @@
 		<?php while ($carousel->slides->have_posts()) : $carousel->slides->the_post(); global $post; ?>
  			<div class="<?php echo $carousel->slides->current_post == 0 ? 'active' : '' ?> item" data-description="#section-<?php echo $i ?>-slide-<?php the_id() ?>">
 				<?php if ( ! $hide_title) : ?>
+					<div class="hdr">
 						<h1><a href="<?php echo $post->link ?>"><?php echo $post->title; ?></a></h1>
 							<div class="postmeta clearfix">
 								<?php if ($post->author || $post->date) : ?>
@@ -11,6 +12,7 @@
 									<p class="date"><?php echo $post->date ?></p>
 								<?php endif; ?>
 							</div> <!-- /.postmeta -->
+					</div> <!-- /.hdr -->
 				<?php endif; // ! $hide_title ?>
 				<a href="<?php echo $post->link ? $post->link : 'javascript:void(0)' ?>"<?php
 					if ($post->video_code) : ?>

@@ -856,6 +856,40 @@ body.home {
 			}
 		}
 	}
+	&.carousel-fade {
+		.item {
+			.transition(0s ease-in-out opacity);
+			left: 0 !important;
+			img {
+				.transition(.4s ease-in-out opacity);
+				opacity: 0;
+			}
+			.hdr, .caption {
+				opacity: 0;
+			}
+			&.active {
+				img, .hdr, .caption {
+					opacity: 1;
+				}
+			}
+		}
+		.next.left, .prev.right {
+			opacity: 1;
+			z-index: 1;
+			img {
+				opacity: 1;
+				z-index: 1;
+			}
+		}
+		.active.left, .active.right {
+			opacity: 1;
+			z-index: 2;
+			img {
+				opacity: 0;
+				z-index: 2;
+			}
+		}
+	}	
 	.carousel-indicator {
 		bottom: 169px + @grid;
 	}
