@@ -265,6 +265,11 @@ h5 {
 	@media(max-width:768px) {
 		margin-bottom: 40px;
 	}
+    @media (max-width: 568px) { // iphone5 landscape
+    	height: 0px;
+    	overflow: hidden;
+    	// display: none;
+    }
 	#main-menu-container {
 	    display: table;
 	    margin-top: 25px;
@@ -272,9 +277,6 @@ h5 {
 	    margin-left: -6px;
 	    width: 100.8%;
 	    position: relative;
-	    @media (max-width: 568px) { // iphone5 landscape
-	    	display: none;
-	    }
 	    #main-menu {
 		    display: table-row;
     	    // @media (max-width: 480px) {
@@ -318,13 +320,12 @@ h5 {
 		    		z-index: 10000000;
 					overflow: visible;
 					height: 0px;
-		    	    // @media (max-width: 480px) {
-		    	    // 	top: 24px;
-		    	    // 	width: 100%;
-		    	    // }
 				    >ul {
 				    	@media(max-width: 767px) {
-				    		display: none !important;
+				    		height: 0px;
+						    padding: 0px;
+				    		overflow: hidden;
+				    		// display: none !important;
 				    	}
 				    	text-transform: lowercase;
 				    	font-weight: @semiBold;
@@ -334,7 +335,6 @@ h5 {
 					    margin: 0 -4px;
 					    position: relative;
 					    max-height: 0px;
-					    padding: 0px;
 					    opacity: 0;
 				    	padding: 16px 0;
 					    visibility: hidden;
