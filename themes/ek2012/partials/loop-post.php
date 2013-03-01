@@ -10,6 +10,7 @@
 	$sharer_img = urlencode(wp_get_attachment_url(get_post_thumbnail_id()));
 	$sharer_descr = urlencode(get_the_excerpt());
 	$category = ek_get_cat($post);
+	$excerpt = strip_tags(get_the_content(''), '<p><a><strong><em>');
  ?>
 <div class="post <?php echo $category->slug ?> span4">
 	<h3><a href="<?php the_permalink() ?>" data-orig_text="<?php echo htmlspecialchars(get_the_title()) ?>"><?php the_title() ?></a></h3>
@@ -29,6 +30,6 @@
 			<!-- <li class="add"><a href=""></a></li> -->
 		</ul>
 	</div>
-	<div class="excerpt" data-orig_text="<?php echo htmlspecialchars(get_the_excerpt()); ?>"><?php the_excerpt() ?></div>
+	<div class="excerpt" data-orig_text="<?php echo htmlspecialchars($excerpt); ?>"><?php echo $excerpt ?></div>
 	<a class="view-more" href="<?php the_permalink() ?>">View More&hellip;</a>
 </div>
