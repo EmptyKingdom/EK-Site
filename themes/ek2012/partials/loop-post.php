@@ -21,7 +21,7 @@
 		class="video <?php echo $provider ?>" data-provider="<?php echo $provider ?>" data-video_ref="<?php echo $code[1] ?>"><div></div
 		<?php endif; ?>
 		><?php the_post_thumbnail() ?></a></div>
-	<div class="clearfix">
+	<div class="clearfix sub-img">
 		<h5 class="category"><a href="<?php echo get_term_link($category) ?>"><?php echo $category->name ?></a></h5>
 		<ul class="unstyled social">
 			<li class="facebook"><a href="http://www.facebook.com/share.php?s=100&p[url]=<?php echo $sharer_url ?>&p[title]=<?php echo $sharer_title ?>&p[summary]=<?php echo $sharer_descr ?>&p[images][0]=<?php echo $sharer_img ?>"></a></li>

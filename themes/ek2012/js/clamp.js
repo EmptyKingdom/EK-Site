@@ -203,7 +203,11 @@
         }
         
         function applyEllipsis(elem, str) {
-            elem.nodeValue = str + '…';
+            if (splitChar == '.')
+                str = str + '.';
+            else
+                str = str + '…';
+            elem.nodeValue = str;
         }
 
 

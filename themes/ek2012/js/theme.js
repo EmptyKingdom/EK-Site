@@ -495,8 +495,8 @@ function resetClamped(els) {
 
 function clampGrid() {
 	// excerpts
-	$('#post-list.grid .excerpt p').each(function(i, e){
-		$clamp(e, {clamp: 3, useNativeClamp: false});
+	$('#post-list.grid .excerpt').each(function(i, e){
+		$clamp(e, {clamp: 3, splitOnChars: ['.', ' '], useNativeClamp: false});
 	})
 
 	// titles
@@ -554,7 +554,7 @@ var viewControls = {
 		$('#list-view').addClass('active');
 		$('#grid-view').removeClass('active');
 		this.switchView('grid', 'list', target);
-		resetClamped($('#post-list.list .excerpt')).wrapInner('<p></p>');
+		resetClamped($('#post-list.list .excerpt'));
 		resetClamped($('#post-list.list h3 a'));
 	},
 
