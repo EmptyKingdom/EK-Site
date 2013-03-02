@@ -61,14 +61,7 @@ class EK_Widget_Random_Articles extends WP_Widget {
 		ek_resume_lazyload();
 	}
  
-    /** @see WP_Widget::update -- do not rename this */
-    function update($new_instance, $old_instance) 
-    {
-		$instance = $old_instance;
-		$instance['title'] = $new_instance['title'];
-        return $instance;
-    }
- 
+
     /** @see WP_Widget::form -- do not rename this */
     function form($instance) 
     {
