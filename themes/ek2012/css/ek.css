@@ -100,7 +100,7 @@ ul#view-controls li#sfw-filter .spinner{position:absolute !important;left:100% !
 #cat-filters .new-media .selected a{color:#62bb46;}
 #cat-filters .new-media .selected .check{background-color:#62bb46;}
 #cat-filters .check{display:inline-block;height:8px;width:8px;margin-right:8px;background-color:#999999;}
-.category-carousel h3{margin-bottom:5px;line-height:1;background-color:#FFF;font-size:28px;font-weight:normal;}
+.category-carousel h1{font-weight:normal;}
 .category-carousel .author{float:left;color:#BABABA;}
 .category-carousel .date{float:left;color:#BABABA;float:right;}
 .category-carousel .item .img{height:318px;overflow:hidden;}@media (min-width:1200px){.category-carousel .item .img{height:395px;}}@media (max-width:979px) and (min-width:768px){.category-carousel .item .img{width:auto;}}.category-carousel .item .img img{width:100%;height:auto;}
