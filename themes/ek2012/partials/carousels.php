@@ -42,7 +42,7 @@ endforeach;
 					<?php endif; ?>
 					<p class="excerpt"><?php echo $post->excerpt ?></p>
 					<?php if ($post->link) : ?>
-						<a class="btn btn-default" href="<?php echo $post->link ?>">View More...</a>
+						<a class="view-more" href="<?php echo $post->link ?>">View More...</a>
 					<?php endif; ?>
 				</li>
 				<?php endwhile; // slide loop ?>
