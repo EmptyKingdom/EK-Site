@@ -58,13 +58,6 @@ a.btn, button.btn {
 	}
 }
 
-.arrow-right {
-	padding-right: @grid+16px;
-	background: url(../img/slices/arrow-right-blue.png) no-repeat right center;
-	display: inline-block;
-	height: 14px;
-}
-
 input {
 	.border-radius(0px) !important;
 	.box-shadow() !important;
@@ -178,7 +171,7 @@ h5 {
 		line-height: 20px; // i don't know why this works
 		&.icon {
 			text-indent: 10000px;
-			background: url(../img/bg-utility-menu-icons.png) no-repeat;
+			background: url(../img/ek-sprite.png) no-repeat;
 			height: @grid*3;
 			width: @grid*3;
 			.transition(.3s ease-in-out all);
@@ -187,33 +180,33 @@ h5 {
 			}
 		}
 		&.tumblr {
-			background-position: 0px 0px;
+			background-position: -48px 0px;
 			&:hover {
-				background-position: 0px -24px;
+				background-position: -48px -24px;
 			}
 		}
 		&.vimeo {
-			background-position: -@grid*4 0px;
+			background-position: -80px 0px;
 			&:hover {
-				background-position: -@grid*4 -24px;
+				background-position: -80px -24px;
 			}
 		}
 		&.pinterest {
-			background-position: -@grid*8 0px;
+			background-position: -112px 0px;
 			&:hover {
-				background-position: -@grid*8 -24px;
+				background-position: -112px -24px;
 			}
 		}
 		&.facebook {
-			background-position: -@grid*12px 0px;
+			background-position: -144px 0px;
 			&:hover {
-				background-position: -@grid*12 -24px;
+				background-position: --144px -24px;
 			}
 		}
 		&.twitter {
-			background-position: -@grid*16px 0px;
+			background-position: -176px 0px;
 			&:hover {
-				background-position: -@grid*16 -24px;
+				background-position: -176 -24px;
 			}
 		}
 		span {
@@ -233,7 +226,7 @@ h5 {
 		font-weight: bold;
 		height: 11px;
 		padding: 7px 0 6px 24px;
-		background: url(../img/icon-search.png) @grid/2 @grid/2 no-repeat;
+		background: url('../img/ek-sprite.png') no-repeat 4px -400px;
 		background-color: #FFF;
 		position: absolute;
 		cursor: pointer;
@@ -389,13 +382,16 @@ h5.category {
 	font-family: @sansSerifFamily;
 	text-transform: uppercase;
 	font-size: 11px;
-	background: url(../img/slices/sprites.png) no-repeat;
+	background: url('../img/ek-sprite.png') no-repeat -222px -85px;
 	height: 11px;
 	padding-top: 2px;
 	line-height: 11px;
 	padding-left: 13+@grid/2;
 	margin: @grid*2 0;
 	vertical-align: 90%;
+	a:hover {
+		color: @ekBlue;
+	}
 }
 
 hr.solid {
@@ -474,9 +470,7 @@ body.home {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border: 0;
-	background-color: rgba(255, 255, 255, .8);
-	background-repeat: no-repeat;
-	background-position: center center;
+	background: rgba(255, 255, 255, .8) url('../img/ek-sprite.png') no-repeat -81px -55px;
 	opacity: 1 !important;
 	color: #FFF !important;
 	width: 30px;
@@ -492,17 +486,17 @@ body.home {
 	}
 	&.left {
 		left: 0px;
-		background-image: url(../img/slices/arrow-left-carousel.png);
+		background-position: -179px -149px;
 		&:hover {
-			background-image: url(../img/slices/arrow-left-carousel-white.png);
+			background-position: -179px -49px;
 		}
 	}
 	&.right {
 		left: auto;
 		right: 0px;
-		background-image: url(../img/slices/arrow-right-carousel.png);
+		background-position: -175px -195px;
 		&:hover {
-			background-image: url(../img/slices/arrow-right-carousel-white.png);
+			background-position: -175px -99px;
 		}
 	}
 }
@@ -647,33 +641,32 @@ ul#view-controls {
 			padding: 5px 0 5px 27px;
 			margin-right: 30px;
 			display: inline-block;
-			background-repeat: no-repeat;
 			vertical-align: middle;
 			line-height: 16px;
-			background-position: left center;
 			font-size: 13px;
 			color: @midGray;
+			background: url('../img/ek-sprite.png') no-repeat;
 		}
 		a:hover, a:active, &.active a, &:hover a, &.checked a {
 			color: @ekBlue !important;
 		}
-		&#grid-view {
+		&#list-view {
 			a {
-				background-image: url(../img/slices/icon-gridview.png);
+				background-position: 0 -179px;
 			}
 			&.active a, &:hover a {
-				background-image: url(../img/slices/icon-gridview-active.png);
+				background-position: 0 -151px;
 			}
 			@media (max-width: 767px) {
 				display: none;
 			}
 		}
-		&#list-view {
+		&#grid-view {
 			a {
-				background-image: url(../img/slices/icon-listview.png);
+				background-position: 0 -238px;
 			}
 			&.active a, &:hover a {
-				background-image: url(../img/slices/icon-listview-active.png);
+				background-position: 0 -210px;
 			}
 			@media (max-width: 767px) {
 				display: none;
@@ -681,22 +674,22 @@ ul#view-controls {
 		}
 		&#cat-filter {
 			a {
-				background-image: url(../img/slices/icon-filter.png);
+				background-position: -1px -287px;
 			}
 			&.active a, &:hover a {
-				background-image: url(../img/slices/icon-filter-active.png);
+				background-position: -1px -259px;
 			}
 		}
 		&#sfw-filter {
 			position: relative;
 			a {
-				background: url(../img/slices/icon-checkbox.png) no-repeat left 2px;
+				background-position: 0 -370px;
 			}
 			&.active a, &:hover a {
-				background-image: url(../img/slices/icon-checkbox-active.png);
+				background-position: 0 -342px;
 			}
 			&.checked a {
-				background-image: url(../img/slices/icon-checkbox-checked.png);
+				background-position: 0 -319px;
 			}
 			.spinner {
 				position: absolute !important;
@@ -723,7 +716,7 @@ body.home {
 		position: absolute;
 		top: @grid*2.5;
 		right: @grid*2.5;
-		background: url(../img/slices/close-button.png) no-repeat;
+		background: url('../img/ek-sprite.png') no-repeat 0 -126px;
 		height: 15px;
 		width: 15px;
 	}
@@ -1005,39 +998,42 @@ body.home {
 	height: 15px;
 	li {
 		display: inline-block;
-		background-image: url(../img/slices/post-list-social.png);
 		background-repeat: no-repeat;
 		height: 15px;
 		width: 15px;
 		line-height: 15px;
 		padding-left: 6px;
+		text-align: center;
 		a {
+			background: url('../img/ek-sprite.png') no-repeat;
 			display: inline-block;
 			height: 15px;
-			width: 15px;
 		}
-		&.facebook {
-			background-position: 8px top;
+		&.facebook a {
+			width: 7px;
+			background-position: -85px -85px;
 			&:hover {
-				background-position: 8px bottom;
+				background-position: -85px -100px;
 			}
 		}
-		&.twitter {
-			background-position: -15px top;
+		&.twitter a {
+			width: 16px;
+			background-position: -102px -85px;
 			&:hover {
-				background-position: -15px bottom;
+				background-position: -102px -100px;
 			}
 		}
-		&.pinterest {
-			background-position: -33px top;
+		&.pinterest a {
+			width: 16px;
+			background-position: -124px -85px;
 			&:hover {
-				background-position: -33px bottom;
+				background-position: -124px -100px;
 			}
 		}
 		// &.add {
-		// 	background-position: -53px top;
+		// 	background-position: -144px -85px;
 		// 	&:hover {
-		// 		background-position: -53px bottom;
+		// 		background-position: -144px -100px;
 		// 	}
 		// }
 	}
@@ -1194,7 +1190,7 @@ a {
 					width: 85px;
 					height: 20px;
 					display: inline-block;
-					background: url(../img/slices/logo-pinterest.png) no-repeat right center;
+					background: url('../img/ek-sprite.png') no-repeat 0 -94px;
 					vertical-align: -10%;
 				}
 			}
@@ -1430,18 +1426,19 @@ body.single, body.page {
 				height: 13px;
 				width: 8px;
 				background-repeat: no-repeat;
+				background: url('../img/ek-sprite.png') no-repeat;
 				&.prev {
 					left: 0;
-					background-image: url(../img/posts-nav-prev-off.png);
+					background-position: -40px -60px;
 					&:hover, &:active {
-						background-image: url(../img/posts-nav-prev-on.png);
+						background-position: 0 -60px;
 					}
 				}
 				&.next {
 					right: 0;
-					background-image: url(../img/posts-nav-next-off.png);
+					background-position: -60px -60px;
 					&:hover, &:active {
-						background-image: url(../img/posts-nav-next-on.png);
+						background-position: -20px -60px;
 					}
 				}
 			}
@@ -1590,8 +1587,7 @@ body.single, body.page {
 				margin-bottom: 0px;
 				li {
 					background-color: #FFF;
-					border: 7px solid #FFF;
-					border-width: 7px 5px 8px 4px;
+					padding: 6px;
 				}
 			}
 		}
@@ -1939,7 +1935,7 @@ body.author {
 
 .photography {
 	h5.category {
-		background: url(../img/slices/category-photography.png) no-repeat;
+		background-position: -223px -136px;
 		a:hover {
 			color: @photographyColor;
 		}
@@ -1972,7 +1968,7 @@ body.author {
 
 .illustration-art {
 	h5.category {
-		background: url(../img/slices/category-illustration.png) no-repeat;
+		background-position: -220px -10px;
 		a:hover {
 			color: @illustrationartColor;
 		}
@@ -2005,7 +2001,7 @@ body.author {
 
 .film {
 	h5.category {
-		background: url(../img/slices/category-film.png) no-repeat;
+		background-position: -223px -109px;
 		a:hover {
 			color: @filmColor;
 		}
@@ -2041,7 +2037,7 @@ body.author {
 
 .new-media {
 	h5.category {
-		background: url(../img/slices/category-new-media.png) no-repeat;
+		background-position: -221px -34px;
 		a:hover {
 			color: @newMediaColor;
 		}
@@ -2106,32 +2102,26 @@ body.author {
 // }
 
 .the-interviews {
-	h5.category,  {
-		background: url(../img/slices/category-interview.png) no-repeat;
-		a:hover {
-			color: @interviewColor;
-		}
-	}
 	.btn-default, .carousel-indicator li.active, ul.sub-menu {
-		background: @interviewColor !important;
+		background: @ekBlue !important;
 	}
 	.carousel-control:hover {
-		background-color: @interviewColor;
+		background-color: @ekBlue;
 		color: #FFF;
 	}
 	.btn:hover {
 		background: @paleGray !important;
-		color: @interviewColor !important;
+		color: @ekBlue !important;
 	}
 	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
-		border-bottom-color: @interviewColor !important;
+		border-bottom-color: @ekBlue !important;
 		a, a:hover {
-			color: @interviewColor !important;
+			color: @ekBlue !important;
 		}
 	}
 	// &.post {
 		a.view-more, h5.random-article, h1.sub {
-			color: @interviewColor;
+			color: @ekBlue;
 			background: none;
 			padding-left: 0px;
 		}
