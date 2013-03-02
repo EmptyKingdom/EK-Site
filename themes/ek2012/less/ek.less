@@ -28,13 +28,13 @@ a.btn, button.btn {
 	.border-radius(0px) !important;
 	.box-shadow();
 	border: none;
-	color: #FFF !important;
+	color: #333 !important;
 	text-transform: uppercase;
 	font-family: @sansSerifFamily;
 	font-size: 13px;
 	line-height: @grid;
 	padding: @grid @grid*2;
-	background: #000;
+	background: #CDCDCD;
 	font-weight: bold;
 	.text-shadow;
 	&:hover {
@@ -1923,6 +1923,12 @@ body.author {
 // 	}
 // }
 
+.photography, .illustration-art, .film, .new-media, .the-interviews, .the-mausoleum, .gallery-spotlight {
+	.btn {
+		color: #FFF !important;
+	}
+}
+
 .photography {
 	h5.category {
 		background: url(../img/slices/category-photography.png) no-repeat;
@@ -2058,38 +2064,38 @@ body.author {
 	// }
 }
 
-.event {
-	h5.category {
-		background: url(../img/slices/category-event.png) no-repeat;
-		a:hover {
-			color: @eventColor;
-		}
-	}
-	.btn-default, .carousel-indicator li.active, ul.sub-menu {
-		background: @eventColor !important;
-	}
-	.carousel-control:hover {
-		background-color: @eventColor;
-		color: #FFF;
-	}
-	.btn:hover {
-		background: @paleGray !important;
-		color: @eventColor !important;
-	}
-	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
-		border-bottom-color: @eventColor !important;
-		a, a:hover {
-			color: @eventColor !important;
-		}
-	}
-	// &.post {
-		a.view-more, h5.random-article, h1.sub {
-			color: @eventColor;
-			background: none;
-			padding-left: 0px;
-		}
-	// }
-}
+// .event {
+// 	h5.category {
+// 		background: url(../img/slices/category-event.png) no-repeat;
+// 		a:hover {
+// 			color: @eventColor;
+// 		}
+// 	}
+// 	.btn-default, .carousel-indicator li.active, ul.sub-menu {
+// 		background: @eventColor !important;
+// 	}
+// 	.carousel-control:hover {
+// 		background-color: @eventColor;
+// 		color: #FFF;
+// 	}
+// 	.btn:hover {
+// 		background: @paleGray !important;
+// 		color: @eventColor !important;
+// 	}
+// 	&.menu-item.active, &.current-menu-item, &.current-menu-ancestor {
+// 		border-bottom-color: @eventColor !important;
+// 		a, a:hover {
+// 			color: @eventColor !important;
+// 		}
+// 	}
+// 	// &.post {
+// 		a.view-more, h5.random-article, h1.sub {
+// 			color: @eventColor;
+// 			background: none;
+// 			padding-left: 0px;
+// 		}
+// 	// }
+// }
 
 .the-interviews {
 	h5.category,  {

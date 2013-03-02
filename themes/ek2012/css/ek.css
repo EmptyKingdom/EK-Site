@@ -6,7 +6,7 @@ a,a:visited{color:#333333;}
 a:hover,a:active{color:#00b8ec;text-decoration:none;}
 hr{margin:10px 0;border-top:1px dotted #cccccc;}
 .highlight{color:#00b8ec;}
-a.btn,button.btn{border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-moz-background-clip:padding !important;-webkit-background-clip:padding-box !important;background-clip:padding-box !important;-webkit-box-shadow:0px 0px 0px #ffffff;-moz-box-shadow:0px 0px 0px #ffffff;box-shadow:0px 0px 0px #ffffff;border:none;color:#FFF !important;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:13px;line-height:8px;padding:8px 16px;background:#000;font-weight:bold;-webkit-text-shadow:0px 0px 0px #ffffff;-moz-text-shadow:0px 0px 0px #ffffff;text-shadow:0px 0px 0px #ffffff;}a.btn:hover,button.btn:hover{background:#e5e5e5;color:#898989 !important;}
+a.btn,button.btn{border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-moz-background-clip:padding !important;-webkit-background-clip:padding-box !important;background-clip:padding-box !important;-webkit-box-shadow:0px 0px 0px #ffffff;-moz-box-shadow:0px 0px 0px #ffffff;box-shadow:0px 0px 0px #ffffff;border:none;color:#333 !important;text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:13px;line-height:8px;padding:8px 16px;background:#CDCDCD;font-weight:bold;-webkit-text-shadow:0px 0px 0px #ffffff;-moz-text-shadow:0px 0px 0px #ffffff;text-shadow:0px 0px 0px #ffffff;}a.btn:hover,button.btn:hover{background:#e5e5e5;color:#898989 !important;}
 a.btn.btn-primary,button.btn.btn-primary{background:#00b8ec;}a.btn.btn-primary:hover,button.btn.btn-primary:hover{background:#333333;color:#FFF !important;}
 a.btn.btn-inverse,button.btn.btn-inverse{background:#333333;}
 .arrow-right{padding-right:24px;background:url(../img/slices/arrow-right-blue.png) no-repeat right center;display:inline-block;height:14px;}
@@ -216,7 +216,8 @@ body.author #author-panel .author-general .social-links{position:absolute;bottom
 body.author #author-panel .author-general .social-links ul{display:inline;}
 body.author #author-panel .author-details h3{text-transform:uppercase;font-family:'myriad-pro',sans-serif;font-size:18px;color:#00b8ec;font-weight:normal;margin:0 0 8px 0;line-height:normal;}
 body.author h3.recent{font-family:'myriad-pro',sans-serif;text-transform:uppercase;font-weight:normal;line-height:normal;font-size:18px;font-weight:600;}body.author h3.recent span{font-family:'minion-pro',serif;text-transform:none;font-style:italic;font-weight:normal;font-size:22px;padding-left:5px;}
-@media (min-width:768px) and (max-width:979px){}.photography h5.category{background:url(../img/slices/category-photography.png) no-repeat;}.photography h5.category a:hover{color:#faa634;}
+@media (min-width:768px) and (max-width:979px){}.photography .btn,.illustration-art .btn,.film .btn,.new-media .btn,.the-interviews .btn,.the-mausoleum .btn,.gallery-spotlight .btn{color:#FFF !important;}
+.photography h5.category{background:url(../img/slices/category-photography.png) no-repeat;}.photography h5.category a:hover{color:#faa634;}
 .photography .btn-default,.photography .carousel-indicator li.active,.photography ul.sub-menu{background:#faa634 !important;}
 .photography .carousel-control:hover{background-color:#faa634;color:#FFF;}
 .photography .btn:hover{background:#e5e5e5 !important;color:#faa634 !important;}
@@ -241,18 +242,13 @@ body.author h3.recent{font-family:'myriad-pro',sans-serif;text-transform:upperca
 .new-media .btn:hover{background:#e5e5e5 !important;color:#62bb46 !important;}
 .new-media.menu-item.active,.new-media.current-menu-item,.new-media.current-menu-ancestor{border-bottom-color:#62bb46 !important;}.new-media.menu-item.active a,.new-media.current-menu-item a,.new-media.current-menu-ancestor a,.new-media.menu-item.active a:hover,.new-media.current-menu-item a:hover,.new-media.current-menu-ancestor a:hover{color:#62bb46 !important;}
 .new-media a.view-more,.new-media h5.random-article,.new-media h1.sub{color:#62bb46;background:none;padding-left:0px;}
-.event h5.category{background:url(../img/slices/category-event.png) no-repeat;}.event h5.category a:hover{color:#894e93;}
-.event .btn-default,.event .carousel-indicator li.active,.event ul.sub-menu{background:#894e93 !important;}
-.event .carousel-control:hover{background-color:#894e93;color:#FFF;}
-.event .btn:hover{background:#e5e5e5 !important;color:#894e93 !important;}
-.event.menu-item.active,.event.current-menu-item,.event.current-menu-ancestor{border-bottom-color:#894e93 !important;}.event.menu-item.active a,.event.current-menu-item a,.event.current-menu-ancestor a,.event.menu-item.active a:hover,.event.current-menu-item a:hover,.event.current-menu-ancestor a:hover{color:#894e93 !important;}
-.event a.view-more,.event h5.random-article,.event h1.sub{color:#894e93;background:none;padding-left:0px;}
 .the-interviews h5.category{background:url(../img/slices/category-interview.png) no-repeat;}.the-interviews h5.category a:hover{color:#00b8eb;}
 .the-interviews .btn-default,.the-interviews .carousel-indicator li.active,.the-interviews ul.sub-menu{background:#00b8eb !important;}
 .the-interviews .carousel-control:hover{background-color:#00b8eb;color:#FFF;}
 .the-interviews .btn:hover{background:#e5e5e5 !important;color:#00b8eb !important;}
 .the-interviews.menu-item.active,.the-interviews.current-menu-item,.the-interviews.current-menu-ancestor{border-bottom-color:#00b8eb !important;}.the-interviews.menu-item.active a,.the-interviews.current-menu-item a,.the-interviews.current-menu-ancestor a,.the-interviews.menu-item.active a:hover,.the-interviews.current-menu-item a:hover,.the-interviews.current-menu-ancestor a:hover{color:#00b8eb !important;}
 .the-interviews a.view-more,.the-interviews h5.random-article,.the-interviews h1.sub{color:#00b8eb;background:none;padding-left:0px;}
+.gallery-spotlight .btn,.the-mausoleum .btn,.featured .btn{color:#FFF !important;}
 .gallery-spotlight h5.category,.the-mausoleum h5.category,.featured h5.category{background:url(../img/slices/category-interview.png) no-repeat;}.gallery-spotlight h5.category a:hover,.the-mausoleum h5.category a:hover,.featured h5.category a:hover{color:#00b8eb;}
 .gallery-spotlight .btn-default,.the-mausoleum .btn-default,.featured .btn-default,.gallery-spotlight .carousel-indicator li.active,.the-mausoleum .carousel-indicator li.active,.featured .carousel-indicator li.active,.gallery-spotlight ul.sub-menu,.the-mausoleum ul.sub-menu,.featured ul.sub-menu{background:#00b8eb !important;}
 .gallery-spotlight .carousel-control:hover,.the-mausoleum .carousel-control:hover,.featured .carousel-control:hover{background-color:#00b8eb;color:#FFF;}
