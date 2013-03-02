@@ -11,7 +11,7 @@ a, a:visited {
 }
 
 a:hover, a:active {
-	color: @linkHighlight;
+	color: @ekBlue;
 	text-decoration: none;
 }
 
@@ -21,7 +21,7 @@ hr {
 }
 
 .highlight {
-	color: @linkHighlight;
+	color: @ekBlue;
 }
 
 a.btn, button.btn {
@@ -42,7 +42,7 @@ a.btn, button.btn {
 		color: @textColor !important;
 	}
 	&.btn-primary {
-		background: @linkHighlight;
+		background: @ekBlue;
 		&:hover {
 			background: @darkGray;
 			color: #FFF !important;
@@ -50,6 +50,10 @@ a.btn, button.btn {
 	}
 	&.btn-inverse {
 		background: @darkGray;
+		color: #FFF !important;
+		&:hover {
+			background: @ekBlue;
+		}
 	}
 }
 
@@ -96,7 +100,7 @@ h4 {
 	font-family: @sansSerifFamily;
 	font-weight: normal;
 	strong {
-		color: @linkHighlight;
+		color: @ekBlue;
 		font-weight: @semiBold;
 	}
 }
@@ -239,8 +243,8 @@ h5 {
 		font-family: @sansSerifFamily;
 		line-height: normal;
 		.transition(.4s ease-in-out all);
-		color: @linkHighlight;
-		.placeholder-color(@linkHighlight);
+		color: @ekBlue;
+		.placeholder-color(@ekBlue);
 			&.expanded {
 				width: 182px;
 				background-color: @paleGray;
@@ -369,10 +373,10 @@ h5 {
 			    	}
 			    }
 			    &:hover, &.current-menu-item  {
-				    border-bottom-color: @linkHighlight;
+				    border-bottom-color: @ekBlue;
 				    cursor: pointer;
 				    a {
-					    color: @linkHighlight;
+					    color: @ekBlue;
 				    }
 			    }
 		    }
@@ -539,7 +543,7 @@ body.home {
 			background-color: @lightGray;
 			margin-left: @grid/2;
 			&.active {
-				background-color: @linkHighlight;
+				background-color: @ekBlue;
 			}
 			a {
 				display: block;
@@ -633,7 +637,8 @@ ul#view-controls {
 	text-transform: uppercase;
 	line-height: 16px;
 	margin: 0 0 30px 0;
-	letter-spacing: 1px;
+	font-family: @sansSerifFamily;
+	font-weight: @semiBold;
 	li {
 		display: inline-block;
 		vertical-align: middle;
@@ -645,12 +650,11 @@ ul#view-controls {
 			vertical-align: middle;
 			line-height: 16px;
 			background-position: left center;
-			font-family: @sansSerifAltFamily;
-			font-size: 11px;
+			font-size: 13px;
 			color: @midGray;
 		}
 		a:hover, a:active, &.active a, &:hover a, &.checked a {
-			color: @linkHighlight !important;
+			color: @ekBlue !important;
 		}
 		&#grid-view {
 			a {
@@ -963,7 +967,7 @@ body.home {
 			}
 			strong {
 				font-weight: normal;
-				color: @linkHighlight;
+				color: @ekBlue;
 			}
 		}
 		h5 {
@@ -1096,15 +1100,15 @@ a {
 	padding-top: 61px;
 	.widget {
 		background-color: whitesmoke;
-		border-bottom: 4px solid @linkHighlight;
+		border-bottom: 4px solid @ekBlue;
 		margin-top: 24px;
 		overflow: hidden;
 		@media(max-width: 568px) { // iphone5 landcsape
 			display: none;
 		}
 		h4 {
-			// background: @linkHighlight url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
-			background-color: @linkHighlight;
+			// background: @ekBlue url(../img/slices/star-widget-hdr.png) no-repeat @grid center;
+			background-color: @ekBlue;
 			padding: 0 15px 0 15px;
 			color: #FFF;
 			text-transform: uppercase;
@@ -1131,7 +1135,7 @@ a {
 			border-bottom-width: 0;
 			h4 {
 				margin-bottom: 0;
-/* 				border-bottom-color: @linkHighlight; */
+/* 				border-bottom-color: @ekBlue; */
 				&:after {
 					content: url(../img/slices/widget-collapsed.png);
 				}
@@ -1271,7 +1275,7 @@ a {
 		text-align: left;
 		.btn-arrow-left;
 		&:hover {
-			background-color: @linkHighlight !important;
+			background-color: @ekBlue !important;
 			color: #FFF !important;
 			@media (min-width: 768px) and (max-width: 979px){
 				background-image: none !important;
@@ -1307,7 +1311,7 @@ a {
 		color: @textColor;
 	}
 	a:hover, a:active {
-		color: @linkHighlight;
+		color: @ekBlue;
 	}
 	.widget {
 		margin-bottom: 45px;
@@ -1319,7 +1323,7 @@ a {
 			}
 			input {
 				background: @darkGray;
-				border-bottom: 2px solid @linkHighlight !important;
+				border-bottom: 2px solid @ekBlue !important;
 				display: block;
 				margin: @grid*2 0;
 				width: 63%;
@@ -1628,9 +1632,9 @@ body.single, body.page {
 					position: relative;
 					.btn-arrow-left;
 					&:hover {
-						background-color: @linkHighlight !important;
+						background-color: @ekBlue !important;
 						color: #FFF !important;
-						background-color: @linkHighlight !important;
+						background-color: @ekBlue !important;
 					}
 					&.prev {
 						visibility: hidden;
@@ -1767,7 +1771,7 @@ body.author {
 					line-height: normal;
 					color: @midGray;
 					span {
-						color: @linkHighlight;
+						color: @ekBlue;
 					}
 				}
 			}
@@ -1793,7 +1797,7 @@ body.author {
 				text-transform: uppercase;
 				font-family: @sansSerifFamily;
 				font-size: 18px;
-				color: @linkHighlight;
+				color: @ekBlue;
 				font-weight: normal;
 				margin: 0 0 8px 0;
 				line-height: normal;
@@ -1845,7 +1849,7 @@ body.author {
 // 		h1 {
 // 			font-size: 22px;
 // 			font-family: @sansSerifFamily;
-// 			color: @linkHighlight;
+// 			color: @ekBlue;
 // 			font-weight: normal;
 // 			text-transform: uppercase;
 // 			line-height: 22px;
@@ -1897,11 +1901,11 @@ body.author {
 // 		}
 // 	}
 // 	.btn-large.tempshop {
-// 		border: 2px solid @linkHighlight;
+// 		border: 2px solid @ekBlue;
 // 		background-color: #dbff08;
 // 		text-align: center;
 // 		vertical-align: middle;
-// 		color: @linkHighlight !important;
+// 		color: @ekBlue !important;
 // 		line-height: 12px;
 // 		font-size: 12px;
 // 		font-weight: @semiBold;
