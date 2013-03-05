@@ -5,6 +5,7 @@ $(document).ready(function($){
 		$('body').addClass('touch-device');
 	}
 
+	// check for css3 transition support
 	var features;
 	(function(s, features) {
 	    features.transitions = 'transition' in s || 'webkitTransition' in s || 'MozTransition' in s || 'msTransition' in s || 'OTransition' in s;
@@ -39,7 +40,6 @@ $(document).ready(function($){
 			for (var key in shareData) {
 		        $(this).attr('href', $(this).attr('href').replace('~'+key+'~', shareData[key]));
 			}
-			// console.log($(this));
 		});
 
 		$this.parent().prepend($shareServices);
@@ -74,7 +74,7 @@ $(document).ready(function($){
 	}
 
 	// set up carousel behavior (interval, switch descriptions, stop videos, update indicator)
-	$('.carousel').carousel({
+	$('.carousel.active').carousel({
 		interval: 7000, 
 		pause: 'hover'
 	}).on({
@@ -101,6 +101,7 @@ $(document).ready(function($){
 		slid: updateCarouselIndicator
 	});
 
+	// clamp category carousels to 2 lines
 	$('.category-carousel').on({
 		slid: function(e){
 			var nextSlide = e.relatedTarget || $(this).find('.item:first').get(0);
@@ -142,8 +143,8 @@ $(document).ready(function($){
 			$($this.data('section')).addClass('active');
 			
 			// switch the selected carousel
-			$('#feature .carousel').removeClass('active');
-			$newCarousel.addClass('active');
+			$('#feature .carousel.active').removeClass('active').carousel('pause');
+			$newCarousel.addClass('active').carousel('cycle');
 			$newCarousel.trigger('switchedto')
 		}
 	}, 'a');
@@ -151,10 +152,10 @@ $(document).ready(function($){
 	// pause carousel when descriptions hovered 
 	$('#carousel-sections').hover(
 		function(){
-			$('#feature .carousel').carousel('pause');
+			$('#feature .carousel.active').carousel('pause');
 		},
 		function(){
-			$('#feature .carousel').carousel('cycle');
+			$('#feature .carousel.active').carousel('pause').carousel('cycle');
 		}
 	)
 	
