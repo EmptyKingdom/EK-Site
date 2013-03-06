@@ -31,7 +31,7 @@
 				<li class="pinterest">
 					<a href="javascript:void(0)" class="service">Pinterest</a>
 					<div class="action">
-						<a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink()) ?>&media=<?php echo urlencode(wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "standard" )) ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+						<a href="http://pinterest.com/pin/create/button/?url=<?php global $post; echo urlencode(get_permalink($post->ID)) ?>&media=<?php echo urlencode(wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "standard" )) ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
 					</div>
 				</li>
 				<li class="gplus">
