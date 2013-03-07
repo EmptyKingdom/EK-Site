@@ -74,14 +74,15 @@ $(document).ready(function($){
 	}
 
 	// set up carousel behavior (interval, switch descriptions, stop videos, update indicator)
-	$('.carousel.active').carousel({
+	$('.carousel').carousel({
 		interval: 7000, 
 		pause: 'hover'
-	}).on({
+	}).carousel('pause').on({
 		slide: function(e){
 			var $this = $(this);
 			
 			if ($this.parent().hasClass('has-side-captions')) {
+
 				// e.relatedTarget is the slide coming in, but it's broken when the first slide is the one coming in
 				var nextSlide = e.relatedTarget || $(this).find('.item:first').get(0);
 
@@ -99,7 +100,7 @@ $(document).ready(function($){
 			})
 		}, 
 		slid: updateCarouselIndicator
-	});
+	}).filter('.active').carousel('cycle');
 
 	// clamp category carousels to 2 lines
 	$('.category-carousel').on({
@@ -150,9 +151,9 @@ $(document).ready(function($){
 	}, 'a');
 
 	// pause carousel when descriptions hovered 
-	$('#carousel-sections').hover(
+	$('#feature').hover(
 		function(){
-			$('#feature .carousel.active').carousel('pause');
+			$('#feature .carousel').carousel('pause');
 		},
 		function(){
 			$('#feature .carousel.active').carousel('pause').carousel('cycle');
