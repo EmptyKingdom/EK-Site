@@ -25,6 +25,7 @@ foreach($widgets as $widget_file)
 	include($widget_file);	
 }
 
+
 /* sidebars */
 register_sidebar(array(
 	'name'          => 'Right Sidebar',
@@ -44,6 +45,22 @@ register_sidebar(array(
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4>',
 	'after_title'   => '</h4>' ));
+
+// if no title then remove extra closing div from after_widget
+add_filter( 'dynamic_sidebar_params', 'check_sidebar_params' );
+function check_sidebar_params( $params ) {
+    global $wp_registered_widgets;
+
+    $settings_getter = $wp_registered_widgets[ $params[0]['widget_id'] ]['callback'][0];
+    $settings = $settings_getter->get_settings();
+    $settings = $settings[ $params[1]['number'] ];
+
+    if ( $params[0][ 'after_widget' ] == '</div></div>' && isset( $settings[ 'title' ] ) && empty( $settings[ 'title' ] ) )
+    {
+		$params[0][ 'after_widget' ] = '</div>';    	
+    }
+    return $params;
+}
 	
 /* custom post types */
 function ek_register_stuff() {
