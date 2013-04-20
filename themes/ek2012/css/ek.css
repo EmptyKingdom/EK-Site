@@ -1664,9 +1664,8 @@ body.page .post-content .img-sharer ul {
   right: 10px;
   margin-bottom: 0px;
 }
-body.single .post-content .img-sharer ul li a,
-body.page .post-content .img-sharer ul li a {
-  display: block;
+body.single .post-content .img-sharer ul li,
+body.page .post-content .img-sharer ul li {
   background-color: #FFF;
   padding: 6px;
 }
