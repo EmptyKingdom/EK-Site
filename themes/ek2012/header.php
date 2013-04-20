@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html>
 	<head>  
+	<!-- Hello from EK -->
 		<meta charset="utf-8">
 	    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' | '; } ?><?php bloginfo('name'); if(is_home()) { echo ' | '; bloginfo('description'); } ?></title>
 		<meta name="description" content="<?php bloginfo('description'); ?>">
