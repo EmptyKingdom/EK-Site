@@ -348,14 +348,20 @@ function ek_filter_title($title)
 
 function ek_pause_lazyload()
 {
-	remove_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
-	remove_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+	if (class_exists('LazyLoad_Images')) 
+	{
+		remove_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
+		remove_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+	}
 }
 
 function ek_resume_lazyload()
 {
-	add_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
-	add_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+	if (class_exists('LazyLoad_Images')) 
+	{
+		add_filter( 'the_content', array( 'LazyLoad_Images', 'add_image_placeholders' ), 99 ); 
+		add_filter( 'post_thumbnail_html', array( 'LazyLoad_Images', 'add_image_placeholders' ), 11 );
+	}
 }
 
 
