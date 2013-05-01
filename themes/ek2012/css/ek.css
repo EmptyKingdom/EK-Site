@@ -488,7 +488,6 @@ hr.solid {
 @media (min-width: 1200px) {
   .ad-slot#ad-slot-1 div {
     padding: 32px 0;
-    background-color: #e5e5e5;
   }
 }
 @media (max-width: 568px) {
@@ -1202,6 +1201,7 @@ a.video div:hover {
   background: #FFF;
   border: none;
   padding: 0px;
+  margin: 0;
 }
 #sidebar .widget.newsletter-signup h4 {
   font-size: 13px;
@@ -1211,7 +1211,7 @@ a.video div:hover {
   color: #898989;
   padding-left: 0;
   cursor: auto;
-  font-weight: bold;
+  font-weight: normal;
 }
 #sidebar .widget.newsletter-signup .content {
   padding-left: 0;
@@ -1290,6 +1290,8 @@ a.video div:hover {
 #sidebar .widget.widget_text {
   padding: 0;
   background-color: #FFF;
+  border-bottom: none;
+  margin: 0;
 }
 #sidebar .widget.twitter h5 {
   font-size: 18px;
@@ -1351,6 +1353,9 @@ a.video div:hover {
     background-image: none !important;
   }
 }
+#newsletter-signup-2 {
+  margin-top: -6px !important;
+}
 /* FOOTER & WIDGETS */
 #footer {
   margin-top: 30px;
@@ -1366,7 +1371,7 @@ a.video div:hover {
   }
 }
 #footer h4 {
-  margin: 18px 0;
+  margin: 27px 0 15px 0;
   color: #cccccc;
 }
 #footer a,
@@ -1387,11 +1392,13 @@ a.video div:hover {
 }
 #footer .widget.newsletter-signup input {
   background: #333333;
-  border-bottom: 2px solid #00b8ec !important;
+  /*border-bottom: 2px solid @ekBlue !important;*/
+
   display: block;
-  margin: 16px 0;
-  width: 63%;
-  color: #e5e5e5;
+  margin: 0 0 9px 0;
+  width: 58%;
+  color: #00b8ec;
+  letter-spacing: 1px;
 }
 #footer .widget.ek-social li {
   margin-left: 0;

@@ -421,7 +421,7 @@ hr.solid {
 			}
 			@media (min-width: 1200px) {
 				padding: 32px 0;
-				background-color: @paleGray;
+				
 			}
 			@media (max-width: 568px) { // iphone5 landscape
 				margin-top: 20px;
@@ -1149,6 +1149,7 @@ a {
 			background: #FFF;
 			border: none;
 			padding: 0px;
+			margin:0;
 			h4 {
 				font-size: @baseFontSize;
 				background: #FFF;
@@ -1157,7 +1158,7 @@ a {
 				color: @textColor;
 				padding-left: 0;
 				cursor: auto;
-				font-weight: bold;
+				font-weight: normal;
 			}
 			.content {
 				padding-left: 0;
@@ -1239,6 +1240,8 @@ a {
 		&.widget_text {
 			padding: 0;
 			background-color: #FFF;
+			border-bottom:none;
+			margin:0;
 		}
 		&.twitter {
 			h5 {
@@ -1291,6 +1294,10 @@ a {
 	}
 }
 
+#newsletter-signup-2 {
+	margin-top: -6px !important;
+}
+
 /* FOOTER & WIDGETS */
 
 #footer {
@@ -1304,7 +1311,7 @@ a {
 		top: 20px;
 	}
 	h4 {
-		margin: 18px 0;
+		margin: 27px 0 15px 0;
 		color: @lightGray;
 	}
 	a, a:link {
@@ -1323,11 +1330,12 @@ a {
 			}
 			input {
 				background: @darkGray;
-				border-bottom: 2px solid @ekBlue !important;
+				/*border-bottom: 2px solid @ekBlue !important;*/
 				display: block;
-				margin: @grid*2 0;
-				width: 63%;
-				color: @paleGray;
+				margin: 0 0 9px 0;
+				width: 58%;
+				color: @ekBlue;
+				letter-spacing:1px;
 			}
 		}
 		&.ek-social {
