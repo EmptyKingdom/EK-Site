@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>Skyline - Newsletter with Template Builder</title>
+ 	<meta name="description" content="a module based template with Template Builder">
+	<meta name="author" content="Xaver Birsak">
+	<meta name="copyright" content="Xaver Birsak">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2012-09-21T00:00:00+02:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	
+	<style>
+		html, body{background-color:#F3F3F3;color:#585858;}
+		h1,h2,h3,h4,h5,h6{color:#585858;}
+		section table{background-color:#F3F3F3;}
+		::-moz-selection{background:#111111;color:#F1F1F1;}
+		::selection{background:#111111;color:#F1F1F1;}
+		a.brand{background-image:url(assets/images/image_20.png);}
+		a, a:hover, a:active{color:#111111;}
+		hr{border-top:1px solid #E5E5E5;border-bottom:1px solid #F9F9F9;}
+		div.navbar-inner, .navbar .nav li ul{background:#333333;color:#F1F1F1;http://static.revaxarts-themes.com/noise.gif}
+		a.btn-navbar{background:#333333;color:#F1F1F1;}
+		.navbar .nav li a{color:#F1F1F1;text-shadow:1px 1px 0px #444444;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#F9F9F9;}
+		.navbar .nav > li a{color:#F1F1F1;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#111111;color:#F1F1F1;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#111111;color:#F1F1F1;}
+		.navbar .nav li ul li a:hover{background:#111111;color:#F1F1F1;}
+		.navbar .nav li ul li a:active{background:#111111;color:#F1F1F1;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: -ms-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: -webkit-gradient(linear, 0 0, 0 585858%, from(#333333), to(#3B3B3B));
+			  background-image: -webkit-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: -o-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: linear-gradient(top, #585858, #3B3B3B);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#585858', endColorstr='#3B3B3B', GradientType=0);
+			  border-color: #3B3B3B #3B3B3B #bfbfbf;
+			  color:#F9F9F9;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #3B3B3B;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	
+	
+    </head>
+    
+<body data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">Skyline - Newsletter with Template Builder</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#general" title="General">General</a></li>
+			<li><a href="#how_to_start" title="How to Start">How to Start</a></li>
+			<li><a href="#html_structure" title="HTML Structure">HTML Structure</a></li>
+			<li><a href="#the_template_builder_2" title="The Template Builder 2">The Template Builder 2</a></li>
+			<li><a href="#mymail_nerwsletter_plugin" title="MyMail Nerwsletter Plugin">MyMail Nerwsletter Plugin</a></li>
+			<li><a href="#my_template_builder" title="My Template Builder">My Template Builder</a></li>
+			<li><a href="#file_structure" title="File Structure">File Structure</a></li>
+			<li><a href="#psd_png_files" title="PSD/PNG Files">PSD/PNG Files</a></li>
+			<li><a href="#preheaders" title="Preheaders">Preheaders</a></li>
+			<li><a href="#how_to_add_a_custom_color" title="How to add a custom color">How to add a custom color</a></li>
+			<li><a href="#how_to_make_a_custom_productbox" title="How to make a custom Productbox">How to make a custom Productbox</a></li>
+			<li><a href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>Skyline - Newsletter with Template Builder</h1>
+	    <p>a module based template with Template Builder</p>
+	    <ul class="marketing-byline">
+			<li>Created: 09/05/2011</li>
+			<li>latest Update: 09/21/2012</li>
+			<li>By: Xaver Birsak</li>
+			
+		</ul>
+	    <p class="download-info">
+			<a href="http://rxa.li/skyline" class="btn btn-primary btn-large">Item Page</a> <a href="http://rxa.li/support" class="btn btn-large">Support Forum</a> 
+		</p>
+		
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to start a discussion at my <a href="http://rxa.li/support">support forum</a>. Thanks so much!</p>
+   </div> <!-- intro -->
+   
+	</div>
+      
+  <section id="general">
+	<div class="page-header"><h3>General</h3><hr class="notop"></div>
+<p>
+	The Template includes several ready-made HTML files. But to use its whole potential you may use the <a href="#the_template_builder_2">Template Builder</a></p>
+</section>
+<section id="how_to_start">
+	<div class="page-header"><h3>How to Start</h3><hr class="notop"></div>
+<p>
+	in your zip file you can found next to the &#39;documentation.zip&#39;, the &#39;jpgs.zip&#39; and the &#39;png_psd.zip&#39; these folders:</p>
+<p>
+	<img alt="" src="assets/images/image_12.png" style="width: 151px; height: 322px"></p>
+<h4>
+	Host it on your own webspace</h4>
+<ol>
+	<li>
+		Upload these folders to your webspace <span class="small">(make sure all required images stay available until your recipients will read the newsletter)</span></li>
+	<li>
+		You can use the <a href="#the_template_builder_2">Template Builder</a> to generate your Template easily by going to the &#39;_templatebuilder&#39; folder via your browser <span class="small">(http://yourdomain.tld/_templatebuilder)</span></li>
+	<li>
+		Or you can manually choose one of the prebuild template files (.html) and edit them with an texteditor</li>
+</ol>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="394" mozallowfullscreen="" src="http://player.vimeo.com/video/35621636?title=0&amp;byline=0&amp;portrait=0&amp;color=111111" webkitallowfullscreen="" width="700"></iframe></p>
+<h4>
+	Use &quot;My Template Builder&quot; online</h4>
+<p>
+	If you don&#39;t have an own webspace or you have troubles get the Template Builder running you can use &quot;My Template Builder&quot;. Go to <a href="#my_template_builder">this section</a> to get started</p>
+</section>
+<section id="html_structure">
+	<div class="page-header"><h3>HTML Structure</h3><hr class="notop"></div>
+<p>
+	This theme is a fixed layout with one columns. The HTML code has been tested for all major mail applications. I&rsquo;ve tested this extensively and it meets every major standard for email templates out there. The HTML templates have been tested on <a href="http://mail.google.com/" target="_blank">Gmail</a>, <a href="http://mail.yahoo.com/" target="_blank">Yahoo Mail</a>, <a href="http://hotmail.com" target="_blank">Hotmail</a>, <a href="http://gmx.com/" target="_blank">GMX</a>, <a href="http://mail.aol.com" target="_blank">AOL Mail</a>, <a href="http://www.apple.com" target="_blank">Apple Mail</a>, <a href="http://office.microsoft.com/outlook/" target="_blank">Microsoft Outlook</a> 2003 and 2010 and <a href="http://www.mozillamessaging.com/" target="_blank">Thunderbird</a> as well. The general template structure is the same throughout the template.</p>
+<p>
+	Here is the general structure:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- Image on the Left start --&gt;
+&lt;table width=&quot;600&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;contenttbl&quot;&gt;
+&lt;tr&gt;
+&nbsp;&nbsp; &nbsp;&lt;td valign=&quot;top&quot; align=&quot;center&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;table width=&quot;552&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;tr&gt;
+&lt;!-- CONTENT start --&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td width=&quot;264&quot; valign=&quot;top&quot; align=&quot;left&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;img src=&quot;IMGPATH&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;264&quot; height=&quot;192&quot; border=&quot;0&quot; style=&quot;max-width:264px;&quot;&nbsp; /&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/td&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td width=&quot;24&quot;&gt;&amp;nbsp;&lt;/td&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td width=&quot;264&quot; valign=&quot;top&quot; align=&quot;left&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;div class=&quot;h&quot;&gt;&lt;div&gt;Headline goes here&lt;/div&gt;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Li Europan lingu es es membres del sam familie...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;div class=&quot;btn&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;img/more.png&quot; width=&quot;94&quot; height=&quot;30&quot; alt=&quot;read more&quot; title=&quot;read more&quot; border=&quot;0&quot;&nbsp; /&gt;&lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/td&gt;
+&lt;!-- CONTENT end --&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/tr&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/table&gt;
+&nbsp;&nbsp; &nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr height=&quot;24&quot;&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!-- Image on the Left end&nbsp; --&gt;
+
+</pre>
+<p>
+	&nbsp;</p>
+<p>
+	Which represents this:</p>
+<p>
+	<img src="assets/images/image_5.png" style="width: 612px; height: 255px; "></p>
+<p>
+	As you can see each block has its content.</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- CONTENT start --&gt;
+&lt;!-- CONTENT end --&gt;</pre>
+<p>
+	These comments are wraps for the content</p>
+</section>
+<section id="the_template_builder_2">
+	<div class="page-header"><h3>The Template Builder 2</h3><hr class="notop"></div>
+<p>
+	With this template you get the Template Builder. Make sure you upload all the files to your server first or check out <a href="#my_template_builder">&quot;My Template Builder&quot;</a>.</p>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="394" mozallowfullscreen="" src="http://player.vimeo.com/video/27926008?title=0&amp;byline=0&amp;portrait=0&amp;color=111111" webkitallowfullscreen="" width="700"></iframe></p>
+<p>
+	Check out <a href="http://revaxarts-themes.com/skyline/_templatebuilder/?tour=start">the Tour for the Template Builder</a></p>
+<p>
+	<img alt="" src="assets/images/image_15.png" style="width: 863px; height: 673px"></p>
+<p>
+	It&#39;s easy to work with the Template Builder:</p>
+<h4>
+	1. Build your Layout</h4>
+<p>
+	First you have to build your layout. You can click on of the prebuilds or drag &#39;n drop modules into the dropzone on the right.</p>
+<p>
+	<img alt="" src="assets/images/image_19.png" style="width: 589px; height: 449px"></p>
+<p>
+	You can reorder the layout and save it.</p>
+<h4>
+	2.&nbsp;Precise the Template</h4>
+<p>
+	Specify more options in step 2. Choose one version you would like to use.</p>
+<p>
+	<img alt="" src="assets/images/image_7.png" style="width: 253px; height: 125px"></p>
+<p>
+	If you would like to use a service like Mailchimp or Campaignmonitor you have to enter an API key.</p>
+<ul>
+	<li>
+		<a href="https://us1.admin.mailchimp.com/account/api-key-popup">Mailchimp API Key</a></li>
+	<li>
+		<a href="http://www.campaignmonitor.com/api/getting-started/#apikey">Campaign Monitor API Key</a></li>
+</ul>
+<p>
+	<img alt="" src="assets/images/image_8.png"></p>
+<p>
+	Define your <a href="#preheaders">preheader</a> to display a custom text in the preview area of the email clients</p>
+<p>
+	If you need just the HTML you can deside to get an inline CSS version or the embedded version</p>
+<p>
+	Choose absolute URLs if you need absolute pathes for the images</p>
+<p>
+	<img alt="" src="assets/images/image_6.png" style="width: 243px; height: 441px"></p>
+<h4>
+	3. Get the HTML</h4>
+<p>
+	If you have uploaded all the files correctly your HTML is shown in the textfield. You can edit, preview or download the HTML.</p>
+<p>
+	<img alt="" src="assets/images/image_16.png"  ></p>
+<p>
+	If you use a service you can directly upload it to it&#39;s dashboard</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="mymail_nerwsletter_plugin">
+	<div class="page-header"><h3>MyMail Nerwsletter Plugin</h3><hr class="notop"></div>
+<p>
+	This Template works with the <a href="http://rxa.li/mymail">MyMail Email Newsletter Plugin for WordPress</a></p>
+<p>
+	<a href="http://rxa.li/mymail"><img alt="" src="assets/images/image_21.jpg" style="width: 590px; height: 300px; "></a></p>
+<p>
+	In the download package your can find a zip file called</p>
+<p>
+	<code>skyline_for_mymail.zip</code></p>
+<p>
+	To install the plugin:</p>
+<ol>
+	<li>
+		Get the <a href="http://rxa.li/mymail">MyMail Newsletter Plugin</a> exclusive on CodeCanyon</li>
+	<li>
+		Follow the installation instruction for the Plugin and activate it.</li>
+	<li>
+		Goto Newsletter =&gt; Templates</li>
+	<li>
+		Click the Upload tab and upload the zip file</li>
+</ol>
+</section>
+<section id="my_template_builder">
+	<div class="page-header"><h3>My Template Builder</h3><hr class="notop"></div>
+<p>
+	With &quot;<a href="http://mytemplatebuilder.revaxarts-themes.com/">My Template Builder</a>&quot; you can access the <a href="#the_template_builder_2">Template Builder</a> without uploading the files to your webspace.</p>
+<p>
+	<strong>You don&#39;t even need a webspace!</strong></p>
+<p>
+	1. Go to the <a href="http://mytemplatebuilder.revaxarts-themes.com/">&quot;My Template Builder&quot; website</a> and enter your purchase code and hit the submit button</p>
+<p>
+	<img alt="" src="assets/images/image_18.png" style="width: 502px; height: 471px"></p>
+<p>
+	After you&#39;ve submitted your valid code you can see all templates where you have entered a purchase code</p>
+<p>
+	<img alt="" src="assets/images/image_10.png" style="width: 792px; height: 500px"></p>
+<p>
+	&nbsp;</p>
+<p>
+	You can now start using the Template Builder by pressing the &quot;Template Builder&quot; button of your desired template</p>
+<p>
+	Try it know:</p>
+<h6>
+	<a href="http://mytemplatebuilder.revaxarts-themes.com/">mytemplatebuilder.revaxarts-themes.com</a></h6>
+</section>
+<section id="file_structure">
+	<div class="page-header"><h3>File Structure</h3><hr class="notop"></div>
+<p>	Each version comes with this file structure:</p>
+<p>	<img src="assets/images/image_14.png" style="width: 188px; height: 583px"></p>
+<p>	All images are in the img folder. For each layout you get 4 different html files:</p>
+<ul>	<li>		layoutname.html <span class="small">(is the normal file)</span></li>
+	<li>		layoutname_inline.html <span class="small">(is the normal file with inline CSS)</span></li>
+	<li>		layoutname_mc.html <span class="small">(is the mailchimp version)</span></li>
+	<li>		layoutname_cm.html <span class="small">(is the campaign monitor version)</span></li>
+</ul>
+<p class="info">
+	Mailchimp and Campaign Monitor will inline your CSS before you send a campaign, so no need to have it here</p>
+</section>
+<section id="psd_png_files">
+	<div class="page-header"><h3>PSD/PNG Files</h3><hr class="notop"></div>
+<p>	I&#39;ve included several psds and pngs with this theme (png_psd.zip). All pngs are fully editable fireworks png</p>
+<p>	For each version you get:</p>
+<ol>
+	<li>		screendesign.psd</li>
+	<li>		screendesign.png</li>
+</ol>
+<p>	The screendesign.psd and screendesign.png are layered designs of the template.</p>
+<p>	You can change the graphics that they match your needs. But don&#39;t change the size of the slices or the layout will maybe get messed up</p>
+<p>	To change a color use the boxes on the right an apply the style in the &quot;properties&quot;</p>
+<h4>
+	Exporting Graphics</h4>
+<p>	Export the slices into a folder and also check the html for hex color codes (#123456)</p>
+</section>
+<section id="preheaders">
+	<div class="page-header"><h3>Preheaders</h3><hr class="notop"></div>
+<p>	Preheaders are small phrases (up to 80 letters) which should help increasing your clickthrough rate. Many email clients display the first letters of an email in their preview area.</p>
+<p>	<img alt="" src="assets/images/image_11.png" style="width: 307px; height: 129px"></p>
+<p class="warning">
+	Preheaders are invisible in the normal email view and show up only in the preview pane of some clients</p>
+<h4>
+	Examples</h4>
+<h5>
+	Outlook 2007 + 2010</h5>
+<p>	<img alt="" src="assets/images/image_13.png" style="width: 393px; height: 88px"></p>
+<h5>
+	Google Mail</h5>
+<p>	<img alt="" src="assets/images/image_9.png" style="width: 807px; height: 53px"></p>
+<h5>
+	iPhone</h5>
+<p>	<img alt="" src="assets/images/image_17.png" style="width: 320px; height: 480px"></p>
+<p class="info">
+	If you use Mailchimp or Campaign Monitor you can use there placeholder tags too!</p>
+<h5>
+	Usefull resources</h5>
+<ul>	<li>		<a href="http://www.campaignmonitor.com/blog/post/3628/a-practical-guide-to-email-preheaders/">A practical guide to email preheaders</a> (Campaign Monitor)</li>
+	<li>		<a href="http://blog.mailchimp.com/fancier-pre-headers-in-your-emails/">Fancier Pre-headers in your emails</a> (Mailchimp)</li>
+	<li>		<a href="http://www.aweber.com/blog/email-marketing/preheaders.htm">5 Ways a Preheader Can Increase Response and Deliverability</a></li>
+	<li>		<a href="http://www.email-marketing-reports.com/iland/2008/01/better-preheaders-six-ideas-to-consider.html">Better preheaders? Six ideas to consider</a></li>
+</ul>
+</section>
+<section id="how_to_add_a_custom_color">
+	<div class="page-header"><h3>How to add a custom color</h3><hr class="notop"></div>
+<p>	This Template comes with alot predefined colors. If you need your own color follow these steps:</p>
+<ol>
+	<li>		Get the hex value of your color (I use as example the value <em><strong>123456</strong></em>)</li>
+</ol>
+<p>	We have to setup the file structure:</p>
+<ol>
+	<li>		Duplicate the folder <em>&#39;version1&#39;</em> and rename it to <em>&#39;version25&#39;</em></li>
+	<li>		If you would like to use only the <a href="#the_template_builder_2">Template Builder</a> open all four files which start with &#39;all_&#39;</li>
+	<li>		seach for the old hex value &#39;F07800&#39; and replace all with your new (e.g. <em><strong>123456</strong></em>)</li>
+</ol>
+<p>	Now we have to add the new file to the Template Builder:</p>
+<ol>
+	<li>		open the custom.js within the <em>&#39;_js&#39;</em> folder of the templatebuilder.</li>
+	<li>		scroll down to colors and attach your hex value to <strong>the end</strong> position:
+		<pre class="prettyprint lang-js linenums">
+colors = [&#39;F07800&#39;,&#39;...&#39;,&#39;123456&#39;];</pre>
+	</li>
+	<li>		do the same for the background color:
+		<pre class="prettyprint lang-js linenums">
+bgcolors = [&#39;F07800&#39;,&#39;...&#39;,&#39;123456&#39;];</pre>
+	</li>
+	<li>		Save the custom.js</li>
+</ol>
+<p class="info">
+	Make sure you upload all your files to your server</p>
+</section>
+<section id="how_to_make_a_custom_productbox">
+	<div class="page-header"><h3>How to make a custom Productbox</h3><hr class="notop"></div>
+<p>
+	It&#39;s easy to make a custom Productbox *</p>
+<p>
+	<img src="assets/images/image_1.png" style="width: 766px; height: 544px"></p>
+<p class="small">
+	* requires at least Photoshop CS2</p>
+<ol>
+	<li>
+		open the <code>productbox.psd</code> within the &#39;png_psd&#39; folder</li>
+	<li>
+		double click on the &#39;front&#39; layer<br>
+		<img src="assets/images/image_3.png" style="width: 239px; height: 424px"></li>
+	<li>
+		make your personal front layout</li>
+	<li>
+		save it and go back to the <code>productbox.psd</code></li>
+	<li>
+		edit the &#39;right-side&#39; layer with a double click</li>
+	<li>
+		after saving go back to <code>productbox.psd</code></li>
+	<li>
+		Select the Crop Tool (C) and crop the image<br>
+		<img alt="" src="assets/images/image_2.png" style="width: 68px; height: 56px"></li>
+	<li>
+		click &#39;file&#39; &gt; &#39;Save for Web &amp; Devices...&#39;</li>
+	<li>
+		for a 1/2 column reduce the width to 264px for a 1/3 column to 168px<br>
+		<img src="assets/images/image_4.png" style="width: 157px; height: 100px"></li>
+	<li>
+		save it into the <code>img</code> folder of your desired version</li>
+</ol>
+<p class="info">
+	Don&#39;t forget to upload your files to your server</p>
+</section>
+<section id="sources_and_credits">
+	<div class="page-header"><h3>Sources and Credits</h3><hr class="notop"></div>
+<p>
+	I&#39;ve used the following images, icons or other files as listed.</p>
+<ul>
+	<li>
+		Social Icons by <a href="http://picons.me/">Picons</a></li>
+	<li>
+		Photo used: <a href="http://photodune.net/item/toronto-skyline/201456">Toronto Skyline</a> by <a href="http://photodune.net/user/elenathewise">elenathewise</a></li>
+	<li>
+		Font: <a href="http://www.impallari.com/lobster/">Lobster</a> by <a href="http://www.impallari.com/">Impallari</a></li>
+	<li>
+		MacBook: <a href="http://www.pixeden.com/psd-mock-up-templates/macbook-pro-retina-psd-mockup">MacBook Pro Retina Psd Mockup</a> by <a href="http://www.pixeden.com">Pixeden</a></li>
+	<li>
+		iPhone: <a href="http://www.pixeden.com/psd-mock-up-templates/iphone-4s-psd-vector-mockup-template">iPhone 4s Psd Vector Mockup Template</a> by <a href="http://www.pixeden.com">Pixeden</a></li>
+</ul>
+<p class="small">
+	Files are maybe not included because of the license</p>
+<p>
+	Once again, thank you so much for purchasing this theme. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this theme. No guarantees, but I&#39;ll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the &quot;Item Discussion&quot; section.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Xaver Birsak</strong> &ndash; <a href="http://revaxarts.com">revaxarts.com</a></p>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright Xaver Birsak 2012 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='450',easing='easeOutExpo';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>
