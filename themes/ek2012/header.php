@@ -81,6 +81,7 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 		//]]></script>
+		<script type="text/javascript" src="http://s3.buysellads.com/ac/adsaleswidget.js"></script>
 	</head>
 	
 
