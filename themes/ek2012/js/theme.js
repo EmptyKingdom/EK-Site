@@ -562,7 +562,9 @@ var viewControls = {
 
 	switchView: function(from, to, target) {
 		$(target).removeClass(from).addClass(to);
-		// $('a.video').find('iframe').remove();
+		$.cookie('viewMode', to, {
+			path: '/'
+		});
 	},
 	
 	showCatFilters: function(target) {
