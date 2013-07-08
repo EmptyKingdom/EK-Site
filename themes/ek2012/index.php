@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="span8" id="main">
 		<?php get_template_part('partials/view-controls') ?>
-		<div id="post-list" class="post-list <?php echo isset($_COOKIE['viewMode']) ? $_COOKIE['viewMode'] : 'list' ?>">
+		<div id="post-list" class="post-list <!--mfunc <?php echo W3TC_DYNAMIC_SECURITY ?> echo isset($_COOKIE['viewMode']) ? $_COOKIE['viewMode'] : 'list'; --><?php echo isset($_COOKIE['viewMode']) ? $_COOKIE['viewMode'] : 'list' ?><!--/mfunc <?php echo W3TC_DYNAMIC_SECURITY ?> -->">
 			<?php get_template_part('partials/posts', 'listing') ?>
 		</div> <!-- /#post-list -->
 		<?php get_template_part('partials/posts-pagination') ?>

@@ -1,6 +1,6 @@
 		<ul class="unstyled" id="view-controls" data-nonce="<?php echo wp_create_nonce('ek_load_posts') ?>">
-			<li id="list-view" class="<?php echo ( ! isset($_COOKIE['viewMode']) || $_COOKIE['viewMode'] == 'list') ? 'active' : ''; ?>"><a href="javascript:void(0)" data-action="listView" class="">List View</a></li>
-			<li id="grid-view" class="<?php echo isset($_COOKIE['viewMode']) && $_COOKIE['viewMode'] == 'grid' ? 'active' : ''; ?>"><a href="javascript:void(0)" data-action="gridView" class="">Grid View</a></li>
+			<li id="list-view" class="<!--mfunc <?php echo W3TC_DYNAMIC_SECURITY ?> echo ( ! isset($_COOKIE['viewMode']) || $_COOKIE['viewMode'] == 'list') ? 'active' : ''; --><?php echo ( ! isset($_COOKIE['viewMode']) || $_COOKIE['viewMode'] == 'list') ? 'active' : ''; ?><!--/mfunc <?php echo W3TC_DYNAMIC_SECURITY ?> -->"><a href="javascript:void(0)" data-action="listView" class="">List View</a></li>
+			<li id="grid-view" class="<!--mfunc <?php echo W3TC_DYNAMIC_SECURITY ?> echo isset($_COOKIE['viewMode']) && $_COOKIE['viewMode'] == 'grid' ? 'active' : ''; --><?php echo isset($_COOKIE['viewMode']) && $_COOKIE['viewMode'] == 'grid' ? 'active' : ''; ?><!--/mfunc <?php echo W3TC_DYNAMIC_SECURITY ?> -->"><a href="javascript:void(0)" data-action="gridView" class="">Grid View</a></li>
 			<?php if (is_home()) : ?>
 			<li id="cat-filter"><a href="javascript:void(0)" data-action="showCatFilters" class="">Filter By Category</a></li>
 			<?php endif; ?>
