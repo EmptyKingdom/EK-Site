@@ -6,7 +6,7 @@ $media = $media[0];
 				<li class="facebook">
 					<a href="javascript:void(0)" class="service">Facebook</a>
 					<div class="action">
-						<div class="fb-like" data-href="<?php echo urlencode(get_permalink()) ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="true" data-font="lucida grande"></div>
+						<div class="fb-like" data-href="<?php echo esc_attr(get_permalink()) ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="true" data-font="lucida grande"></div>
 					</div>
 				</li>
 				<li class="twitter">
